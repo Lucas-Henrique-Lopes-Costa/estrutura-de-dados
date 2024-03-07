@@ -2,7 +2,8 @@
 
 using namespace std;
 
-int main(){
+int main()
+{
     int aux;
     int *auxPtr;
 
@@ -20,6 +21,6 @@ int main(){
     cout << "Endereço de aux:" << &aux << endl;
     cout << "Valor de auxPtr:" << auxPtr << endl;
     cout << "Valor apontado por auxPtr:" << *auxPtr << endl;
-	
-    return 0;	
+
+    return 0;
 }
