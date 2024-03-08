@@ -22,10 +22,19 @@ Exemplo de Saída:
 16
 */
 
+struct Hidrocarboneto {
+    int C;
+    int H;
+};
+
 #include <iostream>
 using namespace std;
 
 int main() {
-    // Seu código aqui
+    Hidrocarboneto *hidrocarboneto = new Hidrocarboneto;
+    cin >> hidrocarboneto->C >> hidrocarboneto->H;
+
+    cout << hidrocarboneto->C * 12 + hidrocarboneto->H;
+    
     return 0;
 }

@@ -12,9 +12,30 @@ Exemplo de saída:
 */
 
 #include <iostream>
+#include <fstream>
 using namespace std;
 
-int main() {
-    // Seu código aqui
+int main()
+{
+    ifstream arquivo("Meu_Arquivo.txt");
+
+    if (!arquivo)
+    {
+        return 1;
+    }
+    else
+    {
+        char c;
+        int cont = 0;
+        while (arquivo.get(c))
+        {
+            if (c != ' ' && c != '\n' && c != '\t')
+            {
+                cont++;
+            }
+        }
+        cout << cont;
+    }
+
     return 0;
 }
