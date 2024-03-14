@@ -133,6 +133,9 @@ int main()
         case 'e':
             itens.getTopo();
             break;
+        case 'f':
+            itens.limpar();
+            break;
         default:
             break;
         }
