@@ -1,2058 +1,306 @@
+
 <!DOCTYPE html>
 <html>
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <title>Dredd - Juiz Online</title>
-      <link rel="stylesheet" type="text/css" href="public/css/jqueryui/jquery-ui-1.9.1.custom.prd.css">
-      <link rel="stylesheet" type="text/css" href="public/css/style.css">
-      <link rel="stylesheet" type="text/css" href="public/css/formulario.css">
-      <script src="public/js/jquery-1.9.0.min.js"></script>
-      <script src="public/js/jquery-ui.min.js?v192"></script>
-      <script src="public/js/jquery.maskedinput.min.js"></script>
-      <script src="public/js/jquery.alphanumeric.js"></script>
-      <script>
-         $(document).ready(function() {
-             $(document).tooltip();
-             $("button, input[type='submit'], input[type='reset']").button();
-         
-             $("input.date").mask("99/99/9999").attr("title","Exemplo: 11/09/2001").tooltip();
-             //~ $("input.datetime").mask("99/99/9999 99:99:99").attr("title","Exemplo: 11/09/2001 10:17:37").tooltip();
-             $("input.datetime").mask("99/99/9999 99:99:99");
-             $("input.integer").numeric().attr("title","Exemplo: 2").tooltip();
-             $("input.number").numeric({allow:"."}).attr("title","Exemplo: 0.5").tooltip();
-             $("textarea").keypress(function(event) {
-                 if (event.ctrlKey && (event.which == 112)) {
-                     event.preventDefault();
-                     $("#data-view-dialog").html("<div class='data-view-box' style='width: 90%;'>"+$(this).val()+"</div>").dialog("open");
-                 }
-             });
-         
-             $("textarea.cpp-code-view").attr("readonly","readonly");
-             $("div.cpp-code-view").each(function() {
-                 var text = $(this).html();
-                 text.replace("&","&amp;");
-                 text.replace("<","&lt;");
-                 text.replace(">","&gt;");
-                 text.replace("\r","");
-         
-                 // Keywords
-                 text.replace("float ","<b>float</b> ");
-                 text.replace("double ","<b>double</b> ");
-                 text.replace("int ","<b>int</b> ");
-                 text.replace("long ","<b>long</b> ");
-                 text.replace("if ","<b>if</b> ");
-                 text.replace("else ","<b>else</b> ");
-                 text.replace("for ","<b>for</b> ");
-                 text.replace("while ","<b>while</b> ");
-                 text.replace("return","<b>return</b>");
-                 text.replace("break","<b>break</b>");
-                 text.replace("using","<b>using</b>");
-                 text.replace("namespace","<b>namespace</b>");
-                 text.replace("#include","<b>#include</b>");
-         
-                 text.replace(" ","&nbsp;");
-                 text.replace("\t","&nbsp;&nbsp;&nbsp;&nbsp;");
-                 text.replace("\n","<br />");
-                 $(this).html(text);
-             });
-         
-             $("#alert-dialog").dialog({
-                 title: "Aviso",
-                 width: "auto",
-                 height: "auto",
-                 modal: true,
-                 buttons: {
-                     Ok: function() {
-                         $(this).dialog("close");
-                     }
-                 }
-             }).dialog("close");
-         
-             $("#data-view-dialog").dialog({
-                 title: "",
-                 width: 800,
-                 height: "auto",
-                 modal: true,
-                 buttons: {
-                     Ok: function() {
-                         $(this).dialog("close");
-                     }
-                 }
-             }).dialog("close");
-         });
-         function openDivAsDialog(id) {
-             $("div#"+id).dialog({
-                 title: "",
-                 width: "auto",
-                 height: "auto",
-                 modal: true,
-                 buttons: {
-                     Ok: function() {
-                         $(this).dialog("close");
-                     }
-                 }
-             }).dialog("open");
-         };
-      </script>
-   </head>
-   <body>
-      <!--
-         <div id="alert-dialog" style="display:none;box-shadow: #444444;"></div>
-         <div id="data-view-dialog" style="display:none;box-shadow: #444444;text-align:center;"></div>
-         -->
-      <div id="topct" class="ui-corner-bottom">
-         <div id="banner">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Dredd - Juiz Online</title>
+    <link rel="stylesheet" type="text/css" href="public/css/jqueryui/jquery-ui-1.9.1.custom.prd.css">
+    <link rel="stylesheet" type="text/css" href="public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="public/css/formulario.css">
+    <script src="public/js/jquery-1.9.0.min.js"></script>
+    <script src="public/js/jquery-ui.min.js?v192"></script>
+    <script src="public/js/jquery.maskedinput.min.js"></script>
+    <script src="public/js/jquery.alphanumeric.js"></script>
+    <script>
+    $(document).ready(function() {
+        $(document).tooltip();
+        $("button, input[type='submit'], input[type='reset']").button();
+
+        $("input.date").mask("99/99/9999").attr("title","Exemplo: 11/09/2001").tooltip();
+        //~ $("input.datetime").mask("99/99/9999 99:99:99").attr("title","Exemplo: 11/09/2001 10:17:37").tooltip();
+        $("input.datetime").mask("99/99/9999 99:99:99");
+        $("input.integer").numeric().attr("title","Exemplo: 2").tooltip();
+        $("input.number").numeric({allow:"."}).attr("title","Exemplo: 0.5").tooltip();
+        $("textarea").keypress(function(event) {
+            if (event.ctrlKey && (event.which == 112)) {
+                event.preventDefault();
+                $("#data-view-dialog").html("<div class='data-view-box' style='width: 90%;'>"+$(this).val()+"</div>").dialog("open");
+            }
+        });
+
+        $("textarea.cpp-code-view").attr("readonly","readonly");
+        $("div.cpp-code-view").each(function() {
+            var text = $(this).html();
+            text.replace("&","&amp;");
+            text.replace("<","&lt;");
+            text.replace(">","&gt;");
+            text.replace("\r","");
+
+            // Keywords
+            text.replace("float ","<b>float</b> ");
+            text.replace("double ","<b>double</b> ");
+            text.replace("int ","<b>int</b> ");
+            text.replace("long ","<b>long</b> ");
+            text.replace("if ","<b>if</b> ");
+            text.replace("else ","<b>else</b> ");
+            text.replace("for ","<b>for</b> ");
+            text.replace("while ","<b>while</b> ");
+            text.replace("return","<b>return</b>");
+            text.replace("break","<b>break</b>");
+            text.replace("using","<b>using</b>");
+            text.replace("namespace","<b>namespace</b>");
+            text.replace("#include","<b>#include</b>");
+
+            text.replace(" ","&nbsp;");
+            text.replace("\t","&nbsp;&nbsp;&nbsp;&nbsp;");
+            text.replace("\n","<br />");
+            $(this).html(text);
+        });
+
+        $("#alert-dialog").dialog({
+            title: "Aviso",
+            width: "auto",
+            height: "auto",
+            modal: true,
+            buttons: {
+                Ok: function() {
+                    $(this).dialog("close");
+                }
+            }
+        }).dialog("close");
+
+        $("#data-view-dialog").dialog({
+            title: "",
+            width: 800,
+            height: "auto",
+            modal: true,
+            buttons: {
+                Ok: function() {
+                    $(this).dialog("close");
+                }
+            }
+        }).dialog("close");
+    });
+    function openDivAsDialog(id) {
+        $("div#"+id).dialog({
+            title: "",
+            width: "auto",
+            height: "auto",
+            modal: true,
+            buttons: {
+                Ok: function() {
+                    $(this).dialog("close");
+                }
+            }
+        }).dialog("open");
+    };
+    </script>
+</head>
+<body>
+<!--
+    <div id="alert-dialog" style="display:none;box-shadow: #444444;"></div>
+    <div id="data-view-dialog" style="display:none;box-shadow: #444444;text-align:center;"></div>
+-->
+    <div id="topct" class="ui-corner-bottom">
+        <div id="banner">
             <h1>Dredd - Juiz Online</h1>
             <div id="topmenu">
-               <a href="/" class="button">Principal</a>
-               <a href="profile.php" class="button">Perfil</a>
-               <a href="testsMine.php" class="button">Minhas Provas</a>
-               <a href="logout.php" class="button">Sair</a>
+                <a href="/" class="button">Principal</a>
+                <a href="profile.php" class="button">Perfil</a>
+                <a href="testsMine.php" class="button">Minhas Provas</a>
+                <a href="logout.php" class="button">Sair</a>
             </div>
-         </div>
-      </div>
-      <div id="contentct">
-         <div id="content">
-            <div id="painel-info">
-               <b>Minutos<br>Restantes</b>:<br>
-               <span id="clock">?</span><br><br>
-               <b>Usuário</b>:<br>
-               <div id="usuario">?</div>
-               <br>
-               <b>Notas</b>:<br>
-               <span id="notas">
-               <a style="color: #FFF" href="#Q1">Q1: 100</a><br>
-               <a style="color: #FFF" href="#Q2">Q2: ?</a><br>
-               <a style="color: #FFF" href="#Q3">Q3: ?</a><br>
-               <a style="color: #FFF" href="#Q4">Q4: ?</a><br>
-               <a style="color: #FFF" href="#Q5">Q5: ?</a><br>
-               <a style="color: #FFF" href="#Q6">Q6: ?</a><br>
-               <a style="color: #FFF" href="#Q7">Q7: ?</a><br>
-               <a style="color: #FFF" href="#Q8">Q8: ?</a><br>
-               <a style="color: #FFF" href="#Q9">Q9: ?</a><br>
-               <a style="color: #FFF" href="#Q10">Q10: ?</a><br>
-               <a style="color: #FFF" href="#Q11">Q11: ?</a><br>
-               <a style="color: #FFF" href="#Q12">Q12: ?</a><br>
-               <a style="color: #FFF" href="#Q13">Q13: ?</a><br>
-               <a style="color: #FFF" href="#Q14">Q14: ?</a><br>
-               <a style="color: #FFF" href="#Q15">Q15: ?</a><br>
-               <a style="color: #FFF" href="#Q16">Q16: ?</a><br>
-               <a style="color: #FFF" href="#Q17">Q17: ?</a><br>
-               <a style="color: #FFF" href="#Q18">Q18: ?</a><br>
-               <a style="color: #FFF" href="#Q19">Q19: ?</a><br>
-               <a style="color: #FFF" href="#Q20">Q20: ?</a><br>
-               <a style="color: #FFF" href="#Q21">Q21: ?</a><br>
-               <a style="color: #FFF" href="#Q22">Q22: ?</a><br>
-               <a style="color: #FFF" href="#Q23">Q23: ?</a><br>
-               <a style="color: #FFF" href="#Q24">Q24: ?</a><br>
-               <a style="color: #FFF" href="#Q25">Q25: ?</a><br>
-               <a style="color: #FFF" href="#Q26">Q26: ?</a><br>
-               <a style="color: #FFF" href="#Q27">Q27: ?</a><br>
-               <a style="color: #FFF" href="#Q28">Q28: ?</a><br>
-               <a style="color: #FFF" href="#Q29">Q29: ?</a><br>
-               <a style="color: #FFF" href="#Q30">Q30: ?</a><br>
-               <a style="color: #FFF" href="#Q31">Q31: ?</a><br>
-               <a style="color: #FFF" href="#Q32">Q32: ?</a><br>
-               Total: 3    </span><br>
-            </div>
-            <div id="prova">
-               <h1>Revisão - Matrizes, Ponteiros, Registros e Arquivos Tipados e em Modo Texto</h1>
-               <p><b>Prova Aberta Até:</b> 22/03/2024 23:59:59</p>
-               <p><b>Número Máximo de Tentativas:</b> 6</p>
-               <p><b>Atenuação da Nota por Tentativa:</b> 0%</p>
-               <p><b>Instruções para a prova:</b> Exercícios de revisão de assuntos de IAlg para alunos de ED. Pode ser acessada de casa.</p>
-               <div class="problem-try-ct">
-                  <a name="Q1"></a>
-                  <h3>Questão 1: Vetores - Números primos no vetor (tamanho fixo)</h3>
-                  <div class="description-display-box">
-                     <p>Faça um programa para receber nove números inteiros positivos, armazená-los em um vetor, calcular e exibir no dispositivo de saída padrão aqueles números que são primos e suas respectivas posições no vetor. Se nenhum número primo for fornecido, nenhuma mensagem precisará ser exibida.</p>
-                     <p><b>Entradas:</b></p>
-                     <ol>
-                        <li>Nove números inteiros positivos a serem armazenados em um vetor.</li>
-                     </ol>
-                     <p><b>Saídas:</b></p>
-                     <ol>
-                        <li>Sequência de números primos e suas respectivas posições (índices no vetor). Obs.: Aqueles números que forem primos e suas respectivas posições deverão ser exibidos aos pares.</li>
-                     </ol>
-                     <p><b>Exemplo de entrada</b>:</p>
-                     <pre>
-7 13 49 23 6 21 78 98 3 
-</pre>
-                     <p><b>Exemplo de saída</b>:</p>
-                     <pre>
-7 0
-13 1
-23 3
-3 8
-</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ1"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <p><b>Última tentativa realizada em:</b> 05/03/2024 23:43:13</p>
-                  <p><b>Tentativas:</b> 1 de 6</p>
-                  <p><b>Nota (0 a 100):</b> 100</p>
-                  <p><b>Status ou Justificativa de Nota:</b> Nenhum erro encontrado.</p>
-                  <button onClick="openDivAsDialog('lastTrial468');">Ver Código da Última Tentativa</button>
-                  <div style="height: 6px"></div>
-                  <div style="display:none" id='lastTrial468'>
-                     <textarea class="cpp-code-view" style="font-family: monospace">/*
-                     Faça um programa para receber nove números inteiros positivos, armazená-los em um vetor, calcular e exibir no dispositivo de saída padrão aqueles números que são primos e suas respectivas posições no vetor. Se nenhum número primo for fornecido, nenhuma mensagem precisará ser exibida.
-                     Entradas:
-                     Nove números inteiros positivos a serem armazenados em um vetor.
-                     Saídas:
-                     Sequência de números primos e suas respectivas posições (índices no vetor). Obs.: Aqueles números que forem primos e suas respectivas posições deverão ser exibidos aos pares.
-                     Exemplo de entrada:
-                     7 13 49 23 6 21 78 98 3 
-                     Exemplo de saída:
-                     7 0
-                     13 1
-                     23 3
-                     3 8
-                     */
-                     #include &lt;iostream&gt;
-                     using namespace std;
-                     bool primo(int n)
-                     {
-                     int divisor = 2;
-                     while (divisor &lt; n)
-                     {
-                     if (n % divisor == 0)
-                     {
-                     return false;
-                     }
-                     divisor++;
-                     }
-                     return true;
-                     }
-                     int main()
-                     {
-                     int vet[9];
-                     for (int i = 0; i &lt; 9; i++)
-                     {
-                     cin &gt;&gt; vet[i];
-                     }
-                     for (int i = 0; i &lt; 9; i++)
-                     {
-                     if (primo(vet[i]))
-                     {
-                     cout &lt;&lt; vet[i] &lt;&lt; &quot; &quot; &lt;&lt; i &lt;&lt; endl;
-                     }
-                     } 
-                     }</textarea>
-                  </div>
-                  <!-- ultima tentativa -->
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="468">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="2">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="1">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q2"></a>
-                  <h3>Questão 2: Vetores - União de vetores (alocação dinâmica)</h3>
-                  <div class="description-display-box">
-                     <p>Na matemática a união de dois conjuntos A e B é representada por A ∪ B e é formada por todos os elementos pertencentes a A ou B. Por exemplo, seja A = {1, 2, 3} e B = {4, 5}, então a união destes dois conjuntos será A ∪ B = {1, 2, 3, 4, 5}, porém caso um elemento esteja em ambos os conjuntos ele não irá aparecer duas vezes no conjunto união, por exemplo, seja A = {1, 2, 3} e B = {1, 2, 4}, assim a união será A ∪ B = {1, 2, 3, 4}.</p>
-                     <p>Utilizando os conceitos de conjunto faça um programa que leia dois vetores A e B e determine a união. O tamanho de cada vetor será informado pelo usuário. </p>
-                     <p><b>Obs.:</b> Considere que não existirão vetores vazios.</p>
-                     <p><b>Obs.2:</b> Os vetores devem ser alocados dinamicamente.</p>
-                     <p><b>Entradas:</b></p>
-                     <ol>
-                        <li>Tamanho do vetor A.</li>
-                        <li>Elementos do vetor A.</li>
-                        <li>Tamanho do vetor B.</li>
-                        <li>Elementos do vetor B.</li>
-                     </ol>
-                     <p><b>Saídas:</b></p>
-                     <ol>
-                        <li>Vetor C representado a união dos vetores A e B.</li>
-                     </ol>
-                     <p><b>Exemplo de Entrada:</b></p>
-                     <pre>
-3
-1 2 3
-2
-2 4
-</pre>
-                     <p><b>Exemplo de Saída:</b></p>
-                     <pre>
-1 2 3 4
-</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ2"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="1988">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="2">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q3"></a>
-                  <h3>Questão 3: Vetor - Quantidade de ocorrências em vetores de strings </h3>
-                  <div class="description-display-box">
-                     <p>Faça um programa que receba três listas de strings. Cada lista representa um conjunto de elementos. Cada lista será digitada em uma linha específica. Será garantido que as duas primeiras listas serão diferentes.</p>
-                     <p>Seu programa deverá exibir no dispositivo de saída padrão, para cada palavra da terceira lista, se a palavra em questão apareceu em nenhuma, uma ou nas duas listas iniciais. </p>
-                     <p>Entradas:</p>
-                     <ol>
-                        <li>Três listas de strings. Cada lista será fornecida em uma linha específica, com a quantidade de palavras no início.</li>
-                     </ol>
-                     <p>Saídas:</p>
-                     <ol>
-                        <li>Sequência de valores que denotam se cada palavra da terceira lista apareceu em nenhuma, uma ou nas duas listas iniciais. </li>
-                     </ol>
-                     <p>Exemplo de Entrada:</p>
-                     <pre>
-4 bola garrafa pedra cachorro
-3 cachorro pedra pato
-5 bola garrafa pato cachorro pedra
-</pre>
-                     <p>Exemplo de Saída:</p>
-                     <pre>
-1 1 1 2 2
-</pre>
-                     <p>Exemplo de Entrada:</p>
-                     <pre>
-4 bola garrafa pedra cachorro
-3 cachorro pedra pato
-2 cachorro pedra
-</pre>
-                     <p>Exemplo de Saída:</p>
-                     <pre>
-2 2
-</pre>
-                     <p>Exemplo de Entrada:</p>
-                     <pre>
-4 bola garrafa pedra cachorro
-3 cachorro pedra pato
-3 cachorro pedra sapato
-</pre>
-                     <p>Exemplo de Saída:</p>
-                     <pre>
-2 2 0
-</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ3"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="2109">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="3">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q4"></a>
-                  <h3>Questão 4: Vetores - Preenchimento ordenado</h3>
-                  <div class="description-display-box">
-                     <p>Faça um programa que receba oito números inteiros e os armazene de forma ordenada em um vetor. Ou seja, assim que lidos, os números já devem ser inseridos no vetor em uma posição que mantém a ordem crescente. Eles <b>não</b> podem ser inseridos no final do vetor para o vetor passar por uma ordenação.</p>
-                     <p>Cada vez que um número for colocado no vetor o programa deve exibir os números inseridos até então.</p>
-                     <p><b>Entrada:</b></p>
-                     <ol>
-                        <li>Oito números inteiros a serem inseridos no vetor.</li>
-                     </ol>
-                     <p><b>Saída:</b></p>
-                     <ol>
-                        <li>Oito linhas contendo em cada uma a situação do vetor após a inserção de cada número lido.</li>
-                     </ol>
-                     <p><b>Exemplo de entrada</b>:</p>
-                     <pre>
-7 3 4 6 2 9 0 1
-</pre>
-                     <p><b>Exemplo de saída</b>:</p>
-                     <pre>7
-3 7
-3 4 7
-3 4 6 7
-2 3 4 6 7
-2 3 4 6 7 9
-0 2 3 4 6 7 9
-0 1 2 3 4 6 7 9</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ4"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="476">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="4">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q5"></a>
-                  <h3>Questão 5: Vetores - Diferença - A invenção de  Lex Luthor</h3>
-                  <div class="description-display-box">
-                     <p>
-                        Luthor irá mais uma vez tentar algo contra o Super-Homem. Dessa vez, ele irá tentar o plano XTPO-3000-PlusAzul. Para isso, ele fez uma <b>lista com os materiais necessários</b> e verificou que alguns itens estavam em falta. Ele tem uma relação em computador dos itens que precisa para a invenção e uma lista dos itens que tem em posse na sua fábrica (alguns dos quais não serão necessários no plano, inclusive). Assim, ele precisa verificar quais itens da primeira lista não constam na segunda lista para poder ir buscá-los em seu estoque no subsolo.  
-                     </p>
-                     <p>Para ajudá-lo, você irá implementar <font color="darkgreen"><b>um algoritmo que recebe duas listas de materiais (dois vetores de strings) e imprime todos os itens que constam na primeira lista mas não constam na segunda lista. Os vetores devem ser implementados utilizando alocação dinâmica</b></font>. A impressão deverá ser feita seguindo a ordem da primeira lista. Considere que os itens das listas não possuem espaço, cada lista contém o número de materiais no topo e que nenhuma lista possui itens repetidos na própria lista. Caso todos os itens da primeira lista estejam presentes na segunda, imprima NADA (todo em maiúsculo).</p>
-                     <p>Entradas:</p>
-                     <ol>
-                        <li>Número de ingredientes da primeira lista.</li>
-                        <li>ingredientes (strings) da primeira lista, separados por espaço.</li>
-                        <li>Número de ingredientes da segunda lista.</li>
-                        <li>ingredientes (strings) da segunda lista, separados por espaço.</li>
-                     </ol>
-                     <p>Saídas:</p>
-                     <ol>
-                        <li>Elementos da lista resultante.</li>
-                     </ol>
-                     <p>Exemplo de Entrada:</p>
-                     <pre>
-5
-rubi_axial
-kriptonita_rosa
-xisto
-cesio137
-uranio_enriquecido
-6
-uranio_enriquecido
-sulfato_de_titanio
-bateria_18650
-kriptonita_rosa
-xisto
-virus_simancol
-</pre>
-                     <p>Exemplo de Saída:</p>
-                     <pre>
-rubi_axial
-cesio137
-</pre>
-                     <p>Exemplo de Entrada:</p>
-                     <pre>
-5
-rubi_axial
-kriptonita_rosa
-xisto
-cesio137
-uranio_enriquecido
-6
-rubi_axial
-kriptonita_rosa
-xisto
-cesio137
-uranio_enriquecido
-bateria_18650
-</pre>
-                     <p>Exemplo de Saída:</p>
-                     <pre>
-NADA
-</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ5"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="1486">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="5">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q6"></a>
-                  <h3>Questão 6: Matrizes - Operações com matrizes</h3>
-                  <div class="description-display-box">
-                     <p>Elabore um programa que preencha uma matriz 10 x 10 com números inteiros, execute cada operação de troca especificada a seguir na matriz original e mostre cada matriz resultante. Você vai precisar de ao menos uma matriz extra para realizar as operações.</p>
-                     <p>Operações de troca a serem realizadas (considerando índices que começam em 1):</p>
-                     <ol>
-                        <li>a linha 2 com a linha 8;</li>
-                        <li>a coluna 4 com a coluna 10;</li>
-                        <li>a diagonal principal com a diagonal secundária;</li>
-                        <li>a linha 5 com a coluna 10.</li>
-                     </ol>
-                     <p><b>Entrada:</b></p>
-                     <ol>
-                        <li>Uma matriz 10 x 10 de inteiros.</li>
-                     </ol>
-                     <p><b>Saída:</b></p>
-                     <ol>
-                        <li>A matriz 10 x 10 resultante das devidas operações descritas em 1, 2, 3, e 4 (utilizando um índice numérico antes de exibir cada matriz).</li>
-                     </ol>
-                     <p><b>Exemplo de entrada</b>:</p>
-                     <pre>
-1 2 3 4 5 6 7 8 9 0
-2 3 4 5 6 7 8 9 0 1
-3 4 5 6 7 8 9 0 1 2
-4 5 6 7 8 9 0 1 2 3
-5 6 7 8 9 0 1 2 3 4
-6 7 8 9 0 1 2 3 4 5
-7 8 9 0 1 2 3 4 5 6
-8 9 0 1 2 3 4 5 6 7
-9 0 1 2 3 4 5 6 7 8
-0 1 2 3 4 5 6 7 8 9
-</pre>
-                     <p><b>Exemplo de saí­da</b>:</p>
-                     <pre>
+        </div>
+    </div>
+    <div id="contentct">
+        <div id="content">
+<div id="painel-info">
+    <b>Minutos<br>Restantes</b>:<br>
+    <span id="clock">?</span><br><br>
+    <b>Usuário</b>:<br>
+    <div id="usuario">?</div><br>
+    <b>Notas</b>:<br>
+    <span id="notas">
+        <a style="color: #FFF" href="#Q1">Q1: ?</a><br>
+        <a style="color: #FFF" href="#Q2">Q2: ?</a><br>
+Total: 0    </span><br>
+</div>
+<div id="prova">
+    <h1>Atividade Preparatória de Pilha</h1>
+    <p><b>Prova Aberta Até:</b> 02/04/2024 12:00:00</p>
+    <p><b>Número Máximo de Tentativas:</b> 10</p>
+    <p><b>Atenuação da Nota por Tentativa:</b> 0%</p>
+    <p><b>Instruções para a prova:</b> A prova é individual. Desligue seu celular. Não converse com os colegas. Não fique olhando para a tela dos colegas.</p>
+    <div class="problem-try-ct">
+        <a name="Q1"></a>
+        <h3>Questão 1: Pilha com encadeamento - Inventário de itens de jogo</h3>
+        <div class="description-display-box">
+<p>Implemente uma estrutura de dados pilha, utilizando encadeamento de nós, para implementar um inventário de itens em um jogo digital. A estrutura deve possibilitar, pelo menos, as seguintes ações: empilhamento e desempilhamento de itens, verificação do item no topo da pilha e limpeza do inventário (remoção de todos os elementos da pilha). O desempilhamento deve escrever mensagem de erro na saída ("<tt>Erro: pilha vazia!</tt>"), quando a pilha já estiver vazia. Os itens do inventários possuem os seguintes atributos: nome (uma string sem espaços), tipo (um único caracter) e valor (um inteiro). </p>
+<p>Entradas:</p>
+<p>O programa deve aceitar os seguintes comandos:</p>
+<ul>
+<li>i: seguido de uma string, um caracter e um inteiro: para inserir um item no inventário</li>
+<li>r: para retirar um item do inventário</li>
+<li>l: para limpar (remover todos) os itens do inventário</li>
+<li>e: para espiar o topo do inventário (escreve o topo sem removê-lo)</li>
+<li>f: para finalizar a execução do programa</li>
+</ul>
+<p>Saídas:</p>
+<p>Todas as saídas de comandos já estão implementadas na função principal desse <a href="/exemplos/pilha-dce8d0ab.cpp">código exemplo fornecido</a>. Ao terminar a execução do programa, todos os itens da pilha são desempilhados e escritos.</p>
+<p>Exemplo de Entrada e Saída juntas:</p>
+<pre>
+r
+Erro: pilha vazia!
+i um a 1
+i dois b 2
+i quatro d 4
+i sete g 7
+i oito h 8
+r
+Nome: oito Tipo: h Valor: 8
+e
+Nome: sete Tipo: g Valor: 7
+r
+Nome: sete Tipo: g Valor: 7
+f
+Nome: quatro Tipo: d Valor: 4
+Nome: dois Tipo: b Valor: 2
+Nome: um Tipo: a Valor: 1
 
-1.
-1 2 3 4 5 6 7 8 9 0
-8 9 0 1 2 3 4 5 6 7
-3 4 5 6 7 8 9 0 1 2
-4 5 6 7 8 9 0 1 2 3
-5 6 7 8 9 0 1 2 3 4
-6 7 8 9 0 1 2 3 4 5
-7 8 9 0 1 2 3 4 5 6
-2 3 4 5 6 7 8 9 0 1
-9 0 1 2 3 4 5 6 7 8
-0 1 2 3 4 5 6 7 8 9
-2.
-1 2 3 0 5 6 7 8 9 4
-2 3 4 1 6 7 8 9 0 5
-3 4 5 2 7 8 9 0 1 6
-4 5 6 3 8 9 0 1 2 7
-5 6 7 4 9 0 1 2 3 8
-6 7 8 5 0 1 2 3 4 9
-7 8 9 6 1 2 3 4 5 0
-8 9 0 7 2 3 4 5 6 1
-9 0 1 8 3 4 5 6 7 2
-0 1 2 9 4 5 6 7 8 3
-3.
-0 2 3 4 5 6 7 8 9 1
-2 0 4 5 6 7 8 9 3 1
-3 4 0 6 7 8 9 5 1 2
-4 5 6 0 8 9 7 1 2 3
-5 6 7 8 0 9 1 2 3 4
-6 7 8 9 1 0 2 3 4 5
-7 8 9 3 1 2 0 4 5 6
-8 9 5 1 2 3 4 0 6 7
-9 7 1 2 3 4 5 6 0 8
-9 1 2 3 4 5 6 7 8 0
-4.
-1 2 3 4 5 6 7 8 9 5
-2 3 4 5 6 7 8 9 0 6
-3 4 5 6 7 8 9 0 1 7
-4 5 6 7 8 9 0 1 2 8
-0 1 2 3 4 5 6 7 8 9
-6 7 8 9 0 1 2 3 4 0
-7 8 9 0 1 2 3 4 5 1
-8 9 0 1 2 3 4 5 6 2
-9 0 1 2 3 4 5 6 7 3
-0 1 2 3 4 5 6 7 8 4
 </pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ6"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="502">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="6">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q7"></a>
-                  <h3>Questão 7: Matrizes - Produto de matrizes</h3>
-                  <div class="description-display-box">
-                     <p>Crie um programa que preencha uma primeira matriz de ordem 4 x 5 e uma segunda matriz 5 x 2. O programa deverá, também, calcular e mostrar a matriz resultante do produto matricial das duas matrizes anteriores, armazenando-o em uma terceira matriz de ordem 4 x 2.</p>
-                     <p><b>Entrada:</b></p>
-                     <ol>
-                        <li>Uma matriz 4 x 5.</li>
-                        <li>Uma matriz 5 x 2.</li>
-                     </ol>
-                     <p><b>Saída:</b></p>
-                     <ol>
-                        <li>Matriz 4 x 2 resultante do produto entre as duas matrizes anteriores.</li>
-                     </ol>
-                     <p><b>Exemplo de entrada</b>:</p>
-                     <pre>
-1 2 3 4 5
-2 5 9 7 1
-3 2 9 4 0
-4 6 4 8 8
 
-1 2
-2 7
-3 6
-4 7
-5 0
+        </div><!-- description-display-box -->
+        <a name="JQ1"></a>
+        <p><b>Peso:</b> 1</p>
+            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
+                <label style="background: #F9F9F9">Nova Resposta:</label>
+                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
+                <input type="file" name="arquivo" id="arquivo" required="required">
+                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
+                <input type="hidden" name="id_prova" value="2006">
+                <input type="hidden" name="tst_password" value="4d5eccf93739c6305aaf8969a682cc57e1fd7395">
+                <input type="hidden" name="id_problema" value="2050">
+                <input type="hidden" name="idUsuario" value="6644">
+                <input type="hidden" name="nroTentativa" value="1">
+                <input type="hidden" name="atenuacao" value="1">
+                <input type="hidden" name="nroQuestao" value="1">
+                <input type="hidden" name="_action" value="save">
+                <input type="submit" name="avaliar" value="Enviar Resposta">
+            </form>
+    </div><!-- problem-try-ct -->
+    <div class="problem-try-ct">
+        <a name="Q2"></a>
+        <h3>Questão 2: Pilha com armazenamento em vetor - Lista de tarefas para robô doméstico</h3>
+        <div class="description-display-box">
+<p>Implemente uma estrutura de dados pilha, utilizando armazenamento em vetor, para implementar uma lista de tarefas para um robô doméstico. A estrutura deve possibilitar, pelo menos, as seguintes ações: empilhamento e desempilhamento de itens, verificação do item no topo da pilha e limpeza da lista de afazeres (remoção de todos os elementos da pilha). O desempilhamento deve escrever mensagem de erro na saída ("<tt>Erro: pilha vazia!</tt>"), quando a pilha já estiver vazia. O empilhamento também deve gerar mensagem de erro (<tt>"Erro: pilha cheia!"</tt>), quanto todas as posições do vetor estiverem ocupadas. Os itens da lista de tarefas possuem os seguintes atributos: nome (uma string sem espaços), tipo (um único caracter) e tempo de execução em minutos (um inteiro). Além disso, sabe-se que esse robô tem capacidade de memória limitada para no <strong>máximo seis tarefas</strong>. </p>
+<p>Entradas:</p>
+<p>O programa deve aceitar os seguintes comandos:</p>
+<ul>
+<li>i seguido de uma string, um caracter e um inteiro: para inserir um item na lista de tarefas</li>
+<li>r: para retirar um item da lista de tarefas</li>
+<li>l: para limpar (remover todos) os itens da lista de tarefas</li>
+<li>e: para espiar o topo da  lista de tarefas (escreve o topo sem removê-lo)</li>
+<li>f: para finalizar a execução do programa</li>
+</ul>
+Antes dos comandos, o  programa recebe a capacidade de armazenamento da pilha.
+<p>Saídas:</p>
+<p>Todas as saídas de comandos já estão implementadas na função principal desse <a href="/exemplos/pilha-939ff45f.cpp">código exemplo fornecido</a>. Ao terminar a execução do programa, todos os itens da pilha são desempilhados e escritos.</p>
+<p>Exemplo de Entrada e Saída juntas:</p>
+<pre>
+r
+Erro: pilha vazia!
+i sala s 150
+i quarto1 q 45
+i quarto2 q 45
+i quarto3 q 60
+i cozinha c 130	
+r
+Nome: cozinha Tipo: c Valor: 130
+i cozinha c 145
+e
+Nome: cozinha Tipo: c Valor: 145
+i varanda v 100
+i banheiro b 120
+Erro: pilha cheia!
+f
+Nome: varanda Tipo: v Valor: 100
+Nome: cozinha Tipo: c Valor: 145
+Nome: quarto3 Tipo: q Valor: 60
+Nome: quarto2 Tipo: q Valor: 45
+Nome: quarto1 Tipo: q Valor: 45
+Nome: sala Tipo: s Valor: 150
 </pre>
-                     <p><b>Exemplo de saída</b>:</p>
-                     <pre>
-55 62
-72 142
-50 102
-100 130
-</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ7"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="503">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="7">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q8"></a>
-                  <h3>Questão 8: Matrizes - Minimax</h3>
-                  <div class="description-display-box">
-                     <p>Na teoria de sistemas define-se como elemento minimax de uma matriz o menor elemento da linha onde se encontra o maior elemento da matriz. Escreva um programa que receba uma matriz quadrada de inteiros, 10x10, e retorne seu elemento minimax, seguido de sua posição. Em caso de números iguais considere o que aparece primeiro.</p>
-                     <p><b>Entradas:</b></p>
-                     <ul>
-                        <li>Um matriz de inteiros de tamanho 10x10.</li>
-                     </ul>
-                     <p><b>Saídas:</b></p>
-                     <ol>
-                        <li>O menor elemento da linha que tem o maior elemento da matriz.</li>
-                        <li>A linha e a coluna onde está o elemento do item anterior.</li>
-                     </ol>
-                     <p><b>Exemplo de entrada:</b></p>
-                     <pre> 1  2  3  4  5  6  7 8  9  0
-11  4 32  5  6  8  9 2  3  1
- 2  3  5  6  7  8  1 0  3  1
- 1  3 45  2  6  8  9 0  2  0
- 4 30  4  2  6 18  5 0  1  0
- 2  3 40  2  6  8 19 0 45  9
- 3  2  5  7  7  8 10 0  2  2
- 1  3 22  2 13  6  9 1  1  0
- 4 30  4  2  6 18  5 0  9 10
- 2  3 34  2  6  8 19 0  0  0</pre>
-                     <p><b>Exemplo de saída:</b></p>
-                     <pre>0
-3 7</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ8"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="380">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="8">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q9"></a>
-                  <h3>Questão 9: Matrizes - Xadrez - Torre</h3>
-                  <div class="description-display-box">
-                     <p>Faça um programa que receba como entrada um tabuleiro de xadrez (matriz de 8x8 posições) e informe quais são as peças ameaçadas pela torre do jogador.</p>
-                     <p>O tabuleiro será dado como uma matriz de 0s, 1s e 2s. Zeros representam posições sem peça. O número 1 representa uma torre (haverá somente uma torre no tabuleiro) e os números 2 representam outras peças (haverá zero ou mais peças representadas pelo número 2 no tabuleiro). </p>
-                     <p>A torre pode ser movida na vertical ou na horizontal quantas casas quiser, mas não pode passar por cima de outra peça. As posições com outras peças que a torre pode tomar são posições ditas "ameaçadas" pela torre. A imagem abaixo mostra uma torre que ameça outras 3 peças (marcadas com um X).</p>
-                     <img src="public/img/xadrez-torre.png" width="220" height="220">
-                     <p>Seu programa deve escrever as coordenadas (linha e coluna, nesta ordem) de cada peça (valor 2 na matriz) ameaçada pela torre (valor 1 na matriz).</p>
-                     <p>Entradas:</p>
-                     <ul>
-                        <li>64 valores inteiros, dispostos na forma de uma matriz 8x8 de peças representadas conforme explicado acima.</li>
-                     </ul>
-                     <p>Saídas:</p>
-                     <ul>
-                        <li>As coordenadas (linha e depois coluna) de cada peça ameaçada, seguindo a ordem de leitura da matriz, ou seja, da menor para a maior linha e da menor para maior coluna (de cima para baixo e da esquerda para direita). As linhas e colunas começam em zero. Cada par de coordenadas deve estar numa linha. Caso nenhuma peça seja ameaçada pela torre, o programa não deve escrever coisa alguma.</li>
-                     </ul>
-                     <p>Exemplo de entrada:</p>
-                     <pre>0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0
-0 0 0 0 2 0 0 0
-2 2 0 0 1 0 2 2
-0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0</pre>
-                     <p>Exemplo de saída:</p>
-                     <pre>2 4
-3 1
-3 6</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ9"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="1260">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="9">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q10"></a>
-                  <h3>Questão 10: Matrizes - Matriz Transposta</h3>
-                  <div class="description-display-box">
-                     <p>Faça um programa que transpõe uma matriz. Transpor uma matriz significa trocar as linhas pelas colunas da matriz. Escrever a matriz transposta é suficiente, não sendo necessário criar antes uma matriz transposta.</p>
-                     <p>Entradas:</p>
-                     <ol>
-                        <li>o número de linhas da matriz e o número de colunas da matriz, na mesma linha</li>
-                        <li>os elementos da matriz (números inteiros).</li>
-                     </ol>
-                     <p>Saídas: O programa deverá escrever a matriz transposta.</p>
-                     <p>Exemplo de entrada:</p>
-                     <pre>3 5
-1 2 3 4 5
-6 7 8 9 0
-4 5 6 7 8</pre>
-                     <p>Exemplo de saída:</p>
-                     <pre>1 6 4 
-2 7 5 
-3 8 6 
-4 9 7 
-5 0 8</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ10"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="233">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="10">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q11"></a>
-                  <h3>Questão 11: Registros e alocação dinâmica - Família (3/3)</h3>
-                  <div class="description-display-box">
-                     <p>Faça um programa que cadastre o sobrenome e as idades de famílias de 3 membros cada (idade do pai, da mãe e do filho). Os dados devem ser lidos em um <b>arranjo alocado dinamicamente</b>,  inicialmente com tamanho 3. A leitura deve ser encerrada quando for lida a palavra <b>FIM</b> como nome da familia. Após o término da leitura dos dados, identifique os casais que possuem filhos de mesma idade e armazene os sobrenomes das famílias envolvidas na igualdade. Caso não haja correspondentes, deve ser impressa a mensagem <b>NENHUM</b>. </p>
-                     <p> <b><i>Restrições adicionais: </i> </b></br> 
-                        * As idades dos membros de uma família devem ser armazenadas em um <b>registro</b>.</br>
-                        ** O tamanho inicial do vetor a ser utilizado é 3 e devem ser acrescentadas 3 posições a cada <b>redimensionamento</b>.
-                     </p>
-                     <p><b>Entradas:</b></p>
-                     <ul>
-                        <li>
-                           Conjunto de sobrenomes e idades das famílias
-                        </li>
-                     </ul>
-                     <p><b>Saídas:</b></p>
-                     <ul>
-                        <li>Tamanho do vetor após cada redimensionamento do vetor de entrada.</li>
-                        <li>Sobrenome das famílias com filhos de mesma idade.</li>
-                     </ul>
-                     <pre>
-<b>Entradas:</b>
-Silva 44 41 17
-Araujo 54 49 19
-Pires 25 30 4
-Correia 29 27 19
-Paulino 60 65 19
-Moreira 29 28 4
-Matos 42 41 14
-FIM 
-<br/><b>Saídas:</b>
-6
-9
-Araujo
-Correia
-Paulino
-Pires
-Moreira
-</p> 
-<p><b>Entradas:</b><br/>
-Castro 44 41 17
-Gomes 38 36 15
-Perez 44 49 19
-FIM</br>
-<b>Saídas:</b>
-NENHUM</p>
-<p><b>Entradas:</b>
-Xavier 50 41 10
-Salles 58 56 20
-Geraldi 44 49 10
-Torres 44 49 20
-FIM</br>
-<b>Saídas:</b>
-6
-Xavier
-Geraldi
-Salles
-Torres
-</pre>
-                     </p> 
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ11"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="1279">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="11">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q12"></a>
-                  <h3>Questão 12: Registros - Figuras geométricas</h3>
-                  <div class="description-display-box">
-                     <p>De acordo com a geometria básica, podemos definir três figuras simples: um círculo, um triângulo e um retângulo.
-                        A dimensão de um círculo é basicamente representada pelo seu raio, um retângulo necessita de dois
-                        parâmetros, base e altura, e um triângulo é representado por três valores, um para cada um de seus lados. 
-                        Munido dessas informações, pode-se calcular o perímetro e a área de qualquer uma dessas figuras citadas 
-                        utilizando o método matemático correto.
-                     </p>
-                     <p>Faça um programa que, referente a essas 3 figuras geométricas, receba as informações de 5 figuras quaisquer do usuário, 
-                        sendo que cada figura será composta pelo tipo dela (adotando uma nomenclatura 'C' 'R' 'T' para identificá-las) além de,
-                        de acordo com a figura indicada, receber os parâmetros geométricos que as representam (suas dimensões). Por fim, exibir o nome, a 
-                        área e o perímetro de cada uma dessas 5 figuras fornecidas pelo usuário.
-                     </p>
-                     <p>Obs.: As figura devem ser identificadas por um caracter da seguinte maneira:</p>
-                     <ul>
-                        <li>'C' = Círculo (parâmetro: raio)</li>
-                        <li>'R' = Retângulo (parâmetros: base e altura)</li>
-                        <li>'T' = Triângulo (parâmetros: 3 lados - podendo ser diferentes)</li>
-                     </ul>
-                     <p>Obs.: Para o valor de PI  utilize a constante M_PI disponível na biblioteca cmath.</p>
-                     <p>Sugestão: O cálculo da área de um triângulo pode ser feito através do Teorema de Herão.</p>
-                     <p><b>Entrada:</b></p>
-                     <ol>
-                        <li>Um caracter representando o tipo da figura geométrica.</li>
-                        <li>Os valores de suas dimensões (raio, lado, etc.) em ponto flutuante (float).</li>
-                     </ol>
-                     <p><b>Saída:</b></p>
-                     <ol>
-                        <li>Nome da figura geométrica.</li>
-                        <li>Perímetro da figura.</li>
-                        <li>Área da figura.</li>
-                     </ol>
-                     <p><b>Exemplo de entrada</b>:</p>
-                     <pre>
-	C 5
-	C 2
-	T 3 4 5
-	R 5 10
-	R 2 2
-	</pre>
-                     <p><b>Exemplo de saída</b>:</p>
-                     <pre>
-	Circulo 31.4159 78.5398 
-	Circulo 12.5664 12.5664 
-	Triangulo 12 6 
-	Retangulo 30 50 
-	Retangulo 8 4
-	</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ12"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="527">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="12">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q13"></a>
-                  <h3>Questão 13: Registros - Corrida São Silvestre</h3>
-                  <div class="description-display-box">
-                     <p>Um grupo de atletas resolveu se preparar para correr a Corrida de 
-                        São Silvestre. Para auxiliar na preparação, pretende-se guardar os 
-                        dados de cada corredor e suas informações dos treinamentos. Com isso, 
-                        espera-se levantar informações que possam ajudar os corredores a 
-                        direcionarem seus treinamentos.
-                     </p>
-                     <p>Faça um programa que receba o número de atletas do grupo e 
-                        permita guardar os dados de cada corredor em um registro com as 
-                        seguintes informações: código do atleta, primeiro nome, idade, 
-                        peso e sexo (M para masculino e F para feminino). O programa deve 
-                        também guardar os dados de treinamento sabendo-se que, em cada treino, 
-                        cada atleta corre uma determinada distância e é medido o tempo gasto. 
-                        Portanto, o programa deve ter um registro com: dia do treino (ignore 
-                        mês e ano), código do atleta, distancia percorrida (km, real) e tempo 
-                        gasto (minutos). Os dados dos treinamentos devem ser lidos até que um 
-                        dia -1 seja digitado.
-                     </p>
-                     <p>O programa deve exibir o nome e a distância total percorrida pelo 
-                        atleta mais velho do sexo masculino, o nome e a idade do atleta que 
-                        participou de mais dias de treino (em caso de empate, considerar o que 
-                        encontrar primeiro) e o nome e o tempo médio diário de treino de 
-                        cada atleta.
-                     </p>
-                     <p>Obs.1: quando for digitado dia de valor -1 não serão digitados os valores dos demais campos.</p>
-                     <p>Obs.2: considere que em cada dia existe apenas um registro de treino para cada atleta.</p>
-                     <p><b>Entrada:</b></p>
-                     <ol>
-                        <li>A quantidade de corredores a serem registrados.</li>
-                        <li>Os dados de todos os corredores (código, nome, idade, peso e sexo).</li>
-                        <li>Os dados de treinamento (dia, código, distância e tempo).</li>
-                     </ol>
-                     <p><b>Saída:</b></p>
-                     <ol>
-                        <li>O nome e a distância total percorrida pelo atleta mais velho do sexo masculino (se nenhum homem for registrado, exibir somente -1).</li>
-                        <li>O nome e a idade do atleta que participou de mais dias de treino (em caso de empate, considerar o que encontrar primeiro).</li>
-                        <li>O nome e o tempo médio diário de treino de cada atleta.</li>
-                     </ol>
-                     <p><b>Exemplo de entrada</b>:</p>
-                     <pre>
-	3
-	1 Joao	30	80	M
-	2 Maria	25	68	F
-	3 Pedro	40	95	M
-	1 1 10.4 30
-	1 2 6.2 25
-	1 3 8.0 36
-	2 1 12.4 32
-	2 2 7.1 27
-	2 3 8.1 35
-	3 1 12.0 30
-	3 3 9.1 38
-	-1
-	</pre>
-                     <p><b>Exemplo de saída</b>:</p>
-                     <pre>
-	Pedro 25.2
-	Joao 30
-	Joao 30.6667
-	Maria 26
-	Pedro 36.3333
-	</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ13"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="528">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="13">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q14"></a>
-                  <h3>Questão 14: Arquivo Tipado - O que tem para hoje?</h3>
-                  <div class="description-display-box">
-                     <p>Faça um programa que leia tarefas de um arquivo tipado, leia uma data representando a data de hoje e escreva quais as tarefas que devem ser feitas na data indicada</p>
-                     <p>Para encurtar o desenvolvimento do programa, o programa pode ser feito supondo o arquivo tipado já existe e já tem as informações nele. Para testar o seu programa, você pode usar o <a style="text-decoration: underline" href="/exemplos/o-que-tem-para-hoje">arquivo de exemplo</a>. <b>Não mude o nome do arquivo</b>.</p>
-                     <p>A comparação entre datas deve ser feita numa sub-rotina específica para isto. Um bom planejamento dos parâmetros é parte da avaliação.</p>
-                     <p>O arquivo com tarefas tem o seguinte formato:</p>
-                     <ol>
-                        <li>Um número inteiro sem sinal, representando o número de registros do arquivo.</li>
-                        <li>Vários registros que representam tarefas.</li>
-                     </ol>
-                     <p>Cada tarefa é representada por:</p>
-                     <ol>
-                        <li>uma descrição (sequência de caracteres - 40 bytes);</li>
-                        <li>uma data.</li>
-                     </ol>
-                     <p>Cada data é representa por 3 inteiros sem sinal, respectivamente o dia, mês e ano.</p>
-                     <p><b>Entradas</b>: dia, mês e ano que representam a data de hoje.</p>
-                     <p><b>Saídas</b>: Todas as tarefas do arquivo com a data de hoje.</p>
-                     <p>Exemplo de Entrada</p>
-                     <pre>17 12 2014</pre>
-                     <p>Exemplo de Saída (em conjunto com o <a href="/exemplos/o-que-tem-para-hoje">arquivo de exemplo</a>)</p>
-                     <pre>Estudar arquivos tipados.</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ14"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="300">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="14">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q15"></a>
-                  <h3>Questão 15: Arquivos - Caracteres não brancos</h3>
-                  <div class="description-display-box">
-                     <p>Faça um programa que abra um arquivo texto chamado "Meu_Arquivo.txt" e conte o número de caracteres não brancos nele. Escreva o resultado da contagem na saída padrão.</p>
-                     <p><b>Entrada:</b></p>
-                     <ol>
-                        <li>O arquivo de texto "Meu_Arquivo.txt".</li>
-                     </ol>
-                     <p><b>Saída:</b></p>
-                     <ol>
-                        <li>Número de caracteres não brancos dentro do arquivo.</li>
-                     </ol>
-                     <p><b>Exemplo de arquivo:</b></p>
-                     <pre>
-Vou aproveitar os exercicios do dredd para estudar muito e tirar 100 em IALG!!
-</pre>
-                     <p><b>Exemplo de saída:</b></p>
-                     <pre>65</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ15"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="548">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="15">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q16"></a>
-                  <h3>Questão 16: Arquivos - Fibonacci Pares</h3>
-                  <div class="description-display-box">
-                     <p>Faça um programa que receba do usuário um número N e escreva em arquivo todos os números pares que fazem parte da sequência de Fibonacci, mas que sejam menores ou iguais aseu N-ésimo termo. O nome do arquivo de saída deve ser recebido do usuário.</p>
-                     <p>Considere que a sequência de Fibonacci é definida como:</p>
-                     <ul>
-                        <li>F(0) = 0;</li>
-                        <li>F(1) = 1;</li>
-                        <li>F(n) = F(n-1) + F(n-2) , n <u>></u> 2; </li>
-                     </ul>
-                     <p>Obs.: Considere que o zero é o primeiro termo da sequência, assim, se usuário digitar N, o programa deve gerar N-1 valores da sequência.</p>
-                     <p>Obs.: Lembre-se que " 0 2 8 34 " é diferente de " 02834 ".</p>
-                     <p><b>Entrada:</b></p>
-                     <ol>
-                        <li>Nome do arquivo de texto a ser criado;</li>
-                        <li>Número N de termos da sequência a serem gerados.</li>
-                     </ol>
-                     <p><b>Saída:</b></p>
-                     <ol>
-                        <li>Elemento(s) par(es) do conjunto N da sequência, escrito(s) no arquivo criado.</li>
-                     </ol>
-                     <p><b>Exemplo de entrada:</b></p>
-                     <pre>
-fib-pares.txt
-10
-</pre>
-                     <p><b>Arquivo de saída (fib-pares.txt):</b></p>
-                     <pre>
-0 2 8 34
-</pre>
-                     <p><b>Exemplo de entrada:</b></p>
-                     <pre>
-ricci.txt    
-40
-</pre>
-                     <p><b>Arquivo de saída (ricci.txt):</b></p>
-                     <pre>
-0 2 8 34 144 610 2584 10946 46368 196418 832040 3524578 14930352 63245986
-</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ16"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="550">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="16">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q17"></a>
-                  <h3>Questão 17: Arquivo - Inverter ordem dos dados lidos</h3>
-                  <div class="description-display-box">
-                     <p>Leia um vetor de números inteiros de um arquivo texto <b>"entrada.txt"</b>. O número de elementos no arquivo não será informado, mas sabe-se que o arquivo contém no máximo 100 números. Seu trabalho é escrever um arquivo <b>"saida.txt"</b>, com os dados do arquivo lido, mas escritos em ordem inversa. Ou seja, o primeiro valor lido deverá ser o último escrito, e vice-versa.</p>
-                     <p><b>Entrada:</b></p>
-                     <ul style="text-align:left;padding-left:20px;">
-                        <li>Arquivo texto <b>entrada.txt</b> contendo até 100 números inteiros</li>
-                     </ul>
-                     <p><b>Saída:</b></p>
-                     <ul style="text-align:left;padding-left:20px;">
-                        <li>Arquivo texto <b>saida.txt</b> contendo até 100 números inteiros, com os dados escritos em ordem inversa ao de leitura do arquivo <b>entrada.txt</b>.</li>
-                     </ul>
-                     <h3>Exemplos de Entradas e Saídas:</h3>
-                     <p><b><i>Exemplo 1</i></b></p>
-                     <p><b>Entrada (arquivo "entrada.txt"):</b></br>
-                     <pre>
-8 9 10 11 12 13 20 25 28 30
-</pre>
-                     </p>
-                     <p><b>Saída (arquivo "saida.txt"):</b></br>
-                     <pre>
-30 28 25 20 13 12 11 10 9 8
-</pre>
-                     </p>
-                     <p><b><i>Exemplo 2</i></b></br>
-                     <p><b>Entrada (arquivo "entrada.txt"):</b></br>
-                     <pre>
-1 2 3 14 15 16 27 28 29 40 41 42 50 60 70 80 99 101
-</pre>
-                     <p><b>Saída (arquivo "saida.txt"):</b></br>
-                     <pre>
-101 99 80 70 60 50 42 41 40 29 28 27 16 15 14 3 2 1
-</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ17"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="405">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="17">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q18"></a>
-                  <h3>Questão 18: Arquivos - Frase codificada</h3>
-                  <div class="description-display-box">
-                     <p>Dado um arquivo texto chamado <b>palavras.txt</b> que possua várias palavras (no máximo 50), uma em cada linha, suponha que exista um arquivo texto <b>numeros.txt</b> com uma sequência de números inteiros positivos onde cada número representa a posição da palavra no arquivo <b>palavras.txt</b> (1 representa a primeira palavra, 2 a segunda, etc.).
-                        Faça um programa que leia os dois arquivos e gere um arquivo texto de saída <b>frase.txt</b> formado pela substituição dos números do arquivo <b>numeros.txt</b> pelas palavras do arquivo <b>palavras.txt</b>.
-                     </p>
-                     <p><b>Entradas (arquivos):</b></p>
-                     <ol>
-                        <li>Arquivo texto denominado <b>palavras.txt</b> com uma palavra em cada linha.</li>
-                        <li>Arquivo texto denominado <b>numeros.txt</b> com uma sequência de números.</li>
-                     </ol>
-                     <p><b>Saídas (arquivos):</b></p>
-                     <ol>
-                        <li>Arquivo texto denominado <b>frase.txt</b> com a substituição dos números do arquivo <b>numeros.txt</b> pelas palavras do arquivo <b>palavras.txt</b>.</li>
-                     </ol>
-                     <p><b>Exemplo de entrada (arquivo palavras.txt)</b>:</p>
-                     <pre>Federal
-Lavras
-de
-Universidade
-</pre>
-                     <p><b>Exemplo de entrada (arquivo numeros.txt)</b>:</p>
-                     <pre>4 1 3 2
-</pre>
-                     <p><b>Exemplo de saída (arquivo frase.txt)</b>:</p>
-                     <pre>Universidade Federal de Lavras</pre>
-                     <p><b>Exemplo de entrada (arquivo palavras.txt)</b>:</p>
-                     <pre>
-maracangalha
-vou
-eu
-pra
-</pre>
-                     <p><b>Exemplo de entrada (arquivo numeros.txt)</b>:</p>
-                     <pre>
-3 2 4 1 3 2 
-</pre>
-                     <p><b>Exemplo de saída (arquivo frase.txt)</b>:</p>
-                     <pre>eu vou pra maracangalha eu vou</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ18"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="404">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="18">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q19"></a>
-                  <h3>Questão 19: Arquivos - Remover repetições</h3>
-                  <div class="description-display-box">
-                     <p>Faça um programa que lê vários números inteiros de um arquivo texto e escreve os mesmos números, na mesma ordem, sem as repetições em outro arquivo.</p>
-                     <p>O programa deverá ler do arquivo "entrada.txt" e escrever o resultado no arquivo "saida.txt"</p>
-                     <p>Entradas (arquivo entrada.txt):</p>
-                     <ol>
-                        <li>A quantidade de números que existem no restante do arquivo.</li>
-                        <li>Vários números inteiros para eliminar os repetidos.</li>
-                     </ol>
-                     <p>Saídas (arquivo saida.txt):</p>
-                     <ul>
-                        <li>Os números lidos, na mesma ordem em que estava, sem as repetições.</li>
-                     </ul>
-                     <p>Exemplo de entrada (arquivo entrada.txt):</p>
-                     <pre>13
-16 78 4 12 42 25 63 4 8 15 16 23 42</pre>
-                     <p>Exemplo de saída (arquivo saida.txt):</p>
-                     <pre>16 78 4 12 42 25 63 8 15 23</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ19"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="408">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="19">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q20"></a>
-                  <h3>Questão 20: Arquivo Tipado - Cadastro de alunos</h3>
-                  <div class="description-display-box">
-                     <p>Uma escola resolveu criar um sistema para fazer o registro de notas dos seus alunos. Para isso, você deve criar um programa que recebe as seguintes informações: número total de alunos e para cada aluno o nome, número de matrícula e nota final do mesmo. É garantido que os dados serão fornecidos em ordem crescente de matrícula. Esses dados devem ser gravados em um arquivo tipado chamado de "alunos.bin".</p>
-                     <p>A seguir, o programa recebe dois números de matrícula. O seu programa deve: buscar o aluno no arquivo tipado com o primeiro número de matrícula (busca binária). Em seguida, alterar esse campo para o segundo número de matrícula fornecido. Esse registro agora deve ser reposicionado para manter a ordem do arquivo tipado. Para isso, deve-se deslocar as posições dos registros no arquivo. No final, um relatório contendo o nome e nota de cada aluno, na mesma ordem que aparecem no arquivo tipado deve ser gerado na tela.</p>
-                     <p><b>OBS: Não é permitida a utilização de vetores ou matrizes nesse programa.</b></p>
-                     <p>Entradas:</p>
-                     <ol>
-                        <li>Número de Alunos - (inteiro)</li>
-                        <li>Sequência de dados de aluno: nome (sem espaco), matrícula, nota - (string, inteiro, real)</li>
-                        <li>matrícula do registro que deve ser modificado</li>
-                        <li>nova matrícula</li>
-                     </ol>
-                     <p>Saídas:</p>
-                     <ol>
-                        <li>Lista de alunos ordenada (nome, nota)</li>
-                     </ol>
-                     <p>Exemplo de Entrada:</p>
-                     <pre>3
-Joao 1010 80.0
-Paulo 1020 85.0
-Ana 1030 90.5
-1030 1000
-</pre>
-                     <p>Exemplo de Saída:</p>
-                     <pre>
-Ana 90.5
-Joao 80.0
-Paulo 85.0
-</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ20"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="972">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="20">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q21"></a>
-                  <h3>Questão 21: Arquivos Tipados - Menor do vetor (recursão, ponteiro)</h3>
-                  <div class="description-display-box">
-                     <p>Faça um programa que leia de um arquivo tipado cujo nome é "menor.bin" um vetor, alocado dinamicamente, de 10 números reais e determina, de forma recursiva, o menor elemento. O arquivo não tem cabeçalho.</p>
-                     <p>Podemos usar a seguinte ideia:</p>
-                     <ul>
-                        <li>O menor elemento de um vetor de uma única posição é o seu único elemento.</li>
-                        <li>O menor elemento de um vetor de mais de uma posição é o menor entre o primeiro elemento e o menor do restante do vetor.</li>
-                     </ul>
-                     <p><b>Entradas:</b></p>
-                     <ul>
-                        <li>10 números reais (float) a serem lidos do arquivo "menor.bin".</li>
-                     </ul>
-                     <p><b>Saídas</b></p>
-                     <ul>
-                        <li>Menor valor lido.</li>
-                     </ul>
-                     <h3>Exemplos de Entradas e Saídas:</h3>
-                     <p><b>Entradas:</b><br>
-                     <p>(a entrada virá <a href="/exemplos/menor.bin" style="text-decoration: underline">deste arquivo binário</a>)</p>
-                     <p><b>Saídas:</b></p>
-                     <pre>1.5</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ21"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="979">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="21">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q22"></a>
-                  <h3>Questão 22: Ponteiro e Arquivo Binário - Vetor dinâmico salvo em arquivo</h3>
-                  <div class="description-display-box">
-                     <p>Faça um programa que guarda números num vetor dinâmico. Não se sabe quantos números deverão ser armazenados até que se saiba quais são os números.</p>
-                     <p>A estratégia de alocação de memória deve ser a seguinte:</p>
-                     <ul>
-                        <li>o vetor é criado inicialmente com capacidade 5,</li>
-                        <li>conforme é feito o armazenamento de números no vetor, novos espaços de memória vão sendo alocados, sempre com 5 elementos a mais do que antes.</li>
-                     </ul>
-                     <p>O programa deverá ler números inteiros positivos de um arquivo binário chamado <tt>dados.bin</tt> e depois da entrada padrão.  O último número em cada entrada de dados será um número não positivo, indicando o fim dos números. Considera-se que o zero não é positivo, conforme pode ser visto no exemplo de entrada.</p>
-                     <p>Ao final da entrada de dados, o programa deverá:</p>
-                     <ol>
-                        <li>Escrever todos os números (não negativos) armazenados.</li>
-                        <li>Escrever qual a capacidade atual do vetor.</li>
-                        <li>Escrever o número de transformações (realocações na memória) necessárias.</li>
-                        <li>Atualizar o arquivo, gravando as alterações (<strong>os valores devem ser escritos em formato binário</strong>.).</li>
-                     </ol>
-                     <p>Exemplo de Entrada:</p>
-                     <p>(<tt>dados.bin</tt>):</p>
-                     <pre>10 18 15 71 42 41 0</pre>
-                     <p>(<tt>entrada padrão</tt>):</p>
-                     <pre>20 18 35 14 13 0</pre>
-                     <p>Exemplo de Saída:</p>
-                     <pre>10 18 15 71 42 41 20 18 35 14 13 
-15
-2</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ22"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="708">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="22">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q23"></a>
-                  <h3>Questão 23: Ponteiro - Procurando o elemento.</h3>
-                  <div class="description-display-box">
-                     <p>Escreva um programa que aloque dinamicamente uma matriz de inteiros. As dimensões da matriz deverão ser lidas da entrada padrão. Crie uma função que receba a matriz e um valor, e busque o valor na matriz.</p>
-                     <p>A busca deve ser feita na ordem em que lemos texto. Caso haja repetição, o primeiro elemento encontrado deve ser a resposta. Toda a interface (leituras e escritas) deve estar no subprograma principal. A fim de aumentar a legibilidade, a passagem de parâmetros por referência não deve ser usada, sendo substituída pela passagem de ponteiros por cópia.</p>
-                     <p>Entradas:</p>
-                     <ol>
-                        <li>Quantidade de linhas e colunas (dois número inteiros positivos).</li>
-                        <li>Elementos presentes na matriz (números inteiros).</li>
-                        <li>Elemento a ser procurado na matriz (número inteiro).</li>
-                     </ol>
-                     <p>Saídas:</p>
-                     <ol>
-                        <li>A linha e a coluna em que o elemento está, ou o texto "ausente", caso não esteja na matriz.</li>
-                     </ol>
-                     <p>Exemplo de Entrada:</p>
-                     <pre>3 3
-3  5  8
-1  2  9
-6  7 10
-2</pre>
-                     <p>Exemplo de Saída:</p>
-                     <pre>1 1</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ23"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="596">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="23">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q24"></a>
-                  <h3>Questão 24: Ponteiros - Hidrocarboneto</h3>
-                  <div class="description-display-box">
-                     <p>Um hidrocarboneto é um composto químico formado por átomos de carbono e hidrogênio. Faça um programa que crie um <b>registro</b> chamado <b>Hidrocarboneto</b> contendo os campos inteiros <b>C</b> e <b>H</b> usados para guardar a quantidade de carbonos e hidrogênios, respectivamente, de um hidrocarboneto. No subprograma principal <b>aloque dinamicamente</b> um registro Hidrocarboneto e peça ao usuário as quantidades de carbono e hidrogênio do mesmo. Sabendo que massa molecular do carbono é 12 e do hidrogênio é 1, seu programa deverá calcular e exibir a massa molecular do composto.</p>
-                     <p></p>
-                     <p>Entradas:</p>
-                     <ol>
-                        <li>Quantidade de carbonos do hidrocarboneto.</li>
-                        <li>Quantidade de hidrogênios do hidrocarboneto.</li>
-                     </ol>
-                     <p>Saídas:</p>
-                     <ol>
-                        <li>Massa molecular do hidrocarboneto.</li>
-                     </ol>
-                     <p>Exemplo de Entrada:</p>
-                     <pre>1 4</pre>
-                     <p>Exemplo de Saída:</p>
-                     <pre>16</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ24"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="649">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="24">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q25"></a>
-                  <h3>Questão 25: Ponteiros - Registros, Ordenação e Ponteiros</h3>
-                  <div class="description-display-box">
-                     <p>Crie um registro para representar alunos, contendo nome, média na disciplina e número de faltas. Faça um programa que leia as informações de N alunos em um vetor alocado dinamicamente. Imprima os nomes dos alunos na ordem decrescente das médias dos alunos.
-                     <p>
-                     <p>Entradas:</p>
-                     <ol>
-                        <li>Número inteiro N.</li>
-                        <li>Sequência de N informações de alunos, na ordem: nome do aluno, média e número de faltas.</li>
-                     </ol>
-                     <p>Saídas:</p>
-                     <ol>
-                        <li>Sequência de N nomes. Os nomes devem ser apresentados em ordem decrescente das médias dos alunos.</li>
-                        <li></li>
-                     </ol>
-                     <p>Exemplo de Entrada:</p>
-                     <pre>
-3
-Joao 76.4 10
-Maria 87.2 2
-Ana 33.7 32
-</pre>
-                     <p>Exemplo de Saída:</p>
-                     <pre>
-Maria
-Joao
-Ana
-</pre>
-                     <p>Observação: Esse exercício não é corrigido pelo Dredd.</p>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ25"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="638">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="25">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q26"></a>
-                  <h3>Questão 26: Ponteiros – Alocação Dinâmica e Subprograma</h3>
-                  <div class="description-display-box">
-                     <p>Faça um subprograma (do tipo <b>procedimento</b>) para preencher automaticamente um vetor de números em ponto flutuante, nomeie o subprograma como <b>obterVetor</b>. Para preencher o vetor seu subprograma deverá satisfazer as seguintes restrições:</p>
-                     <ol>
-                        <li>O valor a ser armazenado em uma posição <b>i</b> qualquer do vetor deverá ser obtido a partir da expressão: <b>(2 * i! + i) / (i*i + 1.75)</b>. Note que <b>i</b> representa os índices dos subscritos (posições) do vetor.</li>
-                        <li>O subprograma de preenchimento do vetor deverá possuir apenas <b>dois parâmetros</b> de entrada. O primeiro deles deverá ser um tipo de dado ponteiro para números em ponto flutuante e o outro deverá ser um inteiro indicando o tamanho do vetor.</li>
-                        <li>O vetor que armazenará os dados deverá ser alocado dinamicamente.</li>
-                        <li>A alocação dinâmica deverá ser realizada <b>fora</b> do subprograma <b>obterVetor</b>.</li>
-                     </ol>
-                     <p>Faça um subprograma principal para testar o procedimento <b>obterVetor</b>, para isso seu programa deverá ler um inteiro <b>N</b>, alocar dinamicamente o vetor, chamar o subprograma <b>obterVetor</b> e preencher o vetor. Em seguida, seu programa deverá ler um segundo número inteiro <b>M</b> e exibir no dispositivo de saída padrão todos os valores armazenados no vetor a partir da posição <b>M</b> (inclusive). Note que todas as operações de entrada e saída de dados devem ser realizadas no subprograma principal. Assuma que <b>M</b> sempre será menor do que <b>N</b>.</p>
-                     <p><b>Entradas:</b></p>
-                     <ol>
-                        <li>Inteiro N.</li>
-                        <li>Inteiro M.</li>
-                     </ol>
-                     <p><b>Saídas:</b></p>
-                     <ol>
-                        <li>Sequência de (N-M) valores em ponto flutuante. Indicando os valores armazenados no vetor.</li>
-                     </ol>
-                     <p>Exemplo de Entrada:</p>
-                     <pre>
-5
-0
-</pre>
-                     <p>Exemplo de Saída:</p>
-                     <pre>
-1.14286
-1.09091
-1.04348
-1.39535
-2.92958
-</pre>
-                     <p>Exemplo de Entrada:</p>
-                     <pre>
-5
-3
-</pre>
-                     <p>Exemplo de Saída:</p>
-                     <pre>
-1.39535
-2.92958
-</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ26"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="640">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="26">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q27"></a>
-                  <h3>Questão 27: Ponteiros - Diferença de tempo nos 100m rasos</h3>
-                  <div class="description-display-box">
-                     <p>Houve uma pane no sistema de contagem de tempo das <b>Olimpíadas</b>, e Comitê Olímpico Internacional (COI), pediu para você fazer um programa que, dado o tempo de cada atleta em uma prova da corrida de 100m rasos, calcule a diferença de tempo de todos os competidores para o primeiro colocado.</p>
-                     <p>Seu programa deverá usar um <b>registro</b> para guardar o tempo (ponto flutuante) dos oito atletas da prova e os dados passados pelo usuário devem ser guardados em um registro <b>alocado dinamicamente</b>. Seu programa deverá então encontrar o primeiro colocado, e calcular a diferença de tempo dos demais atletas para o tempo dele (essas diferenças de tempo também devem ser guardadas em memória <b>alocada dinamicamente</b>). Ao exibir as diferenças de tempo, no caso do atleta que ganhou a prova (cuja diferença seria zero), escreva o tempo dele na prova.</p>
-                     <p><b>Entradas:</b></p>
-                     <ol>
-                        <li>O tempo de oito atletas em uma prova de corrida dos 100m rasos.</li>
-                     </ol>
-                     <p><b>Saídas:</b></p>
-                     <ol>
-                        <li>A diferença de tempo do primeiro colocado para cada um dos demais oito atletas (na ordem em que os dados foram recebidos). Obs: no lugar do primeiro colocado deve ser exibido o tempo dele na prova.</li>
-                     </ol>
-                     <p><b>Exemplo de Entrada:</b></p>
-                     <pre>
-10.5
-10.2
-10.6
-10.8
-10.1
-10.7
-11
-11.1
-</pre>
-                     <p><b>Exemplo de Saída:</b></p>
-                     <pre>
-0.4
-0.1
-0.5
-0.7
-10.1
-0.6
-0.9
-1
-</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ27"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="646">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="27">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q28"></a>
-                  <h3>Questão 28: Ponteiros - Subtração de vetores de caractere</h3>
-                  <div class="description-display-box">
-                     <p>Escreva um programa que leia duas cadeias de caracteres e altere a primeira cadeia para retirar todos os caracteres que estão também na segunda cadeia. As duas cadeias de entrada devem ser declaradas como vetores de char alocados dinamicamente. 
-                     <p>No final, a primeira cadeia de caracteres resultante deve ser copiada para um vertor de caracteres alocado dinamicamente com o tamanho exato. Todas alocações de vetores do programa devem ser dinâmicas.</p>
-                     <p>Entradas:</p>
-                     <ol>
-                        <li> Numero de elementos do primeiro vetor</li>
-                        <li>Elementos do primeiro vetor</li>
-                        <li> Numero de elementos do segundo vetor</li>
-                        <li>Elementos do segundo vetor</li>
-                     </ol>
-                     <p>Saídas:</p>
-                     <ol>
-                        <li>Vetor resultante com os caracteres do primeiro vetor que não se encontram no segundo.</li>
-                     </ol>
-                     <p>Exemplo de Entrada:</p>
-                     <pre>
-10
-q w e r t y u i o p
-9
-m n b v c x z q w
-</pre>
-                     <p>Exemplo de Saída:</p>
-                     <pre>
-e r t y u i o p
-</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ28"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="654">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="28">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q29"></a>
-                  <h3>Questão 29: Ponteiros - Caça Palavras em Matriz</h3>
-                  <div class="description-display-box">
-                     <p>Desenvolva um programa que receba uma matriz nxn (n fornecido pelo usuário) de caracteres (um caractere em cada posição da matriz). O usuário digitará m palavras (m informado na entrada). O programa deve procurar a ocorrência de cada palavra na matriz, imprimindo as coordenadas da primeira letra ou -1 -1 se a palavra não existir. A procura deve ser feita na horizontal (da esquerda para direita) e na vertical (de cima para baixo).</p>
-                     <p>OBS: Letras maiúsculas e minúsculas são diferenciadas. A matriz <b>deve ser alocada dinamicamente</b>. A função strlen() retorna o tamanho de uma string tipo C (vetor de caracteres) e o método length() ou size() pode ser usado para pegar o tamanho de uma string do C++.</p>
-                     <p>Entradas:</p>
-                     <ol>
-                        <li>Tamanho do lado da matriz (n)</li>
-                        <li>Matriz de caracteres (nxn)</li>
-                        <li>Número de palavras (m)</li>
-                        <li>Palavras sem espaços, uma em cada linha</li>
-                     </ol>
-                     <p>Saídas:</p>
-                     <ol>
-                        <li>Posição da letra inicial de cada palavra na matriz, na ordem em que as palavras foram lidas.</li>
-                     </ol>
-                     <p>Exemplo de Entrada:</p>
-                     <pre>3
-A B C
-D E F
-G H I
-2
-BE
-FI</pre>
-                     <p>Exemplo de Saída:</p>
-                     <pre>0 1
-1 2</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ29"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="656">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="29">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q30"></a>
-                  <h3>Questão 30: Ponteiros - Batalha Naval 1 (matriz, subprogramas, arquivo, alocação)</h3>
-                  <div class="description-display-box">
-                     <p>Leia de um arquivo de nome "BatalhaNaval.txt", duas matrizes de tamanho NxN a serem alocadas dinamicamente, sendo que primeira matriz representa a localização dos navios no tabuleiro e a segunda matriz representa a posição de onde os tiros atingiram na primeira matriz.</p>
-                     <p>Na primeira matriz, k representa uma parte do k-ésimo navio, 0 partes no mar.</p>
-                     <p>Na segunda matriz, 1 representa a posição do tiro (correspondente a posição na primeira matriz), 0 posição sem tiro.</p>
-                     <p>Os navios sempre terão tamanho maior que uma posição da matriz, e estarão sempre totalmente na vertical ou horizontal.</p>
-                     <p>O programa deverá retornar o número total de navios completamente afundados pelos tiros. <b>OBS: Sub-rotinas devem ser utilizadas.</b></p>
-                     <p>Entradas:</p>
-                     <ol>
-                        <li>Tamanho da matriz N (inteiro).</li>
-                        <li>Valores da primeira matriz NxN (inteiros).</li>
-                        <li>Valores da segunda matriz NxN (inteiros).</li>
-                     </ol>
-                     <p>Saídas:</p>
-                     <ol>
-                        <li>Número total de navios completamente afundados (inteiro).</li>
-                     </ol>
-                     <p>Exemplo de Entrada:</p>
-                     <pre>5
-0 1 1 1 0
-2 0 0 0 0
-2 0 0 0 0
-2 0 0 0 0
-2 3 3 0 0
-0 1 1 1 1
-1 0 0 0 0
-1 0 0 0 0
-1 0 0 0 0
-1 1 0 0 0</pre>
-                     <p>Exemplo de Saída:</p>
-                     <pre>2</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ30"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="661">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="30">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q31"></a>
-                  <h3>Questão 31: Ponteiros - Redução do vetor (arquivos, modularização)</h3>
-                  <div class="description-display-box">
-                     <p>Faça um programa para ler vários números de um arquivo texto. A primeira linha do arquivo contém a quantidade de dados a serem lidos. Aloque, <b>dinamicamente</b>, a quantidade necessária, não sendo permitido o uso de alocação na pilha, ou seja, devem ser utilizados ponteiros para esta alocação. Cada dois números consecutivos no arquivo devem ser transformados num único número pela média dos dois. Se houver quantidade ímpar de números, o último deve permanecer inalterado.</p>
-                     <p>Depois do processamento, os valores devem ser escritos na saída padrão em ordem inversa.</p>
-                     <p>O processamento e as operações de entrada/saída devem ser separados pela criação de ao menos um subprograma. Um bom planejamento dos subprogramas e das passagens de parâmetros é parte da avaliação.</p>
-                     <p>Entradas:</p>
-                     <ul>
-                        <li>O nome do arquivo com números (não terá mais que 80 caracteres, não terá espaços).</li>
-                        <li>Número inteiro representando o total de valores a serem lidos.</li>
-                        <li>Números reais contidos no arquivo.</li>
-                     </ul>
-                     <p>Saídas:</p>
-                     <ul>
-                        <li>Os números reduzidos, na ordem inversa do cálculo.</li>
-                     </ul>
-                     <p><b>Exemplo de Entrada (entrada padrão):</b></p>
-                     <pre>numeros.txt</pre>
-                     <p><b>Exemplo de Entrada (arquivo numeros.txt):</b></p>
-                     <pre>5
-2.3
-8.1
-5.2
--1.1
-3.14</pre>
-                     <p><b>Exemplo de Saída:</b></p>
-                     <pre>3.14 2.05 5.2</pre>
-                     <p>Observe que a média dos dois primeiros números é 5.2, dos dois outros é 2.05 e o último (3.14) permanece inalterado. Esse valores são escritos em ordem inversa.</p>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ31"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="1149">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="31">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div class="problem-try-ct">
-                  <a name="Q32"></a>
-                  <h3>Questão 32: Ponteiros - Provas de Uma Escola</h3>
-                  <div class="description-display-box">
-                     <p>Um escola deseja automatizar o processo de cálculo de notas da seguinte maneira. Um registro para representar um aluno deve ser criado com o número de matrícula e notas de 2 provas.</p>
-                     <p> Uma matriz nxn será alocada dinamicamente e cada posição contará com um ponteiro para o tipo aluno. Os dados de todos os alunos (nxn) devem ser cadastrados, e para cada aluno será criada uma estrutura com alocação dinâmica e o respectivo ponteiro da matriz será atualizado para apontar para essa estrutura.</p>
-                     <p>Após isso, a matriz terá cada coluna ordenada pela nota final do aluno (crescente), que é calculada pela média simples das duas notas.</p>
-                     <p>Entradas:</p>
-                     <ol>
-                        <li>Tamanho dos lados da matriz n</li>
-                        <li>Sequencia de dados dos nxn alunos</li>
-                     </ol>
-                     <p>Saídas:</p>
-                     <ol>
-                        <li>No de Matrícula de cada aluno, na ordem que aparece na matriz.</li>
-                        <li></li>
-                     </ol>
-                     <p>Exemplo de Entrada:</p>
-                     <pre>2
-1 100 90  2 70 80
-3 60 60   4 100 100
-</pre>
-                     <p>Exemplo de Saída:</p>
-                     <pre>
-3 2
-1 4
-</pre>
-                  </div>
-                  <!-- description-display-box -->
-                  <a name="JQ32"></a>
-                  <p><b>Peso:</b> 1</p>
-                  <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                     <label style="background: #F9F9F9">Nova Resposta:</label>
-                     <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                     <input type="file" name="arquivo" id="arquivo" required="required">
-                     <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                     <input type="hidden" name="id_prova" value="2017">
-                     <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
-                     <input type="hidden" name="id_problema" value="653">
-                     <input type="hidden" name="idUsuario" value="6644">
-                     <input type="hidden" name="nroTentativa" value="1">
-                     <input type="hidden" name="atenuacao" value="1">
-                     <input type="hidden" name="nroQuestao" value="32">
-                     <input type="hidden" name="_action" value="save">
-                     <input type="submit" name="avaliar" value="Enviar Resposta">
-                  </form>
-               </div>
-               <!-- problem-try-ct -->
-               <div style="clear: both"></div>
-            </div>
-            <!-- problem-try-ct -->
-         </div>
-         <!-- prova -->
-         <script type="text/javascript">
-            var serverTime = 1709933240000;
-            var localTime = +Date.now();
-            var timeDiff = serverTime - localTime;
-            var closingTime = 1711162799000;
-            var nomeUsuario = "Lucas Henrique Lopes Costa";
-            $('#usuario').text(nomeUsuario);
-            if (true) {
-                setInterval(function () {
-                    var realtime = +Date.now() + timeDiff;
-                    var minutosRestantes = (closingTime - realtime) / 60000;
-                    if (minutosRestantes < 0)
-                        window.location = 'testTrials.php?encerrar';
-                    else if (minutosRestantes < 5)
-                        minutosRestantes = minutosRestantes.toFixed(1)
-                    else
-                        minutosRestantes = minutosRestantes.toFixed(0);
-                    $('#clock').text(minutosRestantes);
-                }, 5000);
-            }
+
+        </div><!-- description-display-box -->
+        <a name="JQ2"></a>
+        <p><b>Peso:</b> 1</p>
+            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
+                <label style="background: #F9F9F9">Nova Resposta:</label>
+                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
+                <input type="file" name="arquivo" id="arquivo" required="required">
+                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
+                <input type="hidden" name="id_prova" value="2006">
+                <input type="hidden" name="tst_password" value="4d5eccf93739c6305aaf8969a682cc57e1fd7395">
+                <input type="hidden" name="id_problema" value="2051">
+                <input type="hidden" name="idUsuario" value="6644">
+                <input type="hidden" name="nroTentativa" value="1">
+                <input type="hidden" name="atenuacao" value="1">
+                <input type="hidden" name="nroQuestao" value="2">
+                <input type="hidden" name="_action" value="save">
+                <input type="submit" name="avaliar" value="Enviar Resposta">
+            </form>
+    </div><!-- problem-try-ct -->
+    <div style="clear: both"></div>
+</div><!-- problem-try-ct -->
+</div><!-- prova -->
+<script type="text/javascript">
+    var serverTime = 1710368747000;
+    var localTime = +Date.now();
+    var timeDiff = serverTime - localTime;
+    var closingTime = 1712070000000;
+    var nomeUsuario = "Lucas Henrique Lopes Costa";
+    $('#usuario').text(nomeUsuario);
+    if (true) {
+        setInterval(function () {
+            var realtime = +Date.now() + timeDiff;
+            var minutosRestantes = (closingTime - realtime) / 60000;
+            if (minutosRestantes < 0)
+                window.location = 'testTrials.php?encerrar';
+            else if (minutosRestantes < 5)
+                minutosRestantes = minutosRestantes.toFixed(1)
             else
-                $('#clock').text('ENCERRADO');
-            //window.onclose = function() {alert("Close window?");}
-         </script>
-         <br>
-      </div>
-      <!--content-->
-      <div id="bottomct" class="ui-corner-top">
-         <div id="footer">
-            <table boder=0 style="width: 100%;">
-               <tr>
-                  <td style="width:33%;">
-                     <a href="http://www.ufla.br/"  style="float:left;">
-                     <img src="public/img/ufla.png" width="92" height="40" />
-                     </a>
-                  </td>
-                  <td style="width:34%;text-align: center;">
-                     Desenvolvido por <a href="https://bruno.dac.ufla.br/" style="color: #DDF">Bruno Schneider</a>
-                     a partir do programa original (Algod) de Renato R. R. de Oliveira.
-                  </td>
-                  <td style="width:33%;">
-                     <a href="https://www.dac.ufla.br/">
-                     <img src="public/img/logo-dcc.png" style="float:right" width="128" height="40">
-                     </a>
-                  </td>
-               </tr>
-            </table>
-         </div>
-         <!--footer-->
-      </div>
-      <!--bottomct-->
-      </div><!--contentct-->
-   </body>
+                minutosRestantes = minutosRestantes.toFixed(0);
+            $('#clock').text(minutosRestantes);
+        }, 5000);
+    }
+    else
+        $('#clock').text('ENCERRADO');
+    //window.onclose = function() {alert("Close window?");}
+</script>
+        <br>
+        </div><!--content-->
+        <div id="bottomct" class="ui-corner-top">
+            <div id="footer">
+                <table boder=0 style="width: 100%;">
+                    <tr>
+                        <td style="width:33%;">
+                            <a href="http://www.ufla.br/"  style="float:left;">
+                                <img src="public/img/ufla.png" width="92" height="40" />
+                            </a>
+                        </td>
+                        <td style="width:34%;text-align: center;">
+Desenvolvido por <a href="https://bruno.dac.ufla.br/" style="color: #DDF">Bruno Schneider</a>
+a partir do programa original (Algod) de Renato R. R. de Oliveira.
+                        </td>
+                        <td style="width:33%;">
+                            <a href="https://www.dac.ufla.br/">
+                                <img src="public/img/logo-dcc.png" style="float:right" width="128" height="40">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div><!--footer-->
+        </div><!--bottomct-->
+    </div><!--contentct-->
+</body>
 </html>
