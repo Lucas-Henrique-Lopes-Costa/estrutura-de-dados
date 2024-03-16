@@ -6,6 +6,8 @@
     ".env.*": "dotenv",
     ".prettierrc": "json",
     "iostream": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "istream": "cpp",
+    "new": "cpp"
   }
 }

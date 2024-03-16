@@ -26,9 +26,154 @@ Exemplo de Saída 3:
 */
 
 #include <iostream>
+#include <cstring>
 using namespace std;
 
-int main() {
-    // Seu código aqui
+typedef int DadoIndice;
+class pilhaIndice
+{
+private:
+    int capacidade;
+    DadoIndice *dados;
+    int tamanho;
+    int posTopo;
+
+public:
+    pilhaIndice(int cap) : capacidade(cap), dados(new DadoIndice[cap]), tamanho(0), posTopo(-1) {}
+    ~pilhaIndice() { delete[] dados; }
+    bool vazia() const { return tamanho == 0; }
+    bool estaCheia() const { return tamanho == capacidade; }
+    void empilhar(DadoIndice valor)
+    {
+        if (!estaCheia())
+        {
+            dados[++posTopo] = valor;
+            tamanho++;
+        }
+    }
+    DadoIndice desempilhar()
+    {
+        if (!vazia())
+        {
+            tamanho--;
+            return dados[posTopo--];
+        }
+        return -1; // Retorna -1 se tentar desempilhar uma pilha vazia
+    }
+    DadoIndice topo() const { return dados[posTopo]; } // Método para acessar o topo sem desempilhar
+};
+
+typedef char Dado;
+
+class pilha
+{
+private:
+    int capacidade;
+    Dado *dados;
+    int tamanho;
+    int posTopo;
+
+public:
+    pilha(int cap);
+    ~pilha();
+    bool vazia();
+    bool estaCheia();
+    void empilhar(Dado valor);
+    Dado desempilhar();
+    void pegarUltimo();
+    void imprimirPilha();
+};
+
+pilha::pilha(int cap)
+{
+    capacidade = cap;
+    dados = new Dado[capacidade];
+    tamanho = 0;
+    posTopo = -1;
+}
+
+pilha::~pilha()
+{
+    delete[] dados;
+}
+
+bool pilha::vazia()
+{
+    return posTopo == -1;
+}
+
+bool pilha::estaCheia()
+{
+    return posTopo == capacidade;
+}
+
+void pilha::empilhar(Dado valor)
+{
+    if (!estaCheia())
+    {
+        posTopo++;
+        dados[posTopo] = valor;
+        tamanho++;
+    }
+}
+
+Dado pilha::desempilhar()
+{
+    if (!vazia())
+    {
+        tamanho--;
+        return dados[posTopo--];
+    }
+    return -1;
+}
+
+void pilha::pegarUltimo()
+{
+    cout << dados[posTopo] << endl;
+}
+
+int main()
+{
+    string linha;
+    getline(cin, linha);
+
+    int tamanhoPilha = linha.length();
+    pilha p(tamanhoPilha);
+    pilhaIndice p2(tamanhoPilha);
+
+    for (int i = 0; i < tamanhoPilha; i++) // percorre a linha
+    {
+        // cout << "i: " << i << endl;
+        // cout << "linha[i]: " << linha[i] << endl;
+
+        if (linha[i] == '(') // se for abertura
+        {
+            p.empilhar(linha[i]); // empilha
+            p2.empilhar(i);       // empilha a posição
+        }
+        else if (linha[i] == ')') // se for fechamento
+        {
+            if (p.vazia()) // se a pilha estiver vazia
+            {
+                cout << i << endl; // imprime a posição, porque não tem abertura correspondente
+                return 0;
+            }
+            else
+            {
+                p.desempilhar(); // desempilha, porque tem abertura correspondente
+                p2.desempilhar(); // desempilha, porque tem abertura correspondente
+            }
+        }
+    }
+
+    if (p.vazia())
+    {
+        cout << "correto" << endl;
+    }
+    else
+    {
+        cout << p2.desempilhar() << endl;
+    }
+
     return 0;
 }
