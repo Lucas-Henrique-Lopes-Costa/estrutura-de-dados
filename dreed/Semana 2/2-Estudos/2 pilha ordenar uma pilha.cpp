@@ -22,7 +22,136 @@ Exemplo de Saída:
 #include <iostream>
 using namespace std;
 
-int main() {
-    // Seu código aqui
+typedef int Dado;
+
+class pilha
+{
+private:
+    int capacidade;
+    Dado *dados;
+    int tamanho;
+    int posTopo;
+
+public:
+    pilha(int cap);
+    ~pilha();
+    bool vazia();
+    bool estaCheia();
+    void empilhar(Dado valor);
+    Dado desempilhar();
+    int espia();
+    void ordena();
+};
+
+pilha::pilha(int cap)
+{
+    capacidade = cap;
+    dados = new Dado[capacidade];
+    tamanho = 0;
+    posTopo = -1;
+}
+
+pilha::~pilha()
+{
+    delete[] dados;
+}
+
+bool pilha::vazia()
+{
+    return posTopo == -1;
+}
+
+bool pilha::estaCheia()
+{
+    return posTopo == capacidade;
+}
+
+void pilha::empilhar(Dado valor)
+{
+    if (!estaCheia())
+    {
+        posTopo++;
+        dados[posTopo] = valor;
+        tamanho++;
+    }
+    else
+    {
+        // // aloca dinamicamente mais espaço para o vetor
+        // Dado *aux = new Dado[capacidade++];
+        // for (int i = 0; i < tamanho; i++)
+        // {
+        //     aux[i] = dados[i];
+        // }
+        // delete[] dados;
+        // dados = aux;
+        // posTopo++;
+        // dados[posTopo] = valor;
+        // tamanho++;
+    }
+}
+
+Dado pilha::desempilhar()
+{
+    if (!vazia())
+    {
+        tamanho--;
+        return dados[posTopo--];
+    }
+    else
+    {
+        return -1;
+    }
+}
+
+int pilha::espia()
+{
+    if (!vazia())
+    {
+        return dados[posTopo];
+    }
+    return -1;
+}
+
+void pilha::ordena()
+{
+    pilha aux(capacidade);
+    while (!vazia())
+    {
+        int temp = desempilhar(); // vai desempilhando
+        while (!aux.vazia() && aux.espia() > temp)
+        {
+            empilhar(aux.desempilhar());
+        }
+        aux.empilhar(temp);
+    }
+    while (!aux.vazia())
+    {
+        empilhar(aux.desempilhar());
+    }
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+    pilha p(n);
+
+    for (int i = 0; i < n; i++)
+    {
+        int valor;
+        cin >> valor;
+        p.empilhar(valor);
+    }
+
+    // ordenação
+    p.ordena();
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << p.desempilhar() << " ";
+    }
+
+    cout << endl;
+
     return 0;
 }
