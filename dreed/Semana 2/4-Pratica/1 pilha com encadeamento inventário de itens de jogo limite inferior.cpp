@@ -1,11 +1,8 @@
 /*
 Questão 1: Pilha com encadeamento - Inventário de itens de jogo - limite inferior
-Implemente uma função que realize a remoção dos jogos com valores inferiores a um valor informado, denominada remoção especial. Você poderá utilizar
-somente
-como estrutura auxiliar outra pilha. Os demais valores da pilha devem permanecer na posição original. Os valores removidos devem ser impressos no momento da remoção.
-Você pode (
-e deve!
-) utilizar o código que você desenvolveu na atividade "Pilha com encadeamento - Inventário de itens de jogo" como base.
+Implemente uma função que realize a remoção dos jogos com valores inferiores a um valor informado, denominada remoção especial. Você poderá utilizar somente como estrutura auxiliar outra pilha. Os demais valores da pilha devem permanecer na posição original. Os valores removidos devem ser impressos no momento da remoção.
+
+Você pode (e deve!) utilizar o código que você desenvolveu na atividade "Pilha com encadeamento - Inventário de itens de jogo" como base.
 Entradas:
 Com essa finalidade, você deverá adicionar mais um comando, como segue:
 x: seguido de um inteiro: para remover (e imprimir) todos os elementos com valor inferiores ao informado

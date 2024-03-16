@@ -2,8 +2,8 @@
 Questão 1: Pilha com armazenamento de dados em arranjos
 Implemente uma pilha, utilizando armazenamento dos dados em arranjos (vetores). Segue esboço da implementação:
 typedef int Dado; // para facilitar a troca de int para outro tipo
- 
-// pilha implementada em arranjo 
+
+// pilha implementada em arranjo
 class pilhav {
     private:
         int capacidade;
@@ -20,31 +20,30 @@ class pilhav {
         void info();  // imprime informações da pilha (tamanho e  posição do topo)
 };
 Não é necessário tratar problemas do tipo retirada de elemento de pilha vazia ou empilhamento em pilha cheia. A aplicação principal deverá criar uma pilha com capacidade para 20 elementos e realizar as seguintes operações na ordem apresentada:
+
 Empilhar cinco elementos
 Desempilhar três elementos (imprimindo-os)
 Empilhar mais quatro elementos
 Desempilhar três elementos (imprimindo-os)
-Imprime o topo da pilha, sem desempilhar (
-espia()
-)
-Imprime os elementos restantes da pilha (
-depura()
-)
-Imprime tamanho e posição do topo (
-info()
-)
+Imprime o topo da pilha, sem desempilhar (espia())
+Imprime os elementos restantes da pilha (depura())
+Imprime tamanho e posição do topo (info())
+
 Entradas:
 Cinco valores a serem empilhados
 Quatro valores a serem empilhados
+
 Saídas:
 Três elementos desempilhados
 Três elementos desempilhados
 Topo da pilha
 Elementos restantes da pilha
 Tamanho e posição do topo
+
 Exemplo de Entrada:
 8 9 1 3 5
 12 23 0 3
+
 Exemplo de Saída:
 5 3 1
 3 0 23
@@ -56,7 +55,8 @@ Exemplo de Saída:
 #include <iostream>
 using namespace std;
 
-int main() {
+int main()
+{
     // Seu código aqui
     return 0;
 }
