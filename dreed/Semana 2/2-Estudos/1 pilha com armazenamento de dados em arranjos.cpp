@@ -55,8 +55,121 @@ Exemplo de Saída:
 #include <iostream>
 using namespace std;
 
+typedef int Dado;
+
+// pilha implementada em arranjo
+class pilhav
+{
+private:
+    int capacidade;
+    Dado *dados;
+    int tamanho;
+    int posTopo;
+
+public:
+    pilhav(int cap = 100);
+    ~pilhav();
+    void empilha(Dado valor);
+    Dado desempilha();
+    Dado espia();  // acessa elemento do topo, mas não retira
+    void depura(); // imprime os dados do vetor da pilha sem removê-los (desempilhar)
+    void info();   // imprime informações da pilha (tamanho e  posição do topo)
+};
+
+pilhav::pilhav(int cap)
+{
+    capacidade = cap;
+    dados = new Dado[capacidade];
+    tamanho = 0;
+    posTopo = -1;
+}
+
+pilhav::~pilhav()
+{
+    delete[] dados;
+}
+
+void pilhav::info()
+{
+    cout << tamanho << " " << posTopo << endl;
+}
+
+void pilhav::depura()
+{
+    for (int i = 0; i < tamanho; i++)
+    {
+        cout << dados[i] << " ";
+    }
+    cout << endl;
+}
+
+Dado pilhav::espia()
+{
+    return dados[posTopo];
+}
+
+void pilhav::empilha(Dado valor)
+{
+    if (tamanho < capacidade)
+    {
+        dados[++posTopo] = valor; // Primeiro incrementa posTopo, depois usa para atribuir o valor
+        tamanho++;
+    }
+}
+
+Dado pilhav::desempilha()
+{
+    if (tamanho > 0)
+    {
+        tamanho--;
+        return dados[posTopo--]; // Retorna o valor e depois decrementa posTopo
+    }
+    else
+    {
+        // Apenas um placeholder, idealmente deve-se tratar o caso de pilha vazia de forma mais adequada
+        return -1;
+    }
+}
+
 int main()
 {
-    // Seu código aqui
+    pilhav pilha(20);
+
+    // Empilhar cinco elementos
+    int valor;
+    for (int i = 0; i < 5; i++)
+    {
+        cin >> valor;
+        pilha.empilha(valor);
+    }
+
+    // Desempilhar três elementos (imprimindo-os)
+    for (int i = 0; i < 3; i++)
+    {
+        cout << pilha.desempilha() << " ";
+    }
+
+    // Empilhar mais quatro elementos
+    for (int i = 0; i < 4; i++)
+    {
+        cin >> valor;
+        pilha.empilha(valor);
+    }
+
+    // Desempilhar três elementos (imprimindo-os)
+    for (int i = 0; i < 3; i++)
+    {
+        cout << pilha.desempilha() << " ";
+    }
+
+    // Imprime o topo da pilha, sem desempilhar (espia())
+    cout << pilha.espia() << endl;
+
+    // Imprime os elementos restantes da pilha (depura())
+    pilha.depura();
+
+    // Imprime tamanho e posição do topo (info())
+    pilha.info();
+
     return 0;
 }
