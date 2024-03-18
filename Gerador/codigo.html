@@ -123,52 +123,51 @@
     <span id="notas">
         <a style="color: #FFF" href="#Q1">Q1: ?</a><br>
         <a style="color: #FFF" href="#Q2">Q2: ?</a><br>
+        <a style="color: #FFF" href="#Q3">Q3: ?</a><br>
+        <a style="color: #FFF" href="#Q4">Q4: ?</a><br>
+        <a style="color: #FFF" href="#Q5">Q5: ?</a><br>
+        <a style="color: #FFF" href="#Q6">Q6: ?</a><br>
+        <a style="color: #FFF" href="#Q7">Q7: ?</a><br>
+        <a style="color: #FFF" href="#Q8">Q8: ?</a><br>
+        <a style="color: #FFF" href="#Q9">Q9: ?</a><br>
+        <a style="color: #FFF" href="#Q10">Q10: ?</a><br>
 Total: 0    </span><br>
 </div>
 <div id="prova">
-    <h1>Atividade Preparatória de Pilha</h1>
-    <p><b>Prova Aberta Até:</b> 02/04/2024 12:00:00</p>
-    <p><b>Número Máximo de Tentativas:</b> 10</p>
+    <h1>Lista de Estudos de Filas</h1>
+    <p><b>Prova Aberta Até:</b> 02/04/2024 23:59:59</p>
+    <p><b>Número Máximo de Tentativas:</b> 6</p>
     <p><b>Atenuação da Nota por Tentativa:</b> 0%</p>
-    <p><b>Instruções para a prova:</b> A prova é individual. Desligue seu celular. Não converse com os colegas. Não fique olhando para a tela dos colegas.</p>
+    <p><b>Instruções para a prova:</b> A prova é individual. Desligue seu celular. Não converse com os colegas. Não fique olhando para a tela dos colegas.<br/>
+<br/>
+<font size="+1">
+<large>Em todas as questões:<br/>
+=> <b>Não é permitido</b> o uso de classes da STL ou bibliotecas similares para as estruturas sendo utilizadas. <br/>
+=> <b>Não é permitida</b> a "quebra da estrutura", devendo-se  respeitar as propriedades e características de cada estrutura. <br/></font></p>
     <div class="problem-try-ct">
         <a name="Q1"></a>
-        <h3>Questão 1: Pilha com encadeamento - Inventário de itens de jogo</h3>
+        <h3>Questão 1: Remover interseção em fila.</h3>
         <div class="description-display-box">
-<p>Implemente uma estrutura de dados pilha, utilizando encadeamento de nós, para implementar um inventário de itens em um jogo digital. A estrutura deve possibilitar, pelo menos, as seguintes ações: empilhamento e desempilhamento de itens, verificação do item no topo da pilha e limpeza do inventário (remoção de todos os elementos da pilha). O desempilhamento deve escrever mensagem de erro na saída ("<tt>Erro: pilha vazia!</tt>"), quando a pilha já estiver vazia. Os itens do inventários possuem os seguintes atributos: nome (uma string sem espaços), tipo (um único caracter) e valor (um inteiro). </p>
+<p>Dadas duas filas F1 e F2, implemente o método que remove os elementos de F2, presentes em F1. F1 deve estar disponível após a remoção dos elementos de F2 para outras operações.<b> As propriedades de fila devem ser estritamente respeitadas, ou seja: não é permitido o acesso aleatório aos elementos da fila.</b>A fila deve ser implementada utilizando encadeamento.</p>
+
 <p>Entradas:</p>
-<p>O programa deve aceitar os seguintes comandos:</p>
-<ul>
-<li>i: seguido de uma string, um caracter e um inteiro: para inserir um item no inventário</li>
-<li>r: para retirar um item do inventário</li>
-<li>l: para limpar (remover todos) os itens do inventário</li>
-<li>e: para espiar o topo do inventário (escreve o topo sem removê-lo)</li>
-<li>f: para finalizar a execução do programa</li>
-</ul>
+<ol>
+<li>Número de elementos a serem inseridos em F1.</li>
+<li>Elementos de F1 em ordem de inserção (inserção no fim da fila).</li>
+<li>Número de elementos a serem inseridos em F2.</li>
+<li>Elementos de F2 em ordem de inserção (inserção no fim da fila).</li>
+</ol>
 <p>Saídas:</p>
-<p>Todas as saídas de comandos já estão implementadas na função principal desse <a href="/exemplos/pilha-dce8d0ab.cpp">código exemplo fornecido</a>. Ao terminar a execução do programa, todos os itens da pilha são desempilhados e escritos.</p>
-<p>Exemplo de Entrada e Saída juntas:</p>
-<pre>
-r
-Erro: pilha vazia!
-i um a 1
-i dois b 2
-i quatro d 4
-i sete g 7
-i oito h 8
-r
-Nome: oito Tipo: h Valor: 8
-e
-Nome: sete Tipo: g Valor: 7
-r
-Nome: sete Tipo: g Valor: 7
-f
-Nome: quatro Tipo: d Valor: 4
-Nome: dois Tipo: b Valor: 2
-Nome: um Tipo: a Valor: 1
-
-</pre>
-
+<ol>
+<li>Elementos restantes em F1 após a remoção.</li>
+</ol>
+<p>Exemplo de Entrada:</p>
+<pre>11<br>
+4 6 9 10 1 9 2 13 7 3 5<br>
+4<br>
+9 2 7 3</pre>
+<p>Exemplo de Saída:</p>
+<pre>4 6 10 1 13 5</pre>
         </div><!-- description-display-box -->
         <a name="JQ1"></a>
         <p><b>Peso:</b> 1</p>
@@ -177,9 +176,9 @@ Nome: um Tipo: a Valor: 1
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2006">
-                <input type="hidden" name="tst_password" value="4d5eccf93739c6305aaf8969a682cc57e1fd7395">
-                <input type="hidden" name="id_problema" value="2050">
+                <input type="hidden" name="id_prova" value="2001">
+                <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
+                <input type="hidden" name="id_problema" value="787">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
@@ -190,47 +189,43 @@ Nome: um Tipo: a Valor: 1
     </div><!-- problem-try-ct -->
     <div class="problem-try-ct">
         <a name="Q2"></a>
-        <h3>Questão 2: Pilha com armazenamento em vetor - Lista de tarefas para robô doméstico</h3>
+        <h3>Questão 2: Fila - Fila circular em vetor</h3>
         <div class="description-display-box">
-<p>Implemente uma estrutura de dados pilha, utilizando armazenamento em vetor, para implementar uma lista de tarefas para um robô doméstico. A estrutura deve possibilitar, pelo menos, as seguintes ações: empilhamento e desempilhamento de itens, verificação do item no topo da pilha e limpeza da lista de afazeres (remoção de todos os elementos da pilha). O desempilhamento deve escrever mensagem de erro na saída ("<tt>Erro: pilha vazia!</tt>"), quando a pilha já estiver vazia. O empilhamento também deve gerar mensagem de erro (<tt>"Erro: pilha cheia!"</tt>), quanto todas as posições do vetor estiverem ocupadas. Os itens da lista de tarefas possuem os seguintes atributos: nome (uma string sem espaços), tipo (um único caracter) e tempo de execução em minutos (um inteiro). Além disso, sabe-se que esse robô tem capacidade de memória limitada para no <strong>máximo seis tarefas</strong>. </p>
+<p>Filas podem ser implementadas com armazenamento de dados em vetor, se a capacidade fixa não for um problema. Nesse caso, é importante controlar os índices para "dar a volta" no vetor sempre que for necessário. Uma fila assim pode ser chamada de <i>fila circular</i>.</p>
+<p>Faça a implementação de uma fila circular fazendo com que a inserção (método Enfileirar) sempre use o início do vetor (posição zero) quando a <b>fila</b> estiver vazia.</p>
 <p>Entradas:</p>
-<p>O programa deve aceitar os seguintes comandos:</p>
+<p>Inicialmente, o programa lê um número inteiro que é capacidade da fila a ser criada.</p>
+<p>Depois, o programa lê códigos de comandos a executar. Sempre um caractere identificando o comando seguido dos parâmetros necessários para executar o comando, se houverem. Os códigos de comandos são:</p>
 <ul>
-<li>i seguido de uma string, um caracter e um inteiro: para inserir um item na lista de tarefas</li>
-<li>r: para retirar um item da lista de tarefas</li>
-<li>l: para limpar (remover todos) os itens da lista de tarefas</li>
-<li>e: para espiar o topo da  lista de tarefas (escreve o topo sem removê-lo)</li>
-<li>f: para finalizar a execução do programa</li>
+<li>t - para <u>t</u>erminar a execução do programa</li>
+<li>e - para <u>e</u>nfileirar um valor - seguido do valor (número inteiro)</li>
+<li>d - para <u>d</u>esenfileirar um valor</li>
+<li>i - para escrever as <u>i</u>nformações da fila (atributos e conteúdo)</li>
 </ul>
-Antes dos comandos, o  programa recebe a capacidade de armazenamento da pilha.
 <p>Saídas:</p>
-<p>Todas as saídas de comandos já estão implementadas na função principal desse <a href="/exemplos/pilha-939ff45f.cpp">código exemplo fornecido</a>. Ao terminar a execução do programa, todos os itens da pilha são desempilhados e escritos.</p>
-<p>Exemplo de Entrada e Saída juntas:</p>
-<pre>
-r
-Erro: pilha vazia!
-i sala s 150
-i quarto1 q 45
-i quarto2 q 45
-i quarto3 q 60
-i cozinha c 130	
-r
-Nome: cozinha Tipo: c Valor: 130
-i cozinha c 145
-e
-Nome: cozinha Tipo: c Valor: 145
-i varanda v 100
-i banheiro b 120
-Erro: pilha cheia!
-f
-Nome: varanda Tipo: v Valor: 100
-Nome: cozinha Tipo: c Valor: 145
-Nome: quarto3 Tipo: q Valor: 60
-Nome: quarto2 Tipo: q Valor: 45
-Nome: quarto1 Tipo: q Valor: 45
-Nome: sala Tipo: s Valor: 150
-</pre>
-
+<p>Os comandos d e i são os únicos que produzem saída de dados. Cada um pode ser observado no exemplo.</p>
+<p>Exemplo de Entrada e Saída juntos:</p>
+<pre>3
+e 1
+e 2
+e 3
+i
+tamanho=3 capacidade=3 inicio=0 fim=2
+1 2 3 
+d
+1
+e 4
+i
+tamanho=3 capacidade=3 inicio=1 fim=0
+2 3 4
+d
+2
+d
+3
+i
+tamanho=1 capacidade=3 inicio=0 fim=0
+4
+t</pre>
         </div><!-- description-display-box -->
         <a name="JQ2"></a>
         <p><b>Peso:</b> 1</p>
@@ -239,9 +234,9 @@ Nome: sala Tipo: s Valor: 150
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2006">
-                <input type="hidden" name="tst_password" value="4d5eccf93739c6305aaf8969a682cc57e1fd7395">
-                <input type="hidden" name="id_problema" value="2051">
+                <input type="hidden" name="id_prova" value="2001">
+                <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
+                <input type="hidden" name="id_problema" value="1501">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
@@ -250,14 +245,491 @@ Nome: sala Tipo: s Valor: 150
                 <input type="submit" name="avaliar" value="Enviar Resposta">
             </form>
     </div><!-- problem-try-ct -->
+    <div class="problem-try-ct">
+        <a name="Q3"></a>
+        <h3>Questão 3: Fila - Monte de cartas (v2)</h3>
+        <div class="description-display-box">
+<p>Giovani decidiu ordenar sua grande coleção de cartas de "Yu-Gi-Oh!". Para isso pediu sua ajuda e lhe informou que queria um monte ordenado em ordem crescente pelo poder das cartas, e não teria cartas repetidas. Como tinha muitas, ele decidiu ordenar dois montes em ordem crescente (podendo conter cartas repetidas). Sua missão agora é ajudar Giovani a unir os dois montes retirando suas cartas repetidas. Utilizando-se da estrutura da dado fila, faça um programa que lê duas filas já em ordem crescente e cria uma terceira fila com os valores das duas primeiras em ordem crescente sem que haja repetição de elementos.</p>
+<p>Não é permitido utilizar a STL ou similares para resolver o problema, bem como acessar os dados desrespeitando as propriedades da estrutura.</p>
+<p>Entradas:</p>
+<ol>
+<li>Quantidade de elementos da fila 1.</li>
+<li>Elementos da fila 1 em ordem crescente.</li>
+<li>Quantidade de elementos da fila 2.</li>
+<li>Elementos da fila 2 em ordem crescente.</li>
+</ol>
+<p>Saídas:</p>
+<ol>
+<li>Elementos da fila de resultados.</li>
+</ol>
+<p>Exemplo de Entrada:</p>
+<pre>7
+1 3 5 7 10 10 11
+6
+2 4 6 8 10 12</pre>
+<p>Exemplo de Saída:</p>
+<pre>
+1 2 3 4 5 6 7 8 10 11 12</pre>
+        </div><!-- description-display-box -->
+        <a name="JQ3"></a>
+        <p><b>Peso:</b> 1</p>
+            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
+                <label style="background: #F9F9F9">Nova Resposta:</label>
+                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
+                <input type="file" name="arquivo" id="arquivo" required="required">
+                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
+                <input type="hidden" name="id_prova" value="2001">
+                <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
+                <input type="hidden" name="id_problema" value="1789">
+                <input type="hidden" name="idUsuario" value="6644">
+                <input type="hidden" name="nroTentativa" value="1">
+                <input type="hidden" name="atenuacao" value="1">
+                <input type="hidden" name="nroQuestao" value="3">
+                <input type="hidden" name="_action" value="save">
+                <input type="submit" name="avaliar" value="Enviar Resposta">
+            </form>
+    </div><!-- problem-try-ct -->
+    <div class="problem-try-ct">
+        <a name="Q4"></a>
+        <h3>Questão 4: Fila - Atendimento na fila do banco (v2)</h3>
+        <div class="description-display-box">
+
+<p>A agência bancária decidiu contratar uma pessoa para fazer o programa que gerencia as senhas de atendimento nos caixas expressos. Você será responsável por essa implementação e as instruções passadas a você são: existem dois tipos de senha, as prioritárias e as normais; as senhas são chamadas de modo a serem chamadas 3 prioritárias para então uma normal. Não havendo prioridades, as pessoas com senha normal podem ser atendidas normalmente. Sempre que um atendimento normal for realizado, os próximos três devem ser prioritários, se possível. Se estiver na hora de realizar um atendimento de cliente normal mas não houver nenhum cliente normal, deve ser chamado um nome do atendimento preferencial, se houver. Você deverá usar uma estrutura de dados do tipo <b>fila</b> e poderá usar <a href="/exemplos/6b5c6721.cpp">código fornecido</a>.</p>
+<p>O programa deve ler comandos representados por palavras e seus respectivos argumentos assim:</p>
+<ul>
+<li>O comando "normal" seguido de um nome (sem espaços) representa retirada de uma senha normal, ou seja, uma pessoa entrou na fila "normal".</li>
+<li>O comando "prioridade" seguido de um nome (sem espaços) representa retirada de uma senha prioritária,  ou seja, uma pessoa entrou na fila "prioridade".</li>
+<li>O comando "atender" representa uma senha sendo chamada.</li>
+<li>O comando "fim" solicita o fim da execução do programa.</li>
+</ul>
+<p>Para cada comando de atendimento, o programa deverá escrever o nome da pessoa que deve ser atendida, de acordo com as regras de atendimento vistas. Caso não haja cliente a ser chamado, o programa deve escrever "AGUARDE" (letras maiúsculas). A cada atendimento normal, a contagem para prioritários deve ser reiniciada.</p>
+<p>Entradas:</p>
+<ol>
+<li>Sequência de comandos, seguindo as instruções acima.</li>
+</ol>
+<p>Saídas:</p>
+<ol>
+<li>Somente o comando "atender" gera saída, conforme instruções acima.</li>
+</ol>
+<p>Exemplo de Entrada:</p>
+<pre>normal Abner
+prioridade Ackson
+normal Adilson
+normal Adriana
+normal Adriano
+normal Adriel
+prioridade Adrielle
+atender
+atender
+atender
+atender
+prioridade Adriene
+prioridade Adson
+prioridade Afonso
+prioridade Agatha
+atender
+atender
+atender
+atender
+atender
+fim</pre>
+<p>Exemplo de Saída:</p>
+<pre>Ackson
+Adrielle
+Abner
+Adilson
+Adriene
+Adson
+Afonso
+Adriana
+Agatha</pre>
+        </div><!-- description-display-box -->
+        <a name="JQ4"></a>
+        <p><b>Peso:</b> 1</p>
+            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
+                <label style="background: #F9F9F9">Nova Resposta:</label>
+                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
+                <input type="file" name="arquivo" id="arquivo" required="required">
+                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
+                <input type="hidden" name="id_prova" value="2001">
+                <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
+                <input type="hidden" name="id_problema" value="1791">
+                <input type="hidden" name="idUsuario" value="6644">
+                <input type="hidden" name="nroTentativa" value="1">
+                <input type="hidden" name="atenuacao" value="1">
+                <input type="hidden" name="nroQuestao" value="4">
+                <input type="hidden" name="_action" value="save">
+                <input type="submit" name="avaliar" value="Enviar Resposta">
+            </form>
+    </div><!-- problem-try-ct -->
+    <div class="problem-try-ct">
+        <a name="Q5"></a>
+        <h3>Questão 5: Fila - Gerar números binários utilizando uma fila</h3>
+        <div class="description-display-box">
+<p> Implemente uma estrutura do tipo fila com as operações básicas de inserção e remoção. Com a estrutura implementada, faça um programa que utilize a fila para gerar  números binários de 1 a N. O trecho a seguir dá uma dica de como resolver o problema:</p>
+<pre>
+inicio = "1"
+enfileira (inicio) // fila = (1)
+laço
+	enfileira(inicio + “0”) // fila = (1, 10)
+	enfileira(inicio + “1”) // fila(1, 10, 11)
+	elemento = desenfileira() 
+fim  do laço
+</pre>
+<p> Note que como cada passo do laço enfileira por padrão dois elementos, você precisará inserir um controle adicional no laço ou na impressão para evitar enfileirar um elemento a mais, dependendo da entrada. </p> 
+
+<p>Entradas:</p>
+<ol>
+<li>Número inteiro positivo representando <i>N</i></li>
+</ol>
+<p>Saídas:</p>
+<ol>
+<li>Números binários gerados de 1 a <i>N</i></li>
+</ol>
+<p>Exemplo de Entrada:</p>
+<pre>6</pre>
+<p>Exemplo de Saída:</p>
+<pre>1 10 11 100 101 110</pre>
+        </div><!-- description-display-box -->
+        <a name="JQ5"></a>
+        <p><b>Peso:</b> 1</p>
+            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
+                <label style="background: #F9F9F9">Nova Resposta:</label>
+                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
+                <input type="file" name="arquivo" id="arquivo" required="required">
+                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
+                <input type="hidden" name="id_prova" value="2001">
+                <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
+                <input type="hidden" name="id_problema" value="1826">
+                <input type="hidden" name="idUsuario" value="6644">
+                <input type="hidden" name="nroTentativa" value="1">
+                <input type="hidden" name="atenuacao" value="1">
+                <input type="hidden" name="nroQuestao" value="5">
+                <input type="hidden" name="_action" value="save">
+                <input type="submit" name="avaliar" value="Enviar Resposta">
+            </form>
+    </div><!-- problem-try-ct -->
+    <div class="problem-try-ct">
+        <a name="Q6"></a>
+        <h3>Questão 6: Fila - Encontrar os números negativos nas subfilas</h3>
+        <div class="description-display-box">
+<p> Implemente uma estrutura de dados do tipo fila com as operações básicas de inserção e remoção de elementos. Com a estrutura implementada, faça um programa que insira um conjunto <i>N</i> de números inteiros na fila. Em seguida, leia um número inteiro <i>K</i> e encontre o primeiro número negativo para cada sub fila de tamanho <i>K</i>. Caso não haja números negativos em uma subfila, a palavra "inexistente" deve ser impressa.</p>
+
+<p>Entradas:</p>
+<ol>
+<li>Quantidade N de elementos a serem armazenados na fila</li>
+<li>Elementos da fila</li>
+<li>Tamanho K das sub filas</li></ol>
+<p>Saídas:</p>
+<ol>
+<li>Primeiro número negativo identificado em cada sub fila de tamanho K</li>
+</ol>
+<p>Exemplo de Entrada:</p>
+<pre>10
+1 -3 2 4 -6 7 -8 -9 10 5
+3</pre>
+<p>Exemplo de Saída:</p>
+<pre>-3 -3 -6 -6 -6 -8 -8 -9</pre>
+
+<p>Exemplo de Entrada:</p>
+<pre>8
+1 2 -3 4 -5 -6 7 -8
+4</pre>
+<p>Exemplo de Saída:</p>
+<pre>-3 -3 -3 -5 -5</pre>
+
+<p>Exemplo de Entrada:</p>
+<pre>15
+1 2 3 4 -5 6 7 8 9 10 11 -12 -13 -14 -15
+6</pre>
+<p>Exemplo de Saída:</p>
+<pre>-5 -5 -5 -5 -5 inexistente -12 -12 -12 -12</pre>
+        </div><!-- description-display-box -->
+        <a name="JQ6"></a>
+        <p><b>Peso:</b> 1</p>
+            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
+                <label style="background: #F9F9F9">Nova Resposta:</label>
+                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
+                <input type="file" name="arquivo" id="arquivo" required="required">
+                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
+                <input type="hidden" name="id_prova" value="2001">
+                <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
+                <input type="hidden" name="id_problema" value="1827">
+                <input type="hidden" name="idUsuario" value="6644">
+                <input type="hidden" name="nroTentativa" value="1">
+                <input type="hidden" name="atenuacao" value="1">
+                <input type="hidden" name="nroQuestao" value="6">
+                <input type="hidden" name="_action" value="save">
+                <input type="submit" name="avaliar" value="Enviar Resposta">
+            </form>
+    </div><!-- problem-try-ct -->
+    <div class="problem-try-ct">
+        <a name="Q7"></a>
+        <h3>Questão 7: Filas - Mesclar duas filas ordenadas</h3>
+        <div class="description-display-box">
+<p>Implemente um método para mesclar duas filas encadeadas de números inteiros previamente ordenadas e retornar uma nova fila totalmente ordenada. Não é necessário verificar se as filas estavam ordenadas, simplesmente suponha que estavam.</p>
+<p>O programa tem duas filas (A e B) e pode inserir elementos em qualquer uma, escrever os dados de qualquer uma ou mesclar A com B numa fila temporária.</p>
+<p>Entradas:</p>
+<p>Uma sequência de comandos para o programa executar, a saber:</p>
+<ul>
+<li>i: seguido de um identificador de fila (<u>a</u> ou <u>b</u>), seguida de um número inteiro, insere a palavra na fila</li>
+<li>e: seguido de um identificador de fila (<u>a</u> ou <u>b</u>), escreve o conteúdo da fila</li>
+<li>m: mescla a fila a com a fila b numa fila temporária e escreve o seu conteúdo</li>
+<li>t: termina a execução do programa</li>
+</ul>
+<p>Saídas:</p>
+<p>O comando <u>e</u> escreve o conteúdo de uma das listas sem precisar desenfileirar. O comando <u>m</u> escreve o conteúdo da fila temporária sem precisar desenfileirar.</p>
+<p>Exemplo de Entrada:</p>
+<pre>i a 1
+i a 3
+i a 5
+i b 2
+i b 4
+i b 6
+e a
+e b
+m
+t</pre>
+<p>Exemplo de Saída:</p>
+<pre>1 3 5
+2 4 6
+1 2 3 4 5 6
+</pre>
+        </div><!-- description-display-box -->
+        <a name="JQ7"></a>
+        <p><b>Peso:</b> 1</p>
+            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
+                <label style="background: #F9F9F9">Nova Resposta:</label>
+                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
+                <input type="file" name="arquivo" id="arquivo" required="required">
+                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
+                <input type="hidden" name="id_prova" value="2001">
+                <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
+                <input type="hidden" name="id_problema" value="1500">
+                <input type="hidden" name="idUsuario" value="6644">
+                <input type="hidden" name="nroTentativa" value="1">
+                <input type="hidden" name="atenuacao" value="1">
+                <input type="hidden" name="nroQuestao" value="7">
+                <input type="hidden" name="_action" value="save">
+                <input type="submit" name="avaliar" value="Enviar Resposta">
+            </form>
+    </div><!-- problem-try-ct -->
+    <div class="problem-try-ct">
+        <a name="Q8"></a>
+        <h3>Questão 8: Fila - Sistema de estacionamento</h3>
+        <div class="description-display-box">
+<img style="float:right; margin-left:1em" height="300" width="497" src="/public/img/fila-estacionar-88743d6b.png">
+<img style="clear:right; float:right; margin-left:1em" width="497" src="/public/img/fila-retirar-36832578.png">
+<p>Um homem decidiu aproveitar um espaço existente em uma das ruas do bairro em que mora para estacionar carros e complementar sua renda oferecendo o serviço de <i>vallet</i>. Para aumentar a renda, o homem estaciona os carros em 45<sup>o</sup>, o que não permite que um carro sai do estacionamento sem que os carros estacionados à sua frente também tenham que sair.
+O serviço oferecido tem sido bem sucedido e ele decidiu contratá-lo para implementar um aplicativo que simule a operação do estacionamento de modo que ele saiba quantos carros terá que deslocar para que um determinado carro possa ser removido. Os carros deslocados são conduzidos por uma rua paralela e depois estacionados novamente.</p>
+
+<p>Defina a estrutura de dados adequada, utilizando encadeamento, para simular o funcionamento do negócio e implemente essa estrutura (não é permitido o uso da STL ou similares). Lembrando-se que você deve respeitar as regras da estrutura para acesso aos dados, implemente:
+<ul><li> o método que permita simular a operação de estacionar (E);</li>
+<li> o método que permita simular a operação de retirar um carro do estacionamento (D);</li>
+<li>o método que permita ao dono do negócio saber quantos carros foram removidos para a retirada de um determinado carro e imprima a configuração do estacionamento após a remoção.</li>
+<li> a execução é encerrada quando a opção de saída é selecionada (S);</li>
+</ul>
+Os carros estacionados são caracterizados pela sua placa. Para executar uma operação, o usuário deve indicar a operação desejada e informar a placa do carro. Caso seja solicitada a operação de retirado de um carro e este não seja encontrado no estacionamento, deve ser emitida a mensagem "NAO ENCONTRADO". <b>Sempre que um carro é retirado, deve ser impresso o número de carros retirados e a nova configuração do estacionamento</b>.
+</p>
+<p><b>Entradas:</b></p>
+<ol>
+<li>Conjunto de operações de estacionar e retirar carros do estacionamento</li>
+</ol>
+<p><b>Saídas:</b></p>
+<ol>
+<li>Número de carros retirados.</li>
+<li>Configuração dos carros no estacionamento a cada retirada do carro desejado.</li>
+</ol>
+<h2>Exemplos de Entrada e Saída:</h2>
+<p><b>Entrada</b></p>
+<pre>E abc1234
+E def4567
+E poi0987
+E zxc5687
+D poi0987
+D abc1234
+S</pre>
+<p><b>Exemplo de Saída:</b></p>
+<pre>3
+zxc5687
+abc1234
+def4567
+2
+def4567
+zxc5687</pre>
+<p><b>Entrada</b></p>
+<pre>D poi0987
+E abc1234
+E def4567
+E zxc5687
+D abc1234
+S</pre>
+<p><b>Exemplo de Saída:</b></p>
+<pre>NAO ENCONTRADO
+1
+def4567
+zxc5687
+</pre>
+<p><b>Entrada</b></p>
+<pre>E VFT1010
+D VFT1010
+S</pre>
+<p><b>Exemplo de Saída:</b></p>
+<pre>1</pre>
+        </div><!-- description-display-box -->
+        <a name="JQ8"></a>
+        <p><b>Peso:</b> 1</p>
+            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
+                <label style="background: #F9F9F9">Nova Resposta:</label>
+                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
+                <input type="file" name="arquivo" id="arquivo" required="required">
+                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
+                <input type="hidden" name="id_prova" value="2001">
+                <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
+                <input type="hidden" name="id_problema" value="1526">
+                <input type="hidden" name="idUsuario" value="6644">
+                <input type="hidden" name="nroTentativa" value="1">
+                <input type="hidden" name="atenuacao" value="1">
+                <input type="hidden" name="nroQuestao" value="8">
+                <input type="hidden" name="_action" value="save">
+                <input type="submit" name="avaliar" value="Enviar Resposta">
+            </form>
+    </div><!-- problem-try-ct -->
+    <div class="problem-try-ct">
+        <a name="Q9"></a>
+        <h3>Questão 9: Fila - Atendimento copiadora (v2)</h3>
+        <div class="description-display-box">
+<p>Uma nova copiadora irá abrir na sua cidade. Você foi contratado para fazer o programa que gerencia as senhas de utilização dos serviços. As instruções passadas a você são: existem dois tipos de senha, as prioritárias e as normais; as senhas são chamadas de modo a serem chamadas 3 prioritárias para então uma normal. Não havendo prioridades, as pessoas com senha normal podem ser atendidas normalmente. Sempre que um atendimento normal for realizado, os próximos três devem ser prioritários, se possível. Se estiver na hora de realizar um atendimento de cliente normal mas não houver nenhum cliente normal, deve ser chamado um nome do atendimento preferencial, se houver.</p>
+<p>Este é um problema de <b>uso</b> de fila. Você deverá usar uma estrutura de dados do tipo <b>fila</b>, sendo que a classe fila não deve conter nenhum método que tenha características do problema. Em outras palavras, a classe fila não pode ter mecanismos indevidos de acessos a seus dados. Também não é permitido o uso da STL ou similares.</p>
+<p>O programa deve ler comandos representados por palavras e seus respectivos argumentos assim:</p>
+<ul>
+<li>O comando "normal" seguido de um nome (sem espaços) representa retirada de uma senha normal.</li>
+<li>O comando "prioridade" seguido de um nome (sem espaços) representa retirada de uma senha prioritária.</li>
+<li>O comando "atender" representa uma senha sendo chamada.</li>
+<li>O comando "fim" solicita o fim da execução do programa.</li>
+</ul>
+<p>Para cada comando de atendimento, o programa deverá escrever o nome da pessoa que deve ser atendida, de acordo com as regras de atendimento vistas. Caso não haja cliente a ser chamado, o programa deve escrever "AGUARDE" (letras maiúsculas). A cada atendimento normal, a contagem para prioritários deve ser reiniciada.
+</p>
+<p>Entradas:</p>
+<ol>
+<li>Sequência de comandos, seguindo as instruções acima.</li>
+</ol>
+<p>Saídas:</p>
+<ol>
+<li>Somente o comando "atender" gera saída, conforme instruções acima.</li>
+</ol>
+<p>Exemplo de Entrada:</p>
+<pre>normal Abner
+prioridade Ackson
+normal Adilson
+normal Adriana
+normal Adriano
+normal Adriel
+prioridade Adrielle
+atender
+atender
+atender
+atender
+prioridade Adriene
+prioridade Adson
+prioridade Afonso
+prioridade Agatha
+atender
+atender
+atender
+atender
+atender
+fim</pre>
+<p>Exemplo de Saída:</p>
+<pre>Ackson
+Adrielle
+Abner
+Adilson
+Adriene
+Adson
+Afonso
+Adriana
+Agatha</pre>
+        </div><!-- description-display-box -->
+        <a name="JQ9"></a>
+        <p><b>Peso:</b> 1</p>
+            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
+                <label style="background: #F9F9F9">Nova Resposta:</label>
+                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
+                <input type="file" name="arquivo" id="arquivo" required="required">
+                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
+                <input type="hidden" name="id_prova" value="2001">
+                <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
+                <input type="hidden" name="id_problema" value="1788">
+                <input type="hidden" name="idUsuario" value="6644">
+                <input type="hidden" name="nroTentativa" value="1">
+                <input type="hidden" name="atenuacao" value="1">
+                <input type="hidden" name="nroQuestao" value="9">
+                <input type="hidden" name="_action" value="save">
+                <input type="submit" name="avaliar" value="Enviar Resposta">
+            </form>
+    </div><!-- problem-try-ct -->
+    <div class="problem-try-ct">
+        <a name="Q10"></a>
+        <h3>Questão 10: Fila com armazenamento dinâmico</h3>
+        <div class="description-display-box">
+<p>Usando <a href="/exemplos/fila-cc50cab1.cpp">o código com as especificações de métodos e atributos mais um programa que usa a classe Fila</a>, crie uma classe fila com armazenamento dinâmico e encadeamento simples.</p>
+<p>Nas situações em que algum método não puder ser executado, ele deve só escrever alguma mensagem de erro na saída de erros. Não é permitido alterar o projeto que já existe (mudar os parâmetros ou a ocultação dos métodos já definidos). Métodos auxiliares que forem criados estão sujeitos a avaliação.</p>
+<p>Entradas:</p>
+<p>O programa passado aceita os seguintes comandos:</p>
+<ul>
+<li>i seguido de um valor inteiro: para inserir um item na fila</li>
+<li>r: para remover um item da fila</li>
+<li>l: para limpar (remover todos) os itens da fila</li>
+<li>t: para consultar o tamanho da fila</li>
+<li>e: para espiar o próximo da fila (escreve o primeiro sem removê-lo)</li>
+<li>f: para finalizar a execução do programa</li>
+</ul>
+<p>Saídas:</p>
+<p>Todas as saídas de comandos já estão implementadas na função principal. Ao terminar a execução do programa, todos os itens da fila são removidos e escritos, mesmo assim, o destrutor deve desalocar memória de todos os itens da fila.</p>
+<p>Exemplo de Entrada e Saída juntas:</p>
+<pre>i 2
+i 4
+i 6
+r
+2
+t
+2
+l
+i 8
+i 10
+e
+8
+f
+8 10</pre>
+
+        </div><!-- description-display-box -->
+        <a name="JQ10"></a>
+        <p><b>Peso:</b> 1</p>
+            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
+                <label style="background: #F9F9F9">Nova Resposta:</label>
+                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
+                <input type="file" name="arquivo" id="arquivo" required="required">
+                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
+                <input type="hidden" name="id_prova" value="2001">
+                <input type="hidden" name="tst_password" value="25a02ca569d246f888739ea21fd0174e7040e84d">
+                <input type="hidden" name="id_problema" value="1448">
+                <input type="hidden" name="idUsuario" value="6644">
+                <input type="hidden" name="nroTentativa" value="1">
+                <input type="hidden" name="atenuacao" value="1">
+                <input type="hidden" name="nroQuestao" value="10">
+                <input type="hidden" name="_action" value="save">
+                <input type="submit" name="avaliar" value="Enviar Resposta">
+            </form>
+    </div><!-- problem-try-ct -->
     <div style="clear: both"></div>
 </div><!-- problem-try-ct -->
 </div><!-- prova -->
 <script type="text/javascript">
-    var serverTime = 1710368747000;
+    var serverTime = 1710724377000;
     var localTime = +Date.now();
     var timeDiff = serverTime - localTime;
-    var closingTime = 1712070000000;
+    var closingTime = 1712113199000;
     var nomeUsuario = "Lucas Henrique Lopes Costa";
     $('#usuario').text(nomeUsuario);
     if (true) {
