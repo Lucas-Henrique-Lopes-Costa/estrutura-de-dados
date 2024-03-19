@@ -22,7 +22,156 @@ Exemplo de Saída:
 #include <iostream>
 using namespace std;
 
-int main() {
-    // Seu código aqui
+class noh
+{
+    friend class fila;
+
+private:
+    int nValor;
+    noh *nProximo;
+
+public:
+    noh(int valor);
+};
+
+noh::noh(int valor)
+{
+    nValor = valor;
+    nProximo = NULL;
+}
+
+class fila
+{
+private:
+    noh *mInicio;
+    noh *mFim;
+    int mTamanho;
+
+public:
+    fila();
+    ~fila();
+    int tamanho();
+    void enfileira(int valor);
+    int desenfileira();
+    void limpaFila();
+    bool vazia();
+    void removeIntersecao(fila &f2);
+};
+
+fila::fila()
+{
+    mInicio = NULL;
+    mFim = NULL;
+    mTamanho = 0;
+}
+
+fila::~fila()
+{
+    limpaFila();
+}
+
+void fila::limpaFila()
+{
+    while (!vazia())
+    {
+        desenfileira();
+    };
+}
+
+int fila::tamanho()
+{
+    return mTamanho;
+}
+
+bool fila::vazia()
+{
+    return (mTamanho == 0);
+}
+
+
+void fila::enfileira(int valor)
+{
+    noh *novo = new noh(valor);
+    if (mFim != NULL)
+    {
+        mFim->nProximo = novo;
+    }
+    else
+    {
+        mInicio = novo;
+    }
+    mFim = novo;
+    ++mTamanho;
+}
+
+int fila::desenfileira()
+{
+    int valor = mInicio->nValor;
+    noh *temp = mInicio;
+    mInicio = mInicio->nProximo;
+    if (mInicio == NULL)
+    {
+        mFim = NULL;
+    }
+    delete temp;
+    --mTamanho;
+    return valor;
+}
+
+void fila::removeIntersecao(fila &f2)
+{
+    noh *aux = mInicio;
+    noh *aux2 = f2.mInicio;
+    fila f3;
+    while (aux != NULL)
+    {
+        bool intersecao = false;
+        while (aux2 != NULL && !intersecao)
+        {
+            if (aux->nValor == aux2->nValor)
+            {
+                intersecao = true;
+            }
+            aux2 = aux2->nProximo;
+        }
+        if (!intersecao)
+        {
+            f3.enfileira(aux->nValor);
+        }
+        aux2 = f2.mInicio;
+        aux = aux->nProximo;
+    }
+    while (!f3.vazia())
+    {
+        cout << f3.desenfileira() << " ";
+    }
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    fila f1;
+    for (int i = 0; i < n; i++)
+    {
+        int valor;
+        cin >> valor;
+        f1.enfileira(valor);
+    }
+
+    int m;
+    cin >> m;
+
+    fila f2;
+    for (int i = 0; i < m; i++)
+    {
+        int valor;
+        cin >> valor;
+        f2.enfileira(valor);
+    }
+
+    f1.removeIntersecao(f2);
+
     return 0;
 }
