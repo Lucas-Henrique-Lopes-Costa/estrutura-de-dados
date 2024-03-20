@@ -150,10 +150,14 @@ int filaCircular::desenfileira()
 void filaCircular::depura()
 {
     cout << "tamanho=" << mTamanho << " capacidade=" << mCapacidade << " inicio=" << mInicio << " fim=" << mFim << endl;
-    for (int i = 0; i < mTamanho; i++)
+
+    int i = mInicio;
+    do
     {
         cout << mDados[i] << " ";
-    }
+        i = (i + 1) % mCapacidade;
+    } while (i != (mFim + 1) % mCapacidade);
+
     cout << endl;
 }
 
