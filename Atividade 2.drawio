@@ -1,0 +1,402 @@
+<mxfile host="app.diagrams.net" modified="2024-03-24T13:20:29.460Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="0GPoSE9h4PJgOj33E49Y" version="24.1.0" type="github" pages="23">
+  <diagram name="1" id="wW2aYJRkSUFE2fM9_qcW">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="STtgtCKxFUprNOgZ3v3Y-1" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início -&amp;gt; 9 -&amp;gt; 7 -&amp;gt; 5 -&amp;gt; 3 -&amp;gt; 1&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início -&amp;gt; 1 -&amp;gt; 2-&amp;gt; 9&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="STtgtCKxFUprNOgZ3v3Y-2" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux: Incíio -&amp;gt;&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="160" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="STtgtCKxFUprNOgZ3v3Y-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt;&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="210" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="2" id="NWLsW65F5ybx8tmLPSZ1">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="3AybetEUjf6cghduw5IZ-0" />
+        <mxCell id="3AybetEUjf6cghduw5IZ-1" parent="3AybetEUjf6cghduw5IZ-0" />
+        <mxCell id="3AybetEUjf6cghduw5IZ-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início -&amp;gt; 7 -&amp;gt; 5 -&amp;gt; 3 -&amp;gt; 1&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início -&amp;gt; 1 -&amp;gt; 2-&amp;gt; 9&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="3AybetEUjf6cghduw5IZ-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="3AybetEUjf6cghduw5IZ-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&amp;nbsp;-&amp;gt; 9&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="3AybetEUjf6cghduw5IZ-1">
+          <mxGeometry x="40" y="160" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3AybetEUjf6cghduw5IZ-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt;&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="3AybetEUjf6cghduw5IZ-1">
+          <mxGeometry x="40" y="200" width="210" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="3" id="av3bfhyiOQCK5LEJdcb7">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="cHjm1AGFgsoH_1tzff0r-0" />
+        <mxCell id="cHjm1AGFgsoH_1tzff0r-1" parent="cHjm1AGFgsoH_1tzff0r-0" />
+        <mxCell id="cHjm1AGFgsoH_1tzff0r-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início -&amp;gt; 5 -&amp;gt; 3 -&amp;gt; 1&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início -&amp;gt; 1 -&amp;gt; 2-&amp;gt; 9&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="cHjm1AGFgsoH_1tzff0r-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="cHjm1AGFgsoH_1tzff0r-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&amp;nbsp;-&amp;gt; 9 -&amp;gt; 7&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="cHjm1AGFgsoH_1tzff0r-1">
+          <mxGeometry x="40" y="160" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cHjm1AGFgsoH_1tzff0r-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt;&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="cHjm1AGFgsoH_1tzff0r-1">
+          <mxGeometry x="40" y="200" width="210" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="4" id="JI07zmJCh7NDsCU1MMCs">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="z384udFTn19lJGzMdDdT-0" />
+        <mxCell id="z384udFTn19lJGzMdDdT-1" parent="z384udFTn19lJGzMdDdT-0" />
+        <mxCell id="z384udFTn19lJGzMdDdT-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início -&amp;gt; 3 -&amp;gt; 1&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início -&amp;gt; 1 -&amp;gt; 2-&amp;gt; 9&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="z384udFTn19lJGzMdDdT-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="z384udFTn19lJGzMdDdT-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&amp;nbsp;-&amp;gt; 9 -&amp;gt; 7 -&amp;gt; 5&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="z384udFTn19lJGzMdDdT-1">
+          <mxGeometry x="40" y="160" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="z384udFTn19lJGzMdDdT-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt;&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="z384udFTn19lJGzMdDdT-1">
+          <mxGeometry x="40" y="200" width="210" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="5" id="r68riAy0x-m8k8i_umw5">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="4tH6Q3VVll2k11balDXo-0" />
+        <mxCell id="4tH6Q3VVll2k11balDXo-1" parent="4tH6Q3VVll2k11balDXo-0" />
+        <mxCell id="4tH6Q3VVll2k11balDXo-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início -&amp;gt; 1&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início -&amp;gt; 1 -&amp;gt; 2-&amp;gt; 9&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="4tH6Q3VVll2k11balDXo-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="4tH6Q3VVll2k11balDXo-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&amp;nbsp;-&amp;gt; 9 -&amp;gt; 7 -&amp;gt; 5 -&amp;gt; 3&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="4tH6Q3VVll2k11balDXo-1">
+          <mxGeometry x="40" y="160" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4tH6Q3VVll2k11balDXo-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt;&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="4tH6Q3VVll2k11balDXo-1">
+          <mxGeometry x="40" y="200" width="210" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="6" id="9wUe7c3DCyQMofnIKYi0">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="E8hDYItOMlFSM5oAe7Wc-0" />
+        <mxCell id="E8hDYItOMlFSM5oAe7Wc-1" parent="E8hDYItOMlFSM5oAe7Wc-0" />
+        <mxCell id="E8hDYItOMlFSM5oAe7Wc-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início -&amp;gt; 1 -&amp;gt; 2-&amp;gt; 9&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="E8hDYItOMlFSM5oAe7Wc-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="E8hDYItOMlFSM5oAe7Wc-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&amp;nbsp;-&amp;gt; 9 -&amp;gt; 7 -&amp;gt; 5 -&amp;gt; 3&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="E8hDYItOMlFSM5oAe7Wc-1">
+          <mxGeometry x="40" y="160" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="E8hDYItOMlFSM5oAe7Wc-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt; 1&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="E8hDYItOMlFSM5oAe7Wc-1">
+          <mxGeometry x="40" y="200" width="230" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="7" id="pxv2s7mkwEiZeDUc-D-C">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="aKXT5OpidRK-Afv8_Lap-0" />
+        <mxCell id="aKXT5OpidRK-Afv8_Lap-1" parent="aKXT5OpidRK-Afv8_Lap-0" />
+        <mxCell id="aKXT5OpidRK-Afv8_Lap-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início -&amp;gt; 2-&amp;gt; 9&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="aKXT5OpidRK-Afv8_Lap-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="aKXT5OpidRK-Afv8_Lap-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&amp;nbsp;-&amp;gt; 9 -&amp;gt; 7 -&amp;gt; 5 -&amp;gt; 3&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="aKXT5OpidRK-Afv8_Lap-1">
+          <mxGeometry x="40" y="160" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="aKXT5OpidRK-Afv8_Lap-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt; 1&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="aKXT5OpidRK-Afv8_Lap-1">
+          <mxGeometry x="40" y="200" width="230" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="8" id="PAKSMckJsfdmvU4gxC6f">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="4eUXX0qHhnSSLWmnG9tv-0" />
+        <mxCell id="4eUXX0qHhnSSLWmnG9tv-1" parent="4eUXX0qHhnSSLWmnG9tv-0" />
+        <mxCell id="4eUXX0qHhnSSLWmnG9tv-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início -&amp;gt; 2-&amp;gt; 9&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="4eUXX0qHhnSSLWmnG9tv-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="4eUXX0qHhnSSLWmnG9tv-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;&amp;nbsp;-&amp;gt; 9 -&amp;gt; 7 -&amp;gt; 5 -&amp;gt; 3&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="4eUXX0qHhnSSLWmnG9tv-1">
+          <mxGeometry x="40" y="160" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="4eUXX0qHhnSSLWmnG9tv-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt; 1&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="4eUXX0qHhnSSLWmnG9tv-1">
+          <mxGeometry x="40" y="200" width="230" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ezKv8evFQ9UCcmIhcmhA-0" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;COPY&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="4eUXX0qHhnSSLWmnG9tv-1">
+          <mxGeometry x="440" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="9" id="Ct4H9YoGIauz2EXT_GUN">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="QdwbbDXwLeAEHyBfYQ8s-0" />
+        <mxCell id="QdwbbDXwLeAEHyBfYQ8s-1" parent="QdwbbDXwLeAEHyBfYQ8s-0" />
+        <mxCell id="QdwbbDXwLeAEHyBfYQ8s-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px; text-align: left; text-wrap: nowrap; background-color: initial;&quot;&gt;-&amp;gt; 9 -&amp;gt; 7 -&amp;gt; 5 -&amp;gt; 3&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início -&amp;gt; 2-&amp;gt; 9&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="QdwbbDXwLeAEHyBfYQ8s-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="QdwbbDXwLeAEHyBfYQ8s-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="QdwbbDXwLeAEHyBfYQ8s-1">
+          <mxGeometry x="40" y="160" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="QdwbbDXwLeAEHyBfYQ8s-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt; 1&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="QdwbbDXwLeAEHyBfYQ8s-1">
+          <mxGeometry x="40" y="200" width="230" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="10" id="tcRfeBXswTN1nkCo9nPO">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="tV1lvo5Gg3TD3xOPALuW-0" />
+        <mxCell id="tV1lvo5Gg3TD3xOPALuW-1" parent="tV1lvo5Gg3TD3xOPALuW-0" />
+        <mxCell id="tV1lvo5Gg3TD3xOPALuW-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px; text-align: left; text-wrap: nowrap; background-color: initial;&quot;&gt;-&amp;gt; 7 -&amp;gt; 5 -&amp;gt; 3&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início -&amp;gt; 2-&amp;gt; 9&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="tV1lvo5Gg3TD3xOPALuW-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="tV1lvo5Gg3TD3xOPALuW-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;&lt;span style=&quot;text-align: center; text-wrap: wrap; font-size: 16px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 9&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="tV1lvo5Gg3TD3xOPALuW-1">
+          <mxGeometry x="40" y="160" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tV1lvo5Gg3TD3xOPALuW-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt; 1&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="tV1lvo5Gg3TD3xOPALuW-1">
+          <mxGeometry x="40" y="200" width="230" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="11" id="47iTLEyB0jYMU_tLMbyF">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="mkuzw58EjLJlCua_nyKh-0" />
+        <mxCell id="mkuzw58EjLJlCua_nyKh-1" parent="mkuzw58EjLJlCua_nyKh-0" />
+        <mxCell id="mkuzw58EjLJlCua_nyKh-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início&lt;/span&gt;&lt;span style=&quot;font-size: 18px; text-align: left; text-wrap: nowrap; background-color: initial;&quot;&gt;-&amp;gt; 5 -&amp;gt; 3&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início -&amp;gt; 2-&amp;gt; 9&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="mkuzw58EjLJlCua_nyKh-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="mkuzw58EjLJlCua_nyKh-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;&lt;span style=&quot;text-align: center; text-wrap: wrap; font-size: 16px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 9&lt;/span&gt;&lt;span style=&quot;text-align: center; text-wrap: wrap; font-size: 16px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 7&amp;nbsp;&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="mkuzw58EjLJlCua_nyKh-1">
+          <mxGeometry x="40" y="160" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mkuzw58EjLJlCua_nyKh-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt; 1&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="mkuzw58EjLJlCua_nyKh-1">
+          <mxGeometry x="40" y="200" width="230" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="12" id="R--OZ1Vn6XjDw2NdXJ3s">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="3VAuFt4zU6UYMTGt9r1Q-0" />
+        <mxCell id="3VAuFt4zU6UYMTGt9r1Q-1" parent="3VAuFt4zU6UYMTGt9r1Q-0" />
+        <mxCell id="3VAuFt4zU6UYMTGt9r1Q-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início&lt;/span&gt;&lt;span style=&quot;font-size: 18px; text-align: left; text-wrap: nowrap; background-color: initial;&quot;&gt;&amp;nbsp;-&amp;gt; 3&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início -&amp;gt; 2-&amp;gt; 9&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="3VAuFt4zU6UYMTGt9r1Q-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="3VAuFt4zU6UYMTGt9r1Q-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;&lt;span style=&quot;text-align: center; text-wrap: wrap; font-size: 16px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 9&lt;/span&gt;&lt;span style=&quot;text-align: center; text-wrap: wrap; font-size: 16px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 7&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;-&amp;gt; 5&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="3VAuFt4zU6UYMTGt9r1Q-1">
+          <mxGeometry x="40" y="160" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3VAuFt4zU6UYMTGt9r1Q-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt; 1&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="3VAuFt4zU6UYMTGt9r1Q-1">
+          <mxGeometry x="40" y="200" width="230" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Copy of 12" id="K8weJxkb7eBTutVnfCze">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="2141OmUKklAfLnV5vu4a-0" />
+        <mxCell id="2141OmUKklAfLnV5vu4a-1" parent="2141OmUKklAfLnV5vu4a-0" />
+        <mxCell id="2141OmUKklAfLnV5vu4a-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início -&amp;gt; 2-&amp;gt; 9&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="2141OmUKklAfLnV5vu4a-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="2141OmUKklAfLnV5vu4a-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;&lt;span style=&quot;text-align: center; text-wrap: wrap; font-size: 16px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 9&lt;/span&gt;&lt;span style=&quot;text-align: center; text-wrap: wrap; font-size: 16px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 7&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;-&amp;gt; 5&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 3&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2141OmUKklAfLnV5vu4a-1">
+          <mxGeometry x="40" y="160" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="2141OmUKklAfLnV5vu4a-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt; 1&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="2141OmUKklAfLnV5vu4a-1">
+          <mxGeometry x="40" y="200" width="230" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Copy of Copy of 12" id="TVamNrvhqUQSXxrdr6m-">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="qjZb9yKDf9acyc6DRmo7-0" />
+        <mxCell id="qjZb9yKDf9acyc6DRmo7-1" parent="qjZb9yKDf9acyc6DRmo7-0" />
+        <mxCell id="qjZb9yKDf9acyc6DRmo7-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início -&amp;gt; 9&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="qjZb9yKDf9acyc6DRmo7-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="qjZb9yKDf9acyc6DRmo7-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;&lt;span style=&quot;text-align: center; text-wrap: wrap; font-size: 16px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 9&lt;/span&gt;&lt;span style=&quot;text-align: center; text-wrap: wrap; font-size: 16px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 7&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;-&amp;gt; 5&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 3&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="qjZb9yKDf9acyc6DRmo7-1">
+          <mxGeometry x="40" y="160" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qjZb9yKDf9acyc6DRmo7-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt; 1&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="qjZb9yKDf9acyc6DRmo7-1">
+          <mxGeometry x="40" y="200" width="230" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Copy of Copy of Copy of 12" id="9suLIJG3fQTyEMy1FOMv">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="GCZBo39ASM7FPOTU27W0-0" />
+        <mxCell id="GCZBo39ASM7FPOTU27W0-1" parent="GCZBo39ASM7FPOTU27W0-0" />
+        <mxCell id="GCZBo39ASM7FPOTU27W0-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início -&amp;gt; 9&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="GCZBo39ASM7FPOTU27W0-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="GCZBo39ASM7FPOTU27W0-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;&lt;span style=&quot;text-align: center; text-wrap: wrap; font-size: 16px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 9&lt;/span&gt;&lt;span style=&quot;text-align: center; text-wrap: wrap; font-size: 16px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 7&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;-&amp;gt; 5&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 3&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="GCZBo39ASM7FPOTU27W0-1">
+          <mxGeometry x="40" y="160" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="GCZBo39ASM7FPOTU27W0-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt; 1&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="GCZBo39ASM7FPOTU27W0-1">
+          <mxGeometry x="40" y="200" width="230" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Vj5orBIGR8HUhOZm-j-i-0" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;COPY&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="GCZBo39ASM7FPOTU27W0-1">
+          <mxGeometry x="440" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Copy of Copy of Copy of Copy of 12" id="y5Bnwz-35m5Tm8TNmvMg">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="fU1XKzzMZDUqpWz5cO6Q-0" />
+        <mxCell id="fU1XKzzMZDUqpWz5cO6Q-1" parent="fU1XKzzMZDUqpWz5cO6Q-0" />
+        <mxCell id="fU1XKzzMZDUqpWz5cO6Q-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; text-wrap: nowrap; text-align: left; font-size: 18px;&quot;&gt;-&amp;gt; 9&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 16px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; text-wrap: nowrap; text-align: left; font-size: 18px;&quot;&gt;-&amp;gt; 7&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; text-wrap: nowrap; text-align: left; font-size: 18px;&quot;&gt;-&amp;gt; 5&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; text-wrap: nowrap; text-align: left; font-size: 18px;&quot;&gt;-&amp;gt; 3&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início -&amp;gt; 9&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="fU1XKzzMZDUqpWz5cO6Q-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="fU1XKzzMZDUqpWz5cO6Q-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="fU1XKzzMZDUqpWz5cO6Q-1">
+          <mxGeometry x="40" y="160" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="fU1XKzzMZDUqpWz5cO6Q-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt; 1&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="fU1XKzzMZDUqpWz5cO6Q-1">
+          <mxGeometry x="40" y="200" width="230" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Copy of Copy of Copy of Copy of Copy of 12" id="pzUl3ISWQxMJCvNLPgoa">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="Rd-os0SzVbbr4Po5KfK4-0" />
+        <mxCell id="Rd-os0SzVbbr4Po5KfK4-1" parent="Rd-os0SzVbbr4Po5KfK4-0" />
+        <mxCell id="Rd-os0SzVbbr4Po5KfK4-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; text-wrap: nowrap; text-align: left; font-size: 18px;&quot;&gt;-&amp;gt; 7&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; text-wrap: nowrap; text-align: left; font-size: 18px;&quot;&gt;-&amp;gt; 5&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; text-wrap: nowrap; text-align: left; font-size: 18px;&quot;&gt;-&amp;gt; 3&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início -&amp;gt; 9&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Rd-os0SzVbbr4Po5KfK4-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Rd-os0SzVbbr4Po5KfK4-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="Rd-os0SzVbbr4Po5KfK4-1">
+          <mxGeometry x="40" y="160" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Rd-os0SzVbbr4Po5KfK4-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt; 1 -&amp;gt; 9&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="Rd-os0SzVbbr4Po5KfK4-1">
+          <mxGeometry x="40" y="200" width="260" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Copy of Copy of Copy of Copy of Copy of Copy of 12" id="tWU5TiCx1ARXZsdfHeQu">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="o1RC7au0wy8D400LCTfd-0" />
+        <mxCell id="o1RC7au0wy8D400LCTfd-1" parent="o1RC7au0wy8D400LCTfd-0" />
+        <mxCell id="o1RC7au0wy8D400LCTfd-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; text-wrap: nowrap; text-align: left; font-size: 18px;&quot;&gt;-&amp;gt; 5&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; text-wrap: nowrap; text-align: left; font-size: 18px;&quot;&gt;-&amp;gt; 3&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início -&amp;gt; 9&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="o1RC7au0wy8D400LCTfd-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="o1RC7au0wy8D400LCTfd-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;&lt;span style=&quot;text-align: center; text-wrap: wrap; font-size: 16px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 7&amp;nbsp;&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="o1RC7au0wy8D400LCTfd-1">
+          <mxGeometry x="40" y="160" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="o1RC7au0wy8D400LCTfd-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt; 1 -&amp;gt; 9&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="o1RC7au0wy8D400LCTfd-1">
+          <mxGeometry x="40" y="200" width="260" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Copy of Copy of Copy of Copy of Copy of Copy of Copy of 12" id="xGFgOKIuKSLUgQCyg_N8">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="zOYc4GeSxEDO4Ks92mb2-0" />
+        <mxCell id="zOYc4GeSxEDO4Ks92mb2-1" parent="zOYc4GeSxEDO4Ks92mb2-0" />
+        <mxCell id="zOYc4GeSxEDO4Ks92mb2-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início&lt;/span&gt;&lt;span style=&quot;background-color: initial; text-wrap: nowrap; text-align: left; font-size: 18px;&quot;&gt;-&amp;gt; 3&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início -&amp;gt; 9&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="zOYc4GeSxEDO4Ks92mb2-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="zOYc4GeSxEDO4Ks92mb2-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;&lt;span style=&quot;text-align: center; text-wrap: wrap; font-size: 16px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 7&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 5&amp;nbsp;&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="zOYc4GeSxEDO4Ks92mb2-1">
+          <mxGeometry x="40" y="160" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zOYc4GeSxEDO4Ks92mb2-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt; 1 -&amp;gt; 9&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="zOYc4GeSxEDO4Ks92mb2-1">
+          <mxGeometry x="40" y="200" width="260" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of 12" id="ex9El9SC-FvAA-T-Avyp">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="recyGDyC_QdNX7zR9svj-0" />
+        <mxCell id="recyGDyC_QdNX7zR9svj-1" parent="recyGDyC_QdNX7zR9svj-0" />
+        <mxCell id="recyGDyC_QdNX7zR9svj-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início -&amp;gt; 9&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="recyGDyC_QdNX7zR9svj-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="recyGDyC_QdNX7zR9svj-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;&lt;span style=&quot;text-align: center; text-wrap: wrap; font-size: 16px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 7&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 5&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;-&amp;gt; 3&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="recyGDyC_QdNX7zR9svj-1">
+          <mxGeometry x="40" y="160" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="recyGDyC_QdNX7zR9svj-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt; 1 -&amp;gt; 9&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="recyGDyC_QdNX7zR9svj-1">
+          <mxGeometry x="40" y="200" width="260" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of 12" id="qJNwErx3Oypg8tDYEZkE">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="X43myk9a4n1f1ogw-Fm3-0" />
+        <mxCell id="X43myk9a4n1f1ogw-Fm3-1" parent="X43myk9a4n1f1ogw-Fm3-0" />
+        <mxCell id="X43myk9a4n1f1ogw-Fm3-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="X43myk9a4n1f1ogw-Fm3-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="X43myk9a4n1f1ogw-Fm3-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;&lt;span style=&quot;text-align: center; text-wrap: wrap; font-size: 16px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 7&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 5&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;-&amp;gt; 3&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="X43myk9a4n1f1ogw-Fm3-1">
+          <mxGeometry x="40" y="160" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="X43myk9a4n1f1ogw-Fm3-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt; 1 -&amp;gt; 9&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="X43myk9a4n1f1ogw-Fm3-1">
+          <mxGeometry x="40" y="200" width="260" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of 12" id="7c-IUmMtH7qx3LMOK0Oj">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="nFOzvwMn-Y3uCt2PGKdH-0" />
+        <mxCell id="nFOzvwMn-Y3uCt2PGKdH-1" parent="nFOzvwMn-Y3uCt2PGKdH-0" />
+        <mxCell id="nFOzvwMn-Y3uCt2PGKdH-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="nFOzvwMn-Y3uCt2PGKdH-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="nFOzvwMn-Y3uCt2PGKdH-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;&lt;span style=&quot;text-align: center; text-wrap: wrap; font-size: 16px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 7&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;-&amp;gt; 5&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;-&amp;gt; 3&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="nFOzvwMn-Y3uCt2PGKdH-1">
+          <mxGeometry x="40" y="160" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="nFOzvwMn-Y3uCt2PGKdH-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt; 1 -&amp;gt; 9&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="nFOzvwMn-Y3uCt2PGKdH-1">
+          <mxGeometry x="40" y="200" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="fccdF5NPwQbyth2nhl0b-0" value="&lt;span style=&quot;font-size: 16px;&quot;&gt;COPY&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="nFOzvwMn-Y3uCt2PGKdH-1">
+          <mxGeometry x="440" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of Copy of 12" id="b9jQgjBqKFkkAVosgj-O">
+    <mxGraphModel dx="951" dy="585" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="1dHkxe9h8dHuj6E2lF5j-0" />
+        <mxCell id="1dHkxe9h8dHuj6E2lF5j-1" parent="1dHkxe9h8dHuj6E2lF5j-0" />
+        <mxCell id="1dHkxe9h8dHuj6E2lF5j-2" value="&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;A: Início&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 16px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; text-wrap: nowrap; text-align: left; font-size: 18px;&quot;&gt;-&amp;gt; 7&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; text-wrap: nowrap; text-align: left; font-size: 18px;&quot;&gt;-&amp;gt; 5&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial; text-wrap: nowrap; text-align: left; font-size: 18px;&quot;&gt;-&amp;gt; 3&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;font-size: 16px;&quot;&gt;B: Início&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1dHkxe9h8dHuj6E2lF5j-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="1dHkxe9h8dHuj6E2lF5j-3" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaAux:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;Início&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1dHkxe9h8dHuj6E2lF5j-1">
+          <mxGeometry x="40" y="160" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="1dHkxe9h8dHuj6E2lF5j-4" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;FilaResultante: Início -&amp;gt; 1 -&amp;gt; 9&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1dHkxe9h8dHuj6E2lF5j-1">
+          <mxGeometry x="40" y="200" width="260" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
