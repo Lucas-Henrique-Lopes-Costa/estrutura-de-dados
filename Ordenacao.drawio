@@ -1,0 +1,725 @@
+<mxfile host="app.diagrams.net" modified="2024-03-24T02:31:11.603Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="aqs9KNGRus6zGOf0Dt7-" version="24.0.7" type="github" pages="27">
+  <diagram name="1" id="hDC_pvtcxiJRQY1bdzBG">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="IewwF97ZsOj0MAcYxI8R-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO -&amp;gt; 66 -&amp;gt;&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-size: 16px; background-color: initial;&quot;&gt;40 -&amp;gt; 81 -&amp;gt;12&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="IewwF97ZsOj0MAcYxI8R-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1:&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="160" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="IewwF97ZsOj0MAcYxI8R-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;:&amp;nbsp;&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="IewwF97ZsOj0MAcYxI8R-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="240" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="IewwF97ZsOj0MAcYxI8R-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="IewwF97ZsOj0MAcYxI8R-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="320" width="110" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="2" id="VrOTl-gc_OLUq9ZDto1m">
+    <mxGraphModel dx="984" dy="625" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="wjpXLFjXmecS23AHanbN-0" />
+        <mxCell id="wjpXLFjXmecS23AHanbN-1" parent="wjpXLFjXmecS23AHanbN-0" />
+        <mxCell id="wjpXLFjXmecS23AHanbN-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO -&amp;gt; 40 -&amp;gt; 81&amp;nbsp;-&amp;gt;12&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="wjpXLFjXmecS23AHanbN-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="wjpXLFjXmecS23AHanbN-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1: 66&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="wjpXLFjXmecS23AHanbN-1">
+          <mxGeometry x="40" y="160" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="wjpXLFjXmecS23AHanbN-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;:&amp;nbsp;&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="wjpXLFjXmecS23AHanbN-1">
+          <mxGeometry x="40" y="200" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="wjpXLFjXmecS23AHanbN-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="wjpXLFjXmecS23AHanbN-1">
+          <mxGeometry x="40" y="240" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="wjpXLFjXmecS23AHanbN-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="wjpXLFjXmecS23AHanbN-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="wjpXLFjXmecS23AHanbN-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="wjpXLFjXmecS23AHanbN-1">
+          <mxGeometry x="40" y="320" width="110" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="3" id="rBVYLTxwZWeaefLqDxWc">
+    <mxGraphModel dx="984" dy="625" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="YW4N2oWB_ag-dK5R8pPc-0" />
+        <mxCell id="YW4N2oWB_ag-dK5R8pPc-1" parent="YW4N2oWB_ag-dK5R8pPc-0" />
+        <mxCell id="YW4N2oWB_ag-dK5R8pPc-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO -&amp;gt; 81&amp;nbsp;-&amp;gt;12&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="YW4N2oWB_ag-dK5R8pPc-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="YW4N2oWB_ag-dK5R8pPc-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1: 66&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="YW4N2oWB_ag-dK5R8pPc-1">
+          <mxGeometry x="40" y="160" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YW4N2oWB_ag-dK5R8pPc-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;: 40&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="YW4N2oWB_ag-dK5R8pPc-1">
+          <mxGeometry x="40" y="200" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YW4N2oWB_ag-dK5R8pPc-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="YW4N2oWB_ag-dK5R8pPc-1">
+          <mxGeometry x="40" y="240" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YW4N2oWB_ag-dK5R8pPc-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="YW4N2oWB_ag-dK5R8pPc-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="YW4N2oWB_ag-dK5R8pPc-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="YW4N2oWB_ag-dK5R8pPc-1">
+          <mxGeometry x="40" y="320" width="110" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="4" id="gq8J2KKMi05juaOIkbY9">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="C8gdN3wagX68dTF-UVE_-0" />
+        <mxCell id="C8gdN3wagX68dTF-UVE_-1" parent="C8gdN3wagX68dTF-UVE_-0" />
+        <mxCell id="C8gdN3wagX68dTF-UVE_-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO -&amp;gt; 81&amp;nbsp;-&amp;gt;12&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="C8gdN3wagX68dTF-UVE_-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="C8gdN3wagX68dTF-UVE_-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1: 66&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="C8gdN3wagX68dTF-UVE_-1">
+          <mxGeometry x="40" y="160" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="C8gdN3wagX68dTF-UVE_-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;: 40&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="C8gdN3wagX68dTF-UVE_-1">
+          <mxGeometry x="40" y="200" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="C8gdN3wagX68dTF-UVE_-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="C8gdN3wagX68dTF-UVE_-1">
+          <mxGeometry x="40" y="240" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="C8gdN3wagX68dTF-UVE_-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="C8gdN3wagX68dTF-UVE_-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="C8gdN3wagX68dTF-UVE_-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="C8gdN3wagX68dTF-UVE_-1">
+          <mxGeometry x="40" y="320" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9scptOr5QUIj-6FFUMp0-0" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Var1 &amp;gt; Var2?&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="C8gdN3wagX68dTF-UVE_-1">
+          <mxGeometry x="360" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="5" id="XP7LYaZZoDv8aqOT61oP">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="La79lHVZ_z5GlSKyNa9B-0" />
+        <mxCell id="La79lHVZ_z5GlSKyNa9B-1" parent="La79lHVZ_z5GlSKyNa9B-0" />
+        <mxCell id="La79lHVZ_z5GlSKyNa9B-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO -&amp;gt; 81&amp;nbsp;-&amp;gt;12&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="La79lHVZ_z5GlSKyNa9B-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="La79lHVZ_z5GlSKyNa9B-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1:&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="La79lHVZ_z5GlSKyNa9B-1">
+          <mxGeometry x="40" y="160" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="La79lHVZ_z5GlSKyNa9B-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;: 40&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="La79lHVZ_z5GlSKyNa9B-1">
+          <mxGeometry x="40" y="200" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="La79lHVZ_z5GlSKyNa9B-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1: topo -&amp;gt; 66&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="La79lHVZ_z5GlSKyNa9B-1">
+          <mxGeometry x="40" y="240" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="La79lHVZ_z5GlSKyNa9B-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="La79lHVZ_z5GlSKyNa9B-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="La79lHVZ_z5GlSKyNa9B-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="La79lHVZ_z5GlSKyNa9B-1">
+          <mxGeometry x="40" y="320" width="110" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="6" id="vPzuVzBcrtDJ4mrwo3xP">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0XQRzTkI5MDhoc1G057N-0" />
+        <mxCell id="0XQRzTkI5MDhoc1G057N-1" parent="0XQRzTkI5MDhoc1G057N-0" />
+        <mxCell id="0XQRzTkI5MDhoc1G057N-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO -&amp;gt;12&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0XQRzTkI5MDhoc1G057N-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="0XQRzTkI5MDhoc1G057N-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1: 81&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="0XQRzTkI5MDhoc1G057N-1">
+          <mxGeometry x="40" y="160" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0XQRzTkI5MDhoc1G057N-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;: 40&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="0XQRzTkI5MDhoc1G057N-1">
+          <mxGeometry x="40" y="200" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0XQRzTkI5MDhoc1G057N-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1: topo -&amp;gt; 66&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="0XQRzTkI5MDhoc1G057N-1">
+          <mxGeometry x="40" y="240" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0XQRzTkI5MDhoc1G057N-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="0XQRzTkI5MDhoc1G057N-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0XQRzTkI5MDhoc1G057N-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="0XQRzTkI5MDhoc1G057N-1">
+          <mxGeometry x="40" y="320" width="110" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="7" id="SF1q-g_f8lXzFVioSXSi">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="KQYdsIzPsv3whppV30jk-0" />
+        <mxCell id="KQYdsIzPsv3whppV30jk-1" parent="KQYdsIzPsv3whppV30jk-0" />
+        <mxCell id="KQYdsIzPsv3whppV30jk-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO -&amp;gt;12&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="KQYdsIzPsv3whppV30jk-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="KQYdsIzPsv3whppV30jk-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1: 81&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="KQYdsIzPsv3whppV30jk-1">
+          <mxGeometry x="40" y="160" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KQYdsIzPsv3whppV30jk-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;: 40&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="KQYdsIzPsv3whppV30jk-1">
+          <mxGeometry x="40" y="200" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KQYdsIzPsv3whppV30jk-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1: topo -&amp;gt; 66&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="KQYdsIzPsv3whppV30jk-1">
+          <mxGeometry x="40" y="240" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KQYdsIzPsv3whppV30jk-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="KQYdsIzPsv3whppV30jk-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KQYdsIzPsv3whppV30jk-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="KQYdsIzPsv3whppV30jk-1">
+          <mxGeometry x="40" y="320" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vucP4KQj__X6_Mgrvn1f-0" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Var1 &amp;gt; Var2?&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="KQYdsIzPsv3whppV30jk-1">
+          <mxGeometry x="360" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="8" id="5nVqU-aeEwWtV-hI3f5C">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="NDYCy9VOZkGc734e7WRQ-0" />
+        <mxCell id="NDYCy9VOZkGc734e7WRQ-1" parent="NDYCy9VOZkGc734e7WRQ-0" />
+        <mxCell id="NDYCy9VOZkGc734e7WRQ-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO -&amp;gt;12&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="NDYCy9VOZkGc734e7WRQ-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="NDYCy9VOZkGc734e7WRQ-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1:&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="NDYCy9VOZkGc734e7WRQ-1">
+          <mxGeometry x="40" y="160" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NDYCy9VOZkGc734e7WRQ-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;: 40&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="NDYCy9VOZkGc734e7WRQ-1">
+          <mxGeometry x="40" y="200" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NDYCy9VOZkGc734e7WRQ-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1: topo -&amp;gt; 81 -&amp;gt; 66&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="NDYCy9VOZkGc734e7WRQ-1">
+          <mxGeometry x="40" y="240" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NDYCy9VOZkGc734e7WRQ-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="NDYCy9VOZkGc734e7WRQ-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="NDYCy9VOZkGc734e7WRQ-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="NDYCy9VOZkGc734e7WRQ-1">
+          <mxGeometry x="40" y="320" width="110" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="9" id="tTnVumyKPsbvH2BR0JI7">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="paZCokwZ68oI0fz2pTfM-0" />
+        <mxCell id="paZCokwZ68oI0fz2pTfM-1" parent="paZCokwZ68oI0fz2pTfM-0" />
+        <mxCell id="paZCokwZ68oI0fz2pTfM-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="paZCokwZ68oI0fz2pTfM-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="paZCokwZ68oI0fz2pTfM-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1: 12&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="paZCokwZ68oI0fz2pTfM-1">
+          <mxGeometry x="40" y="160" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="paZCokwZ68oI0fz2pTfM-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;: 40&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="paZCokwZ68oI0fz2pTfM-1">
+          <mxGeometry x="40" y="200" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="paZCokwZ68oI0fz2pTfM-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1: topo -&amp;gt; 81 -&amp;gt; 66&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="paZCokwZ68oI0fz2pTfM-1">
+          <mxGeometry x="40" y="240" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="paZCokwZ68oI0fz2pTfM-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="paZCokwZ68oI0fz2pTfM-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="paZCokwZ68oI0fz2pTfM-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="paZCokwZ68oI0fz2pTfM-1">
+          <mxGeometry x="40" y="320" width="110" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="10" id="AgSeWx99QnHn4gagDAVs">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="FdgOIWunW7rH4ezRzvKe-0" />
+        <mxCell id="FdgOIWunW7rH4ezRzvKe-1" parent="FdgOIWunW7rH4ezRzvKe-0" />
+        <mxCell id="FdgOIWunW7rH4ezRzvKe-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="FdgOIWunW7rH4ezRzvKe-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="FdgOIWunW7rH4ezRzvKe-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1: 12&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="FdgOIWunW7rH4ezRzvKe-1">
+          <mxGeometry x="40" y="160" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="FdgOIWunW7rH4ezRzvKe-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;: 40&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="FdgOIWunW7rH4ezRzvKe-1">
+          <mxGeometry x="40" y="200" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="FdgOIWunW7rH4ezRzvKe-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1: topo -&amp;gt; 81 -&amp;gt; 66&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="FdgOIWunW7rH4ezRzvKe-1">
+          <mxGeometry x="40" y="240" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="FdgOIWunW7rH4ezRzvKe-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="FdgOIWunW7rH4ezRzvKe-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="FdgOIWunW7rH4ezRzvKe-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="FdgOIWunW7rH4ezRzvKe-1">
+          <mxGeometry x="40" y="320" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mycnCb4UuCvf4ATIrYqS-0" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Var1 &amp;gt; Var2?&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="FdgOIWunW7rH4ezRzvKe-1">
+          <mxGeometry x="360" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="11" id="-PiME4wDpJDgMHmnPVQz">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="xRacDP0RFrtBGlZyJR1T-0" />
+        <mxCell id="xRacDP0RFrtBGlZyJR1T-1" parent="xRacDP0RFrtBGlZyJR1T-0" />
+        <mxCell id="xRacDP0RFrtBGlZyJR1T-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="xRacDP0RFrtBGlZyJR1T-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="xRacDP0RFrtBGlZyJR1T-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1: 12&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="xRacDP0RFrtBGlZyJR1T-1">
+          <mxGeometry x="40" y="160" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xRacDP0RFrtBGlZyJR1T-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="xRacDP0RFrtBGlZyJR1T-1">
+          <mxGeometry x="40" y="200" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xRacDP0RFrtBGlZyJR1T-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1: topo -&amp;gt; 40 -&amp;gt; 81 -&amp;gt; 66&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="xRacDP0RFrtBGlZyJR1T-1">
+          <mxGeometry x="40" y="240" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xRacDP0RFrtBGlZyJR1T-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="xRacDP0RFrtBGlZyJR1T-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xRacDP0RFrtBGlZyJR1T-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="xRacDP0RFrtBGlZyJR1T-1">
+          <mxGeometry x="40" y="320" width="110" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="12" id="ORyHtFOA26KMnwDRnvUA">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0kFK9fGLjdpjVQkvoUWz-0" />
+        <mxCell id="0kFK9fGLjdpjVQkvoUWz-1" parent="0kFK9fGLjdpjVQkvoUWz-0" />
+        <mxCell id="0kFK9fGLjdpjVQkvoUWz-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="0kFK9fGLjdpjVQkvoUWz-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="0kFK9fGLjdpjVQkvoUWz-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1:&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="0kFK9fGLjdpjVQkvoUWz-1">
+          <mxGeometry x="40" y="160" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0kFK9fGLjdpjVQkvoUWz-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="0kFK9fGLjdpjVQkvoUWz-1">
+          <mxGeometry x="40" y="200" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0kFK9fGLjdpjVQkvoUWz-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1: topo -&amp;gt; 40 -&amp;gt; 81 -&amp;gt; 66&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="0kFK9fGLjdpjVQkvoUWz-1">
+          <mxGeometry x="40" y="240" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0kFK9fGLjdpjVQkvoUWz-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="0kFK9fGLjdpjVQkvoUWz-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0kFK9fGLjdpjVQkvoUWz-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante: topo -&amp;gt; 12&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="0kFK9fGLjdpjVQkvoUWz-1">
+          <mxGeometry x="40" y="320" width="200" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="13" id="4lkJEnfQsZSSaIS4Cl81">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="olkngkb1aEB88WVQzE4S-0" />
+        <mxCell id="olkngkb1aEB88WVQzE4S-1" parent="olkngkb1aEB88WVQzE4S-0" />
+        <mxCell id="olkngkb1aEB88WVQzE4S-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-size: 18px; text-align: left; text-wrap: nowrap;&quot;&gt;-&amp;gt; 40 -&amp;gt; 81 -&amp;gt; 66&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="olkngkb1aEB88WVQzE4S-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="olkngkb1aEB88WVQzE4S-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1:&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="olkngkb1aEB88WVQzE4S-1">
+          <mxGeometry x="40" y="160" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="olkngkb1aEB88WVQzE4S-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="olkngkb1aEB88WVQzE4S-1">
+          <mxGeometry x="40" y="200" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="olkngkb1aEB88WVQzE4S-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="olkngkb1aEB88WVQzE4S-1">
+          <mxGeometry x="40" y="240" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="olkngkb1aEB88WVQzE4S-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="olkngkb1aEB88WVQzE4S-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="olkngkb1aEB88WVQzE4S-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante: topo -&amp;gt; 12&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="olkngkb1aEB88WVQzE4S-1">
+          <mxGeometry x="40" y="320" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="qiq-Yh-CsUY77-UO7cP6-0" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;COPY&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="olkngkb1aEB88WVQzE4S-1">
+          <mxGeometry x="360" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="14" id="_A0kmYKYhXs5rRFVj_HD">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="c0bcdOk3OwAwjq5uJoug-0" />
+        <mxCell id="c0bcdOk3OwAwjq5uJoug-1" parent="c0bcdOk3OwAwjq5uJoug-0" />
+        <mxCell id="c0bcdOk3OwAwjq5uJoug-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-size: 18px; text-align: left; text-wrap: nowrap;&quot;&gt;-&amp;gt; 81 -&amp;gt; 66&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="c0bcdOk3OwAwjq5uJoug-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="c0bcdOk3OwAwjq5uJoug-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1: 40&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="c0bcdOk3OwAwjq5uJoug-1">
+          <mxGeometry x="40" y="160" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c0bcdOk3OwAwjq5uJoug-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="c0bcdOk3OwAwjq5uJoug-1">
+          <mxGeometry x="40" y="200" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c0bcdOk3OwAwjq5uJoug-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="c0bcdOk3OwAwjq5uJoug-1">
+          <mxGeometry x="40" y="240" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c0bcdOk3OwAwjq5uJoug-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="c0bcdOk3OwAwjq5uJoug-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c0bcdOk3OwAwjq5uJoug-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante: topo -&amp;gt; 12&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="c0bcdOk3OwAwjq5uJoug-1">
+          <mxGeometry x="40" y="320" width="200" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="15" id="dgi9M6XRRw8FvwFtEAOF">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="u3sNnsGVk1Vxg-DvWHQ2-0" />
+        <mxCell id="u3sNnsGVk1Vxg-DvWHQ2-1" parent="u3sNnsGVk1Vxg-DvWHQ2-0" />
+        <mxCell id="u3sNnsGVk1Vxg-DvWHQ2-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO&lt;/font&gt;&lt;span style=&quot;font-size: 18px; text-align: left; text-wrap: nowrap;&quot;&gt;&amp;nbsp;-&amp;gt; 66&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="u3sNnsGVk1Vxg-DvWHQ2-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="u3sNnsGVk1Vxg-DvWHQ2-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1: 40&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="u3sNnsGVk1Vxg-DvWHQ2-1">
+          <mxGeometry x="40" y="160" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="u3sNnsGVk1Vxg-DvWHQ2-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;: 81&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="u3sNnsGVk1Vxg-DvWHQ2-1">
+          <mxGeometry x="40" y="200" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="u3sNnsGVk1Vxg-DvWHQ2-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="u3sNnsGVk1Vxg-DvWHQ2-1">
+          <mxGeometry x="40" y="240" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="u3sNnsGVk1Vxg-DvWHQ2-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="u3sNnsGVk1Vxg-DvWHQ2-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="u3sNnsGVk1Vxg-DvWHQ2-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante: topo -&amp;gt; 12&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="u3sNnsGVk1Vxg-DvWHQ2-1">
+          <mxGeometry x="40" y="320" width="200" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="16" id="skUG-tzkWAk8YJ5aGXze">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="mFoflh0jY7gAMLNe8UMg-0" />
+        <mxCell id="mFoflh0jY7gAMLNe8UMg-1" parent="mFoflh0jY7gAMLNe8UMg-0" />
+        <mxCell id="mFoflh0jY7gAMLNe8UMg-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO&lt;/font&gt;&lt;span style=&quot;font-size: 18px; text-align: left; text-wrap: nowrap;&quot;&gt;&amp;nbsp;-&amp;gt; 66&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="mFoflh0jY7gAMLNe8UMg-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="mFoflh0jY7gAMLNe8UMg-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1: 40&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="mFoflh0jY7gAMLNe8UMg-1">
+          <mxGeometry x="40" y="160" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mFoflh0jY7gAMLNe8UMg-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;background-color: initial; font-size: 18px;&quot;&gt;: 81&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="mFoflh0jY7gAMLNe8UMg-1">
+          <mxGeometry x="40" y="200" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mFoflh0jY7gAMLNe8UMg-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="mFoflh0jY7gAMLNe8UMg-1">
+          <mxGeometry x="40" y="240" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mFoflh0jY7gAMLNe8UMg-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="mFoflh0jY7gAMLNe8UMg-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="mFoflh0jY7gAMLNe8UMg-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante: topo -&amp;gt; 12&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="mFoflh0jY7gAMLNe8UMg-1">
+          <mxGeometry x="40" y="320" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="THuqPRhvqus_7stLDys_-0" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Var1 &amp;gt; Var2?&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="mFoflh0jY7gAMLNe8UMg-1">
+          <mxGeometry x="400" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="17" id="VZZh6o6IcE3fhOjUNOVr">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="8-BQ9XhaBoEAVv9-NrLD-0" />
+        <mxCell id="8-BQ9XhaBoEAVv9-NrLD-1" parent="8-BQ9XhaBoEAVv9-NrLD-0" />
+        <mxCell id="8-BQ9XhaBoEAVv9-NrLD-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO&lt;/font&gt;&lt;span style=&quot;font-size: 18px; text-align: left; text-wrap: nowrap;&quot;&gt;&amp;nbsp;-&amp;gt; 66&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="8-BQ9XhaBoEAVv9-NrLD-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="8-BQ9XhaBoEAVv9-NrLD-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1: 40&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="8-BQ9XhaBoEAVv9-NrLD-1">
+          <mxGeometry x="40" y="160" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8-BQ9XhaBoEAVv9-NrLD-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2:&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="8-BQ9XhaBoEAVv9-NrLD-1">
+          <mxGeometry x="40" y="200" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8-BQ9XhaBoEAVv9-NrLD-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1: topo -&amp;gt; 81&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="8-BQ9XhaBoEAVv9-NrLD-1">
+          <mxGeometry x="40" y="240" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8-BQ9XhaBoEAVv9-NrLD-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="8-BQ9XhaBoEAVv9-NrLD-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="8-BQ9XhaBoEAVv9-NrLD-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante: topo -&amp;gt; 12&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="8-BQ9XhaBoEAVv9-NrLD-1">
+          <mxGeometry x="40" y="320" width="200" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="18" id="37tmwSvmQu0scuUcpP1I">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="HEoDpBQRU0lCrEIbLDe9-0" />
+        <mxCell id="HEoDpBQRU0lCrEIbLDe9-1" parent="HEoDpBQRU0lCrEIbLDe9-0" />
+        <mxCell id="HEoDpBQRU0lCrEIbLDe9-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="HEoDpBQRU0lCrEIbLDe9-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HEoDpBQRU0lCrEIbLDe9-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1: 40&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="HEoDpBQRU0lCrEIbLDe9-1">
+          <mxGeometry x="40" y="160" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HEoDpBQRU0lCrEIbLDe9-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2: 66&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="HEoDpBQRU0lCrEIbLDe9-1">
+          <mxGeometry x="40" y="200" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HEoDpBQRU0lCrEIbLDe9-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1:topo -&amp;gt; 81&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="HEoDpBQRU0lCrEIbLDe9-1">
+          <mxGeometry x="40" y="240" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HEoDpBQRU0lCrEIbLDe9-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="HEoDpBQRU0lCrEIbLDe9-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="HEoDpBQRU0lCrEIbLDe9-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante: topo -&amp;gt; 12&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="HEoDpBQRU0lCrEIbLDe9-1">
+          <mxGeometry x="40" y="320" width="200" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="19" id="LKVNJmnl5KVtJGUfMWQG">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="e4U8lxe0KMNHRsaQQKl7-0" />
+        <mxCell id="e4U8lxe0KMNHRsaQQKl7-1" parent="e4U8lxe0KMNHRsaQQKl7-0" />
+        <mxCell id="e4U8lxe0KMNHRsaQQKl7-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="e4U8lxe0KMNHRsaQQKl7-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="e4U8lxe0KMNHRsaQQKl7-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1: 40&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="e4U8lxe0KMNHRsaQQKl7-1">
+          <mxGeometry x="40" y="160" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e4U8lxe0KMNHRsaQQKl7-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2: 66&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="e4U8lxe0KMNHRsaQQKl7-1">
+          <mxGeometry x="40" y="200" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e4U8lxe0KMNHRsaQQKl7-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1:topo -&amp;gt; 81&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="e4U8lxe0KMNHRsaQQKl7-1">
+          <mxGeometry x="40" y="240" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e4U8lxe0KMNHRsaQQKl7-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="e4U8lxe0KMNHRsaQQKl7-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e4U8lxe0KMNHRsaQQKl7-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante: topo -&amp;gt; 12&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="e4U8lxe0KMNHRsaQQKl7-1">
+          <mxGeometry x="40" y="320" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="MiZXoe5ZRgOJw5tPMKtn-0" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;Var1 &amp;gt; Var2?&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="e4U8lxe0KMNHRsaQQKl7-1">
+          <mxGeometry x="400" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="20" id="ECf_W9ISqO8cHqSsyd06">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="3le_WfD3O7_bMiRNaNv6-0" />
+        <mxCell id="3le_WfD3O7_bMiRNaNv6-1" parent="3le_WfD3O7_bMiRNaNv6-0" />
+        <mxCell id="3le_WfD3O7_bMiRNaNv6-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="3le_WfD3O7_bMiRNaNv6-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="3le_WfD3O7_bMiRNaNv6-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1: 40&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="3le_WfD3O7_bMiRNaNv6-1">
+          <mxGeometry x="40" y="160" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3le_WfD3O7_bMiRNaNv6-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2:&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="3le_WfD3O7_bMiRNaNv6-1">
+          <mxGeometry x="40" y="200" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3le_WfD3O7_bMiRNaNv6-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1:topo -&amp;gt; 66 -&amp;gt; 81&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="3le_WfD3O7_bMiRNaNv6-1">
+          <mxGeometry x="40" y="240" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3le_WfD3O7_bMiRNaNv6-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="3le_WfD3O7_bMiRNaNv6-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3le_WfD3O7_bMiRNaNv6-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante: topo -&amp;gt; 12&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="3le_WfD3O7_bMiRNaNv6-1">
+          <mxGeometry x="40" y="320" width="200" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="21" id="VWGrCwnXxBuiz2aFUTUL">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="OSpl0nXeXFqzBIZgLHy8-0" />
+        <mxCell id="OSpl0nXeXFqzBIZgLHy8-1" parent="OSpl0nXeXFqzBIZgLHy8-0" />
+        <mxCell id="OSpl0nXeXFqzBIZgLHy8-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="OSpl0nXeXFqzBIZgLHy8-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="OSpl0nXeXFqzBIZgLHy8-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1:&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="OSpl0nXeXFqzBIZgLHy8-1">
+          <mxGeometry x="40" y="160" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OSpl0nXeXFqzBIZgLHy8-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2:&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="OSpl0nXeXFqzBIZgLHy8-1">
+          <mxGeometry x="40" y="200" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OSpl0nXeXFqzBIZgLHy8-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1:topo -&amp;gt; 66 -&amp;gt; 81&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="OSpl0nXeXFqzBIZgLHy8-1">
+          <mxGeometry x="40" y="240" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OSpl0nXeXFqzBIZgLHy8-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="OSpl0nXeXFqzBIZgLHy8-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OSpl0nXeXFqzBIZgLHy8-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante: topo -&amp;gt; 40 -&amp;gt; 12&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="OSpl0nXeXFqzBIZgLHy8-1">
+          <mxGeometry x="40" y="320" width="250" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="22" id="40UjcrfO2u3ua6JnA16c">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="lK5CunxQRAfBBMfH8VJy-0" />
+        <mxCell id="lK5CunxQRAfBBMfH8VJy-1" parent="lK5CunxQRAfBBMfH8VJy-0" />
+        <mxCell id="lK5CunxQRAfBBMfH8VJy-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lK5CunxQRAfBBMfH8VJy-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="lK5CunxQRAfBBMfH8VJy-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1:&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="lK5CunxQRAfBBMfH8VJy-1">
+          <mxGeometry x="40" y="160" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lK5CunxQRAfBBMfH8VJy-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2:&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="lK5CunxQRAfBBMfH8VJy-1">
+          <mxGeometry x="40" y="200" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lK5CunxQRAfBBMfH8VJy-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1:topo -&amp;gt; 66 -&amp;gt; 81&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="lK5CunxQRAfBBMfH8VJy-1">
+          <mxGeometry x="40" y="240" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lK5CunxQRAfBBMfH8VJy-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="lK5CunxQRAfBBMfH8VJy-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lK5CunxQRAfBBMfH8VJy-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante: topo -&amp;gt; 40 -&amp;gt; 12&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="lK5CunxQRAfBBMfH8VJy-1">
+          <mxGeometry x="40" y="320" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="jFUWAF0hPRDeVh-Ze89l-0" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;COPY&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="lK5CunxQRAfBBMfH8VJy-1">
+          <mxGeometry x="360" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="23" id="uXaiOXq6PiOX8XDCco_C">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="VR94jwN-jN4E3iXH5Ct1-0" />
+        <mxCell id="VR94jwN-jN4E3iXH5Ct1-1" parent="VR94jwN-jN4E3iXH5Ct1-0" />
+        <mxCell id="VR94jwN-jN4E3iXH5Ct1-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO:&amp;nbsp;&lt;/font&gt;&lt;span style=&quot;font-size: 18px; text-align: left; text-wrap: nowrap;&quot;&gt;66 -&amp;gt; 81&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="VR94jwN-jN4E3iXH5Ct1-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="VR94jwN-jN4E3iXH5Ct1-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1:&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="VR94jwN-jN4E3iXH5Ct1-1">
+          <mxGeometry x="40" y="160" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VR94jwN-jN4E3iXH5Ct1-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2:&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="VR94jwN-jN4E3iXH5Ct1-1">
+          <mxGeometry x="40" y="200" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VR94jwN-jN4E3iXH5Ct1-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="VR94jwN-jN4E3iXH5Ct1-1">
+          <mxGeometry x="40" y="240" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VR94jwN-jN4E3iXH5Ct1-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="VR94jwN-jN4E3iXH5Ct1-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VR94jwN-jN4E3iXH5Ct1-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante: topo -&amp;gt; 40 -&amp;gt; 12&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="VR94jwN-jN4E3iXH5Ct1-1">
+          <mxGeometry x="40" y="320" width="250" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="24" id="DgB6FT_SJK520rAeJubc">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="SvBCCfzpojfGEjT1WMbo-0" />
+        <mxCell id="SvBCCfzpojfGEjT1WMbo-1" parent="SvBCCfzpojfGEjT1WMbo-0" />
+        <mxCell id="SvBCCfzpojfGEjT1WMbo-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO:&lt;/font&gt;&lt;span style=&quot;font-size: 18px; text-align: left; text-wrap: nowrap;&quot;&gt;&amp;nbsp;81&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="SvBCCfzpojfGEjT1WMbo-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="SvBCCfzpojfGEjT1WMbo-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1:&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;66&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="SvBCCfzpojfGEjT1WMbo-1">
+          <mxGeometry x="40" y="160" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SvBCCfzpojfGEjT1WMbo-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2:&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="SvBCCfzpojfGEjT1WMbo-1">
+          <mxGeometry x="40" y="200" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SvBCCfzpojfGEjT1WMbo-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="SvBCCfzpojfGEjT1WMbo-1">
+          <mxGeometry x="40" y="240" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SvBCCfzpojfGEjT1WMbo-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="SvBCCfzpojfGEjT1WMbo-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="SvBCCfzpojfGEjT1WMbo-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante: topo -&amp;gt; 40 -&amp;gt; 12&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="SvBCCfzpojfGEjT1WMbo-1">
+          <mxGeometry x="40" y="320" width="250" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="25" id="NObmF4BqCWzMcQ-OXnBQ">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="vh8MXffzxbmUTieLhTJm-0" />
+        <mxCell id="vh8MXffzxbmUTieLhTJm-1" parent="vh8MXffzxbmUTieLhTJm-0" />
+        <mxCell id="vh8MXffzxbmUTieLhTJm-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="vh8MXffzxbmUTieLhTJm-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="vh8MXffzxbmUTieLhTJm-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1:&amp;nbsp;&lt;/span&gt;&lt;/font&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;66&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="vh8MXffzxbmUTieLhTJm-1">
+          <mxGeometry x="40" y="160" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vh8MXffzxbmUTieLhTJm-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2: 81&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="vh8MXffzxbmUTieLhTJm-1">
+          <mxGeometry x="40" y="200" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vh8MXffzxbmUTieLhTJm-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="vh8MXffzxbmUTieLhTJm-1">
+          <mxGeometry x="40" y="240" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vh8MXffzxbmUTieLhTJm-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="vh8MXffzxbmUTieLhTJm-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="vh8MXffzxbmUTieLhTJm-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante: topo -&amp;gt; 40 -&amp;gt; 12&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="vh8MXffzxbmUTieLhTJm-1">
+          <mxGeometry x="40" y="320" width="250" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="26" id="tQpH-_bDGf-HIU_7yXld">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="Ou6-QPVBQW0X5UsZhSUs-0" />
+        <mxCell id="Ou6-QPVBQW0X5UsZhSUs-1" parent="Ou6-QPVBQW0X5UsZhSUs-0" />
+        <mxCell id="Ou6-QPVBQW0X5UsZhSUs-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="Ou6-QPVBQW0X5UsZhSUs-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="Ou6-QPVBQW0X5UsZhSUs-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1:&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="Ou6-QPVBQW0X5UsZhSUs-1">
+          <mxGeometry x="40" y="160" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Ou6-QPVBQW0X5UsZhSUs-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2: 81&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="Ou6-QPVBQW0X5UsZhSUs-1">
+          <mxGeometry x="40" y="200" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Ou6-QPVBQW0X5UsZhSUs-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="Ou6-QPVBQW0X5UsZhSUs-1">
+          <mxGeometry x="40" y="240" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Ou6-QPVBQW0X5UsZhSUs-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="Ou6-QPVBQW0X5UsZhSUs-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Ou6-QPVBQW0X5UsZhSUs-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante: topo -&amp;gt; 66 -&amp;gt; 40 -&amp;gt; 12&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="Ou6-QPVBQW0X5UsZhSUs-1">
+          <mxGeometry x="40" y="320" width="290" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Fim" id="rdDyyOvmVLtp3e-CryWr">
+    <mxGraphModel dx="918" dy="526" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="KKOVhc-Pohu18tOHOof1-0" />
+        <mxCell id="KKOVhc-Pohu18tOHOof1-1" parent="KKOVhc-Pohu18tOHOof1-0" />
+        <mxCell id="KKOVhc-Pohu18tOHOof1-2" value="&lt;font style=&quot;font-size: 16px;&quot;&gt;TOPO&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="KKOVhc-Pohu18tOHOof1-1">
+          <mxGeometry x="10" y="10" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="KKOVhc-Pohu18tOHOof1-3" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar1:&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="KKOVhc-Pohu18tOHOof1-1">
+          <mxGeometry x="40" y="160" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KKOVhc-Pohu18tOHOof1-4" value="&lt;font style=&quot;font-size: 18px;&quot;&gt;V&lt;span style=&quot;background-color: initial;&quot;&gt;ar2:&lt;/span&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="KKOVhc-Pohu18tOHOof1-1">
+          <mxGeometry x="40" y="200" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KKOVhc-Pohu18tOHOof1-5" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha1:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="KKOVhc-Pohu18tOHOof1-1">
+          <mxGeometry x="40" y="240" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KKOVhc-Pohu18tOHOof1-6" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Pilha2:&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="KKOVhc-Pohu18tOHOof1-1">
+          <mxGeometry x="40" y="280" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="KKOVhc-Pohu18tOHOof1-7" value="&lt;span style=&quot;font-size: 18px;&quot;&gt;Resultante: topo -&amp;gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;81&lt;/span&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;-&amp;gt; 66 -&amp;gt; 40 -&amp;gt; 12&lt;/span&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="KKOVhc-Pohu18tOHOof1-1">
+          <mxGeometry x="40" y="320" width="340" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
