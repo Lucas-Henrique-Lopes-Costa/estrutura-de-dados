@@ -137,68 +137,14 @@ void torneio::imprime()
   cout << endl;
 }
 
-inline int torneio::pai(int i)
-{
-  return (i - 1) / 2;
-}
 
-inline int torneio::esquerdo(int i)
-{
-  return 2 * i + 1;
-}
-
-inline int torneio::direito(int i)
-{
-  return 2 * i + 2;
-}
-
-void torneio::arruma()
-{
-  for (int i = inicioDados - 1; i >= 0; i--)
-  {
-    copiaMaior(i);
-  }
-}
 
 int main()
 {
-  int tam = 9;
-  dado vet[] = {50,
-                2,
-                90,
-                20,
-                230,
-                43,
-                8,
-                34,
-                66};
+  int tam = 13;
+  dado vet[] = {11, 5, 3, 4, 2, 15, 7, 9, 10, 8, 12, 6, 13};
 
   torneio *h = new torneio(vet, tam);
   h->imprime();
   delete h;
-
-  tam = 13;
-  dado vet2[] = {50,
-                 2,
-                 90,
-                 20,
-                 230,
-                 43,
-                 8,
-                 34,
-                 66,
-                 100,
-                 110};
-  h = new torneio(vet2, tam);
-  h->imprime();
-  delete h;
-
-  tam = 9;
-  h = new torneio(tam);
-
-  for (int i = 0; i < tam; i++)
-  {
-    h->insere(vet[i]);
-    h->imprime();
-  }
 }
