@@ -186,9 +186,12 @@ void MaxHeap::insere(dado d)
     {
         cout << "Erro ao inserir" << endl;
     }
-    heap[tamanho] = d;
-    corrigeSubindo(tamanho);
-    tamanho++;
+    else
+    {
+        heap[tamanho] = d;
+        corrigeSubindo(tamanho);
+        tamanho++;
+    }
 }
 
 int MaxHeap::getTamanho()
