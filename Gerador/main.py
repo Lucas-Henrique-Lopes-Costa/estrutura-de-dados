@@ -23,7 +23,7 @@ def generate_cpp_files(html_file_path):
 
         # Formatar o nome do arquivo com base no nome da questão
         filename = re.sub(r"[^\w\s]", "", question_name)
-        filename = " ".join(filename.split()[1:])
+        filename = " ".join(filename.split()[1:2])
         filename = filename.lower() + ".cpp"
 
         # Gerar conteúdo para o arquivo .cpp
