@@ -59,7 +59,7 @@ MaxHeap::~MaxHeap()
 
 void MaxHeap::arruma()
 {
-  for (int i = tamanho / 2 - 1; i >= 0; i--)
+  for (int i = tamanho / 2 - 1; i >= 0; i--) // O último nó com filhos
   {
     corrigeDescendo(i);
   }

@@ -208,31 +208,25 @@ void MaxHeap::alteraPrioridade(string nome, int prioridade)
 {
     bool encontrado = false;
 
-    dado NovoHeap;
-
     int i = 0;
     while (i < tamanho && !encontrado)
     {
         if (heap[i].nomeTarefa == nome)
         {
-            NovoHeap.nomeTarefa = heap[i].nomeTarefa;
-            NovoHeap.tipoTarefa = heap[i].tipoTarefa;
-            NovoHeap.energiaGasta = heap[i].energiaGasta;
-            NovoHeap.tipoTarefa = heap[i].tempoEstimado;
-            NovoHeap.prioridade = prioridade;
+            heap[i].prioridade = prioridade;
+            encontrado = true;
         }
-
-        heap[i].nomeTarefa = " ";
-        heap[i].tipoTarefa = ' ';
-        heap[i].energiaGasta = 0;
-        heap[i].tempoEstimado = 0;
-        heap[i].prioridade = 0;
-
-        retiraRaiz();
-        insere(NovoHeap);
-
-        encontrado = true;
         i++;
+    }
+
+    if (encontrado)
+    {
+        corrigeDescendo(i - 1);
+        corrigeSubindo(i - 1);
+    }
+    else
+    {
+        cout << "Erro ao alterar prioridade" << endl;
     }
 }
 

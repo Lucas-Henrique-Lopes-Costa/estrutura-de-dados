@@ -23,9 +23,92 @@ Exemplo de Saída:
 */
 
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-int main() {
-    // Seu código aqui
+struct Participante
+{
+    int valorBase;
+    int valorRelativo;
+
+    Participante(int valor) : valorBase(valor), valorRelativo(valor) {}
+};
+
+class Torneio
+{
+private:
+    vector<Participante> participantes;
+    void competir(int i);
+
+public:
+    Torneio(const vector<int> &valores);
+    void executarTorneio();
+    void verBaseMaior();
+};
+
+Torneio::Torneio(const vector<int> &valores)
+{
+    for (size_t i = 0; i < valores.size(); ++i)
+    {
+        int valor = valores[i];
+        participantes.push_back(Participante(valor));
+    }
+}
+
+void Torneio::competir(int i)
+{
+    int esq = 2 * i + 1;
+    int dir = 2 * i + 2;
+    int vencedor = i;
+
+    if (esq < static_cast<int>(participantes.size()))
+    {
+        vencedor = esq;
+
+        if (dir < static_cast<int>(participantes.size()))
+        {
+            if (participantes[dir].valorRelativo > participantes[esq].valorRelativo ||
+                (participantes[dir].valorRelativo == participantes[esq].valorRelativo && participantes[dir].valorBase > participantes[esq].valorBase))
+            {
+                vencedor = dir;
+            }
+        }
+
+        if (vencedor != i)
+        {
+            participantes[i].valorRelativo = participantes[vencedor].valorRelativo - (participantes[vencedor].valorRelativo - participantes[esq + (dir - esq) * (vencedor == dir)].valorRelativo);
+            participantes[i].valorBase = participantes[vencedor].valorBase;
+        }
+    }
+}
+
+void Torneio::executarTorneio()
+{
+    for (int i = participantes.size() / 2 - 1; i >= 0; --i)
+    {
+        competir(i);
+    }
+}
+
+void Torneio::verBaseMaior()
+{
+    cout << participantes[0].valorBase << endl;
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+    vector<int> valores(n);
+    for (int i = 0; i < n; ++i)
+    {
+        cin >> valores[i];
+    }
+
+    Torneio torneio(valores);
+    torneio.executarTorneio();
+    torneio.verBaseMaior();
+
     return 0;
 }
