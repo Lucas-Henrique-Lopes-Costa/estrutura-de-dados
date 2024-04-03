@@ -1,13 +1,14 @@
 /*
-Modifique a sua estrutura heap para que considere a maior prioridade de execução de uma tarefa. No caso considere a tarefa com maior prioridade indicada pelo valor 1 e a medida que o valor aumenta a prioridade diminui. Implemente o método alteraPrioridade() nessa minheap. A alteração de prioridade implica que o dado alterado deva ser rearranjado, de forma a manter as propriedades do heap.
-
-Você pode (e deve!) utilizar o código que você desenvolveu na atividade "Heap - Organização de um robô domestico" como base.
-
+Questão 3: Minheap - Organização de um robô domestico - Alterar prioridade de um dado
+Modifique a sua estrutura heap para que considere a maior prioridade de execução de uma tarefa. No caso considere a tarefa com maior prioridade indicada pelo valor 1 e a medida que o valor aumenta a prioridade diminui. Implemente o método
+alteraPrioridade()
+nessa minheap. A alteração de prioridade implica que o dado alterado deva ser rearranjado, de forma a manter as propriedades do heap.
+Você pode (
+e deve!
+) utilizar o código que você desenvolveu na atividade "Heap - Organização de um robô domestico" como base.
 Com essa finalidade, você deverá adicionar mais um comando, como segue:
-
 a seguindo de uma string e um inteiro: altera a prioridade da atividade com o nome informado com o novo valor.
 Exemplo de Entrada e Saída juntas:
-
 10
 r
 Erro ao retirar raiz
@@ -42,11 +43,9 @@ f
 #include <iostream>
 #include <utility>   // para usar swap
 #include <stdexcept> // para usar exceção com runtime_error
-#include <cstring>   // para usar memcpy
 
 using namespace std;
 
-// Definição da estrutura de dados para armazenar informações de uma tarefa
 struct dado
 {
     string nomeTarefa;
@@ -56,124 +55,124 @@ struct dado
     int prioridade;
 };
 
-// Sobrecarga do operador > para comparar dados
 bool operator>(dado d1, dado d2)
 {
-    return ((d1.prioridade > d2.prioridade) or ((d1.prioridade == d2.prioridade) and (d1.energiaGasta < d2.energiaGasta)));
+    return d1.prioridade < d2.prioridade;
 }
 
-// Sobrecarga do operador < para comparar dados
 bool operator<(dado d1, dado d2)
 {
-    return ((d1.prioridade < d2.prioridade) or ((d1.prioridade == d2.prioridade) and (d1.energiaGasta > d2.energiaGasta)));
+    return d1.prioridade > d2.prioridade;
 }
 
-// Sobrecarga do operador de saída para imprimir informações de uma tarefa
 ostream &operator<<(ostream &output, const dado &d)
 {
     output << "[" << d.nomeTarefa << "/" << d.tipoTarefa << "/" << d.energiaGasta << "/" << d.tempoEstimado << "/" << d.prioridade << "]";
     return output;
 }
 
-// Classe Heap
-class Heap
+class MaxHeap
 {
 private:
-    dado *heap;                  // Array para armazenar os dados
-    int capacidade;              // Capacidade máxima da heap
-    int tamanho;                 // Tamanho atual da heap
-    inline int pai(int i);       // Método para retornar o índice do pai de um nó
-    inline int esquerdo(int i);  // Método para retornar o índice do filho esquerdo de um nó
-    inline int direito(int i);   // Método para retornar o índice do filho direito de um nó
-    void corrigeDescendo(int i); // Método para corrigir a heap descendo a partir do índice fornecido
-    void corrigeSubindo(int i);  // Método para corrigir a heap subindo a partir do índice fornecido
-    void arruma();               // Método para arrumar a heap
+    dado *heap;
+    int capacidade;
+    int tamanho;
+    inline int pai(int i);
+    inline int esquerdo(int i);
+    inline int direito(int i);
+    void corrigeDescendo(int i);
+    void corrigeSubindo(int i);
+
 public:
-    Heap(int cap);                                             // Construtor da classe
-    ~Heap();                                                   // Destrutor da classe
-    void imprime();                                            // Método para imprimir a heap
-    dado retiraRaiz();                                         // Método para retirar a raiz da heap
-    void insere(dado d);                                       // Método para inserir um dado na heap
-    int getTamanho();                                          // Método para retornar o tamanho atual da heap
-    void altPrioridade(string nomeTarefa, int novaPrioridade); // Método para alterar a prioridade de uma tarefa
+    MaxHeap(int cap);
+    ~MaxHeap();
+    void imprime();
+    dado retiraRaiz();
+    void insere(dado d);
+    int getTamanho();
+    void alteraPrioridade(string nome, int prioridade);
 };
 
-// Implementação dos métodos da classe Heap
-
-Heap::Heap(int cap)
+MaxHeap::MaxHeap(int cap)
 {
     capacidade = cap;
-    tamanho = 0;
     heap = new dado[cap];
+    tamanho = 0;
 }
 
-Heap::~Heap()
+MaxHeap::~MaxHeap()
 {
+    capacidade = 0;
     delete[] heap;
 }
 
-int Heap::pai(int i)
+int MaxHeap::pai(int i)
 {
     return (i - 1) / 2;
 }
 
-int Heap::esquerdo(int i)
+int MaxHeap::esquerdo(int i)
 {
     return 2 * i + 1;
 }
 
-int Heap::direito(int i)
+int MaxHeap::direito(int i)
 {
     return 2 * i + 2;
 }
 
-void Heap::corrigeDescendo(int i)
+void MaxHeap::corrigeDescendo(int i)
 {
-    int menor = i;
-    int esquerda = esquerdo(i);
-    int direita = direito(i);
-    if (esquerda < tamanho and heap[esquerda] < heap[menor])
+    int esq = esquerdo(i);
+    int dir = direito(i);
+    int maior = i;
+
+    if (esq < tamanho && heap[esq] > heap[maior])
     {
-        menor = esquerda;
+        maior = esq;
     }
-    if (direita < tamanho and heap[direita] < heap[menor])
+
+    if (dir < tamanho && heap[dir] > heap[maior])
     {
-        menor = direita;
+        maior = dir;
     }
-    if (menor != i)
+
+    if (maior != i)
     {
-        swap(heap[i], heap[menor]);
-        corrigeDescendo(menor);
+        swap(heap[i], heap[maior]);
+        corrigeDescendo(maior);
     }
 }
 
-void Heap::corrigeSubindo(int i)
+void MaxHeap::corrigeSubindo(int i)
 {
-    int mPai = pai(i);
-    if (heap[i] < heap[mPai])
+    int p = pai(i);
+
+    if (heap[i] > heap[p])
     {
-        swap(heap[mPai], heap[i]);
-        corrigeSubindo(mPai);
+        swap(heap[i], heap[p]);
+        corrigeSubindo(p);
     }
 }
 
-void Heap::imprime()
+void MaxHeap::imprime()
 {
     if (tamanho > 0)
     {
         for (int i = 0; i < tamanho; i++)
         {
-            cout << heap[i] << " ";
+            if (heap[i].nomeTarefa != " ")
+                cout << heap[i] << " ";
         }
         cout << endl;
     }
     else
     {
-        cout << "Heap vazia!\n";
+        cout << "Heap vazia!" << endl;
     }
 }
 
-dado Heap::retiraRaiz()
+dado MaxHeap::retiraRaiz()
 {
     dado aux = heap[0];
     swap(heap[0], heap[tamanho - 1]);
@@ -182,110 +181,103 @@ dado Heap::retiraRaiz()
     return aux;
 }
 
-void Heap::insere(dado d)
+void MaxHeap::insere(dado d)
 {
-    if (tamanho < capacidade)
+    if (tamanho == capacidade)
+    {
+        cout << "Erro ao inserir" << endl;
+    }
+    else
     {
         heap[tamanho] = d;
         corrigeSubindo(tamanho);
         tamanho++;
     }
-    else
-    {
-        cout << "Erro ao inserir\n";
-    }
 }
 
-int Heap::getTamanho()
+int MaxHeap::getTamanho()
 {
     return tamanho;
 }
 
-void Heap::arruma()
+void MaxHeap::alteraPrioridade(string nome, int prioridade)
 {
-    for (int i = tamanho / 2 - 1; i >= 0; i--)
-    {
-        corrigeDescendo(i);
-    }
-}
+    bool encontrado = false;
 
-// Pode ter algum trecho perigoso de código aqui, mas não achei nada que pudesse ser melhorado
-void Heap::altPrioridade(string nomeTarefa, int novaPrioridade)
-{
-    Heap aux(tamanho);
-    dado auxDado;
-    while (tamanho > 0)
+    int i = 0;
+    while (i < tamanho && !encontrado)
     {
-        auxDado = retiraRaiz();
-        if (auxDado.nomeTarefa == nomeTarefa)
+        if (heap[i].nomeTarefa == nome)
         {
-            auxDado.prioridade = novaPrioridade;
+            heap[i].prioridade = prioridade;
+            encontrado = true;
         }
-        aux.insere(auxDado);
+        i++;
     }
-    memcpy(heap, aux.heap, sizeof(dado) * aux.tamanho);
-    tamanho = aux.tamanho;
+
+    if (encontrado)
+    {
+        corrigeDescendo(i - 1);
+        corrigeSubindo(i - 1);
+    }
+    else
+    {
+        cout << "Erro ao alterar prioridade" << endl;
+    }
 }
 
-// Função principal
 int main()
 {
     int capacidade;
     dado info;
     char comando;
-    string nomeTarefa;
 
-    // Leitura da capacidade da heap
     cin >> capacidade;
-    Heap meuHeap(capacidade);
+    MaxHeap meuHeap(capacidade);
 
     do
     {
         try
         {
-            // Leitura do comando
             cin >> comando;
             switch (comando)
             {
             case 'i': // inserir
-                // Leitura das informações da tarefa
                 cin >> info.nomeTarefa >> info.tipoTarefa >> info.energiaGasta >> info.tempoEstimado >> info.prioridade;
-                // Inserção da tarefa na heap
                 meuHeap.insere(info);
                 break;
             case 'r': // remover
-                // Remoção da raiz da heap e impressão do nome da tarefa removida
                 if (meuHeap.getTamanho() > 0)
                 {
                     cout << meuHeap.retiraRaiz().nomeTarefa << endl;
                 }
                 else
                 {
-                    cout << "Erro ao retirar raiz\n";
+                    cout << "Erro ao retirar raiz" << endl;
                 }
                 break;
             case 'p': // limpar tudo
-                // Impressão de todas as tarefas na heap
+            {
                 meuHeap.imprime();
                 break;
-            case 'a': // alterar prioridade
-                int novaPrioridade;
-                // Leitura do nome da tarefa e da nova prioridade
-                cin >> nomeTarefa >> novaPrioridade;
-                // Alteração da prioridade da tarefa
-                meuHeap.altPrioridade(nomeTarefa, novaPrioridade);
+            }
+            case 'a':
+            {
+                string nomeTarefa;
+                int prioridade;
+                cin >> nomeTarefa >> prioridade;
+                meuHeap.alteraPrioridade(nomeTarefa, prioridade);
                 break;
+            }
             case 'f': // finalizar
-                // Finaliza a execução do programa
+                // checado no do-while
                 break;
             default:
-                // Comando inválido
                 cerr << "comando inválido\n";
             }
         }
         catch (runtime_error &e)
         {
-            // Tratamento de exceção
             cout << e.what() << endl;
         }
     } while (comando != 'f'); // finalizar execução
