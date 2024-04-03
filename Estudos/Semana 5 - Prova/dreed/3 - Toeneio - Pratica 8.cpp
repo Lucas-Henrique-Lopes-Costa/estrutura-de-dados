@@ -45,7 +45,7 @@ private:
     int capacidade;                          // Capacidade total da heap
     int inicioDados;                         // Índice onde começam os dados reais na heap
     bool competirMaior;                      // Variável para alternar entre competir pelo maior ou menor valor
-    inline int pai(int filho);               // Função auxiliar para encontrar o pai de um nó na heap
+    inline int pai(int filho);                // Função auxiliar para encontrar o pai de um nó na heap
     inline int esquerda(int getPai);         // Função auxiliar para encontrar o filho esquerdo de um nó na heap
     inline int direita(int getPai);          // Função auxiliar para encontrar o filho direito de um nó na heap
     void arruma();                           // Método para organizar a heap
