@@ -1,0 +1,4976 @@
+Tipos Abstratos de Dados 
+-TADs
+
+Joaquim Quinteiro Uchôa,
+Juliana Galvani Greghi,
+Renato Ramos da Silva
+
+
+
+● TADs e POO
+● Conceitos Básicos de POO
+● Visibilidade e 
+
+Encapsulamento
+● Implementando Classes
+
+Roteiro ● Construtores e 
+Destrutores / Sobrecarga  
+de Métodos
+
+● Atributos Alocados 
+Dinamicamente
+
+● Sobrecarga de Operadores
+● Projeto de Classes
+
+2
+
+
+
+TADs e POO
+
+3
+
+
+
+Tipos Abstratos de Dados - i
+Representação abstrata de dados a serem 
+utilizados com foco nas operações a serem 
+realizadas, sem se preocupar com detalhes de 
+implementação. 
+
+Tipo de dado independente de sua representação.
+
+
+
+Tipos Abstratos de Dados - II
+Pensemos no exemplo de representar um estudante. 
+Sem abstração, estudantes seriam representados por 
+variáveis soltas (nome, idade, matrícula, etc.):
+
+string nome;
+int idade;
+int matricula;
+
+Para o desenvolvedor, podem ser encaradas como 
+variáveis independentes, sem ligação direta.
+
+5
+
+
+
+Tipos Abstratos de Dados - III
+Usando a visão de tipos abstratos de dados, um 
+algoritmo é projetado tendo-se como base que não 
+há o nome, idade e matrícula do estudante, mas 
+simplesmente o tipo estudante. 
+
+Este tipo, como um tipo simples (inteiro ou 
+string), deve ter operadores próprios. Assim, TAD 
+estudante deve possuir operações desejáveis ao 
+programador, como validar a matrícula, verificar 
+idade, etc. 6
+
+
+
+Tipos Abstratos de Dados - IV
+Uma representação em estilo de estruturas já 
+ajuda melhor a visualizar um TAD:
+
+struct estudante {
+string nome;
+int idade;
+int matricula;
+
+};
+
+7
+
+
+
+Tipos Abstratos de Dados - V
+Entretanto... como as operações em registros são 
+implementadas geralmente como funções separadas 
+dos registros, não há como garantir que as 
+operações garantam a interdependência dos campos. 
+
+Assim, uma melhor abordagem é o uso de classes, 
+um dos pilares da orientação a objetos. 
+
+8
+
+
+
+Programação OrientadA a Objetos
+Conjunto de princípios 
+que orientam a criação de 
+sistemas computacionais 
+abordando os problemas e 
+suas soluções como 
+objetos que interagem 
+entre si.
+
+
+
+Paradigma Orientado a Objetos
+A programação orientada a objetos (POO) geralmente 
+implica em mudança de visão para a programação. Para 
+parte dos pesquisadores é apenas uma evolução da 
+programação estruturada. 
+
+Entretanto, a maior parte dos pesquisadores entendem 
+esse tipo de programação como um paradigma, uma vez 
+que implica em formas diferenciadas de desenvolvimento 
+de software. 
+
+
+
+Suporte a POO em Linguagens
+POO é suportada por várias linguagens (ex: C++, 
+Python, Ruby, C#, atualmente sua maior expressão 
+comercial é dada pelo Java).
+
+Em nosso curso, usaremos técnicas básicas de POO em 
+C++. 
+
+
+
+Conceitos Básicos 
+de POO
+
+12
+
+
+
+Pilares do Paradigma Orientado a Objetos
+Existem quatro conceitos fundamentais (pilares) que 
+norteiam o desenvolvimento POO:
+
+- Abstração;
+- Encapsulamento;
+- Herança;
+- Polimorfismo.
+
+
+
+Pilares do Paradigma Orientado a Objetos
+Existem quatro conceitos fundamentais (pilares) que 
+norteiam o desenvolvimento POO:
+
+- Abstração;
+- Encapsulamento;
+- Herança;
+- Polimorfismo.
+
+Neste curso só iremos abordar, e apenas os elementos básicos, dos dois primeiros 
+pilares. O aprofundamento e os outros dois pilares serão vistos em curso específico.
+
+
+
+Abstração
+Representação de uma entidade do mundo real, 
+com seu comportamento e características: 
+
+❏ Objetos;
+❏ Classes;
+❏ Atributos;
+❏ Métodos.
+
+
+
+Objetos
+- Um objeto pode ser entendido como um ser, 
+
+lugar, evento, coisa ou conceito do mundo real 
+ou imaginário que possa ser aplicável a um 
+sistema.
+
+- É comum que haja objetos diferentes com 
+características semelhantes. Esses objetos são 
+agrupados em classes.
+
+
+
+Classes
+Uma classe é um tipo abstrato de dados, que reúne 
+objetos com características similares. 
+
+O comportamento destes objetos é descrito pelo 
+conjunto de métodos disponíveis e o conjunto de 
+atributos da classe descrevem as características 
+de um objeto. 
+
+
+
+Exemplo: Uma Classe Estudante
+class estudante {
+  private:
+    string nome;
+    int idade;
+    int matricula;
+    string disciplinas[10];
+  public:
+    void inicializarDados(string n, int i, int m);
+    void imprimirDados();
+    bool matricularEmDisciplina(string disciplina);
+};
+
+18
+
+
+
+Atributos
+- Um atributo é uma característica de um grupo de 
+
+entidades do mundo real, agrupados em uma 
+classe.
+
+- Um atributo pode ser um valor simples (um 
+inteiro, por exemplo) ou estruturas complexas 
+(um outro objeto, por exemplo).
+
+
+
+Exemplo
+class Foo {
+  private:
+
+Considere a classe Foo.     int n;
+Seus atributos são um     char c;
+
+    float f;
+número inteiro n, um     string s; 
+caractere c, um número real     int* vet; 
+
+  public:
+f, uma cadeia de caracteres     bool inicializa();
+(string) s e um ponteiro     bool finaliza();
+
+    float calcula(int x);
+para o tipo inteiro vet.     void imprime();  
+
+};
+
+
+
+Métodos
+- Semelhante a uma função, é a implementação de 
+
+uma ação da entidade representada pela classe;
+- Conjunto de métodos define o comportamento dos 
+
+objetos de uma classe.
+
+
+
+Exemplo
+class Foo {
+  private:
+
+Considere a classe Foo.     int n;
+Seus métodos são:     char c;
+
+    float f;
+inicializa(),     string s; 
+finaliza(),     int* vet; 
+
+  public:
+calcula()     bool inicializa();
+e imprime().     bool finaliza();
+
+    float calcula(int x);
+    void imprime();  
+};
+
+
+
+Exemplo: Uma Classe Estudante
+class estudante {
+  private: Atributos
+    string nome;
+    int idade; Métodos
+    int matricula;
+    string disciplinas[10];
+  public:
+    void inicializarDados(string n, int i, int m);
+    void imprimirDados();
+    bool matricularEmDisciplina(string disciplina);
+};
+
+23
+
+
+
+E o tal do Objeto?
+Classes são um agrupamento de objetos com 
+características  similares!
+
+Objetos são entidades (instâncias) únicas de uma 
+classe!
+
+Em C++: classes definem tipos, objetos são 
+instanciados em variáveis.
+
+
+
+Exemplo - Objetos da Classe Estudante 
+int main() {
+    estudante aluno1;
+    estudante sala[20];
+    ...
+    ...
+}
+    
+
+25
+
+
+
+Exemplo - Objetos da Classe Estudante 
+int main() {
+    estudante aluno1; Um único objeto da 
+
+classe estudante
+    estudante sala[20];
+    ...
+    ... Um vetor de objetos 
+
+da classe estudante
+}
+    
+
+26
+
+
+
+Visibilidade e 
+Encapsulamento
+
+27
+
+
+
+Visibilidade
+- A visibilidade é utilizada para indicar o nível de 
+
+acesso de um determinado atributo ou método;
+- Três modos distintos:
+
+- Público;
+- Privado;
+- Protegido.
+
+
+
+Visibilidade
+- A visibilidade é utilizoabdjae topsa drea  qiunadisiqcuaerr  cola snsíevse plo ddeem  
+
+acesso de um determinadtoe r aatcreissbou ta oa troiub umtoést oud om;étodos 
+
+- Três modos distintos: públicos.
+
+- Público 
+- Privado
+- Protegido
+
+
+
+Visibilidade
+- A visibilidade é utilizada para indicar o nível de 
+
+acesso de um determinado aapterniabs uat cola sosue  qmuéet oddeofi;ne atributos 
+- Três modos distintos: ou métodos privados pode ter acesso 
+
+- Público a eles.
+- Privado
+- Protegido
+
+
+
+Visibilidade
+- A visibilidade é utilizada para indicar o nível de 
+
+acesso de um determinado atributo ou método;
+- Três modos distintos: apenas a classe que define atributos 
+
+- Público ou métodos protegidos, ou classes 
+
+- Privado filhas,  podem ter acesso a eles.
+
+- Protegido
+
+
+
+Visibilidade
+- A visibilidade é utilizada para indicar o nível de 
+
+acesso de um determinaadpoe naatsr ai cbluatssoe  oquu em déetfiondeo a;tributos 
+- Três modos distintos: ou métodos protegidos, ou classes 
+
+- Público filhas,  podem ter acesso a eles.
+- Privado
+- Protegido Sem uso de herança, o modo 
+
+protegido funciona de 
+maneira similar ao privado.
+
+
+
+Exemplo de Visibilidade
+class Foo {
+  private:
+
+Na classe Foo, os     int n;
+atributos estão     char c;
+privados, enquanto os     float f;
+métodos estão todos     string s; 
+públicos.     int* vet; 
+
+  public:
+Isso implica que os     bool inicializa();
+atributos só podem     bool finaliza();
+ser acessados por     float calcula(int x);
+
+métodos da classe.     void imprime();  
+};
+
+33
+
+
+
+Encapsulamento
+❏ Ocultação de dados;
+❏ Possibilita o melhor aproveitamento dos componentes do 
+
+software, facilitando:
+❏ Entendimento
+❏ Reuso
+❏ Manutenção
+
+34
+
+
+
+Encapsulamento
+❏ Minimiza a interdependência;
+❏ Não se conhece seu funcionamento internamente, apenas se 
+
+sabe como utilizar;
+❏ A classe define as operações/atributos acessíveis a 
+
+outras classes.
+❏ Possui como vantagens:
+
+❏ Segurança;
+❏ Independência;
+❏ Elevado grau de abstração.
+
+❏ Impactado pela amizade entre classes (friend).
+
+35
+
+
+
+Classes e Funções “AmigAs”
+Em alguns casos, pode ser interessante permitir 
+que outras classes ou funções externas possam 
+acessar os dados privados, sem modificar o 
+encapsulamento.
+
+Em C++, isso é feito por 
+meio da diretiva friend. 
+
+
+
+Exemplo de Função AmigA class Foo {
+  friend void dobra(Foo f); 
+
+O procedimento dobra   private:
+foi declarado como     int n;
+
+amigo da classe Foo.     char c;
+    float f;
+
+Nesse caso, esse     string s; 
+
+procedimento consegue   ...
+  ...  
+
+acessar e alterar };
+atributos privados de 
+Foo. void dobra(Foo f){
+
+  f.n = 2* f.n;
+}
+
+37
+
+
+
+Implementando 
+Classes
+
+38
+
+
+
+Implementação dos Métodos
+class Foo {
+  private:
+
+A classe Foo     int n;
+encontra-se declarada,     char c;
+entretanto é necessário     float f;
+implementar seus     string s; 
+métodos.     int* vet; 
+
+  public:
+A implementação dos     bool inicializa();
+métodos de uma classe     bool finaliza();
+pode ser feita interna     float calcula(int x);
+
+ou externamente à     void imprime();  
+};
+
+classe.
+39
+
+
+
+Formas de Implementação dos Métodos da Classe
+Os métodos em uma classe podem ser implementados:
+
+● diretamente na classe, logo após a declaração, 
+o que é chamado de implementação inline;
+
+● externamente, utilizando o operador de escopo 
+(::), para indicar que o método pertence à 
+classe.
+
+40
+
+
+
+Implementação Interna ...
+    bool finaliza() {
+      delete[] vet;
+
+class Foo {       return true;
+ ...     }
+public:
+    bool inicializa() {     float calcula(int x) {
+      n = 0;       return x * f;
+      c = 'a';     }
+      f = 0;
+      s = "a";     void imprime() {
+      vet = new int[10];       cout << n << " " 
+      return true;            << c << " "
+    }            << f << " " 
+    ...            << s << endl;
+
+    }
+}; 41
+
+  
+
+
+
+Implementação Externa bool Foo::finaliza() {
+  delete[] vet;
+
+class Foo {   return true;
+ ... }
+};
+
+float Foo::calcula(int x) {
+      return x * f;
+
+bool Foo::inicializa() { }
+  n = 0;
+  c = 'a'; void Foo::imprime() {
+  f = 0;   cout << n << " " 
+  s = "a";        << c << " "
+  vet = new int[10];        << f << " " 
+  return true;        << s << endl;
+} }
+
+  42
+
+
+
+Funções Inline - I
+Uma função inline é uma sugestão para o 
+compilador fazer uma cópia de seu código ao invés 
+da chamada de função. Isso gera um pequeno 
+aumento de eficiência. 
+
+Geralmente usa-se inline com funções pequenas e 
+que são chamadas com frequência.
+
+O compilador pode aceitar ou não a sugestão, 
+dependendo, inclusive, de opções de otimização.
+
+43
+
+
+
+Funções Inline - II
+Funções ou procedimentos que são implementados 
+dentro da declaração da classe são compiladas 
+como inline.
+
+Outra alternativa é usar a diretiva inline antes 
+da declaração da função.
+
+44
+
+
+
+Função Inline - Exemplo
+class Foo {
+ ...
+    bool finaliza() { Nesse caso, 
+      delete[] vet; finaliza() e  
+      return true;
+    } calcula() são 
+    ... funções inline.
+    inline float calcula(int x);
+ ...
+};
+
+float Foo::calcula(int x) {
+      return x * f;
+} 45
+
+
+
+Implementação Interna ou Externa? - I
+Uma diferença prática entre implementação interna 
+ou externa é que a interna é automaticamente 
+inline. 
+
+É importante lembrar que inline é apenas uma 
+sugestão ao compilador e pode não ser acatada. 
+Além disso pode-se usar a diretiva inline com 
+implementação externa. 
+
+46
+
+
+
+Implementação Interna ou Externa? - II
+A implementação externa permite que o código seja 
+separado em arquivos diferentes: um arquivo .h ou 
+.hpp com a declaração (o cabeçalho) e um arquivo 
+.cpp com a implementação dos métodos. 
+
+Nesse caso, pode-se disponibilizar a 
+implementação já compilada em forma de 
+código-objeto, sem necessidade de disponibilizar 
+o código da implementação.
+
+47
+
+
+
+Implementação Interna ou Externa? - III
+Tirando-se os detalhes da declaração inline 
+automática, ou a possibilidade de 
+disponibilização de bibliotecas sem o 
+código-fonte da implementação, na grande maioria 
+dos casos a opção por implementação interna ou 
+externa é uma questão de estilo. 
+
+É importante que o aluno tenha contato com as 
+duas formas de desenvolvimento.
+
+48
+
+
+
+Um exemplo passo a passo: vectorx
+Vetores tradicionais (arrays) não possuem 
+controle de tamanho, o que pode gerar erros de 
+acesso a posições indevidas. Também não possuem 
+recurso para impressão. 
+
+Um TAD específico poderia acrescentar essas e 
+outras funcionalidades.
+
+Vamos a um passo a passo de construção desse TAD, 
+inicialmente usando registros.
+
+
+
+VectorX: Implementação utilizando registros puros
+Arquivo vecstruct1.cpp
+
+Poucas modificações seriam necessários nesse 
+código para funcionamento em C puro.
+
+É um código de difícil manutenção, sendo 
+complicado verificar erros e adicionar novos 
+recursos.
+
+
+
+VectorX: Implementação utilizando registros de C++
+Arquivo vecstruct2.cpp
+
+Em C++ é possível usar métodos dentro de estruturas. 
+O código é mais claro e fácil de manter.
+
+Em C++ estruturas (structs) são apenas classes em 
+que tudo é público por padrão. Assim, falta 
+encapsulamento.
+
+O exemplo também pode ser melhorado usando 
+construtores e destrutores.
+
+
+
+Construtores e 
+Destrutores / 
+Sobrecarga de Métodos
+
+52
+
+
+
+Construtores
+Um construtor é um método especial para a criação e 
+inicialização de uma nova instância de uma classe. 
+
+Um construtor inicializa um objeto e suas variáveis, cria 
+quaisquer outros objetos de que ele precise,  garantindo que 
+ele seja configurado corretamente quando criado. 
+
+Na maioria das linguagens de programação, o construtor é um 
+método que tem o mesmo nome da classe, que geralmente é 
+chamado quando um objeto da classe é declarado ou 
+instanciado.
+
+
+
+Destrutores
+De forma similar aos construtores, os destrutores são 
+métodos fundamentais das classes, sendo geralmente chamados 
+quando termina o tempo de vida do objeto. 
+
+Em algumas linguagens, como C++, ocupam papel tão importante 
+quanto os construtores, por conta da necessidade de 
+desalocação de memória.
+
+54
+
+
+
+Construtor/Destrutor class Foo {
+ ...
+public:
+
+Em C++, o construtor tem o     Foo() {
+próprio nome da classe sem       n = 0;
+
+definição de tipo (já que o       c = 'a';
+      f = 0;
+
+tipo é a própria classe).       s = "a";
+
+O destrutor, em C++, é       vet = new int[10];   
+    }
+
+indicado pelo nome da     ~Foo() {
+classe, precedido de do til       delete[] vet;
+(~), também sem definição     }
+de tipo.  ...
+
+};
+55
+
+
+
+Inicialização de atributos em construtores - i
+Atributos em classes são inicializados geralmente 
+de duas maneiras: 
+
+● inicialização direta
+● inicialização em lista (repasse ao construtor 
+
+do atributo)
+
+
+
+Inicialização de atributos em construtores - ii
+class myClass myClass::myClass(float f, char a,  
+{     bool b, int i) : 
+  public:        // inicialização em lista
+    myClass(float f, char a,        mFloat( f ), mBoolean( true ) 
+
+bool b, int i); {
+  private:     // inicialização direta
+    float mFloat;     mCharacter = a;
+    char mCharacter;     mInteger = 0;
+    bool mBoolean; }
+    int mInteger;
+};  
+
+
+
+Inicialização de atributos em construtores - iii
+Apesar de a inicialização direta ser mais comum 
+entre os desenvolvedores,  pode ser mais 
+eficiente utilizar inicialização em lista 
+(depende do compilador). Ainda: 
+
+● atributos constantes ou referências só podem 
+ser inicializados em lista;
+
+● vetores ou estruturas sem construtores só podem 
+ser inicializados diretamente.
+
+
+
+Sobrecarga de Métodos - i
+Em C++, é possível ter vários métodos diferentes 
+com o mesmo nome, desde que os parâmetros 
+utilizados sejam diferentes:
+
+int foo(int x);
+float foo(float f);
+int foo(char c);
+float foo(float f, char c, int b);
+
+
+
+Sobrecarga de Métodos - ii
+Note que não é possível utilizar essa abordagem 
+com o mesmo conjunto de parâmetros, o seguinte 
+trecho não funcionaria:
+
+int   foo(int x, float f);
+float foo(int x, float f);
+
+
+
+Sobrecarga de Métodos - iii
+Como a ordem dos parâmetros é importante , o 
+seguinte trecho funcionaria sem problemas:
+
+int   foo(float f, int x);
+float foo(int x, float f);
+
+
+
+Sobrecarga de Métodos - IV
+Construtores também podem class Foo {
+ser sobrecarregados.  ...
+
+Assim, é possível ter     Foo();
+inicialização de objetos de     Foo(int n);
+maneiras diferenciadas, de     Foo(int n, float f);
+acordo com os parâmetros 
+utilizados.  ...
+
+};
+ 
+
+62
+
+
+
+VectorX: Implementação utilizando classes em C++
+Arquivo vecclass1.cpp
+
+Apesar de estruturas serem classes, a boa 
+prática de programação recomenda utilizar 
+class para classes normais e struct  apenas 
+em situações que o encapsulamento não é 
+necessário.
+
+Esse código usa construtores, com aumento de 
+manutenibilidade.
+
+
+
+Atributos Alocados
+Dinamicamente
+
+64
+
+
+
+Atributos alocados dinamicamente
+Quando são utilizados atributos alocados 
+dinamicamente, é necessário um cuidado adicional 
+com a forma que os objetos são utilizados. 
+
+Pode ser necessário implementar um construtor de 
+cópia e sobrecarregar o operador de atribuição 
+para evitar maiores problemas.
+
+
+
+Operações implementadas por padrão
+Mesmo quando não se implementa, são 
+disponibilizados em C++:
+
+● Construtor padrão (sem parâmetros) - apenas 
+aloca espaço na memória para valores estáticos
+
+● Construtor de cópia - faz cópia do objeto, 
+copiando valores estáticos
+
+● Operador de atribuição - copia os valores do 
+objeto à direita para o objeto à esquerda
+
+
+
+E o que tem isso com ponteiros?
+Ponteiros são variáveis estáticas (contém um 
+endereço de memória), mas que são geralmente usados 
+para apontar variáveis alocadas dinamicamente.
+
+Ou seja, o endereço de memória (o valor do ponteiro) 
+é copiado…
+
+A área apontada por ele, não… 
+
+E se a cópia faz a desalocação dos dados???
+
+
+
+Um exemplo comum
+
+vectorx v1 Chamada por valor (cópia) vectorx tempxxx1
+
+tam 20 foo(vectorx v) tam 20
+
+cap 30 cap 30
+
+vetor 0x561d03989e70 vetor 0x561d03989e70
+
+
+
+Ou seja
+
+vectorx v1 vectorx tempxxx1
+
+tam 20 tam 20
+
+cap 30 cap 30
+
+vetor 0x561d03989e70 vetor 0x561d03989e70
+
+As duas variáveis possuem atributos apontando 
+a mesma região da memória!
+
+
+
+Mas...
+A região da memória vectorx::~vectorx() {
+apontada por temp é     cout << "morri" << endl;
+
+desalocada     delete[] vetor;
+
+automaticamente quando a     tam = 0;
+
+variável encerra seu }
+
+tempo de vida...
+
+
+
+Mas...
+A região memória vectorx::~vectorx() {
+apontada por vec é     cout << "morri" << endl;
+
+desalocada     delete[] vetor;
+
+automaticamente quando a     tam = 0;
+
+variável encerra seu }
+
+tempo de vida...
+
+O que vai acontecer quando a função foo( ) terminar???
+
+
+
+Muita caca!
+
+v1 possui 
+vectorx v1
+
+atributo 
+tam 20 apontando para 
+cap 30 uma região que 
+
+foi desalocada
+vetor 0x561d03989e70
+
+
+
+Muita caca mesmo!
+
+v1 possui 
+vectorx v1
+
+atributo 
+tam 20 apontando para 
+cap 30 uma região que 
+
+foi desalocada
+vetor 0x561d03989e70
+
+Tentativa de acessar os dados irá gerar falha de segmentação!
+
+
+
+Atribuição irá gerar problemas similares
+vectorx  v1; vectorx v2, v3, v4;
+
+// construtor de cópia // atribuição -> operador = 
+foo(v1); vectorx v5;
+
+v5 = v2;
+// construtor de cópia
+vectorx v2 = v1; // atribuição -> operador =
+
+v4 = v2 + v3; 
+
+
+
+Caminhos possíveis
+
+Caminho 1 Caminho 2
+
+Não utilizar cópias, usando apenas Implementar construtor de cópia 
+ponteiros e referências para (sobrescrevendo o construtor de 
+passagem de parâmetros em cópia padrão).
+funções.
+
+Não efetuar atribuições. Implementar sobrecarga do 
+operador de atribuição (=).
+
+
+
+Construtor de cópia
+Um construtor de vectorx::vectorx(const vectorx& vec) {
+
+cópia recebe um   cout << "construtor de cópia" << endl;
+  tam = vec.tam;
+
+outro objeto para   vetor = new int[tam];
+efetuar cópia dos   for (int i = 0; i < tam; i++) {
+dados.      vetor[i] = vec.vetor[i];
+
+   }
+}
+
+
+
+Construtor de cópia
+Um construtor de vectorx::vectorx(const vectorx& vec) {
+
+cópia recebe um   cout << "construtor de cópia" << endl;
+
+outro objeto para   tam = vec.tam;
+
+efetuar cópia dos   vetor = new int[tam];
+  for (int i = 0; i < tam; i++) {
+
+dados.      vetor[i] = vec.vetor[i];
+   }
+
+Dados dinâmicos 
+são alocados e }
+
+copiados 
+manualmente.
+
+
+
+Construtor de cópia
+#include <cstring> // para uso da memcpy
+...
+
+Um construtor de vectorx::vectorx(const vectorx& vec) {
+cópia recebe um   cout << "construtor de cópia" << endl;
+
+outro objeto para   tam = vec.tam;
+
+efetuar cópia dos   vetor = new int[tam];
+
+dados.   memcpy(vetor, vec.vetor, tam);
+}
+
+Cópia dos dados 
+feita de 
+maneira mais 
+eficiente
+
+
+
+Construtor de cópia - observações importantes
+Parâmetro recebido como referência (para evitar 
+cópia, chamada recursiva).
+
+Recomenda-se o uso de const, para evitar alterar 
+os dados do objeto recebido como parâmetro.
+
+vectorx::vectorx(const vectorx& vec)
+
+
+
+Sobrecarga de 
+Operadores
+
+80
+
+
+
+Atribuição com atributos alocados dinamicamente
+Assim como com o construtor, vimos que atributos 
+alocados dinamicamente podem gerar problemas ao 
+se realizar uma atribuição.
+
+Um dos caminhos possíveis para resolver esse 
+problema é sobrecarregar o operador de 
+atribuição.
+
+81
+
+
+
+Sobrecarga de Operadores - Visão Geral
+Mecanismo que permite int main() {
+modificar operadores 
+dependendo dos argumentos Ponto p1;
+
+fornecidos. Possui Ponto p2;
+
+vantagens e desvantagens: Ponto p3 = p1 + p2;
+
+● maior facilidade de }
+
+escrita
+● risco de menor 
+
+legibilidade
+
+
+
+Sobrecarga de Operadores - Exemplo
+public class Ponto {
+private:
+   int x;
+   int y;
+public:
+   Ponto operator+(const Ponto &outro){
+      return new Ponto(this->x + outro.x, this->y + outro.y);
+   }
+   ...
+}
+
+
+
+Sobrecarga de Operadores - Exemplo
+public class Ponto {
+private:
+   int x;
+   int y;
+public:
+   Ponto operator+(const Ponto &outro){
+      return new Ponto(this->x + outro.x, this->y + outro.y);
+   }
+   ... What is this?
+}
+
+
+
+O Operador This - I
+O operador this, em C++, é um ponteiro para o objeto 
+atual. Em várias situações ele é desnecessário, mas 
+pode aumentar a clareza. Os dois trechos a seguir são 
+equivalentes:
+
+   Ponto operator+(const Ponto &outro){
+      return new Ponto(this->x + outro.x, this->y + outro.y);
+   }
+   Ponto operator+(const Ponto &outro){
+      return new Ponto(x + outro.x, y + outro.y);
+   }
+
+85
+
+
+
+O Operador This - II
+Outro motivo para usar o this é quando o parâmetro do método 
+e o atributo da classe possuem o mesmo nome:
+
+   Noh::alteraValor(int valor){
+      this->valor = valor;
+   }
+
+Ressalta-se que alguns desenvolvedores gostam de utilizar 
+this mesmo quando não há problemas de nomenclatura, com a 
+justificativa de aumento de clareza. Por conta de uso de 
+dois objetos de mesma classe, é bastante usado em sobrecarga 
+de operadores.
+
+86
+
+
+
+Sobrecarga de Operadores - i
+Em C++ é possível sobrecarregar não apenas 
+métodos, mas também operadores. 
+
+Nesse caso, os operadores podem ser entendidos 
+como uma função com nome especial e que é chamada 
+quando o operador é encontrado.
+
+
+
+Sobrecarga de Operadores - ii
+Operadores podem ser geralmente implementados 
+como funções externas (geralmente “amigas”) ou 
+como métodos das classes. Na maioria das vezes, 
+cabe ao desenvolvedor escolher a melhor forma de 
+implementação. 
+
+Em alguns casos (por exemplo sobrecarga do 
+operador “<<” para saída), é necessário 
+implementar como função externa.
+
+
+
+Sobrecarga de Operadores - iii
+O operador + na operação a+b, em que a e b sejam 
+da classe Foo, pode ser entendido como:
+
+operator+(Foo& a, Foo& b) Função + aplicada a a e b.
+
+Ou
+
+Foo::operator+(Foo& b) Método + de a aplicado a b.
+
+
+
+Sobrecarga de Operadores - iv
+Questões importantes na sobrecarga de operadores:
+
+● Qual o tipo de retorno? Em geral, operadores 
+possuem retorno para permitir continuidade. Ex: 
+x = a + b + c; (essa operação não seria possível 
+sem retorno).
+
+● Qual o tipo de passagem de parâmetro 
+(geralmente referência, com parâmetros 
+constantes). 
+
+
+
+Cuidados com sobrecarga de operadores
+Sobrecarga de operadores podem gerar problemas 
+semânticos e devem ser usados com cautela.  Se mal 
+utilizados, podem gerar problemas de legibilidade de 
+código.
+
+Por exemplo, dado dois vetores a e b, o que 
+representa a+b? Concatenação dos vetores ou soma dos 
+elementos um a um? Note que as duas operações 
+existem matematicamente e poderiam usar o mesmo 
+símbolo.
+
+
+
+Cuidados com operador *
+É recomendável o uso de () para evitar cout << *ptr1 << endl;
+confusões entre o operador de indireção cout << *ptr2 << endl;
+
+e a multiplicação: // trecho com erro!
+cout << *ptr1 *ptr2 << endl; 
+// trecho sem erros
+
+int p = 10;
+cout << (*ptr1) * (*ptr2) 
+
+int q = 20;      << endl; 
+int *ptr1 = &p;
+int *ptr2 = &q;
+
+
+
+Exemplo de sobrecarga de operadores - i
+class vectorx {
+
+vectorx& operator+(const vectorx& vec); 
+vectorx& operator=(const vectorx& vec); 
+int operator*(const vectorx& vec); // produto interno
+vectorx operator*(const int& n); // produto de vetor por n 
+
+    friend vectorx operator*(const int& n, vectorx& vec);
+friend ostream& operator<<(ostream& out, const vectorx& vec);  
+
+
+
+Exemplo de sobrecarga de operadores - ii
+
+Arquivo vecclass2.cpp
+
+
+
+Projeto de Classes
+
+95
+
+
+
+Projetando Classes - i
+Classes são utilizadas para representar tipos de 
+dados. Esses dados, por sua vez, são usados para 
+resolver problemas. 
+
+Em geral, esses problemas podem ser resolvidos 
+utilizando diferentes conjuntos de classes/objetos. 
+
+Além disso, não existe uma única forma de 
+representar uma classe.
+
+
+
+Projetando Classes - i
+Classes são utilizadas para representar tipos de 
+dados. Esses dados, por sua vez, são usados para 
+
+Existem, entretanto, boas 
+resolver problemas. 
+
+práticas, que facilitam ampliar e 
+Em geral,u teislsiezsa rp rcolbalsesmeas/ opbojdetmo s,e r resolvidos 
+utilizandfoa cdilfietraendtoe sm acnountjeunçtãoos de cóldaisgsoe.s/objetos. 
+
+Além disso, não existe uma única forma de 
+representar uma classe.
+
+
+
+Projetando Classes - ii
+Uma questão que sempre figura ao projetar uma classe 
+é: quais atributos e métodos uma classe deve ter. 
+
+Não é incomum, por exemplo verificar como atributos, 
+valores que deveriam ser apenas retornos de métodos.
+
+Uma recomendação inicial é: utilizar o mínimo 
+necessário de atributos para representar a classe, 
+agregando novos elementos apenas quando esses 
+facilitarem o uso e desenvolvimento. 
+
+
+
+Projetando Classes - Um Exemplo - i
+Suponha a classe VectorX, criada para agregar a 
+possibilidade de checagem de tamanho. Os 
+atributos sugeridos para essa classe foram um 
+vetor dinâmico e um atributo para armazenar o 
+tamanho dos dados:
+
+int* vetor;
+int tam;
+
+
+
+Projetando Classes - Um Exemplo - ii 
+Suponha que seja interessante adicionar a 
+possibilidade de redimensionar o vetor dinamicamente 
+durante a execução. 
+
+Para não ficar redimensionando o vetor a todo momento, 
+pode se adotar a estratégia de redimensioná-lo de 
+tempos em tempos, adicionando um determinado tamanho a 
+cada passo. Assim, pode ser que num determinado 
+momento exista um espaço alocado para 100 elementos, 
+mas usando apenas 20. 
+
+
+
+Projetando Classes - Um Exemplo - iii
+Para adicionar a capacidade de redimensionamento, 
+a maneira mais adequada é adicionar um novo 
+atributo na classe:
+
+int* vetor;
+int tam;
+int capacidade;
+
+
+
+Projetando Classes - Um Exemplo - iv
+Suponha agora, que seja necessário calcular o 
+maior e menor valor da classe VectorX. A pergunta 
+geralmente feita é: deixar maior e menor como 
+retorno de métodos ou como atributos na classe? 
+
+
+
+Projetando Classes - Um Exemplo - iv
+Suponha agora, que seja necessário calcular o 
+maior e menor valor da classe VectorX. A pergunta 
+geralmente feita é: deixar maior e menor como 
+retorno de métodos ou como atributos na classe? 
+
+Em geral, não há uma resposta única correta, 
+a resposta depende do problema sendo 
+resolvido. 
+
+
+
+Projetando Classes - Um Exemplo - iv
+Suponha agora, que seja necessário calcular o 
+maior e menor valor da classe VectorX. A pergunta 
+geralmente feita é: deixar maior e menor como 
+retorno de métodos ou como atributos na classe? 
+
+Em geral, não há uma resposta única correta, 
+a resposta depende do problema sendo 
+resolvido. 
+
+Qual é o problema sendo resolvido???
+
+
+
+Projetando Classes - Um Exemplo - v
+Caso o cálculo do maior ou menor elemento da classe VectorX 
+seja para o uso mais corriqueiro e tradicional, é melhor 
+implementá-los como retorno de métodos:
+
+int maior( ) { … }
+int menor( ) { … }
+
+Observe que nesse caso, não há manutenção de dados, apenas o 
+cálculo. Além disso, o método poderia retornar tanto o valor 
+como a posição (e a escolha de qual depende novamente do 
+problema sendo resolvido).
+
+
+
+Projetando Classes - Um Exemplo - vi
+Suponha, entretanto, que por algum motivo específico, 
+o problema sendo resolvido precise ficar utilizando a 
+cada momento o maior ou menor elemento da VectorX. 
+Nesse caso, pode não ser razoável ficar calculando 
+isso a cada momento e ser mais interessante armazenar 
+maior (ou menor) como um atributo:
+
+int maior;
+void atualizaMaior( ); // método para atualizar o
+
+// atributo maior
+
+
+
+Projetando Classes - Um Exemplo - vii
+Adicionar maior como atributo em VectorX não vem de graça, 
+entretanto. 
+
+Observe a necessidade de criar um método para atualizá-lo. 
+Mais importante que isso: é preciso garantir que o atributo 
+seja sempre válido para uso. 
+
+Por exemplo ao inserir um novo elemento, é necessário 
+verificar se ele não deve substituir o atualmente armazenado 
+em maior. 
+
+Ou então: o que fazer se o elemento em maior for removido? 
+
+
+
+Atributos - Recomendações
+Todo atributo tem um custo.
+Inserir um atributo implica em avaliar como 
+mantê-lo “saudável” para uso. 
+
+Atributos devem ser inseridos apenas quando são 
+realmente necessários, ou irão facilitar o 
+uso/desenvolvimento.
+
+
+
+Escolha entre Protegido, Privado e Público - I
+Recomenda-se o uso do princípio de menor privilégio 
+possível ao usar POO. Ou seja: atributos e métodos 
+que não precisem ser acessados externamente devem 
+ser mantidos privados ou protegidos. 
+
+Na medida do possível, exceto pouquíssimas exceções, 
+atributos devem ser mantidos privados ou protegidos. 
+Um exemplo de exceção são atributos estáticos, que 
+fogem ao escopo deste curso. 
+
+109
+
+
+
+Escolha entre Protegido, Privado e Público - II
+Métodos auxiliares, que só são usados por outros 
+métodos da própria classe, também devem ser mantidos 
+privados ou protegidos.
+
+Ao se usar herança, métodos e atributos protegidos 
+serão acessíveis por classes filhas, o que ocorre na 
+maioria dos casos. Sem herança, não há distinção 
+entre privado e protegido. 
+
+110
+
+
+
+Escolha entre Protegido, Privado e Público - III
+Usando-se o princípio de menor privilégio, uma 
+recomendação é começar com atributos e métodos 
+privados e ir movendo-os para a seção protegida ou 
+pública, de acordo com a necessidade.
+
+Deve-se evitar tornar público o acesso a atributos e 
+métodos críticos da classe, que podem alterar sua 
+estrutura sem uma devida verificação.   
+
+111
+
+
+
+Dando Nome aos Bois - I
+Existem vários padrões para nomear atributos e métodos em uma 
+classe. Alguns padrões, por exemplo, definem que nomes de classes 
+devem iniciar com letras maiúsculas. 
+
+Parte dos padrões especificam que os métodos devem ser verbos. 
+Alguns desses padrões especificam verbos no infinitivo, enquanto 
+outros especificam verbos no imperativo ou no presente do 
+indicativo:
+
+estudante::realizarMatricula()
+estudante::realizeMatricula()
+estudante::realizaMatricula()
+
+112
+
+
+
+Dando Nome aos Bois - II
+No que diz respeito aos atributos, para evitar problemas de 
+usar o mesmo nome em um atributo e um parâmetro, alguns 
+padrões utilizam alguma letra no início de cada atributo, 
+geralmente o m (de my, meu):
+
+class Foo {
+  int mValor;
+  float mDado;
+  ...
+
+113
+
+
+
+Dando Nome aos Bois - III
+Não existe um padrão consensual para nomear métodos e 
+atributos, assim duas recomendações são feitas:
+
+1. Evitar misturar padrões diferentes em um mesmo código, 
+evitando prejuízos à legibilidade.
+
+2. Conhecer diferentes padrões, para evitar problemas ao ter 
+que se integrar em uma equipe que já tenha um padrão 
+pré-estabelecido.
+
+114
+
+
+
+Sobre o Material
+
+115
+
+
+
+Sobre este material
+Material produzido coletivamente, principalmente 
+pelos seguintes professores do DCC/UFLA:
+
+● Joaquim Quinteiro Uchôa
+● Juliana Galvani Greghi
+● Renato Ramos da Silva
+
+Inclui contribuições de outros professores do 
+setor de Fundamentos de Programação do DCC/UFLA.
+Esta obra está licenciado com uma Licença Creative Commons Atribuição 4.0 Internacional.
+
+116
+
+Universidade Federal de Lavras
+GCC216 - Estrutura de Dados
+
+Estrutura de Dados Pilha
+Prof. Joaquim Uchôa
+
+Profa. Juliana Greghi
+Prof. Renato Ramos
+
+
+
+● Definição e Visão Geral
+● Operações Básicas sobre 
+
+Roteiro Pilhas
+● Informação Importante
+● Implementação 
+
+Utilizando Vetores
+
+2
+
+
+
+Definição e 
+Visão Geral
+
+3
+
+
+
+Definição
+● De acordo com o dicionário o que é uma pilha?
+
+4
+
+
+
+Definição
+● De acordo com o dicionário o que é uma pilha?¹
+
+○ Porção de coisas dispostas umas sobre as outras (monte);
+
+○ Dispositivo que transforma a energia química em energia 
+elétrica;
+
+○ Indivíduo irritado ou nervoso
+
+○ Caixa que contém dentro de si outras caixas de várias 
+dimensões, acondicionadas, umas dentro das outras, de 
+acordo com os tamanhos
+
+¹Segundo dicionário michaelis on-line http://michaelis.uol.com.br/busca?id=OWQE 5
+
+
+
+Definição
+● E em Computação?
+
+○ É uma estrutura de dados que assume a ideia de 
+monte para armazenar as informações.
+
+○ É baseada no princípio "Last In First Out"(LIFO)
+■ O último inserido será o primeiro a ser retirado.
+■ A manipulação é feita somente em uma das 
+
+extremidades.
+■ Não é possível o acesso direto aos demais dados.
+
+6
+
+
+
+Definição
+Ideia Básica
+
+7
+
+
+
+Aplicações Tradicionais de Pilhas
+Pilhas são utilizadas em diversas situações na 
+computação. Por exemplo, são utilizadas no processo 
+recursivo e nas seguintes aplicações:
+
+● Calculadora para expressões matemáticas;
+● Conversão de número decimal para binário;
+● Retirada de mercadorias de um caminhão de entregas;
+● Mecanismo de fazer/desfazer de editores diversos;
+● Mecanismo de navegação de páginas na Internet 
+
+(avançar e retornar).
+8
+
+
+
+Inserção na Pilha
+A inserção deve ser sempre na posição à frente 
+(ou acima) do último elemento inserido.
+
+9
+
+
+
+Retirada de Elementos na Pilha
+A retirada de um elemento na pilha é sempre daquele 
+que foi inserido por último. Caso se  deseje acessar, 
+por exemplo, o conteúdo de um nó intermediário, todos 
+os demais devem ser desempilhados antes. 
+
+10
+
+
+
+Formas de Implementação
+Uma pilha pode ser implementada de diferentes 
+maneiras, as mais comuns são:
+
+● Implementação usando encadeamento de nós 
+(elementos) da pilha;
+
+● Implementação usando arranjo para armazenamento 
+dos elementos.
+
+11
+
+
+
+Implementação Usando Encadeamento - I
+A implementação mais usual de pilha é a usando 
+encadeamento. Nessa implementação, cada nó contém 
+informações e aponta para o próximo nó. O último 
+nó da pilha aponta para NULO, indicando seu 
+término. A pilha sabe apenas onde está o topo.
+Pilha
+TOPO
+
+Nó 1 Nó 2 ... Nó n-1 Nó n
+12
+
+
+
+Implementação Usando Encadeamento - II
+Em uma implementação por encadeamento, uma pilha 
+contém um apontador para o topo e cada nó contém 
+o dado armazenado e um apontador para o próximo 
+nó na estrutura.
+
+Pilha
+TOPO Nó i
+
+Dados Próximo nó
+
+13
+
+
+
+Implementação Usando Encadeamento - III
+Pilha e nós são implementados tradicionalmente 
+como estruturas ou classes. Usaremos a segunda 
+abordagem, usando uma classe para pilha e outra 
+para os nós. 
+
+Pilha
+TOPO Nó i
+
+Dados Próximo nó
+
+14
+
+
+
+Classe Noh
+Cada nó da pilha possui atributos com os dados 
+armazenados, que pode ser desde um simples 
+inteiro até uma estrutura ou outra classe. Além 
+disso, possui um apontador para o próximo nó. 
+
+class 
+Nó noh
+Dados Próximo nó
+
+int dado;
+noh* proximo;
+
+15
+
+
+
+Classe Pilha
+A classe pilha contém geralmente, além do apontador 
+para o topo, um atributo para informar a quantidade de 
+elementos (nós) que ela possui. Outros atributos podem 
+ser necessários, dependendo do problema resolvido.
+
+Pilha class 
+pilha
+
+TOPO
+int tamanho;
+noh* topo;
+
+16
+
+
+
+Operações Básicas 
+Sobre Pilhas
+
+17
+
+
+
+Operações Básicas sobre Pilhas
+Uma pilha possui um conjunto de operações 
+básicas, para seu correto uso:
+
+● Criação / destruição
+● Inserção (ou empilhamento)
+● Remoção (ou desempilhamento)
+
+18
+
+
+
+Criação da pilha
+criarPilha(): TOPO
+
+topo ← NULL;
+
+// informação opcional NULL
+tamanho ← 0;
+
+A criação da pilha consiste basicamente 
+em garantir que seu topo não aponte 
+para uma região válida de memória.
+
+19
+
+
+
+Inserção de elemento
+A inserção em uma 
+
+push(valor): pilha, consiste em 
+criar um novo nó com o 
+dado a ser armazenado e 
+
+novo ← criar_noh(valor); posteriormente 
+colocá-lo no topo. 
+
+novo.proximo ← topo; Assim, seu próximo 
+elemento é o topo 
+
+topo ← novo; antigo e o topo passa a 
+ser o novo elemento 
+
+tamanho++; inserido.  
+
+20
+
+
+
+Operações Básicas Sobre Pilhas
+Inserção ou Empilhamento (PUSH)
+
+TOPO
+
+TOPO TOPO NOVO1
+
+NOVO1
+
+NULL NULL NULL
+
+NULL
+Situação Inicial Inserindo o elemento NOVO1 
+
+21
+
+
+
+Operações Básicas Sobre Pilhas TOPO
+
+Inserção ou Empilhamento (PUSH)
+TOPO TOPO NOVO2
+
+NOVO2
+
+NOVO1 NOVO1 NOVO1
+
+NULL
+
+NULL NULL NULL
+22
+
+
+
+Inserção de elemento
+push(valor): valor=23 TOPO
+novo ← criar_noh(valor);
+
+NULL
+novo.proximo ← topo;
+
+topo ← novo;
+
+tamanho++; 
+
+23
+
+
+
+Inserção de elemento
+push(valor): valor=23 TOPO 23
+
+novo ← criar_noh(valor);
+NULL NULL
+
+novo.proximo ← topo;
+
+topo ← novo;
+
+tamanho++; 
+
+24
+
+
+
+Inserção de elemento
+push(valor): valor=23 TOPO 23
+
+novo ← criar_noh(valor);
+NULL
+
+novo.proximo ← topo;
+
+topo ← novo;
+
+tamanho++; 
+
+25
+
+
+
+Inserção de elemento
+push(valor): valor=23 TOPO
+
+novo ← criar_noh(valor);
+23
+
+novo.proximo ← topo;
+NULL
+
+topo ← novo;
+
+tamanho++; 
+
+26
+
+
+
+Inserção de elemento
+push(valor): valor=23 TOPO
+
+novo ← criar_noh(valor);
+23
+
+novo.proximo ← topo;
+NULL
+
+topo ← novo;
+
+tamanho++; tamanho=1
+
+27
+
+
+
+Inserção de elemento
+push(valor): valor=45 TOPO
+
+novo ← criar_noh(valor);
+23
+
+novo.proximo ← topo;
+NULL
+
+topo ← novo;
+
+tamanho++; 
+
+28
+
+
+
+Inserção de elemento
+push(valor): valor=45 TOPO 45
+
+novo ← criar_noh(valor);
+23 NULL
+
+novo.proximo ← topo;
+
+topo ← novo; NULL
+
+tamanho++; 
+
+29
+
+
+
+Inserção de elemento
+push(valor): valor=45 TOPO
+
+45
+novo ← criar_noh(valor);
+
+23
+novo.proximo ← topo;
+
+NULL
+topo ← novo;
+
+tamanho++; 
+
+30
+
+
+
+Inserção de elemento
+push(valor): valor=45 TOPO
+
+novo ← criar_noh(valor);
+45
+
+novo.proximo ← topo;
+
+topo ← novo; 23
+
+tamanho++; NULL
+
+31
+
+
+
+Inserção de elemento
+push(valor): valor=45 TOPO
+
+novo ← criar_noh(valor);
+45
+
+novo.proximo ← topo;
+
+topo ← novo; 23
+
+tamanho++; NULL
+
+tamanho=2
+32
+
+
+
+Retirada de Elemento
+pop(): A retirada de um 
+
+elemento da pilha 
+consiste em acessar o 
+
+aux ←  topo; seu topo, retornando-o 
+dado ← aux.valor; para a ação desejada. 
+topo ← aux.proximo; Nesse caso, o novo topo 
+
+passa a ser o próximo 
+apagar(aux); nó do topo anterior, 
+tamanho--; que será removido do 
+// faz ação desejada sistema.
+
+// (e.g.: retorno)
+efetuaAcao(dado); 33
+
+
+
+Retirada de Elemento TOPO
+
+TOPO NOVO2
+
+NOVO2
+
+NOVO1 NOVO1
+
+NULL
+
+NULL NULL
+34
+
+
+
+Retirada de Elemento
+TOPO
+
+pop():
+
+aux ←  topo; 45
+dado ← aux.valor;
+topo ← aux.proximo; 23
+apagar(aux);
+tamanho--; NULL
+// faz ação desejada 
+// (e.g.: retorno)
+efetuaAcao(dado); 35
+
+
+
+Retirada de elemento
+TOPO
+
+pop(): aux
+
+aux ←  topo; 45
+dado ← aux.valor;
+topo ← aux.proximo; 23
+apagar(aux);
+tamanho--; NULL
+// faz ação desejada 
+// (e.g.: retorno)
+efetuaAcao(dado); 36
+
+
+
+Retirada de elemento
+TOPO
+
+pop(): aux
+
+aux ←  topo; 45
+dado ← aux.valor;
+topo ← aux.proximo; 23
+apagar(aux);
+tamanho--; NULL
+// faz ação desejada 
+// (e.g.: retorno) dado=45
+
+efetuaAcao(dado); 37
+
+
+
+Retirada de elemento
+TOPO
+
+pop():
+aux
+
+aux ←  topo;
+dado ← aux.valor; 45
+topo ← aux.proximo; 23
+apagar(aux);
+tamanho--; NULL
+// faz ação desejada 
+// (e.g.: retorno) dado=45
+
+efetuaAcao(dado); 38
+
+
+
+Retirada de elemento
+TOPO
+
+pop():
+aux
+
+aux ←  topo;
+dado ← aux.valor; 45
+topo ← aux.proximo; 23
+apagar(aux);
+tamanho--; NULL
+// faz ação desejada 
+// (e.g.: retorno) dado=45
+
+efetuaAcao(dado); 39
+
+
+
+Retirada de elemento
+TOPO
+
+pop():
+
+aux ←  topo;
+dado ← aux.valor;
+topo ← aux.proximo; 23
+apagar(aux);
+tamanho--; NULL
+// faz ação desejada 
+// (e.g.: retorno) dado=45
+
+tamanho=1
+efetuaAcao(dado); 40
+
+
+
+Retirada de elemento
+TOPO
+
+pop():
+
+aux ←  topo;
+dado ← aux.valor;
+topo ← aux.proximo; 23
+apagar(aux);
+tamanho--; NULL
+// faz ação desejada 
+// (e.g.: retorno) dado=45
+
+tamanho=1
+efetuaAcao(dado); 41
+
+
+
+Informação 
+Importante
+
+42
+
+
+
+Informação Importante TOPO
+
+● O acesso à Pilha deve ser 
+sempre feito pelo TOPO NOVO20
+
+● As ligações entre os nós 
+.
+
+é para que a estrutura .
+
+permaneça integrada. .
+
+NOVO2
+
+NOVO1
+
+NULL
+43
+
+
+
+Informação Importante
+Mas professor, dessa 
+forma eu só posso 
+acessar o elemento que 
+o TOPO aponta? E se, 
+por exemplo, na 
+estrutura anterior, eu 
+quiser utilizar o 
+elemento NOVO12, o que 
+fazer?
+
+44
+
+
+
+Informação Importante
+Pela definição, não é possível acessar os outros 
+elementos que não estão no topo. Assim, não é 
+possível desenvolver uma função da pilha que 
+resolva isso.
+
+Mas você pode retirar todos os elementos do topo 
+até encontrar o elemento desejado. Vamos deixar 
+claro, que essa situação deve ser feita via 
+retirada de elementos, não pode ser um 
+procedimento da pilha. 45
+
+
+
+Outras Operações em Pilhas - i
+Além das operações básicas apresentadas, as 
+pilhas podem implementar:
+
+● verificar o número de elementos da pilha;
+● verificar se a pilha está ou não vazia;
+● retirar todos os elementos da pilha;
+● opcionalmente acessar o topo da pilha;
+● opcionalmente depurar/imprimir a pilha.
+
+46
+
+
+
+Outras Operações em Pilhas - ii
+➢ A retirada de todos os elementos da pilha é por 
+
+meio de desempilhamento, um por um. 
+➢ O destrutor é implementado geralmente usando o 
+
+método para retirar todos os elementos da 
+pilha.
+
+47
+
+
+
+Outras Operações em Pilhas - iii
+➢ O acesso ao topo (espia) costuma ser 
+
+disponibilizado em várias implementações. Nesse 
+caso, há o acesso ao dado, mas sem sua 
+retirada, que continua no topo da pilha.
+
+48
+
+
+
+Outras Operações em Pilhas - iv
+➢ Implementações iniciais às vezes fazem uso de 
+
+mecanismos de percorrimento para 
+impressão/depuração dos dados. Esse método é 
+considerado uma quebra de estrutura, pois 
+acessa os elementos intermediários sem 
+desempilhamento. Assim, esse recurso só pode 
+ser usado, para fins didáticos ou de depuração. 
+
+49
+
+
+
+Implementação
+Utilizando Vetor
+
+50
+
+
+
+Implementação utilizando vetor
+
+Vantagem
+- Operações rápidas (acesso, 
+empilhamento, 
+desempilhamento).
+
+topo
+
+51
+
+
+
+Implementação utilizando vetor
+
+Desvantagem
+- Espaço alocado sem 
+necessidade;
+- Impossibilidade de aumentar 
+a capacidade da pilha sem 
+
+topo redimensionamento do vetor.
+
+52
+
+
+
+Implementação utilizando vetor
+A implementação em vetor 
+utiliza um atributo para 
+armazenar o índice do 
+vetor que contém o topo 
+da pilha. Em uma 
+inserção, o topo avança 
+uma posição. Em uma 
+retirada, o topo retorna 
+uma posição.
+
+topo
+
+53
+
+
+
+Considere os elementos Insere elemento na pilha
+
+ 23   45   11
+
+23, 45, 11 e 89.
+topo
+
+Insere elemento na pilha Remove elemento da pilha
+ 23   45   
+
+ 23
+
+topo
+topo
+
+Insere elemento na pilha Insere elemento na pilha
+
+ 23   45  23   45   89
+
+topo topo
+
+
+
+Um Exemplo:
+Notação Pósfixa
+
+55
+
+
+
+Expressão em Notação Pósfixa - i
+Um dos problemas ao tratar expressões matemáticas 
+computacionalmente é a precedência de operadores:
+
+2+4*2 = 10?  Ou  2+4*2 = 12?
+
+Por conta disso, usamos geralmente parênteses:
+
+2+(4*2) = 10  e  (2+4)*2 = 12
+
+Mas internamente, geralmente se usam outras 
+formas de representação.
+
+56
+
+
+
+Expressão em Notação Pósfixa - ii
+Uma das formas de representar expressões sem o 
+problema com precedência de operadores é o uso de 
+notação pósfixa. Nesse caso, o operador é 
+inserido após os operandos a que deve ser 
+aplicado. Por exemplo: 
+
+2+(4*2) seria escrito como 2 4 2 * + 
+
+(2+4)*2 seria escrito como 2 4 + 2 * 
+
+57
+
+
+
+Expressão em Notação Pósfixa - iIi
+A ideia é que o processamento é feito da seguinte 
+forma: sempre que um operador é lido, ele é 
+aplicado aos dois operandos anteriores. Então 
+vejamos:  
+
+2 4 2 * + => ao percorrer, encontramos o *, então 
+ele é aplicado a 4 e 2, produzindo 8. Na 
+sequência, o + é aplicado ao 8 e o 2 inicial, 
+produzindo 10. 
+
+58
+
+
+
+Expressão em Notação Pósfixa - iv
+2 4 + 2 * => ao percorrer, encontramos o +, então 
+ele é aplicado a 2 e 4, produzindo 6. Na 
+sequência, o * é aplicado ao 6 e o 2 final, 
+produzindo 12. 
+
+59
+
+
+
+Usando Pilhas para Expressão em Notação Pósfixa 
+Uma das vantagens dessa notação é a possibilidade 
+de uso da estrutura de dados pilha para resolver 
+a expressão.
+
+Para isso, basta ir empilhando os valores e, ao 
+encontrar um operador, fazer o desempilhamento 
+dos valores associados. 
+
+60
+
+
+
+Exemplo - i
+Considere a seguinte expressão pós-fixada:
+
+2 3 4 + *
+
+Para calcular o resultado utilizando pilha, 
+empilhamos inicialmente os valores 2, 3 e 4:
+
+4 Topo
+
+3
+
+2
+61
+
+
+
+Exemplo - ii
+Ao encontrar o +, o 4 e o 3 são desempilhados e a 
+operação de soma é realizada. O resultado é novamente 
+empilhado:
+
+7 Topo
+
+2
+
+Por fim, ao encontrar o *, o 7 e o 2 são desempilhados, 
+a operação é realizada e tem-se o resultado final 14, 
+que será o último elemento na pilha. 
+
+62
+
+
+
+Sobre o Material
+
+63
+
+
+
+Sobre este material
+Material produzido coletivamente, principalmente 
+pelos seguintes professores do DAC/UFLA:
+
+● Joaquim Quinteiro Uchôa
+● Juliana Galvani Greghi
+● Renato Ramos da Silva
+
+Inclui contribuições de outros professores do 
+setor de Fundamentos de Programação do DAC/UFLA.
+Esta obra está licenciado com uma Licença Creative Commons Atribuição 4.0 Internacional.
+
+64
+
+Universidade Federal de Lavras
+GCC216 - Estrutura de Dados
+
+Estrutura de Dados Fila
+Prof. Joaquim Uchôa
+
+Profa. Juliana Greghi
+Prof. Renato Ramos
+
+
+
+● Definição e Visão Geral
+● Operações Básicas sobre 
+
+Roteiro Filas
+● Informação Importante
+● Implementação 
+
+Utilizando Vetores
+
+2
+
+
+
+Definição e 
+Visão Geral
+
+3
+
+
+
+Definição
+● De acordo com o dicionário 
+
+o que é uma fila?
+
+4
+
+
+
+Definição
+● De acordo com o dicionário o que é uma fila?¹
+
+○ Sequência de pessoas ou coisas alinhadas uma atrás da 
+outra, organizada geralmente por ordem cronológica de 
+chegada ou por diferentes critérios (de altura, de idade 
+etc.) e para diversos fins
+
+○ Conjunto de soldados em fileira
+
+¹Segundo dicionário michaelis on-line http://michaelis.uol.com.br/busca?id=OWQE 5
+
+
+
+Definição
+● E em Computação?
+
+○ É uma estrutura de dados que assume a ideia de 
+sequência de objetos para armazenar as informações.
+
+○ É baseada no princípio "First In First Out"(FIFO)
+■ O primeiro inserido será o primeiro a ser retirado.
+■ A manipulação é feita pelas extremidades por função 
+
+pré-definida. Por uma se insere e na outra se retira.
+■ Não é possível o acesso direto aos demais dados.
+
+6
+
+
+
+Definição
+Ideia Básica
+
+7
+
+
+
+Aplicações Tradicionais de Filas
+Filas são utilizadas em diversas situações na 
+computação. Por exemplo, são utilizadas para 
+implementação de buffers e nas seguintes aplicações:
+
+● Escalonamento de processos na CPU;
+● Escalonamento de acesso à memória secundária;
+● Sincronização de processos assíncronos;
+● Gerenciamento de fila de impressão;
+● Controle de interrupções de hardware;
+● Controle de chamadas em call centers;
+● Busca em largura em grafos.
+
+8
+
+
+
+Inserção na Fila
+A inserção deve ser sempre após o último elemento inserido.
+
+9
+
+
+
+Retirada de Elementos na Fila
+A remoção deve ser sempre daquele que foi inserido primeiro. Caso se 
+deseje acessar, por exemplo, o conteúdo do nó laranja, todos os demais 
+devem ser desenfileirados antes.
+
+10
+
+
+
+Formas de Implementação
+Uma fila pode ser implementada de diferentes 
+maneiras, as mais comuns são:
+
+● Implementação usando encadeamento de nós 
+(elementos) da fila;
+
+● Implementação usando arranjo para armazenamento 
+dos elementos.
+
+11
+
+
+
+Implementação Usando Encadeamento - I
+A implementação mais usual de fila é a usando 
+encadeamento. Cada nó contém informações e aponta 
+para o próximo nó. O último nó da fila aponta 
+para NULO, indicando seu término. A fila sabe 
+apenas onde está o início e o fim.
+
+Fila
+INÍCIO FIM
+
+Nó 1 Nó 2 ... Nó n-1 Nó n
+12
+
+
+
+Implementação Usando Encadeamento - II
+Em uma implementação por encadeamento, uma fila 
+contém um apontador para o início e outro para o 
+fim. Cada nó contém o dado armazenado e um 
+apontador para o próximo nó na estrutura. 
+
+Fila Nó i
+INÍCIO FIM Dados Próximo nó
+
+13
+
+
+
+Implementação Usando Encadeamento - III
+A fila e seus nós são implementados 
+tradicionalmente como estruturas ou classes. 
+Usaremos a segunda abordagem, usando uma classe 
+para fila e outra para os nós. 
+
+Fila Nó i
+INÍCIO FIM Dados Próximo nó
+
+14
+
+
+
+Classe Noh
+Cada nó da fila possui atributos com os dados 
+armazenados, que pode ser desde um simples 
+inteiro até uma estrutura ou outra classe. Além 
+disso, possui um apontador para o próximo nó. 
+
+class 
+Nó noh
+Dados Próximo nó
+
+int dado;
+noh* proximo;
+
+15
+
+
+
+Classe Fila
+A classe fila contém geralmente, além dos apontadores 
+para seu ínicio e fim, um atributo para informar a 
+quantidade de elementos (nós) que ela possui. Outros 
+atributos podem ser necessários, dependendo do 
+problema resolvido.
+
+class 
+Fila fila
+INÍCIO FIM int tamanho;
+
+noh* inicio;
+noh* fim;
+
+16
+
+
+
+Operações Básicas 
+Sobre Filas
+
+17
+
+
+
+Operações Básicas sobre Filas
+Uma fila possui um conjunto de operações básicas, 
+para seu correto uso:
+
+● Criação / destruição
+● Inserção (ou enfileiramento)
+● Remoção (ou desenfileiramento)
+
+18
+
+
+
+Criação da Fila
+criarFila(): INÍCIO FIM
+
+inicio ← NULL;
+fim ← NULL;
+
+NULL NULL
+// informação opcional
+tamanho ← 0; A criação da fila consiste 
+
+basicamente em garantir que seus 
+apontadores não referenciem uma 
+região válida de memória.
+
+19
+
+
+
+Inserção de elemento A inserção em uma fila, 
+consiste em criar um novo 
+nó com o dado a ser 
+
+enqueue(valor): armazenado e 
+posteriormente colocá-lo 
+
+novo ← criar_noh(valor); no fim da fila. Assim, 
+ele passa a ser o próximo 
+
+se filaVazia() elemento do fim antigo e 
+   inicio ← novo; o fim passa a ser o novo 
+
+elemento inserido. 
+senão Checagem adicional é 
+   fim.proximo ← novo; necessária para verificar 
+fim ← novo; se fila estava ou não 
+
+vazia antes da inserção.  
+tamanho++; 
+
+20
+
+
+
+Inserção ou Enfileiramento (ENQUEUE)
+INÍCIO
+
+INÍCIO FIM INÍCIO FIM NOVO1 NOVO1
+
+FIM
+
+NULL NULL NULL NULL NULL NULL
+
+Situação Inicial Inserindo o elemento NOVO1 
+
+21
+
+
+
+Inserção ou Enfileiramento (ENQUEUE)
+INÍCIO
+
+NOVO1
+INÍCIO INÍCIO
+
+FIM
+NOVO1 NOVO1 NOVO2
+
+NOVO2
+FIM FIM
+
+NULL NULL NULL
+NULL
+
+22
+
+
+
+Retirada de Elemento dequeue():
+
+aux ← inicio;
+A retirada de um dado ← aux.valor;
+elemento da fila 
+consiste em acessar o inicio ← aux.proximo;
+seu início, apagar(aux);
+retornando-o para a tamanho--;
+ação desejada. Nesse 
+caso, o novo início se filaVazia() 
+passa a ser o próximo fim ← nulo;
+nó do início anterior, // faz ação desejada 
+que será removido do 
+sistema. // (e.g.: retorno)
+
+efetuaAcao(dado);
+23
+
+ 
+
+
+
+Desenfileramento(Dequeue) NOVO1 INÍCIO
+
+NOVO2 INÍCIO
+NOVO2
+
+NOVO1
+NOVO3
+
+NOVO3
+
+FIM
+
+NULL FIM
+NULL
+
+NULL
+24
+
+
+
+Informação 
+Importante
+
+25
+
+
+
+Informação Importante FIM
+
+● O acesso à Fila deve ser 
+sempre feito pelo FIM, NULL NOVO20
+
+para inserção, e INÍCIO, 
+para retirada. ...
+
+● As ligações entre os nós 
+é para que a estrutura NOVO2
+
+permaneça integrada.
+INÍCIO NOVO1
+
+26
+
+
+
+Informação Importante
+Mas professor, dessa 
+forma eu só posso 
+retirar o elemento que 
+o INÍCIO aponta? E se, 
+por exemplo, na 
+estrutura anterior, eu 
+quiser utilizar o 
+elemento NOVO12, o que 
+fazer?
+
+27
+
+
+
+Informação Importante
+Pela definição, não é possível acessar os outros 
+elementos que não estão no início. Assim, não é 
+possível desenvolver uma função da fila que 
+resolva isso.
+
+Mas você pode retirar todos os elementos da fila 
+até encontrar o elemento desejado. Vamos deixar 
+claro, que essa situação deve ser feita via 
+retirada de elementos, não pode ser um 
+procedimento da fila. 28
+
+
+
+Outras Operações em Filas - i
+Além das operações básicas apresentadas, as filas 
+podem implementar:
+
+● verificar o número de elementos da fila;
+● verificar se a fila está ou não vazia;
+● retirar todos os elementos da fila;
+● opcionalmente acessar o início da fila;
+● opcionalmente depurar/imprimir a fila.
+
+29
+
+
+
+Outras Operações em Filas - ii
+➢ A retirada de todos os elementos da fila é por 
+
+meio de desenfileiramento, um por um. 
+➢ O destrutor é implementado geralmente usando o 
+
+método para retirar todos os elementos da fila.
+
+30
+
+
+
+Outras Operações em Filas - iii
+➢ O acesso ao início (espia) costuma ser 
+
+disponibilizado em várias implementações. Nesse 
+caso, há o acesso ao dado, mas sem sua 
+retirada, que continua no início da fila.
+
+31
+
+
+
+Outras Operações em Filas - iv
+➢ Implementações iniciais às vezes fazem uso de 
+
+mecanismos de percorrimento para 
+impressão/depuração dos dados. Esse método é 
+considerado uma quebra de estrutura, pois 
+acessa os elementos intermediários sem 
+desenfileiramento. Assim, esse recurso só pode 
+ser usado, para fins didáticos ou de depuração. 
+
+32
+
+
+
+Implementação
+Utilizando Vetor
+
+33
+
+
+
+Filas em arranjos
+Assim como as pilhas, as filas também podem ser 
+implementadas por meio de arranjos.
+
+fim Vantagem
+- Operações rápidas 
+(acesso, enfileiramento, 
+desenfileiramento).
+
+início
+
+34
+
+
+
+Filas em arranjos
+Assim como as pilhas, as filas também podem ser 
+implementadas por meio de arranjos.
+
+fim Desvantagem
+- Espaço alocado sem 
+necessidade;
+- Impossibilidade de 
+aumentar a capacidade da 
+
+início fila, sem redimensionamento 
+do vetor.
+
+35
+
+
+
+Considere os Insere elemento na fila
+
+elementos 23, 45, 11  23   45   11
+
+e 89. início fim
+
+Insere elemento na fila Remove elemento da fila
+   45  11
+
+ 23
+
+início fim
+início fim
+
+Insere elemento na fila Insere elemento na fila
+
+ 23   45    45   11 89
+
+início fim início fim
+
+
+
+Filas circulares - i
+Geralmente implementações de filas em arranjos 
+são chamadas de filas circulares. O motivo é que 
+sem isso, o arranjo não é reorganizado à medida 
+que o início avança: 
+
+   45   11 89
+
+início fim
+
+37
+
+
+
+Filas circulares - ii
+À medida que as operações são executadas, é 
+possível que a posição do fim fique antes da 
+posição de início em uma fila circular: 
+
+12   58   13 27
+
+fim início
+
+Isso é conseguido em implementação utilizando o 
+operador de módulo.
+
+38
+
+
+
+Inserção em Fila Circular
+tamanho ⇒ 
+
+enqueue(valor): número de 
+se (tamanho = capacidade) posições 
+  gerarErro(“fila cheia”);    ocupadas no 
+
+arranjo
+se (posInicio = -1) { // fila vazia
+  posInicio++; capacidade ⇒ 
+} quantidade de 
+posFim ← (posFim + 1) % capacidade; posições 
+
+alocadas no 
+dados[posFim] ← valor; arranjo
+tamanho++;
+
+39
+
+
+
+Remoção em Fila Circular
+dequeue():
+se ( tamanho == 0 ) 
+  gerarErro(“fila vazia”);    
+aux ← dados[posInicio];
+se (posInicio = posFim) { //removeu último elemento da fila
+  posFim = -1;
+  posInicio = -1;
+} senão 
+  posInicio ← (posInicio + 1) % capacidade;
+tamanho--;
+efetuaAção(aux); // geralmente retorno
+
+40
+
+
+
+Sobre o Material
+
+41
+
+
+
+Sobre este material
+Material produzido coletivamente, principalmente 
+pelos seguintes professores do DCC/UFLA:
+
+● Joaquim Quinteiro Uchôa
+● Juliana Galvani Greghi
+● Renato Ramos da Silva
+
+Inclui contribuições de outros professores do 
+setor de Fundamentos de Programação do DCC/UFLA.
+Esta obra está licenciado com uma Licença Creative Commons Atribuição 4.0 Internacional.
+
+42
+
+Universidade Federal de Lavras
+GCC216 - Estrutura de Dados
+
+Estruturas de Dados 
+Heap e Torneio
+
+Prof. Joaquim Uchôa
+Profa. Juliana Greghi
+Prof. Renato Ramos
+
+
+
+● Conceitos Básicos
+● Heaps em Arranjos
+
+Roteiro ● Retirada e Inserção de 
+Elementos
+
+● Implementação
+● Torneio
+
+2
+
+
+
+Conceitos Básicos
+
+3
+
+
+
+Comentários Iniciais
+Um heap binário é uma estrutura de dados usada 
+para implementação de filas de prioridade. Em 
+geral, é implementado em um arranjo, mas de forma 
+a ser acessado como uma árvore binária. 
+
+Uma árvore binária é um tipo especial de árvore, 
+em que cada nó tem zero, um ou dois nós filhos.
+
+Uma árvore é um tipo especial de grafo.
+
+
+
+Comentários Iniciais
+Um heap binário é uma estrutura de dados usada 
+para implemePntação de filas de prioridade. Em geral, é implementado em um arranjo, mas de forma 
+a ser acessado cEomo uRma árvAore Íbi,ná ria. 
+Uma árvore binária é um tipo especial de árvore, 
+em que cada nó tem zero, um ou dois nós filhos.
+
+Uma árvore éP um Etipo RespeciAal dÍe !gr!af!o.
+
+
+
+Conceitos Iniciais - Grafos I
+Um grafo G(V,E) é  
+
+formado por um 
+conjunto de vértices 
+(V) e um subconjunto 
+de pares de V, 
+chamados arestas (E). 
+As arestas ligam 
+justamente os vértices 
+do grafo.
+
+
+
+Conceitos Iniciais - Grafos II
+Se os pares em E  
+
+forem ordenados, 
+então as arestas 
+possuem direção o 
+grafo é dito ser 
+ordenado ou 
+orientado (ou 
+dígrafo).
+
+
+
+Conceitos Iniciais - Grafos IV
+Um caminho no 
+grafo é qualquer 
+conjunto de 
+arestas que leva 
+de um nó a outro. 
+Ao lado temos um 
+caminho que liga 
+os nós a a h.  
+
+
+
+Conceitos Iniciais - Grafos IV
+Um grafo é conexo se existe um caminho entre 
+dois nós diferentes do mesmo grafo. 
+
+Grafo Grafo
+conexo desconexo
+
+
+
+Conceitos Iniciais - Grafos IV
+Um grafo é cíclico se 
+existe algum nó que 
+possui um caminho que 
+volta a ele passando 
+por outros nós.
+
+Isso ocorre ao lado com 
+os nós B, D e F. 
+
+10
+
+
+
+Conceitos Iniciais - Árvore I
+Uma árvore é um grafo 
+conexo (existe caminho 
+entre quaisquer dois 
+de seus vértices) e 
+acíclico (não possui 
+ciclos - ou seja, não 
+existe dois caminhos 
+entre vértices)
+
+
+
+Conceitos Iniciais - Árvore II
+Em geral, nas 
+aplicações em 
+Computação, são 
+utilizadas árvores 
+enraizadas. Uma árvore 
+é enraizada se um Raiz
+vértice é escolhido 
+como especial, chamado 
+raiz. 
+
+
+
+Conceitos Iniciais - Árvore III Raiz
+
+Como em geral a raiz 
+tem grande importância 
+(seja por ser o 
+primeiro elemento ou o 
+mais valioso), é comum 
+representar árvores 
+com a raiz na parte 
+superior. 
+
+
+
+Conceitos Iniciais - Árvore IV
+Dado um nó específico de uma 
+árvore enraizada, seus filhos 
+são os nós que estão ligados 
+diretamente a ele em um nível 
+inferior. No exemplo ao lado, os 
+filhos do nó 6 são 4 e 7. 
+
+Nós sem filhos são denominados 
+folhas, caso do 1, 4, 7 e 13. 
+
+
+
+Conceitos Iniciais - Árvores V
+Em uma árvore enraizada, tem-se para cada nó:
+➡ Grau: número de nós filhos.
+➡ Profundidade: distância (número de arestas) até 
+a raiz. Nós com mesma profundidade estão em um 
+mesmo nível.
+➡ Altura da árvore: maior profundidade.
+➡ Grau da árvore: maior grau de seus nós.
+
+
+
+Exemplo de Árvore Enraizada
+Na árvore ao lado, em que 8 
+é a raiz, os nós 1, 6 e 14 
+estão no mesmo nível, 
+profundidade 2. O nó 14 
+possui grau 1 e o nó 6 grau 
+2. O nó 1 possui grau 0. Os 
+nós 1, 4, 7 e 13 são folhas.
+O grau da árvore é 2 (árvore 
+binária) e sua altura é 3. 
+
+
+
+Exemplo de Árvore Enraizada
+Na árvore ao lado, em que 8 
+é a Uraiz, os nós 1, 6 e 14 estão nmo me shmoe níavepl,  é um 
+profundidade 2. O nó 14 
+posstuii pgroau  1e es op nóe 6c giraul  de 
+2. O nó 1 possui grau 0. Os 
+nós á1, r4v, o7 er e13  sbãoi nfoláharsi.a!
+O grau da árvore é 2 (árvore 
+binária) e sua altura é 3. 
+
+
+
+Completando as definições - i
+Um heap é uma árvore binária balanceada e 
+completa.
+
+Árvore balanceada: todos os nós folhas estão 
+no mesmo nível ou no máximo com um nível de 
+diferença. 
+
+
+
+Exemplo de Árvore Balanceada
+
+
+
+Exemplo de Árvore Desbalanceada
+
+Nós folhas com mais 
+de um nível de 
+diferença. 
+
+
+
+Completando as definições - ii
+Uma árvore é completa, quando, com exceção 
+das folhas, todos os nós possuem o mesmo grau 
+da árvore. Também é aceitável que o último nó 
+não folha, à direita ou à esquerda, possua 
+grau inferior. 
+
+
+
+Ex. de árvore não-completa
+
+
+
+Ex. de árvore completa
+ 
+
+
+
+Podemos voltar ao Heap???
+Um heap é um tipo específico de árvore binária.
+
+Em um maxheap, cada nó é maior que seus filhos e 
+descendentes. Em um minheap, ocorre exatamente o 
+inverso.
+
+Neste texto, iremos considerar o maxheap, a 
+adaptação para minheap é trivial.
+
+
+
+Exemplo de Heap (Maxheap)
+ 
+
+
+
+Heaps em Arranjos
+
+26
+
+
+
+Implementação Tradicional de Heaps: Arranjos
+Heaps são tradicionalmente implementados em 
+arranjos, para melhor eficiência das operações.
+
+Mas essa forma de implementação só é adequada (e 
+comum) por conta das características intrínsecas 
+dessa estrutura de dados (ser uma árvore binária 
+completa e balanceada).  
+
+27
+
+
+
+Heap em arranjo
+ 
+
+
+
+Heap em arranjo
+ 
+
+Só é possível representar um heap 
+em arranjo pelo fato dele ser 
+completo e balanceado.
+
+Com isso, não há espaços não 
+utilizado no meio do arranjo. 
+
+
+
+Heap em arranjo
+ 
+
+Como a raiz é única, e a 
+capacidade quase dobra (com um 
+elemento a menos) a cada passo, 
+a capacidade do heap, se utilizada 
+todas as posições, será da 
+grandeza de 2k-1.
+
+
+
+Para que serve isso?
+Um heap é uma forma prática e eficiente de 
+implementar filas de prioridade.
+
+Para isso, basta, para retirar o elemento de 
+maior prioridade:
+1. remover a raiz
+2. substituí-la pelo último elemento
+3. reorganizar o heap
+
+
+
+Operações básicas em heaps (reorganização)
+Corrige descendo: caso um elemento seja menor 
+que um de seus filhos, efetua-se a troca de 
+valores e repete-se o processo no nó filho. 
+Utilizada na retirada da raiz. 
+
+Corrige subindo: caso um elemento seja maior 
+que seu pai, efetua-se a troca de valores e 
+repete-se o processo no nó pai. 
+Utilizada na inserção de um novo elemento no 
+heap.
+
+
+
+Exemplo 1 - i/xvii
+Imagine que pretendamos construir um maxheap 
+a partir dos elementos de um vetor:
+
+35, 38, 12, 14, 9, 71, 98, 3, 29, 10, 99, 31 
+
+Precisaríamos de um heap com capacidade 
+teórica para 15 elementos, caso queiramos 
+usar todas as posições. 
+
+
+
+Exemplo 1 - ii/xvii
+Inicialmente os dados são copiados 
+
+35 no heap, sem se preocupar com a 
+
+38 12 propriedade principal (pai maior 
+que seus filhos). 
+
+Será necessário corrigir o heap.
+14 9 71 98
+
+3 29 10 99 31
+
+35 38 12 14 9 71 98 3 29 10 99 31
+
+
+
+Exemplo 1 - iii/xvii
+Para corrigir o heap, utilizamos a 
+
+35 corrige-descendo, indo da primeira 
+
+38 12 metade dos elementos no arranjo 
+(metade superior na árvore) até a raiz.
+
+Demais nós não possuem filhos, portanto, 
+14 9 71 98 é inútil chamar o corrige-descendo.
+
+3 29 10 99 31
+
+35 38 12 14 9 71 98 3 29 10 99 31
+
+
+
+Exemplo 1 - iv/xvii
+Da metade superior até a raiz, cada 
+nó é comparado com seus dois 
+
+35 possíveis filhos. 
+38 12
+
+Caso os filhos não sejam maiores 
+que o pai, nada ocorre e o processo 
+parcial encerra-se, indo para o 
+
+14 9 71 98 próximo nó.
+
+3 29 10 99 31
+
+35 38 12 14 9 71 98 3 29 10 99 31
+
+
+
+Exemplo 1 - v/xvii
+35 Caso o nó tenha algum filho maior, 
+
+38 12 ele é trocado pelo maior dos filhos 
+e o processo se repete no filho 
+trocado. 
+
+14 9 71 98
+
+3 29 10 99 31
+
+35 38 12 14 9 71 98 3 29 10 99 31
+
+
+
+Exemplo 1 - vi/xvii
+35
+
+O processo de correção irá ocorrer 
+38 12 até chegar a um nó folha ou não 
+
+haver mais trocas. 
+
+14 99 71 98
+
+3 29 10 9 31
+
+35 38 12 14 99 71 98 3 29 10 9 31
+
+
+
+Exemplo 1 - vii/xvii
+35
+
+38 12
+
+14 99 71 98
+
+3 29 10 9 31
+
+35 38 12 14 99 71 98 3 29 10 9 31
+
+
+
+Exemplo 1 - viii/xvii
+35
+
+38 12
+
+29 99 71 98
+
+3 14 10 9 31
+
+35 38 12 29 99 71 98 3 14 10 9 31
+
+
+
+Exemplo 1 - ix/xvii
+35
+
+Quando os dois filhos são maiores, 
+38 12 escolhe-se o maior deles. 
+
+29 99 71 98
+
+3 14 10 9 31
+
+35 38 12 29 99 71 98 3 14 10 9 31
+
+
+
+Exemplo 1 - xi/xvii
+35
+
+38 98
+
+29 99 71 12
+
+3 14 10 9 31
+
+35 38 98 29 99 71 12 3 14 10 9 31
+
+
+
+Exemplo 1 - xii/xvii
+35
+
+38 98
+
+29 99 71 12
+
+3 14 10 9 31
+
+35 38 98 29 99 71 12 3 14 10 9 31
+
+
+
+Exemplo 1 - xiii/xvii
+35
+
+Ao descer, quando já se encontra 
+99 98 filhos menores que o pai, o 
+
+processo corrige-descendo encerra.
+
+29 38 71 12
+
+3 14 10 9 31
+
+35 99 98 29 38 71 12 3 14 10 9 31
+
+
+
+Exemplo 1 - xiv/xvii
+35
+
+99 98
+
+29 38 71 12
+
+3 14 10 9 31
+
+35 99 98 29 38 71 12 3 14 10 9 31
+
+
+
+Exemplo 1 - xv/xvii
+99
+
+Ao descer, o processo 
+35 98 corrige-descendo se repete até 
+
+chegar a um nó folha ou os filhos 
+serem menores que o pai.
+
+29 38 71 12
+
+3 14 10 9 31
+
+99 35 98 29 38 71 12 3 14 10 9 31
+
+
+
+Exemplo 1 - xvi/xvii
+99
+
+38 98
+
+29 35 71 12
+
+3 14 10 9 31
+
+99 38 98 29 35 71 12 3 14 10 9 31
+
+
+
+Exemplo 1 - xvii/xvii
+99
+
+Ao término do processo o heap está 
+38 98 montado e o maior elemento 
+
+encontra-se na raiz.
+
+29 35 71 12
+
+3 14 10 9 31
+
+99 38 98 29 35 71 12 3 14 10 9 31
+
+
+
+Retirada e Inserção de 
+Elementos
+
+49
+
+
+
+Exemplo 2 - i/xv
+Suponha que, com o heap montado, precisemos 
+retirar quatro elementos. 
+
+A retirada de um elemento no heap só é possível 
+no topo.
+
+Após a retirada, o heap deve ser reorganizado. 
+Para isso, troca-se a raiz com o último elemento, 
+aplicando-se corrige-descendo na nova raiz.
+
+
+
+Exemplo 2 - ii/xv
+99
+
+38 98
+
+29 35 71 12
+
+3 14 10 9 31
+
+99 38 98 29 35 71 12 3 14 10 9 31
+
+
+
+Exemplo 2 - iii/xv
+Elementos retirados:
+
+31 99
+
+38 98
+
+29 35 71 12
+
+Capacidade: 12
+Tamanho: 11
+
+3 14 10 9 99
+
+31 38 98 29 35 71 12 3 14 10 9 99
+
+
+
+Exemplo 2 - iv/xv
+Elementos retirados:
+
+31 99
+
+38 98
+O valor 99 não faz mais parte do 
+heap. É armazenado no arranjo 
+apenas como histórico e efeito 
+
+29 35 71 12
+colateral do swap.
+
+Capacidade: 12
+Tamanho: 11
+
+3 14 10 9 99
+
+31 38 98 29 35 71 12 3 14 10 9 99
+
+
+
+Exemplo 2 - v/xv
+Elementos retirados:
+
+31 99
+
+38 98
+
+Reaplica-se o corrige-descendo na 
+nova raiz, para corrigir o novo heap.
+
+29 35 71 12
+
+Capacidade: 12
+Tamanho: 11
+
+3 14 10 9 99
+
+31 38 98 29 35 71 12 3 14 10 9 99
+
+
+
+Exemplo 2 - vi/xv
+Elementos retirados:
+
+98 99
+
+38 31
+
+29 35 71 12
+
+Capacidade: 12
+Tamanho: 11
+
+3 14 10 9 99
+
+98 38 31 29 35 71 12 3 14 10 9 99
+
+
+
+Exemplo 2 - vii/xv
+Elementos retirados:
+
+98 99
+
+38 71
+
+29 35 31 12
+
+Capacidade: 12
+Tamanho: 11
+
+3 14 10 9 99
+
+98 38 71 29 35 31 12 3 14 10 9 99
+
+
+
+Exemplo 2 - viii/xv
+Elementos retirados:
+
+98 99
+
+38 71
+
+29 35 31 12
+
+Capacidade: 12
+Tamanho: 11
+
+3 14 10 9 99
+
+98 38 71 29 35 31 12 3 14 10 9 99
+
+
+
+Exemplo 2 - ix/xv
+Elementos retirados:
+
+9 99   98
+
+38 71
+
+29 35 31 12
+
+Capacidade: 12
+Tamanho: 10
+
+3 14 10 98 99
+
+9 38 71 29 35 31 12 3 14 10 98 99
+
+
+
+Exemplo 2 - x/xv
+Elementos retirados:
+
+71 99   98
+
+38 9
+
+29 35 31 12
+
+Capacidade: 12
+Tamanho: 10
+
+3 14 10 98 99
+
+71 38 9 29 35 31 12 3 14 10 98 99
+
+
+
+Exemplo 2 - xi/xv
+Elementos retirados:
+
+71 99   98
+
+38 31
+
+29 35 9 12
+
+Capacidade: 12
+Tamanho: 10
+
+3 14 10 98 99
+
+71 38 31 29 35 9 12 3 14 10 98 99
+
+
+
+Exemplo 2 - xii/xv
+Elementos retirados:
+
+10 99   98   71
+
+38 31
+
+29 35 9 12
+
+Capacidade: 12
+Tamanho: 9
+
+3 14 71 98 99
+
+10 38 31 29 35 9 12 3 14 71 98 99
+
+
+
+Exemplo 2 - xiii/xv
+Elementos retirados:
+
+38 99   98   71
+
+35 31
+
+Passos 
+intermediários 
+
+29 10 9 12 omitidos
+
+Capacidade: 12
+Tamanho: 9
+
+3 14 71 98 99
+
+38 35 31 29 10 9 12 3 14 71 98 99
+
+
+
+Exemplo 2 - xiv/xv
+Elementos retirados:
+
+14 99   98   71   38
+
+35 31
+
+29 10 9 12
+
+Capacidade: 12
+Tamanho: 8
+
+3 38 71 98 99
+
+14 35 31 29 10 9 12 3 38 71 98 99
+
+
+
+Exemplo 2 - xv/xv
+Elementos retirados:
+
+35 99   98   71   38
+
+29 31
+
+Passos 
+intermediários 
+
+14 10 9 12 omitidos
+
+Capacidade: 12
+Tamanho: 8
+
+3 38 71 98 99
+
+35 29 31 14 10 9 12 3 38 71 98 99
+
+
+
+Exemplo 3 - i/xi
+Suponha que, com o heap anterior, com 
+capacidade para doze elementos, mas 
+utilizando oito posições, queiramos inserir 
+dois novos elementos: 55 e 33. 
+
+A inserção é sempre feita após a posição 
+final do heap, chamando-se o corrige-subindo 
+logo em seguida.
+
+
+
+Exemplo 3 - ii/xi
+Elementos a serem inseridos:
+
+35 55   33
+
+29 31
+
+14 10 9 12
+
+Capacidade: 12
+Tamanho: 8
+
+3 38 71 98 99
+
+35 29 31 14 10 9 12 3 38 71 98 99
+
+
+
+Exemplo 3 - iii/xi
+Elementos a serem inseridos:
+
+35 55   33
+
+29 31
+
+14 10 9 12
+
+Capacidade: 12
+Tamanho: 8
+
+3 55 71 98 99
+
+35 29 31 14 10 9 12 3 55 71 98 99
+
+
+
+Exemplo 3 - iv/xi
+Elementos a serem inseridos:
+
+35 55   33
+
+29 31
+O pai de um nó é facilmente 
+determinado pela posição no 
+arranjo, como será visto logo a 
+
+14 10 9 12
+seguir.
+
+Capacidade: 12
+Tamanho: 9
+
+3 55 71 98 99
+
+35 29 31 14 10 9 12 3 55 71 98 99
+
+
+
+Exemplo 3 - v/xi
+Elementos a serem inseridos:
+
+35 55   33
+
+29 31
+Como o nó inserido pode ter 
+alterado a estrutura do heap, o 
+método corrige-subindo é 
+
+55 10 9 12
+chamado. 
+
+Capacidade: 12
+Tamanho: 9
+
+3 14 71 98 99
+
+35 29 31 55 10 9 12 3 14 71 98 99
+
+
+
+Exemplo 3 - vi/xi
+Elementos a serem inseridos:
+
+35 55   33
+
+55 31
+Processo é repetido até não haver 
+mais trocas ou chegar ao raiz. 
+
+29 10 9 12
+
+Capacidade: 12
+Tamanho: 9
+
+3 14 71 98 99
+
+35 55 31 29 10 9 12 3 14 71 98 99
+
+
+
+Exemplo 3 - vii/xi
+Elementos a serem inseridos:
+
+55 55   33
+
+35 31
+Processo é repetido até não haver 
+mais trocas ou chegar ao raiz. 
+
+29 10 9 12
+
+Capacidade: 12
+Tamanho: 9
+
+3 14 71 98 99
+
+55 35 31 29 10 9 12 3 14 71 98 99
+
+
+
+Exemplo 3 - viii/xi
+Elementos a serem inseridos:
+
+55 55   33
+
+35 31
+
+29 10 9 12
+
+Capacidade: 12
+Tamanho: 9
+
+3 14 71 98 99
+
+55 35 31 29 10 9 12 3 14 71 98 99
+
+
+
+Exemplo 3 - ix/xi
+Elementos a serem inseridos:
+
+55 55   33
+
+35 31
+
+29 10 9 12
+
+Capacidade: 12
+Tamanho: 10
+
+3 14 33 98 99
+
+55 35 31 29 10 9 12 3 14 33 98 99
+
+
+
+Exemplo 3 - x/xi
+Elementos a serem inseridos:
+
+55 55   33
+
+35 31
+
+29 33 9 12
+
+Capacidade: 12
+Tamanho: 10
+
+3 14 10 98 99
+
+55 35 31 29 33 9 12 3 14 10 98 99
+
+
+
+Exemplo 3 - xi/xi
+Elementos a serem inseridos:
+
+55 55   33
+
+35 31
+Como o nó é menor que o nó pai, o 
+processo de correção é terminado.
+
+29 33 9 12
+
+Capacidade: 12
+Tamanho: 10
+
+3 14 10 98 99
+
+55 35 31 29 33 9 12 3 14 10 98 99
+
+
+
+Implementação 
+
+76
+
+
+
+Heap - Métodos para Implementação
+Como foi percebido, os métodos necessários a uma 
+implementação de heap são: corrige-descendo(), 
+corrige-subindo() (desnecessário se não suportar 
+inserção), insere() e retira-raiz(). 
+
+Quando da construção a partir de vetor, 
+geralmente se utiliza um método auxiliar 
+denominado geralmente de heapify(), 
+constroi-heap() ou arruma(). 
+
+
+
+Heap - Métodos Auxiliares
+Como heaps são implementados tradicionalmente em 
+arranjos, é necessários o uso de métodos 
+auxiliares para encontrar o pai de um nó, bem 
+como seu filho à esquerda e filho à direita.
+
+
+
+Encontrando Pais e Filhos - i
+Observe, no heap ao lado, que cada 
+camada está em sequência no heap.
+
+99
+
+38 98 Isso possibilita criar uma relação 
+matemática para obter a posição dos 
+nó pai e nós filhos a partir da posição 
+do nó atual.
+
+29 35 71 12
+ 
+
+3 14 10 9 31
+
+99 38 98 29 35 71 12 3 14 10 9 31
+
+0 1 2 3 4 5 6 7 8 9 10 11
+
+
+
+Encontrando Pais e Filhos - ii
+Considerando-se arranjos começando em posição 
+zero:
+
+pai(i) ← (i-1)/2
+
+esquerdo(i) ← 2i + 1
+
+direito(i) ← 2i + 2   
+
+
+
+Encontrando Pais e Filhos - ii
+Algumas implementações de heap, começam a 
+contagem na posição 1, nesse caso: 
+
+pai(i) ← (i)/2
+o nó pai e o nó esquerdo 
+
+esquerdo(i) ← 2i são calculados com uma 
+
+direito(i) ← 2i + 1   operação a menos.
+
+
+
+Encontrando Pais e Filhos - ii
+Algumas implementações de heap, começam a 
+contagem na posição 1, nesse caso: 
+
+pai(i) ← (i)/2 Quando começando com a 
+posição 1, recomenda-se utilizar 
+
+esquerdo(i) ← 2i a posição 0 para armazenar o 
+tamanho utilizado do heap. 
+
+direito(i) ← 2i + 1   
+
+
+
+Implementação de Heap - Visão Geral
+A implementação de um heap é feita 
+tradicionalmente em arranjos, definidos a partir 
+de uma capacidade.
+
+Adicionalmente, além dos dados no arranjo, é 
+importante armazenar o tamanho utilizado.  
+
+Os exemplos de algoritmos a seguir utilizam heaps 
+que, a princípio, podem começar da posição 0 ou 1 
+indistintamente. 
+
+
+
+Heap - Criação e Remoção
+criarHeap(umaCapacidade):
+capacidade ← umaCapacidade;
+dados ← alocaVetorDeDados(capacidade);
+tamanho ← 0;
+
+destruirHeap():
+desalocaVetorDeDados(dados);
+
+
+
+Heap - Corrige Descendo
+corrigeDescendo(i): 
+esq ← esquerdo(i);
+dir ← direito(i);
+maior ← i;
+se ((esq <= FINAL) e (dados[esq] > dados[maior]))
+
+maior ← esq;    
+se ((dir <= FINAL) e (dados[dir] > dados[maior]))
+
+maior ← dir;
+se (maior ≠ i) {
+
+troca(dados[i], dados[maior]);
+corrigeDescendo(maior);
+
+}
+
+
+
+Heap - Corrige Descendo
+FINAL indica a posição 
+
+corrigeDescendo(i): final do heap e 
+esq ← esquerdo(i); depende do tamanho 
+
+dir ← direito(i); (número de elementos 
+no heap). 
+
+maior ← i;
+se ((esq <= FINAL) e (dados[esq] > dados[i]))
+
+maior ← esq;    
+se ((dir <= FINAL) e (dados[dir] > dados[maior]))
+
+maior ← dir;
+se (maior ≠ i) {
+
+troca(dados[i], dados[maior]);
+corrigeDescendo(maior);
+
+}
+
+
+
+Heap - Corrige Descendo
+FINAL indica a posição 
+
+corrigeDescendo(i): final do heap e 
+esq ← esquerdo(i); depende do tamanho 
+
+dir ← direito(i); (número de elementos 
+
+maior ← no heap). 
+ i;
+
+se ((esq <= FINAL) e (dados[esq] > dados[i]))
+maior ← esq;    FINAL vale 
+
+TAMANHO - 1, 
+se ((dir <= FINAL) e (dados[dir] > dados[maior])) para heaps 
+
+maior ← dir; começando em 0 
+e vale TAMANHO 
+
+se (maior ≠ i) { para heaps 
+troca(dados[i], dados[maior]); começando em 
+
+1.
+corrigeDescendo(maior);
+
+}
+
+
+
+Heap - Construção a partir de Vetor
+constroiHeap(vetor,tamanho): //heapify()
+dados ← copiaDados(vetor);
+// INICIO informa posição inicial utilizada no vetor
+para todo i de METADE até INICIO {
+
+corrigeDescendo(i);
+}
+
+  
+
+
+
+Heap - Construção a partir de Vetor
+constroiHeap(vetor,tamanho): //heapify()
+dados ← copiaDados(vetor);
+// INICIO informa posição inicial utilizada no vetor
+para todo i de METADE até INICIO {
+
+corrigeDescendo(i);
+}
+
+METADE  indica a posição do último nó não folha no heap.
+ 
+METADE = FINAL/2 para heaps começando em 1
+
+  METADE = (FINAL-1)/2 para heaps começando em 0
+
+
+
+Heap - Construção a partir de Vetor
+constroiHeap(vetor,tamanho): //heapify()
+dados ← copiaDados(vetor);
+// INICIO informa posição inicial utilizada no vetor
+para todo i de METADE até INICIO {
+
+corrigeDescendo(i);
+} FINAL vale 
+
+TAMANHO - 1, Considerando que o valor de FINAL depende se o 
+para heaps 
+começando em 0 armazenamento começa em 0 ou 1:
+e vale TAMANHO  
+
+  para heaps METADE = TAMANHO/2 para heaps começando em 1
+começando em METADE = (TAMANHO-2)/2 para heaps começando em 0
+1.
+
+
+
+Heap - Retirada da Raiz 
+retiraRaiz():
+se (tamanho < 1)
+
+gerarErro(erroTamanho);
+aux ← dados[INICIO];
+troca(dados[INICIO],dados[FINAL]);
+tamanho--;
+corrigeDescendo(INICIO);
+efetuaAcao(aux);
+
+
+
+Heap - Corrige Subindo
+corrigeSubindo(i):
+p ← pai(i);
+se ((p ≥ INICIO) e (dados[i] > dados[p])) {
+
+troca(dados[i],dados[p]);
+corrigeSubindo(p);
+
+}
+
+
+
+Heap - Corrige Subindo
+corrigeSubindo(i):
+p ← pai(i); O teste (p ≥ INICIO) é desnecessário 
+se ((p ≥ INICIO) e (dadnoas [mia]i o>ri ad addaoss [lpi]ng)u)a g{ens de 
+
+programação, caso se utilize heap 
+troca(dados[i],dadosc[opm]e)ç;ando em 0. Isso ocorre porque o 
+corrigeSubindo(p); pai da raiz vai ser calculado como: 
+
+}
+raiz(0) = (0-1)/2 = -1/2.
+ 
+A maioria das linguagens (incluindo 
+C/C++) vai arredondar esse valor 
+para 0 ao fazer divisão inteira. 
+
+
+
+Heap - Inserção
+insere(valor):
+se (tamanho = capacidade)
+
+geraErro(erroInsercao);
+heap[FINAL+1] ← valor;
+corrigeSubindo(FINAL+1);
+tamanho++; 
+
+
+
+Heap - Outros Métodos 
+Considera-se quebra de estrutura acessar diretamente o 
+arranjo de dados em um heap. Assim, um método para 
+impressão dos dados só seria aceito em implementações 
+didáticas ou para depuração.
+
+Em algumas situações, é permitido o acesso (mas sem 
+retirada) ao elemento raiz, espiando-o. 
+
+Um heap também pode ser utilizado para ordenar 
+vetores, através do método heapsort. 
+
+
+
+Heapsort
+O heapsort é um método de ordenação que consiste na 
+construção de um heap a partir dos dados de um vetor. 
+Pode-se usar um maxheap ou minheap, dependendo como os 
+dados são trabalhados. 
+
+No heapsort, até que o heap fique vazio, os elementos 
+do heap são retirados um por um, produzindo uma 
+ordenação dos dados.
+
+É possível encontrar vários algoritmos e 
+implementações em que a estrutura fica implícita. 
+
+
+
+Torneio
+
+97
+
+
+
+Torneio - i
+Um torneio é uma árvore estritamente binária na 
+qual cada nó não folha (pai) contém uma cópia do 
+maior elemento entre seus dois filhos. 
+
+O conteúdo das folhas de um torneio determina o 
+conteúdo de todos os seus nós. 
+
+
+
+Torneio - ii
+A representação de um torneio através de um 
+MaxHeap permite identificar a classificação dos 
+1º e 2º lugares com facilidade, por exemplo. 
+
+A ordem de classificação é obtida retirando-se a 
+raiz e reorganizando os elementos do torneio, mas 
+mantendo a classificação parcial já realizada. 
+
+
+
+Torneio - iIi
+
+13
+
+3 14 10 9 31 8 6 13
+
+13 3 14 10 9 31 8 6 13
+
+
+
+Torneio - iv
+
+31 13
+
+3 14 10 9 31 8 6 13
+
+31 13 3 14 10 9 31 8 6 13
+
+
+
+Torneio - v
+
+10 31 13
+
+3 14 10 9 31 8 6 13
+
+10 31 13 3 14 10 9 31 8 6 13
+
+
+
+Torneio - vi
+
+14 10 31 13
+
+3 14 10 9 31 8 6 13
+
+14 10 31 13 3 14 10 9 31 8 6 13
+
+
+
+Torneio - vii
+
+31
+
+14 10 31 13
+
+3 14 10 9 31 8 6 13
+
+31 14 10 31 13 3 14 10 9 31 8 6 13
+
+
+
+Torneio - viIi
+
+14 31
+
+14 10 31 13
+
+3 14 10 9 31 8 6 13
+
+14 31 14 10 31 13 3 14 10 9 31 8 6 13
+
+
+
+Torneio - ix
+31
+
+14 31
+
+14 10 31 13
+
+3 14 10 9 31 8 6 13
+
+31 14 31 14 10 31 13 3 14 10 9 31 8 6 13
+
+
+
+Torneio - X
+31
+
+É fácil apontar, após a 
+construção, o campeão e o 
+vice-campeão do torneio. 
+O campeão está na raiz e 14 31
+
+o vice-campeão é o filho 
+da raiz que não tem o 
+mesmo valor. 14 10 31 13
+
+3 14 10 9 31 8 6 13
+
+31 14 31 14 10 31 13 3 14 10 9 31 8 6 13
+
+
+
+Torneio Incompleto
+
+108
+
+
+
+Torneio Incompleto - i
+Como pode ser percebido, fica bastante simples 
+implementar um torneio quando os elementos 
+representam uma potência de 2. O heap ocupa todas 
+as posições possíveis de nós folha.
+
+E quando não há elementos suficientes para ocupar 
+todas as posições?
+
+109
+
+
+
+Torneio Incompleto - ii
+Como em um torneio os dados estão todos contidos 
+nas folhas, a alocação do vetor de dados precisa 
+alocar espaço para os dados e os possíveis nós 
+nas camadas intermediárias. 
+
+Se as folhas estivessem todas cheias, a 
+capacidade total a ser alocada seria 2k - 1. Nesse 
+caso, os dados ocupariam metade do espaço, ou 
+seja 2k-1.
+
+110
+
+
+
+Torneio Incompleto - iIi
+Assim o número de possíveis pais é dado pelo cálculo da 
+potência de 2 menos uma unidade, tal que esse cálculo 
+seja maior ou igual ao número de dados iniciais:  
+
+numPais ← 1;
+enquanto (numPais < numDados)
+  numPais ← numPais * 2;
+capacidade ← numPais - 1  + numDados;
+alocaVetorDeDados(capacidade);
+inicioVetorDeDados ← capacidade - tam;
+copiaVetorDeDados();
+
+111
+
+
+
+Torneio Incompleto - iIi
+Assim o número de possíveis possíveis pais é dado pelo 
+cálculo da potência de 2 menos uma unidade, tal que esse 
+cálculo seja maior ou igual ao número de dados iniciais:  
+
+numPais ← 1;
+enquanto (numPais < numDados) A cópia do vetor 
+  numPais ← numPais * 2; de dados é feita a 
+
+partir do espaço 
+capacidade ← numPais - 1  + numDados; reservado aos nós 
+alocaVetorDeDados(capacidade); dos possíveis 
+inicioVetorDeDados ← capacidade - tam; pais.
+copiaVetorDeDados();
+
+112
+
+
+
+Torneio incompleto - iv
+Após cópia dos dados, é necessário agora arrumar o 
+torneio. A função arruma(), assim como no maxheap, 
+consiste em chamar uma função auxiliar do meio até o 
+início para ir corrigindo os elementos.
+ 
+No caso do torneio, não há troca de valores, mas 
+cópia. Além disso, como os dados estão apenas nas 
+folhas, não há necessidade de descer aos níveis mais 
+baixos como na corrigeDescendo() do heap. Assim, vamos 
+chamar esse método de copiaMaior(). 
+
+113
+
+
+
+Método arruma()
+arruma():
+para todo i de inicioVetorDeDados até INICIO {
+
+copiaMaior(i);
+}
+
+114
+
+
+
+Método copiaMaior()
+copiaMaior(i): 
+esq ← esquerdo(i);
+dir ← direito(i);
+se (esq <= FINAL)
+
+se ((dir <= FINAL) e (dados[dir] > dados[esq]))
+maior ← dir;
+
+senão
+maior ← esq;
+
+    heap[i] ← heap[maior];
+senão
+
+heap[i] ← INVALIDO; 
+
+115
+
+
+
+Método copiaMaior()
+INVALIDO é uma forma de informar 
+que o valor naquele nó não pode 
+
+copiaMaior(i): ser usado. 
+esq ← esquerdo(i); Caso o torneio seja apenas de 
+dir ← direito(i); valores positivos (o mais usual), 
+se (esq <= FINAL) basta configurar INVALIDO como -1. 
+
+se ((dir <= FINAL) e (dados[dir] > dados[esq]))
+maior ← dir;
+
+senão
+maior ← esq;
+
+    heap[i] ← heap[maior];
+senão
+
+heap[i] ← INVALIDO; 
+
+116
+
+
+
+Torneio Incompleto - Exemplo (1)
+Considere o seguinte exemplo: 9 times vão 
+competir pela copa de jokempô. A pontuação foi 
+determinada por caracteres, em ordem crescente.
+
+F A G T M C B I L
+
+117
+
+
+
+Torneio incompleto - Exemplo (2)
+Para nove times, precisamos de um arranjo com 24 
+posições: 
+2k (potência de dois que comporta a quantidade de 
+elementos) - 1 + a quantidade de elementos 
+
+16 - 1 + 9 = 24
+
+118
+
+
+
+Torneio incompleto - Exemplo (3)
+O preenchimento do arranjo começa na porção 
+final, que representa o conjunto de folhas (ou 
+filhos).
+
+inicioVetorDeDados ← numPais;    
+copiaVetorDeDados();
+
+F A G T M C B I L
+
+119
+
+
+
+Torneio incompleto - Exemplo (4)
+T
+
+T L
+
+T M L -1
+
+F T M I L -1 -1 -1
+
+F A G T M C B I L
+120
+
+
+
+Torneio incompleto - Exemplo (5)
+Após aplicação do método arruma(), o vetor de dados 
+ficará da seguinte forma:
+
+T T L T M L -1 F T M I L -1 -1 -1 F A G T M C B I L
+
+121
+
+
+
+Suporte para Inserção - i
+Usualmente, torneios são construídos a partir de 
+dados em vetores. 
+
+Entretanto, apesar de um pouco mais trabalhoso, 
+não é complicado adicionar inserção em torneios.
+
+Nesse caso é necessário criar o vetor com a 
+capacidade desejada (de maneira similar ao 
+tamanho do vetor) e marcar posições não 
+utilizadas como inválidas.
+
+122
+
+
+
+Suporte para Inserção - II
+A inserção é feita sempre na primeira folha 
+disponível, cuja posição é possível de encontrar 
+usando tamanho e posição da primeira folha 
+(inicioVetorDeDados).
+
+Após a inserção, é necessário ir copiando o valor 
+inserido até a raiz ou até encontrar um valor que 
+seja maior que ele. O funcionamento é similar à 
+corrigeSubindo(), mas sem trocas.   
+
+123
+
+
+
+Método insere()
+insere(valor):
+se (tamanho = capacidade)
+
+geraErro(erroInsercao);
+heap[tamanho+inicioDados] ← valor;
+copiaSubindo(tamanho+inicioDados);
+tamanho++; 
+
+124
+
+
+
+Método copiaSubindo()
+copiaSubindo(i):
+p ← pai(i);
+se ((dados[i] > dados[p])) {
+
+dados[p] ← dados[i];
+corrigeSubindo(p);
+
+}
+
+125
+
+
+
+Retirada de Elementos - i 
+Em geral, torneios são produzidos para fácil 
+obtenção do vencedor, sendo também fácil obter o 
+segundo colocado. Assim, a maioria das aplicações 
+de torneios não utilizam a retirada de elementos.
+
+Caso seja necessário, é preciso avaliar o que 
+essa retirada significa para o problema em 
+questão, uma vez que diferentes caminhos podem 
+ser seguidos após a retirada da raiz. 
+
+126
+
+
+
+Retirada de Elementos - ii 
+31
+
+Por exemplo, no torneio 
+ao lado, o segundo 
+colocado é o 14, mas o 
+
+14 31
+segundo maior valor é o 
+15. Para que o 15 suba ao 
+topo, caso seja esse o 14 10 31 15
+
+objetivo da retirada, é 
+necessário refazer o 3 14 10 9 31 8 6 15
+
+torneio com os elementos 
+restantes.
+
+127
+
+
+
+Retirada de Elementos - iIi 
+-1
+
+Caso seja necessário 
+refazer o torneio, basta 
+marcar os nós com o valor 
+
+14 -1
+retirado como inválidos 
+(-1 na figura) e 
+reconstruir o torneio 14 10 -1 15
+
+usando a função arruma().
+3 14 10 9 -1 8 6 15
+
+128
+
+
+
+Sobre o Material
+
+129
+
+
+
+Sobre este material
+Material produzido coletivamente, principalmente 
+pelos seguintes professores do DCC/UFLA:
+
+● Joaquim Quinteiro Uchôa
+● Juliana Galvani Greghi
+● Renato Ramos da Silva
+
+Inclui contribuições de outros professores do 
+setor de Fundamentos de Programação do DCC/UFLA.
+Esta obra está licenciado com uma Licença Creative Commons Atribuição 4.0 Internacional.
+
+130
