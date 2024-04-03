@@ -1,0 +1,931 @@
+﻿Universidade Federal de Lavras
+GCC216 - Estrutura de Dados
+
+Estrutura de Dados Pilha
+Prof. Joaquim Uchôa
+
+Profa. Juliana Greghi
+Prof. Renato Ramos
+
+
+
+● Definição e Visão Geral
+● Operações Básicas sobre 
+
+Roteiro Pilhas
+● Informação Importante
+● Implementação 
+
+Utilizando Vetores
+
+2
+
+
+
+Definição e 
+Visão Geral
+
+3
+
+
+
+Definição
+● De acordo com o dicionário o que é uma pilha?
+
+4
+
+
+
+Definição
+● De acordo com o dicionário o que é uma pilha?¹
+
+○ Porção de coisas dispostas umas sobre as outras (monte);
+
+○ Dispositivo que transforma a energia química em energia 
+elétrica;
+
+○ Indivíduo irritado ou nervoso
+
+○ Caixa que contém dentro de si outras caixas de várias 
+dimensões, acondicionadas, umas dentro das outras, de 
+acordo com os tamanhos
+
+¹Segundo dicionário michaelis on-line http://michaelis.uol.com.br/busca?id=OWQE 5
+
+
+
+Definição
+● E em Computação?
+
+○ É uma estrutura de dados que assume a ideia de 
+monte para armazenar as informações.
+
+○ É baseada no princípio "Last In First Out"(LIFO)
+■ O último inserido será o primeiro a ser retirado.
+■ A manipulação é feita somente em uma das 
+
+extremidades.
+■ Não é possível o acesso direto aos demais dados.
+
+6
+
+
+
+Definição
+Ideia Básica
+
+7
+
+
+
+Aplicações Tradicionais de Pilhas
+Pilhas são utilizadas em diversas situações na 
+computação. Por exemplo, são utilizadas no processo 
+recursivo e nas seguintes aplicações:
+
+● Calculadora para expressões matemáticas;
+● Conversão de número decimal para binário;
+● Retirada de mercadorias de um caminhão de entregas;
+● Mecanismo de fazer/desfazer de editores diversos;
+● Mecanismo de navegação de páginas na Internet 
+
+(avançar e retornar).
+8
+
+
+
+Inserção na Pilha
+A inserção deve ser sempre na posição à frente 
+(ou acima) do último elemento inserido.
+
+9
+
+
+
+Retirada de Elementos na Pilha
+A retirada de um elemento na pilha é sempre daquele 
+que foi inserido por último. Caso se  deseje acessar, 
+por exemplo, o conteúdo de um nó intermediário, todos 
+os demais devem ser desempilhados antes. 
+
+10
+
+
+
+Formas de Implementação
+Uma pilha pode ser implementada de diferentes 
+maneiras, as mais comuns são:
+
+● Implementação usando encadeamento de nós 
+(elementos) da pilha;
+
+● Implementação usando arranjo para armazenamento 
+dos elementos.
+
+11
+
+
+
+Implementação Usando Encadeamento - I
+A implementação mais usual de pilha é a usando 
+encadeamento. Nessa implementação, cada nó contém 
+informações e aponta para o próximo nó. O último 
+nó da pilha aponta para NULO, indicando seu 
+término. A pilha sabe apenas onde está o topo.
+Pilha
+TOPO
+
+Nó 1 Nó 2 ... Nó n-1 Nó n
+12
+
+
+
+Implementação Usando Encadeamento - II
+Em uma implementação por encadeamento, uma pilha 
+contém um apontador para o topo e cada nó contém 
+o dado armazenado e um apontador para o próximo 
+nó na estrutura.
+
+Pilha
+TOPO Nó i
+
+Dados Próximo nó
+
+13
+
+
+
+Implementação Usando Encadeamento - III
+Pilha e nós são implementados tradicionalmente 
+como estruturas ou classes. Usaremos a segunda 
+abordagem, usando uma classe para pilha e outra 
+para os nós. 
+
+Pilha
+TOPO Nó i
+
+Dados Próximo nó
+
+14
+
+
+
+Classe Noh
+Cada nó da pilha possui atributos com os dados 
+armazenados, que pode ser desde um simples 
+inteiro até uma estrutura ou outra classe. Além 
+disso, possui um apontador para o próximo nó. 
+
+class 
+Nó noh
+Dados Próximo nó
+
+int dado;
+noh* proximo;
+
+15
+
+
+
+Classe Pilha
+A classe pilha contém geralmente, além do apontador 
+para o topo, um atributo para informar a quantidade de 
+elementos (nós) que ela possui. Outros atributos podem 
+ser necessários, dependendo do problema resolvido.
+
+Pilha class 
+pilha
+
+TOPO
+int tamanho;
+noh* topo;
+
+16
+
+
+
+Operações Básicas 
+Sobre Pilhas
+
+17
+
+
+
+Operações Básicas sobre Pilhas
+Uma pilha possui um conjunto de operações 
+básicas, para seu correto uso:
+
+● Criação / destruição
+● Inserção (ou empilhamento)
+● Remoção (ou desempilhamento)
+
+18
+
+
+
+Criação da pilha
+criarPilha(): TOPO
+
+topo ← NULL;
+
+// informação opcional NULL
+tamanho ← 0;
+
+A criação da pilha consiste basicamente 
+em garantir que seu topo não aponte 
+para uma região válida de memória.
+
+19
+
+
+
+Inserção de elemento
+A inserção em uma 
+
+push(valor): pilha, consiste em 
+criar um novo nó com o 
+dado a ser armazenado e 
+
+novo ← criar_noh(valor); posteriormente 
+colocá-lo no topo. 
+
+novo.proximo ← topo; Assim, seu próximo 
+elemento é o topo 
+
+topo ← novo; antigo e o topo passa a 
+ser o novo elemento 
+
+tamanho++; inserido.  
+
+20
+
+
+
+Operações Básicas Sobre Pilhas
+Inserção ou Empilhamento (PUSH)
+
+TOPO
+
+TOPO TOPO NOVO1
+
+NOVO1
+
+NULL NULL NULL
+
+NULL
+Situação Inicial Inserindo o elemento NOVO1 
+
+21
+
+
+
+Operações Básicas Sobre Pilhas TOPO
+
+Inserção ou Empilhamento (PUSH)
+TOPO TOPO NOVO2
+
+NOVO2
+
+NOVO1 NOVO1 NOVO1
+
+NULL
+
+NULL NULL NULL
+22
+
+
+
+Inserção de elemento
+push(valor): valor=23 TOPO
+novo ← criar_noh(valor);
+
+NULL
+novo.proximo ← topo;
+
+topo ← novo;
+
+tamanho++; 
+
+23
+
+
+
+Inserção de elemento
+push(valor): valor=23 TOPO 23
+
+novo ← criar_noh(valor);
+NULL NULL
+
+novo.proximo ← topo;
+
+topo ← novo;
+
+tamanho++; 
+
+24
+
+
+
+Inserção de elemento
+push(valor): valor=23 TOPO 23
+
+novo ← criar_noh(valor);
+NULL
+
+novo.proximo ← topo;
+
+topo ← novo;
+
+tamanho++; 
+
+25
+
+
+
+Inserção de elemento
+push(valor): valor=23 TOPO
+
+novo ← criar_noh(valor);
+23
+
+novo.proximo ← topo;
+NULL
+
+topo ← novo;
+
+tamanho++; 
+
+26
+
+
+
+Inserção de elemento
+push(valor): valor=23 TOPO
+
+novo ← criar_noh(valor);
+23
+
+novo.proximo ← topo;
+NULL
+
+topo ← novo;
+
+tamanho++; tamanho=1
+
+27
+
+
+
+Inserção de elemento
+push(valor): valor=45 TOPO
+
+novo ← criar_noh(valor);
+23
+
+novo.proximo ← topo;
+NULL
+
+topo ← novo;
+
+tamanho++; 
+
+28
+
+
+
+Inserção de elemento
+push(valor): valor=45 TOPO 45
+
+novo ← criar_noh(valor);
+23 NULL
+
+novo.proximo ← topo;
+
+topo ← novo; NULL
+
+tamanho++; 
+
+29
+
+
+
+Inserção de elemento
+push(valor): valor=45 TOPO
+
+45
+novo ← criar_noh(valor);
+
+23
+novo.proximo ← topo;
+
+NULL
+topo ← novo;
+
+tamanho++; 
+
+30
+
+
+
+Inserção de elemento
+push(valor): valor=45 TOPO
+
+novo ← criar_noh(valor);
+45
+
+novo.proximo ← topo;
+
+topo ← novo; 23
+
+tamanho++; NULL
+
+31
+
+
+
+Inserção de elemento
+push(valor): valor=45 TOPO
+
+novo ← criar_noh(valor);
+45
+
+novo.proximo ← topo;
+
+topo ← novo; 23
+
+tamanho++; NULL
+
+tamanho=2
+32
+
+
+
+Retirada de Elemento
+pop(): A retirada de um 
+
+elemento da pilha 
+consiste em acessar o 
+
+aux ←  topo; seu topo, retornando-o 
+dado ← aux.valor; para a ação desejada. 
+topo ← aux.proximo; Nesse caso, o novo topo 
+
+passa a ser o próximo 
+apagar(aux); nó do topo anterior, 
+tamanho--; que será removido do 
+// faz ação desejada sistema.
+
+// (e.g.: retorno)
+efetuaAcao(dado); 33
+
+
+
+Retirada de Elemento TOPO
+
+TOPO NOVO2
+
+NOVO2
+
+NOVO1 NOVO1
+
+NULL
+
+NULL NULL
+34
+
+
+
+Retirada de Elemento
+TOPO
+
+pop():
+
+aux ←  topo; 45
+dado ← aux.valor;
+topo ← aux.proximo; 23
+apagar(aux);
+tamanho--; NULL
+// faz ação desejada 
+// (e.g.: retorno)
+efetuaAcao(dado); 35
+
+
+
+Retirada de elemento
+TOPO
+
+pop(): aux
+
+aux ←  topo; 45
+dado ← aux.valor;
+topo ← aux.proximo; 23
+apagar(aux);
+tamanho--; NULL
+// faz ação desejada 
+// (e.g.: retorno)
+efetuaAcao(dado); 36
+
+
+
+Retirada de elemento
+TOPO
+
+pop(): aux
+
+aux ←  topo; 45
+dado ← aux.valor;
+topo ← aux.proximo; 23
+apagar(aux);
+tamanho--; NULL
+// faz ação desejada 
+// (e.g.: retorno) dado=45
+
+efetuaAcao(dado); 37
+
+
+
+Retirada de elemento
+TOPO
+
+pop():
+aux
+
+aux ←  topo;
+dado ← aux.valor; 45
+topo ← aux.proximo; 23
+apagar(aux);
+tamanho--; NULL
+// faz ação desejada 
+// (e.g.: retorno) dado=45
+
+efetuaAcao(dado); 38
+
+
+
+Retirada de elemento
+TOPO
+
+pop():
+aux
+
+aux ←  topo;
+dado ← aux.valor; 45
+topo ← aux.proximo; 23
+apagar(aux);
+tamanho--; NULL
+// faz ação desejada 
+// (e.g.: retorno) dado=45
+
+efetuaAcao(dado); 39
+
+
+
+Retirada de elemento
+TOPO
+
+pop():
+
+aux ←  topo;
+dado ← aux.valor;
+topo ← aux.proximo; 23
+apagar(aux);
+tamanho--; NULL
+// faz ação desejada 
+// (e.g.: retorno) dado=45
+
+tamanho=1
+efetuaAcao(dado); 40
+
+
+
+Retirada de elemento
+TOPO
+
+pop():
+
+aux ←  topo;
+dado ← aux.valor;
+topo ← aux.proximo; 23
+apagar(aux);
+tamanho--; NULL
+// faz ação desejada 
+// (e.g.: retorno) dado=45
+
+tamanho=1
+efetuaAcao(dado); 41
+
+
+
+Informação 
+Importante
+
+42
+
+
+
+Informação Importante TOPO
+
+● O acesso à Pilha deve ser 
+sempre feito pelo TOPO NOVO20
+
+● As ligações entre os nós 
+.
+
+é para que a estrutura .
+
+permaneça integrada. .
+
+NOVO2
+
+NOVO1
+
+NULL
+43
+
+
+
+Informação Importante
+Mas professor, dessa 
+forma eu só posso 
+acessar o elemento que 
+o TOPO aponta? E se, 
+por exemplo, na 
+estrutura anterior, eu 
+quiser utilizar o 
+elemento NOVO12, o que 
+fazer?
+
+44
+
+
+
+Informação Importante
+Pela definição, não é possível acessar os outros 
+elementos que não estão no topo. Assim, não é 
+possível desenvolver uma função da pilha que 
+resolva isso.
+
+Mas você pode retirar todos os elementos do topo 
+até encontrar o elemento desejado. Vamos deixar 
+claro, que essa situação deve ser feita via 
+retirada de elementos, não pode ser um 
+procedimento da pilha. 45
+
+
+
+Outras Operações em Pilhas - i
+Além das operações básicas apresentadas, as 
+pilhas podem implementar:
+
+● verificar o número de elementos da pilha;
+● verificar se a pilha está ou não vazia;
+● retirar todos os elementos da pilha;
+● opcionalmente acessar o topo da pilha;
+● opcionalmente depurar/imprimir a pilha.
+
+46
+
+
+
+Outras Operações em Pilhas - ii
+➢ A retirada de todos os elementos da pilha é por 
+
+meio de desempilhamento, um por um. 
+➢ O destrutor é implementado geralmente usando o 
+
+método para retirar todos os elementos da 
+pilha.
+
+47
+
+
+
+Outras Operações em Pilhas - iii
+➢ O acesso ao topo (espia) costuma ser 
+
+disponibilizado em várias implementações. Nesse 
+caso, há o acesso ao dado, mas sem sua 
+retirada, que continua no topo da pilha.
+
+48
+
+
+
+Outras Operações em Pilhas - iv
+➢ Implementações iniciais às vezes fazem uso de 
+
+mecanismos de percorrimento para 
+impressão/depuração dos dados. Esse método é 
+considerado uma quebra de estrutura, pois 
+acessa os elementos intermediários sem 
+desempilhamento. Assim, esse recurso só pode 
+ser usado, para fins didáticos ou de depuração. 
+
+49
+
+
+
+Implementação
+Utilizando Vetor
+
+50
+
+
+
+Implementação utilizando vetor
+
+Vantagem
+- Operações rápidas (acesso, 
+empilhamento, 
+desempilhamento).
+
+topo
+
+51
+
+
+
+Implementação utilizando vetor
+
+Desvantagem
+- Espaço alocado sem 
+necessidade;
+- Impossibilidade de aumentar 
+a capacidade da pilha sem 
+
+topo redimensionamento do vetor.
+
+52
+
+
+
+Implementação utilizando vetor
+A implementação em vetor 
+utiliza um atributo para 
+armazenar o índice do 
+vetor que contém o topo 
+da pilha. Em uma 
+inserção, o topo avança 
+uma posição. Em uma 
+retirada, o topo retorna 
+uma posição.
+
+topo
+
+53
+
+
+
+Considere os elementos Insere elemento na pilha
+
+ 23   45   11
+
+23, 45, 11 e 89.
+topo
+
+Insere elemento na pilha Remove elemento da pilha
+ 23   45   
+
+ 23
+
+topo
+topo
+
+Insere elemento na pilha Insere elemento na pilha
+
+ 23   45  23   45   89
+
+topo topo
+
+
+
+Um Exemplo:
+Notação Pósfixa
+
+55
+
+
+
+Expressão em Notação Pósfixa - i
+Um dos problemas ao tratar expressões matemáticas 
+computacionalmente é a precedência de operadores:
+
+2+4*2 = 10?  Ou  2+4*2 = 12?
+
+Por conta disso, usamos geralmente parênteses:
+
+2+(4*2) = 10  e  (2+4)*2 = 12
+
+Mas internamente, geralmente se usam outras 
+formas de representação.
+
+56
+
+
+
+Expressão em Notação Pósfixa - ii
+Uma das formas de representar expressões sem o 
+problema com precedência de operadores é o uso de 
+notação pósfixa. Nesse caso, o operador é 
+inserido após os operandos a que deve ser 
+aplicado. Por exemplo: 
+
+2+(4*2) seria escrito como 2 4 2 * + 
+
+(2+4)*2 seria escrito como 2 4 + 2 * 
+
+57
+
+
+
+Expressão em Notação Pósfixa - iIi
+A ideia é que o processamento é feito da seguinte 
+forma: sempre que um operador é lido, ele é 
+aplicado aos dois operandos anteriores. Então 
+vejamos:  
+
+2 4 2 * + => ao percorrer, encontramos o *, então 
+ele é aplicado a 4 e 2, produzindo 8. Na 
+sequência, o + é aplicado ao 8 e o 2 inicial, 
+produzindo 10. 
+
+58
+
+
+
+Expressão em Notação Pósfixa - iv
+2 4 + 2 * => ao percorrer, encontramos o +, então 
+ele é aplicado a 2 e 4, produzindo 6. Na 
+sequência, o * é aplicado ao 6 e o 2 final, 
+produzindo 12. 
+
+59
+
+
+
+Usando Pilhas para Expressão em Notação Pósfixa 
+Uma das vantagens dessa notação é a possibilidade 
+de uso da estrutura de dados pilha para resolver 
+a expressão.
+
+Para isso, basta ir empilhando os valores e, ao 
+encontrar um operador, fazer o desempilhamento 
+dos valores associados. 
+
+60
+
+
+
+Exemplo - i
+Considere a seguinte expressão pós-fixada:
+
+2 3 4 + *
+
+Para calcular o resultado utilizando pilha, 
+empilhamos inicialmente os valores 2, 3 e 4:
+
+4 Topo
+
+3
+
+2
+61
+
+
+
+Exemplo - ii
+Ao encontrar o +, o 4 e o 3 são desempilhados e a 
+operação de soma é realizada. O resultado é novamente 
+empilhado:
+
+7 Topo
+
+2
+
+Por fim, ao encontrar o *, o 7 e o 2 são desempilhados, 
+a operação é realizada e tem-se o resultado final 14, 
+que será o último elemento na pilha. 
+
+62
+
+
+
+Sobre o Material
+
+63
+
+
+
+Sobre este material
+Material produzido coletivamente, principalmente 
+pelos seguintes professores do DAC/UFLA:
+
+● Joaquim Quinteiro Uchôa
+● Juliana Galvani Greghi
+● Renato Ramos da Silva
+
+Inclui contribuições de outros professores do 
+setor de Fundamentos de Programação do DAC/UFLA.
+Esta obra está licenciado com uma Licença Creative Commons Atribuição 4.0 Internacional.
+
+64

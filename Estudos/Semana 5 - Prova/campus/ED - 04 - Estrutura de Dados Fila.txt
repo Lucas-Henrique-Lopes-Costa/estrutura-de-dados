@@ -1,0 +1,592 @@
+﻿Universidade Federal de Lavras
+GCC216 - Estrutura de Dados
+
+Estrutura de Dados Fila
+Prof. Joaquim Uchôa
+
+Profa. Juliana Greghi
+Prof. Renato Ramos
+
+
+
+● Definição e Visão Geral
+● Operações Básicas sobre 
+
+Roteiro Filas
+● Informação Importante
+● Implementação 
+
+Utilizando Vetores
+
+2
+
+
+
+Definição e 
+Visão Geral
+
+3
+
+
+
+Definição
+● De acordo com o dicionário 
+
+o que é uma fila?
+
+4
+
+
+
+Definição
+● De acordo com o dicionário o que é uma fila?¹
+
+○ Sequência de pessoas ou coisas alinhadas uma atrás da 
+outra, organizada geralmente por ordem cronológica de 
+chegada ou por diferentes critérios (de altura, de idade 
+etc.) e para diversos fins
+
+○ Conjunto de soldados em fileira
+
+¹Segundo dicionário michaelis on-line http://michaelis.uol.com.br/busca?id=OWQE 5
+
+
+
+Definição
+● E em Computação?
+
+○ É uma estrutura de dados que assume a ideia de 
+sequência de objetos para armazenar as informações.
+
+○ É baseada no princípio "First In First Out"(FIFO)
+■ O primeiro inserido será o primeiro a ser retirado.
+■ A manipulação é feita pelas extremidades por função 
+
+pré-definida. Por uma se insere e na outra se retira.
+■ Não é possível o acesso direto aos demais dados.
+
+6
+
+
+
+Definição
+Ideia Básica
+
+7
+
+
+
+Aplicações Tradicionais de Filas
+Filas são utilizadas em diversas situações na 
+computação. Por exemplo, são utilizadas para 
+implementação de buffers e nas seguintes aplicações:
+
+● Escalonamento de processos na CPU;
+● Escalonamento de acesso à memória secundária;
+● Sincronização de processos assíncronos;
+● Gerenciamento de fila de impressão;
+● Controle de interrupções de hardware;
+● Controle de chamadas em call centers;
+● Busca em largura em grafos.
+
+8
+
+
+
+Inserção na Fila
+A inserção deve ser sempre após o último elemento inserido.
+
+9
+
+
+
+Retirada de Elementos na Fila
+A remoção deve ser sempre daquele que foi inserido primeiro. Caso se 
+deseje acessar, por exemplo, o conteúdo do nó laranja, todos os demais 
+devem ser desenfileirados antes.
+
+10
+
+
+
+Formas de Implementação
+Uma fila pode ser implementada de diferentes 
+maneiras, as mais comuns são:
+
+● Implementação usando encadeamento de nós 
+(elementos) da fila;
+
+● Implementação usando arranjo para armazenamento 
+dos elementos.
+
+11
+
+
+
+Implementação Usando Encadeamento - I
+A implementação mais usual de fila é a usando 
+encadeamento. Cada nó contém informações e aponta 
+para o próximo nó. O último nó da fila aponta 
+para NULO, indicando seu término. A fila sabe 
+apenas onde está o início e o fim.
+
+Fila
+INÍCIO FIM
+
+Nó 1 Nó 2 ... Nó n-1 Nó n
+12
+
+
+
+Implementação Usando Encadeamento - II
+Em uma implementação por encadeamento, uma fila 
+contém um apontador para o início e outro para o 
+fim. Cada nó contém o dado armazenado e um 
+apontador para o próximo nó na estrutura. 
+
+Fila Nó i
+INÍCIO FIM Dados Próximo nó
+
+13
+
+
+
+Implementação Usando Encadeamento - III
+A fila e seus nós são implementados 
+tradicionalmente como estruturas ou classes. 
+Usaremos a segunda abordagem, usando uma classe 
+para fila e outra para os nós. 
+
+Fila Nó i
+INÍCIO FIM Dados Próximo nó
+
+14
+
+
+
+Classe Noh
+Cada nó da fila possui atributos com os dados 
+armazenados, que pode ser desde um simples 
+inteiro até uma estrutura ou outra classe. Além 
+disso, possui um apontador para o próximo nó. 
+
+class 
+Nó noh
+Dados Próximo nó
+
+int dado;
+noh* proximo;
+
+15
+
+
+
+Classe Fila
+A classe fila contém geralmente, além dos apontadores 
+para seu ínicio e fim, um atributo para informar a 
+quantidade de elementos (nós) que ela possui. Outros 
+atributos podem ser necessários, dependendo do 
+problema resolvido.
+
+class 
+Fila fila
+INÍCIO FIM int tamanho;
+
+noh* inicio;
+noh* fim;
+
+16
+
+
+
+Operações Básicas 
+Sobre Filas
+
+17
+
+
+
+Operações Básicas sobre Filas
+Uma fila possui um conjunto de operações básicas, 
+para seu correto uso:
+
+● Criação / destruição
+● Inserção (ou enfileiramento)
+● Remoção (ou desenfileiramento)
+
+18
+
+
+
+Criação da Fila
+criarFila(): INÍCIO FIM
+
+inicio ← NULL;
+fim ← NULL;
+
+NULL NULL
+// informação opcional
+tamanho ← 0; A criação da fila consiste 
+
+basicamente em garantir que seus 
+apontadores não referenciem uma 
+região válida de memória.
+
+19
+
+
+
+Inserção de elemento A inserção em uma fila, 
+consiste em criar um novo 
+nó com o dado a ser 
+
+enqueue(valor): armazenado e 
+posteriormente colocá-lo 
+
+novo ← criar_noh(valor); no fim da fila. Assim, 
+ele passa a ser o próximo 
+
+se filaVazia() elemento do fim antigo e 
+   inicio ← novo; o fim passa a ser o novo 
+
+elemento inserido. 
+senão Checagem adicional é 
+   fim.proximo ← novo; necessária para verificar 
+fim ← novo; se fila estava ou não 
+
+vazia antes da inserção.  
+tamanho++; 
+
+20
+
+
+
+Inserção ou Enfileiramento (ENQUEUE)
+INÍCIO
+
+INÍCIO FIM INÍCIO FIM NOVO1 NOVO1
+
+FIM
+
+NULL NULL NULL NULL NULL NULL
+
+Situação Inicial Inserindo o elemento NOVO1 
+
+21
+
+
+
+Inserção ou Enfileiramento (ENQUEUE)
+INÍCIO
+
+NOVO1
+INÍCIO INÍCIO
+
+FIM
+NOVO1 NOVO1 NOVO2
+
+NOVO2
+FIM FIM
+
+NULL NULL NULL
+NULL
+
+22
+
+
+
+Retirada de Elemento dequeue():
+
+aux ← inicio;
+A retirada de um dado ← aux.valor;
+elemento da fila 
+consiste em acessar o inicio ← aux.proximo;
+seu início, apagar(aux);
+retornando-o para a tamanho--;
+ação desejada. Nesse 
+caso, o novo início se filaVazia() 
+passa a ser o próximo fim ← nulo;
+nó do início anterior, // faz ação desejada 
+que será removido do 
+sistema. // (e.g.: retorno)
+
+efetuaAcao(dado);
+23
+
+ 
+
+
+
+Desenfileramento(Dequeue) NOVO1 INÍCIO
+
+NOVO2 INÍCIO
+NOVO2
+
+NOVO1
+NOVO3
+
+NOVO3
+
+FIM
+
+NULL FIM
+NULL
+
+NULL
+24
+
+
+
+Informação 
+Importante
+
+25
+
+
+
+Informação Importante FIM
+
+● O acesso à Fila deve ser 
+sempre feito pelo FIM, NULL NOVO20
+
+para inserção, e INÍCIO, 
+para retirada. ...
+
+● As ligações entre os nós 
+é para que a estrutura NOVO2
+
+permaneça integrada.
+INÍCIO NOVO1
+
+26
+
+
+
+Informação Importante
+Mas professor, dessa 
+forma eu só posso 
+retirar o elemento que 
+o INÍCIO aponta? E se, 
+por exemplo, na 
+estrutura anterior, eu 
+quiser utilizar o 
+elemento NOVO12, o que 
+fazer?
+
+27
+
+
+
+Informação Importante
+Pela definição, não é possível acessar os outros 
+elementos que não estão no início. Assim, não é 
+possível desenvolver uma função da fila que 
+resolva isso.
+
+Mas você pode retirar todos os elementos da fila 
+até encontrar o elemento desejado. Vamos deixar 
+claro, que essa situação deve ser feita via 
+retirada de elementos, não pode ser um 
+procedimento da fila. 28
+
+
+
+Outras Operações em Filas - i
+Além das operações básicas apresentadas, as filas 
+podem implementar:
+
+● verificar o número de elementos da fila;
+● verificar se a fila está ou não vazia;
+● retirar todos os elementos da fila;
+● opcionalmente acessar o início da fila;
+● opcionalmente depurar/imprimir a fila.
+
+29
+
+
+
+Outras Operações em Filas - ii
+➢ A retirada de todos os elementos da fila é por 
+
+meio de desenfileiramento, um por um. 
+➢ O destrutor é implementado geralmente usando o 
+
+método para retirar todos os elementos da fila.
+
+30
+
+
+
+Outras Operações em Filas - iii
+➢ O acesso ao início (espia) costuma ser 
+
+disponibilizado em várias implementações. Nesse 
+caso, há o acesso ao dado, mas sem sua 
+retirada, que continua no início da fila.
+
+31
+
+
+
+Outras Operações em Filas - iv
+➢ Implementações iniciais às vezes fazem uso de 
+
+mecanismos de percorrimento para 
+impressão/depuração dos dados. Esse método é 
+considerado uma quebra de estrutura, pois 
+acessa os elementos intermediários sem 
+desenfileiramento. Assim, esse recurso só pode 
+ser usado, para fins didáticos ou de depuração. 
+
+32
+
+
+
+Implementação
+Utilizando Vetor
+
+33
+
+
+
+Filas em arranjos
+Assim como as pilhas, as filas também podem ser 
+implementadas por meio de arranjos.
+
+fim Vantagem
+- Operações rápidas 
+(acesso, enfileiramento, 
+desenfileiramento).
+
+início
+
+34
+
+
+
+Filas em arranjos
+Assim como as pilhas, as filas também podem ser 
+implementadas por meio de arranjos.
+
+fim Desvantagem
+- Espaço alocado sem 
+necessidade;
+- Impossibilidade de 
+aumentar a capacidade da 
+
+início fila, sem redimensionamento 
+do vetor.
+
+35
+
+
+
+Considere os Insere elemento na fila
+
+elementos 23, 45, 11  23   45   11
+
+e 89. início fim
+
+Insere elemento na fila Remove elemento da fila
+   45  11
+
+ 23
+
+início fim
+início fim
+
+Insere elemento na fila Insere elemento na fila
+
+ 23   45    45   11 89
+
+início fim início fim
+
+
+
+Filas circulares - i
+Geralmente implementações de filas em arranjos 
+são chamadas de filas circulares. O motivo é que 
+sem isso, o arranjo não é reorganizado à medida 
+que o início avança: 
+
+   45   11 89
+
+início fim
+
+37
+
+
+
+Filas circulares - ii
+À medida que as operações são executadas, é 
+possível que a posição do fim fique antes da 
+posição de início em uma fila circular: 
+
+12   58   13 27
+
+fim início
+
+Isso é conseguido em implementação utilizando o 
+operador de módulo.
+
+38
+
+
+
+Inserção em Fila Circular
+tamanho ⇒ 
+
+enqueue(valor): número de 
+se (tamanho = capacidade) posições 
+  gerarErro(“fila cheia”);    ocupadas no 
+
+arranjo
+se (posInicio = -1) { // fila vazia
+  posInicio++; capacidade ⇒ 
+} quantidade de 
+posFim ← (posFim + 1) % capacidade; posições 
+
+alocadas no 
+dados[posFim] ← valor; arranjo
+tamanho++;
+
+39
+
+
+
+Remoção em Fila Circular
+dequeue():
+se ( tamanho == 0 ) 
+  gerarErro(“fila vazia”);    
+aux ← dados[posInicio];
+se (posInicio = posFim) { //removeu último elemento da fila
+  posFim = -1;
+  posInicio = -1;
+} senão 
+  posInicio ← (posInicio + 1) % capacidade;
+tamanho--;
+efetuaAção(aux); // geralmente retorno
+
+40
+
+
+
+Sobre o Material
+
+41
+
+
+
+Sobre este material
+Material produzido coletivamente, principalmente 
+pelos seguintes professores do DCC/UFLA:
+
+● Joaquim Quinteiro Uchôa
+● Juliana Galvani Greghi
+● Renato Ramos da Silva
+
+Inclui contribuições de outros professores do 
+setor de Fundamentos de Programação do DCC/UFLA.
+Esta obra está licenciado com uma Licença Creative Commons Atribuição 4.0 Internacional.
+
+42
