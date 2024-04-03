@@ -121,7 +121,7 @@
     <div id="usuario">?</div><br>
     <b>Notas</b>:<br>
     <span id="notas">
-        <a style="color: #FFF" href="#Q1">Q1: ?</a><br>
+        <a style="color: #FFF" href="#Q1">Q1: 96</a><br>
         <a style="color: #FFF" href="#Q2">Q2: ?</a><br>
         <a style="color: #FFF" href="#Q3">Q3: ?</a><br>
         <a style="color: #FFF" href="#Q4">Q4: ?</a><br>
@@ -129,101 +129,479 @@
         <a style="color: #FFF" href="#Q6">Q6: ?</a><br>
         <a style="color: #FFF" href="#Q7">Q7: ?</a><br>
         <a style="color: #FFF" href="#Q8">Q8: ?</a><br>
-Total: 0    </span><br>
+Total: 12    </span><br>
 </div>
 <div id="prova">
-    <h1>Atividade Prática Heap</h1>
+    <h1>Atividade Prática Fila</h1>
     <p><b>Prova Aberta Até:</b> 02/04/2024 23:59:59</p>
     <p><b>Número Máximo de Tentativas:</b> 3</p>
     <p><b>Atenuação da Nota por Tentativa:</b> 0%</p>
     <p><b>Instruções para a prova:</b> A prova é individual. Desligue seu celular. Não converse com os colegas. Não fique olhando para a tela dos colegas.</p>
     <div class="problem-try-ct">
         <a name="Q1"></a>
-        <h3>Questão 1: Maxheap - Organização de um robô domestico - Prioridades </h3>
+        <h3>Questão 1: Fila com encadeamento - Lista de tarefas do jogador - Maior recompensa no prazo</h3>
         <div class="description-display-box">
-<p>Modifique a sua estrutura heap para que considere a maior prioridade de execução de uma tarefa. No caso considere a tarefa com maior prioridade indicada pelo maior valor e a medida que o valor diminui a prioridade diminui. Caso exista atividades com o mesmo valor de prioridade, o desempate é a atividade com menor quantidade de energia gasta pela atividade.</p>
-<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Heap - Organização de um robô domestico" como base. </p>
-
+<p>Modifique o tipo do campo prêmio para inteiro, sendo o valor a ser recebido em moedas digitais pela atividade realizada pelo jogador. Implemente uma função que imprima a soma das recompensas das atividades com tempo menor que o informado e coloque essas atividade no início da fila. Caso não exista nenhuma atividade menor que o valor informado, deve ser impresso o valor 0.</p>
+<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Fila com encadeamento - Lista de tarefas do jogador" como base. </p>
+<p>Com essa finalidade, você deverá adicionar mais um comando, como segue:</p>
+<ul>
+<li>p seguido de um inteiro: para contabilizar (e imprimir)  o valor total do premio das atividades que foram realizadas dentro do valor determinado.</li>
+</ul>
+<p>Saídas:</p>
+<p>Todas as saídas de comandos já estão implementadas na função principal código entregue, somente falta implementar a chamada para a remoção. Ao terminar a execução do programa, todos os itens da pilha são desempilhados e escritos.</p>
 <p>Exemplo de Entrada e Saída juntas:</p>
 <pre>
-10
 r
-Erro ao retirar raiz
-p
-Heap vazia!
-i livingroom r 35 58 1
-i tvroom t 18 28 1
-i kitchen c 180 200 1
-i bedroom1 x 99 90 2
-i bedroom2 x 33 50 2
-i bedroom3 v 56 80 8
-p
-[bedroom3/v/56/80/8] [bedroom1/x/99/90/2] [bedroom2/x/33/50/2] [livingroom/r/35/58/1] [tvroom/t/18/28/1] [kitchen/c/180/200/1]
+Erro: Fila vazia!
+i destruirArmazen 252 f 100
+i salvarDonzela 888 e 300
+i montarObservatorioMonteM2 582 d 400
+i eliminarChefao 12585 a 2000
+i eliminarBando 25354 a 30000
+p 500
+1722
 r
-bedroom3
-p
-[bedroom2/x/33/50/2] [bedroom1/x/99/90/2] [kitchen/c/180/200/1] [livingroom/r/35/58/1] [tvroom/t/18/28/1]
+Nome: destruirArmazen Premio: 252 Tipo: f tempo: 100
+e
+Nome: salvarDonzela Premio: 888 Tipo: e tempo: 300
 f
+Nome: salvarDonzela Premio: 888 Tipo: e tempo: 300
+Nome: montarObservatorioMonteM2 Premio: 582 Tipo: d tempo: 400
+Nome: eliminarChefao Premio: 12585 Tipo: a tempo: 2000
+Nome: eliminarBando Premio: 25354 Tipo: a tempo: 30000
 </pre>
+
         </div><!-- description-display-box -->
         <a name="JQ1"></a>
         <p><b>Peso:</b> 1</p>
-            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                <label style="background: #F9F9F9">Nova Resposta:</label>
-                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                <input type="file" name="arquivo" id="arquivo" required="required">
-                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2005">
-                <input type="hidden" name="tst_password" value="0b032a7b044faf1483a4875a66f7d2dd1194daee">
-                <input type="hidden" name="id_problema" value="2105">
-                <input type="hidden" name="idUsuario" value="6644">
-                <input type="hidden" name="nroTentativa" value="1">
-                <input type="hidden" name="atenuacao" value="1">
-                <input type="hidden" name="nroQuestao" value="1">
-                <input type="hidden" name="_action" value="save">
-                <input type="submit" name="avaliar" value="Enviar Resposta">
-            </form>
+        <p><b>Última tentativa realizada em:</b> 20/03/2024 20:28:20</p>
+        <p><b>Tentativas:</b> 3 de 3</p>
+        <p><b>Nota (0 a 100):</b> 96</p>
+        <p><b>Status ou Justificativa de Nota:</b> O programa não resolve todas as instâncias do problema.</p>
+        <button onClick="openDivAsDialog('lastTrial2075');">Ver Código da Última Tentativa</button>
+        <div style="height: 6px"></div>
+        <div style="display:none" id='lastTrial2075'>
+            <textarea class="cpp-code-view" style="font-family: monospace">/*
+{
+     Classe Fila encadeada
+ *
+ * by Renato Ramos da Silva, 2023, Estruturas de Dados
+ *
+
+    #include &lt;iostream&gt;
+    #include &lt;stdexcept&gt;
+
+    using namespace std;
+
+    struct Dado {
+        string nome;
+        string premio;
+        char tipo;
+        int tempo;
+    };
+
+    // Imprime as informações de um dado qualquer
+    void imprimir_dado(const Dado&amp; umDado) {
+        cout &lt;&lt; &quot;Você já implementou o método para imprimir dados???&quot; &lt;&lt; endl;
+    }
+
+    class Noh {
+        friend class Fila;
+        private:
+            Dado mDado; // poderia ser outro tipo de variável
+            Noh* mProx;
+        public:
+            Noh(Dado v) {
+                mDado = v;
+                mProx = NULL;
+            }
+    };
+
+    class Fila {
+        public:
+            // Constrói Fila vazia.
+            Fila();
+            // Destrutor que desaloca memória.
+            ~Fila();
+            // Retira e retorna o elemento que estiver na frente da Fila.
+            // Escreve uma mensagem de erro se não for possível desenfileirar.
+            Dado Desenfileirar();
+            // Insere um elemento na Fila.
+            void Enfileirar(const Dado&amp; d);
+            // Apagar todos os dados da Fila.
+            void LimparTudo();
+            // Retorna o elemento que está na frente da Fila, sem desenfileirar.
+            inline void Primeiro();
+            // Informa se a Fila está Vazia.
+            inline bool Vazia();
+        private:
+            Noh* mPtPrimeiro;
+            Noh* mPtrUltimo;
+    };
+
+    Fila::Fila() {
+    }
+
+    Fila::~Fila() {
+    }
+
+    Dado Fila::Desenfileirar() {
+        if (this-&gt;Vazia()) throw runtime_error(&quot;Erro: Fila vazia!&quot;);
+        // completar com o código, caso não esteja vazia
+    }
+
+    void Fila::Enfileirar(const Dado&amp; d) {
+
+    }
+
+    void Fila::LimparTudo() {
+    }
+
+    void Fila::Primeiro() {
+        if (this-&gt;Vazia()) throw runtime_error(&quot;Erro: Fila vazia!&quot;);
+        // completar com o código, caso não esteja vazia
+    }
+
+    bool Fila::Vazia() {
+    }
+
+
+    int main() {
+        Fila fila;
+        Dado info;
+        char comando;
+        do {
+            try{
+                cin &gt;&gt; comando;
+                switch (comando) {
+                    case 'i': // inserir
+                        cin &gt;&gt; info.nome &gt;&gt; info.premio &gt;&gt; info.tipo &gt;&gt; info.tempo;
+                        fila.Enfileirar(info);
+                        break;
+                    case 'r': // remover
+                        imprimir_dado(fila.Desenfileirar());
+                        break;
+                    case 'l': // limpar tudo
+                        fila.LimparTudo();
+                        break;
+                    case 'e': // espiar
+                        fila.Topo();
+                        break;
+                    case 'f': // finalizar
+                        // checado no do-while
+                        break;
+                    default:
+                        cerr &lt;&lt; &quot;comando inválido\n&quot;;
+                }
+            } catch (runtime_error&amp; e) {
+                cout &lt;&lt; e.what() &lt;&lt; endl;
+            }
+        } while (comando != 'f'); // finalizar execução
+        while (not fila.Vazia()) {
+            imprimir_dado(fila.DesemFilar());
+        }
+        cout &lt;&lt; endl;
+        return 0;
+    }
+}
+    Implemente uma estrutura de dados fila, utilizando encadeamento de nós, para implementar uma lista de tarefas do jogador, usando como base o código fornecido. A estrutura deve possibilitar, pelo menos, as seguintes ações: enfileiramento e desenfileiramento de itens, verificação do item no frente da fila e limpeza da lista (remoção de todos os elementos da fila). O desenfileiramento deve escrever mensagem de erro na saída (&quot;Erro: fila vazia!&quot;), quando a fila já estiver vazia. Os itens da lista possuem os seguintes atributos: nome da tarefa (uma string sem espaços), prêmio (uma string sem espaços), tipo (um único caracter) e tempo para realização (um inteiro).
+
+Entradas:
+
+O programa deve aceitar os seguintes comandos:
+
+i seguido de duas string, um caracter e um inteiro: para inserir um item na lista de tarefas
+r: para retirar um item da lista de tarefas
+l: para limpar (remover todos) os itens da lista de tarefas
+e: para espiar a frente da lista de tarefas (escreve o topo sem removê-lo)
+f: para finalizar a execução do programa
+Saídas:
+
+Todas as saídas de comandos já estão implementadas na função principal desse código exemplo fornecido. Ao terminar a execução do programa, todos os itens da fila são desempilhados e escritos.
+
+Exemplo de Entrada e Saída juntas:
+
+r
+Erro: Fila vazia!
+i destruirArmazen jaqueta f 100
+i salvarDonzela hb20 e 300
+i montarObservatorioMonteM2 binoculo d 400
+i eliminarChefao milDolares a 2000
+i eliminarBando dezmilDolares a 30000
+r
+Nome: destruirArmazen Premio: jaqueta Tipo: f tempo: 100
+e
+Nome: salvarDonzela Premio: hb20 Tipo: e tempo: 300
+f
+Nome: salvarDonzela Premio: hb20 Tipo: e tempo: 300
+Nome: montarObservatorioMonteM2 Premio: binoculo Tipo: d tempo: 400
+Nome: eliminarChefao Premio: milDolares Tipo: a tempo: 2000
+Nome: eliminarBando Premio: dezmilDolares Tipo: a tempo: 30000
+*/
+
+/* Classe Fila encadeada
+ *
+ * by Renato Ramos da Silva, 2023, Estruturas de Dados
+ * Editada por Pedro Gonçalves, 2024
+ *
+ */
+
+#include &lt;iostream&gt;
+#include &lt;stdexcept&gt;
+
+using namespace std;
+
+struct Dado
+{
+    string nome;
+    int premio;
+    char tipo;
+    int tempo;
+};
+
+// Imprime as informações de um dado qualquer
+void imprimir_dado(const Dado &amp;umDado)
+{
+
+    cout &lt;&lt; &quot;Nome: &quot; &lt;&lt; umDado.nome &lt;&lt; &quot; Premio: &quot; &lt;&lt; umDado.premio &lt;&lt; &quot; Tipo: &quot; &lt;&lt; umDado.tipo &lt;&lt; &quot; tempo: &quot; &lt;&lt; umDado.tempo &lt;&lt; endl;
+}
+
+class Noh
+{
+    friend class Fila;
+
+private:
+    Dado mDado; // poderia ser outro tipo de variável
+    Noh *mProx;
+
+public:
+    Noh(Dado v)
+    {
+        mDado = v;
+        mProx = nullptr;
+    }
+};
+
+class Fila
+{
+public:
+    // Constrói Fila vazia.
+    Fila();
+    // Destrutor que desaloca memória.
+    ~Fila();
+    // Retira e retorna o elemento que estiver na frente da Fila.
+    // Escreve uma mensagem de erro se não for possível desenfileirar.
+    Dado Desenfileirar();
+    // Insere um elemento na Fila.
+    void Enfileirar(const Dado &amp;d);
+    // Apagar todos os dados da Fila.
+    void LimparTudo();
+    // Retorna o elemento que está na frente da Fila, sem desenfileirar.
+    inline void Primeiro();
+    // Informa se a Fila está Vazia.
+    inline bool Vazia();
+    void imprimirFaixa(int faixa);
+    void Topo();
+
+private:
+    Noh *mPtPrimeiro;
+    Noh *mPtrUltimo;
+    int tamanho;
+};
+
+Fila::Fila()
+{
+    tamanho = 0;
+    mPtrUltimo = nullptr;
+    mPtPrimeiro = nullptr;
+}
+
+Fila::~Fila()
+{
+    LimparTudo();
+}
+
+Dado Fila::Desenfileirar()
+{
+    if (this-&gt;Vazia())
+        throw runtime_error(&quot;Erro: Fila vazia!&quot;);
+
+    Dado dado = mPtPrimeiro-&gt;mDado;
+    Noh *aux = mPtPrimeiro;
+    mPtPrimeiro = mPtPrimeiro-&gt;mProx;
+    delete aux;
+
+    tamanho--;
+
+    if (Vazia())
+        mPtrUltimo = nullptr;
+
+    return dado;
+}
+
+void Fila::Enfileirar(const Dado &amp;d)
+{
+    Noh *novo = new Noh(d);
+    if (Vazia())
+        mPtPrimeiro = novo;
+    else
+        mPtrUltimo-&gt;mProx = novo;
+
+    mPtrUltimo = novo;
+    tamanho++;
+}
+void Fila::Topo()
+{
+    if (this-&gt;Vazia())
+        throw runtime_error(&quot;Erro: fila vazia!&quot;);
+
+    cout &lt;&lt; &quot;Nome: &quot; &lt;&lt; mPtPrimeiro-&gt;mDado.nome &lt;&lt; &quot; Premio: &quot; &lt;&lt; mPtPrimeiro-&gt;mDado.premio &lt;&lt; &quot; Tipo: &quot; &lt;&lt; mPtPrimeiro-&gt;mDado.tipo &lt;&lt; &quot; Tempo: &quot; &lt;&lt; mPtPrimeiro-&gt;mDado.tempo &lt;&lt; endl;
+}
+
+void Fila::LimparTudo()
+{
+    while (!Vazia())
+    {
+        Desenfileirar();
+    }
+}
+
+void Fila::Primeiro()
+{
+    if (this-&gt;Vazia())
+        throw runtime_error(&quot;Erro: Fila vazia!&quot;);
+    // completar com o código, caso não esteja vazia
+}
+
+bool Fila::Vazia()
+{
+    return (mPtPrimeiro == nullptr);
+}
+
+void Fila::imprimirFaixa(int faixa)
+{
+    Fila f2;
+
+    int auxTamanho = tamanho;
+
+    int soma = 0;
+    for (int i = 0; i &lt; auxTamanho; i++)
+    {
+        // ordernar f1
+        Dado temp = Desenfileirar();
+        if (temp.tempo &lt; faixa)
+        {
+            soma += temp.premio;
+            f2.Enfileirar(temp);
+        }
+        else
+        {
+            Enfileirar(temp);
+        }
+    }
+
+    cout &lt;&lt; soma &lt;&lt; endl;
+
+    // enviar o que restou da f1 para f2
+    while (!Vazia())
+    {
+        Dado temp2 = Desenfileirar();
+        f2.Enfileirar(temp2);
+    }
+    
+    // pegar f2 e enviar para f1
+    while (!f2.Vazia())
+    {
+        Dado temp3 = f2.Desenfileirar();
+        Enfileirar(temp3);
+    }
+}
+
+int main()
+{
+    Fila fila;
+    Dado info;
+    char comando;
+    do
+    {
+        try
+        {
+            cin &gt;&gt; comando;
+            switch (comando)
+            {
+            case 'i': // inserir
+                cin &gt;&gt; info.nome &gt;&gt; info.premio &gt;&gt; info.tipo &gt;&gt; info.tempo;
+                fila.Enfileirar(info);
+                break;
+            case 'r': // remover
+                imprimir_dado(fila.Desenfileirar());
+                break;
+            case 'l': // limpar tudo
+                fila.LimparTudo();
+                break;
+            case 'e': // espiar
+                fila.Topo();
+                break;
+            case 'p':
+                int faixa;
+                cin &gt;&gt; faixa;
+                fila.imprimirFaixa(faixa);
+                break;
+            case 'f':
+                break;
+            default:
+                cerr &lt;&lt; &quot;comando inválido\n&quot;;
+            }
+        }
+        catch (runtime_error &amp;e)
+        {
+            cout &lt;&lt; e.what() &lt;&lt; endl;
+        }
+    } while (comando != 'f'); // finalizar execução
+    while (not fila.Vazia())
+    {
+        imprimir_dado(fila.Desenfileirar());
+    }
+    cout &lt;&lt; endl;
+    return 0;
+}</textarea>
+        </div><!-- ultima tentativa -->
+                <p><i>Você esgotou o máximo de tentativas nesta questão.</i></p>
     </div><!-- problem-try-ct -->
     <div class="problem-try-ct">
         <a name="Q2"></a>
-        <h3>Questão 2: Maxheap - Organização de um robô domestico - Alterar prioridade de um dado</h3>
+        <h3>Questão 2: Fila com encadeamento - Lista de tarefas do jogador - Contabilizar tempo das atividades do mesmo tipo</h3>
         <div class="description-display-box">
-<p>Modifique a sua estrutura heap para que considere a maior prioridade de execução de uma tarefa. No caso considere a tarefa com maior prioridade indicada pelo maior valor e a medida que o valor diminui a prioridade diminui. Implemente o método <tt>alteraPrioridade()</tt> nessa maxheap. A alteração de prioridade implica que o dado alterado deva ser rearranjado, de forma a manter as propriedades do heap. </p>
-<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Heap - Organização de um robô domestico" como base. </p>
+<p>Implemente uma função que realize a contagem e impressão do tempo para realizar as atividades de um mesmo tipo e as coloque na frente da fila.</p>
+<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Fila com encadeamento - Lista de tarefas do jogador" como base. </p>
 <p>Com essa finalidade, você deverá adicionar mais um comando, como segue:</p>
 <ul>
-<li>a seguindo de uma string e um inteiro: altera a prioridade da atividade com o nome informado com o novo valor.</li>
+<li>a seguido de um char: para contabilizar (e imprimir) o tempo para realizar as atividades de um mesmo tipo.</li>
 </ul>
+<p>Saídas:</p>
+<p>Todas as saídas de comandos já estão implementadas na função principal código entregue, somente falta implementar a chamada para a remoção. Ao terminar a execução do programa, todos os itens são desenfileirados e escritos.</p>
 <p>Exemplo de Entrada e Saída juntas:</p>
 <pre>
-10
 r
-Erro ao retirar raiz
-p
-Heap vazia!
-i livingroom r 35 58 5
-i tvroom t 18 28 8
-i kitchen c 180 200 1
-i bedroom1 x 99 90 2
-i bedroom2 x 33 50 5
-i bedroom3 v 56 80 8
-i MasterBedroom x 56 70 9
-i Bathroom1 n 32 56 7
-i Bathroom2 n 44 80 5
-i LaundryRoom h 15 7 1
-i entrace a 10 5 2
-Erro ao inserir
-p
-[MasterBedroom/x/56/70/9] [Bathroom1/n/32/56/7] [tvroom/t/18/28/8] [livingroom/r/35/58/5] [bedroom2/x/33/50/5] [kitchen/c/180/200/1] [bedroom3/v/56/80/8] [bedroom1/x/99/90/2] [Bathroom2/n/44/80/5] [LaundryRoom/h/15/7/1] 
-a MasterBedroom 5
-p
-[tvroom/t/18/28/8] [Bathroom1/n/32/56/7] [bedroom3/v/56/80/8] [livingroom/r/35/58/5] [bedroom2/x/33/50/5] [kitchen/c/180/200/1] [MasterBedroom/x/56/70/5] [bedroom1/x/99/90/2] [Bathroom2/n/44/80/5] [LaundryRoom/h/15/7/1] 
+Erro: Fila vazia!
+i destruirArmazen jaqueta f 100
+i salvarDonzela hb20 e 300
+i montarObservatorioMonteM2 binoculo d 400
+i eliminarChefao milDolares a 2000
+i eliminarBando dezmilDolares a 30000
+a a
+32000
 r
-tvroom
-p
-[bedroom3/v/56/80/8] [Bathroom1/n/32/56/7] [MasterBedroom/x/56/70/5] [livingroom/r/35/58/5] [bedroom2/x/33/50/5] [kitchen/c/180/200/1] [LaundryRoom/h/15/7/1] [bedroom1/x/99/90/2] [Bathroom2/n/44/80/5] 
+Nome: eliminarChefao Premio: milDolares Tipo: a tempo: 2000
+e
+Nome: eliminarBando Premio: dezmilDolares Tipo: a tempo: 30000
 f
+Nome: eliminarBando Premio: dezmilDolares Tipo: a tempo: 30000
+Nome: destruirArmazen Premio: jaqueta Tipo: f tempo: 100
+Nome: salvarDonzela Premio: hb20 Tipo: e tempo: 300
+Nome: montarObservatorioMonteM2 Premio: binoculo Tipo: d tempo: 400
 </pre>
+
         </div><!-- description-display-box -->
         <a name="JQ2"></a>
         <p><b>Peso:</b> 1</p>
@@ -232,9 +610,9 @@ f
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2005">
-                <input type="hidden" name="tst_password" value="0b032a7b044faf1483a4875a66f7d2dd1194daee">
-                <input type="hidden" name="id_problema" value="2106">
+                <input type="hidden" name="id_prova" value="2004">
+                <input type="hidden" name="tst_password" value="ccdbd0d95009e2d70496594dd21c76b9770f1a7b">
+                <input type="hidden" name="id_problema" value="2074">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
@@ -245,46 +623,37 @@ f
     </div><!-- problem-try-ct -->
     <div class="problem-try-ct">
         <a name="Q3"></a>
-        <h3>Questão 3: Minheap - Organização de um robô domestico - Alterar prioridade de um dado</h3>
+        <h3>Questão 3: Fila com encadeamento - Lista de tarefas do jogador - Maior quantidade de atividade dentro do tempo </h3>
         <div class="description-display-box">
-<p>Modifique a sua estrutura heap para que considere a maior prioridade de execução de uma tarefa. No caso considere a tarefa com maior prioridade indicada pelo valor 1 e a medida que o valor aumenta a prioridade diminui. Implemente o método <tt>alteraPrioridade()</tt> nessa minheap. A alteração de prioridade implica que o dado alterado deva ser rearranjado, de forma a manter as propriedades do heap. </p>
-<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Heap - Organização de um robô domestico" como base. </p>
+<p>O jogador resolveu realizar o maior número de tarefas da lista abaixo de um determinado tempo que é informado (valor inteiro positivo). Para isso ele resolveu fazer primeiro as tarefas que tem menor custo até atingir o valor especificado (mas este não incluso). Implemente uma função que imprima o maior número de tarefas da fila em que a soma das tarefas seja menor que o valor informado. Além disso, elimine as atividades da fila.</p>
+<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Fila com encadeamento - Lista de tarefas do jogador" como base. </p>
 <p>Com essa finalidade, você deverá adicionar mais um comando, como segue:</p>
 <ul>
-<li>a seguindo de uma string e um inteiro: altera a prioridade da atividade com o nome informado com o novo valor.</li>
+<li>t seguido de um inteiro: para contabilizar (e imprimir)  as atividades que foram realizadas dentro do valor determinado.</li>
 </ul>
+<p>Saídas:</p>
+<p>Todas as saídas de comandos já estão implementadas na função principal código entregue, somente falta implementar a chamada para a remoção. Ao terminar a execução do programa, todos os itens da pilha são desempilhados e escritos.</p>
 <p>Exemplo de Entrada e Saída juntas:</p>
 <pre>
-10
 r
-Erro ao retirar raiz
-p
-Heap vazia!
-i livingroom r 35 58 5
-i tvroom t 18 28 8
-i kitchen c 180 200 1
-i bedroom1 x 99 90 2
-i bedroom2 x 33 50 5
-i bedroom3 v 56 80 8
-i MasterBedroom x 56 70 9
-i Bathroom1 n 32 56 7
-i Bathroom2 n 44 80 5
-i LaundryRoom h 15 7 1
-i entrace a 10 5 2
-Erro ao inserir
-p
-[kitchen/c/180/200/1] [LaundryRoom/h/15/7/1] [livingroom/r/35/58/5] [Bathroom2/n/44/80/5] [bedroom1/x/99/90/2] [bedroom3/v/56/80/8] [MasterBedroom/x/56/70/9] [tvroom/t/18/28/8] [Bathroom1/n/32/56/7]
-[bedroom2/x/33/50/5] 
-a kitchen 5
-p
-[LaundryRoom/h/15/7/1] [bedroom1/x/99/90/2] [livingroom/r/35/58/5] [Bathroom2/n/44/80/5] [kitchen/c/180/200/5] [bedroom3/v/56/80/8] [MasterBedroom/x/56/70/9] [tvroom/t/18/28/8] [Bathroom1/n/32/56/7] 
-[bedroom2/x/33/50/5] 
+Erro: Fila vazia!
+i destruirArmazen jaqueta f 100
+i salvarDonzela hb20 e 300
+i montarObservatorioMonteM2 binoculo d 400
+i eliminarChefao milDolares a 2000
+i eliminarBando dezmilDolares a 30000
+t 800
+Nome: destruirArmazen Premio: jaqueta Tipo: f tempo: 100
+Nome: salvarDonzela Premio: hb20 Tipo: e tempo: 300
 r
-LaundryRoom
-p
-[bedroom1/x/99/90/2] [bedroom2/x/33/50/5] [livingroom/r/35/58/5] [Bathroom2/n/44/80/5] [kitchen/c/180/200/5] [bedroom3/v/56/80/8] [MasterBedroom/x/56/70/9] [tvroom/t/18/28/8] [Bathroom1/n/32/56/7] 
+Nome: montarObservatorioMonteM2 Premio: binoculo Tipo: d tempo: 400
+e
+Nome: eliminarChefao Premio: milDolares Tipo: a tempo: 2000
 f
+Nome: eliminarChefao Premio: milDolares Tipo: a tempo: 2000
+Nome: eliminarBando Premio: dezmilDolares Tipo: a tempo: 30000
 </pre>
+
         </div><!-- description-display-box -->
         <a name="JQ3"></a>
         <p><b>Peso:</b> 1</p>
@@ -293,9 +662,9 @@ f
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2005">
-                <input type="hidden" name="tst_password" value="0b032a7b044faf1483a4875a66f7d2dd1194daee">
-                <input type="hidden" name="id_problema" value="2107">
+                <input type="hidden" name="id_prova" value="2004">
+                <input type="hidden" name="tst_password" value="ccdbd0d95009e2d70496594dd21c76b9770f1a7b">
+                <input type="hidden" name="id_problema" value="2073">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
@@ -306,32 +675,38 @@ f
     </div><!-- problem-try-ct -->
     <div class="problem-try-ct">
         <a name="Q4"></a>
-        <h3>Questão 4: Minheap - Organização de um robô domestico - Prioridades </h3>
+        <h3>Questão 4: Fila com encadeamento - Lista de tarefas do jogador -Recompensas de um determinado tipo</h3>
         <div class="description-display-box">
-<p>Modifique a sua estrutura heap para que considere a maior prioridade de execução de uma tarefa. No caso considere a tarefa com maior prioridade indicada pelo valor 1 e a medida que o valor aumenta a prioridade diminui. Caso exista atividades com o mesmo valor de prioridade, o desempate é a atividade com menor tempo estimado para realizar a atividade.</p>
-<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Heap - Organização de um robô domestico" como base. </p>
-
+<p>Modifique o tipo do campo prêmio para inteiro, sendo o valor a ser recebido em moedas digitais pela atividade realizada pelo jogador. Implemente uma função que imprima a soma das recompensas das atividades de um determinado tipo e coloque essas atividade no início da fila.</p>
+<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Fila com encadeamento - Lista de tarefas do jogador" como base. </p>
+<p>Com essa finalidade, você deverá adicionar mais um comando, como segue:</p>
+<ul>
+<li>p seguido de um char: para contabilizar (e imprimir) o total do prêmio das atividades de acordo com o tipo.</li>
+</ul>
+<p>Saídas:</p>
+<p>Todas as saídas de comandos já estão implementadas na função principal código entregue, somente falta implementar a chamada para a remoção. Ao terminar a execução do programa, todos os itens da pilha são desempilhados e escritos.</p>
 <p>Exemplo de Entrada e Saída juntas:</p>
 <pre>
-10
 r
-Erro ao retirar raiz
-p
-Heap vazia!
-i livingroom r 35 58 1
-i tvroom t 18 28 1
-i kitchen c 180 200 1
-i bedroom1 x 99 90 2
-i bedroom2 x 33 50 2
-i bedroom3 v 56 80 8
-p
-[tvroom/t/18/28/1] [livingroom/r/35/58/1] [kitchen/c/180/200/1] [bedroom1/x/99/90/2] [bedroom2/x/33/50/2] [bedroom3/v/56/80/8] 
+Erro: Fila vazia!
+i destruirArmazen 252 f 100
+i salvarDonzela 888 e 300
+i montarObservatorioMonteM2 582 d 400
+i eliminarChefao 12585 a 2000
+i eliminarBando 25354 a 30000
+p a
+37939
 r
-tvroom
-p
-[livingroom/r/35/58/1] [bedroom2/x/33/50/2] [kitchen/c/180/200/1] [bedroom1/x/99/90/2] [bedroom3/v/56/80/8] 
+Nome: eliminarChefao Premio: 12585 Tipo: a tempo: 2000
+e
+Nome: eliminarBando Premio: 25354 Tipo: a tempo: 30000
 f
+Nome: eliminarBando Premio: 25354 Tipo: a tempo: 30000
+Nome: destruirArmazen Premio: 252 Tipo: f tempo: 100
+Nome: salvarDonzela Premio: 888 Tipo: e tempo: 300
+Nome: montarObservatorioMonteM2 Premio: 582 Tipo: d tempo: 400
 </pre>
+
         </div><!-- description-display-box -->
         <a name="JQ4"></a>
         <p><b>Peso:</b> 1</p>
@@ -340,9 +715,9 @@ f
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2005">
-                <input type="hidden" name="tst_password" value="0b032a7b044faf1483a4875a66f7d2dd1194daee">
-                <input type="hidden" name="id_problema" value="2108">
+                <input type="hidden" name="id_prova" value="2004">
+                <input type="hidden" name="tst_password" value="ccdbd0d95009e2d70496594dd21c76b9770f1a7b">
+                <input type="hidden" name="id_problema" value="2077">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
@@ -353,38 +728,43 @@ f
     </div><!-- problem-try-ct -->
     <div class="problem-try-ct">
         <a name="Q5"></a>
-        <h3>Questão 5: Torneio - Torneio residual</h3>
+        <h3>Questão 5: Fila com armazenamento em vetor - Lista de processos em uma repartição pública - ordenação pelo número do processo</h3>
         <div class="description-display-box">
-<p>Um torneio é uma árvore estritamente binária na qual cada nó não folha contém uma cópia do maior elemento entre seus dois filhos. O conteúdo das folhas de um torneio determina o conteúdo de todos os seus nós. Um torneio com n folhas representa um conjunto de n elementos.</p>
-
-<p>Implemente um torneio utilizando uma estratégia semelhante a um Heap. Entretanto, a cada etapa, o elemento vencedor irá para a próxima etapa com o seu valor reduzido do valor do oponente. Neste caso, a estrutura de dados utilizada para representar um elemento deve possuir um valor base, que é o valor inicial e, caso ele vença o torneio, o valor que será utilizado é um valor relativo que será utilizado para contabilizar a progressão. Caso exista um empate, o elemento com maior valor base avança. O vencedor do torneio deverá ter seu valor base impresso.</p>
-
-<p>Note que normalmente um torneio é uma árvore estritamente binária, cheia. Como, neste problema, temos que o tamanho da entrada pode não ser uma potência de 2, será necessário fazer ajustes para trabalhar com o que costumamos chamar de torneio incompleto. Uma das abordagens possíveis é apresentada nos slides e vídeo do assunto, verifique. </p>
-
-<p>Faça um programa que funcione como um torneio.</p>
-    A entrada deve conter o número de participantes seguido dos participantes. A saída apresenta o valor base do participante campeão do torneio.
-</p>
-<p></p>
-<p>Entradas:</p>
-<ol>
-<li>Quantidade de participantes</li>
-<li>Identificação dos participantes</li>
-</ol>
+<p>Implemente uma função que realize a ordenação dos elementos da fila pelo número do processo. O elemento com menor número deve ficar na frente da fila e o de maior valor no fim.</p>
+<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Fila com armazenamento em vetor - Lista de processos em uma repartição pública" como base. </p>
+<p>Com essa finalidade, você deverá adicionar mais um comando, como segue:</p>
+<ul>
+<li>o: para ordenar a fila.</li>
+</ul>
 <p>Saídas:</p>
-<ol>
-<li>Valor base do campeão do torneio</li>
-</ol>
-<p>Exemplo de Entrada:</p>
-<pre>8
-2 7 4 1 3 9 6 8</pre>
-<p>Exemplo de Saída:</p>
-<pre>9</pre>
+<p>Todas as saídas de comandos já estão implementadas na função principal código entregue, somente falta implementar a chamada para a remoção. Ao terminar a execução do programa, todos os itens da pilha são desempilhados e escritos.</p>
+<p>Exemplo de Entrada e Saída juntas:</p>
+<pre>
+r
+Erro: fila vazia!
+i processo1 Joao a 2
+i processo2 Maria c 5
+i processo3 Severino d 9
+i processo4 Marcos f 12
+i processo5 Barnabe a 10
+i processo6 Tiao z 22
+i processo7 Marlon m 40
+Erro: fila cheia!
+r
+Nome: processo1 Assunto: Joao Tipo: a Processo: 2
+e
+Nome: processo2 Assunto: Maria Tipo: c Processo: 5
+i processo7 Marlon m 4 
+o
+f
+Nome: processo7 Assunto: Marlon Tipo: m Processo: 4
+Nome: processo2 Assunto: Maria Tipo: c Processo: 5
+Nome: processo3 Assunto: Severino Tipo: d Processo: 9
+Nome: processo5 Assunto: Barnabe Tipo: a Processo: 10
+Nome: processo4 Assunto: Marcos Tipo: f Processo: 12
+Nome: processo6 Assunto: Tiao Tipo: z Processo: 22
+</pre>
 
-<p>Exemplo de Entrada:</p>
-<pre>13
-11 5 3 4 2 15 7 9 10 8 12 6 13</pre>
-<p>Exemplo de Saída:</p>
-<pre>13</pre>
         </div><!-- description-display-box -->
         <a name="JQ5"></a>
         <p><b>Peso:</b> 1</p>
@@ -393,9 +773,9 @@ f
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2005">
-                <input type="hidden" name="tst_password" value="0b032a7b044faf1483a4875a66f7d2dd1194daee">
-                <input type="hidden" name="id_problema" value="1835">
+                <input type="hidden" name="id_prova" value="2004">
+                <input type="hidden" name="tst_password" value="ccdbd0d95009e2d70496594dd21c76b9770f1a7b">
+                <input type="hidden" name="id_problema" value="2098">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
@@ -406,38 +786,46 @@ f
     </div><!-- problem-try-ct -->
     <div class="problem-try-ct">
         <a name="Q6"></a>
-        <h3>Questão 6: Torneio - Torneio alternado</h3>
+        <h3>Questão 6: Fila com armazenamento em vetor - Lista de processos em uma repartição pública - quantidade de processos do mesmo tipo</h3>
         <div class="description-display-box">
-<p>Um torneio é uma árvore estritamente binária na qual cada nó não folha contém uma cópia do maior elemento entre seus dois filhos. O conteúdo das folhas de um torneio determina o conteúdo de todos os seus nós. Um torneio com n folhas representa um conjunto de n elementos.</p>
-
-<p>Implemente um torneio utilizando uma estratégia semelhante a um Heap. Entretanto, a cada etapa, a condição de vitória (maior elemento ou menor elemento) é alternada. A primeira etapa sempre começa com a condição de vitória sendo o maior elemento, a segunda é o menor valor, a terceira volta a ser o maior, e continua sucessivamente.</p>
-
-<p>Note que normalmente um torneio é uma árvore estritamente binária, cheia. Como, neste problema, temos que o tamanho da entrada pode não ser uma potência de 2, será necessário fazer ajustes para trabalhar com o que costumamos chamar de torneio incompleto. Uma das abordagens possíveis é apresentada nos slides e vídeo do assunto, verifique. </p>
-
-<p>Faça um programa que funcione como um torneio alternado, onde a cada etapa, alterna a condição de vitória (maior ou menor). A primeira etapa sempre começa com a condição de vitória sendo o maior valor, a segunda é o menor valor, a terceira volta a ser o maior, e continua nessa ordem.</p>
-    A entrada deve conter o número de participantes seguido dos participantes. A saída apresenta o participante campeão do torneio.
-</p>
-<p></p>
-<p>Entradas:</p>
-<ol>
-<li>Quantidade de participantes</li>
-<li>Identificação dos participantes</li>
-</ol>
+<p>Implemente uma função que realize a contabilize o número de processos de um mesmo tipo e imprima na tela.</p>
+<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Fila com armazenamento em vetor - Lista de processos em uma repartição pública" como base. </p>
+<p>Com essa finalidade, você deverá adicionar mais um comando, como segue:</p>
+<ul>
+<li>c seguindo de um carácter: para informar o número de processos daquele tipo e imprimir na tela.</li>
+</ul>
 <p>Saídas:</p>
-<ol>
-<li>Campeão do torneio</li>
-</ol>
-<p>Exemplo de Entrada:</p>
-<pre>8
-2 7 4 1 3 9 6 8</pre>
-<p>Exemplo de Saída:</p>
-<pre>8</pre>
+<p>Todas as saídas de comandos já estão implementadas na função principal código entregue, somente falta implementar a chamada para a remoção. Ao terminar a execução do programa, todos os itens da pilha são desempilhados e escritos.</p>
+<p>Exemplo de Entrada e Saída juntas:</p>
+<pre>
+r
+Erro: fila vazia!
+i processo1 Joao a 2
+i processo2 Maria c 5
+i processo3 Severino d 9
+i processo4 Marcos f 12
+i processo5 Barnabe a 10
+i processo6 Tiao z 22
+i processo7 Marlon a 40
+Erro: fila cheia!
+r
+Nome: processo1 Assunto: Joao Tipo: a Processo: 2
+e
+Nome: processo2 Assunto: Maria Tipo: c Processo: 5
+i processo7 Marlon a 40
+c a
+Processo: 10
+Processo: 40
+Numero de processos: 2
+f
+Nome: processo2 Assunto: Maria Tipo: c Processo: 5
+Nome: processo3 Assunto: Severino Tipo: d Processo: 9
+Nome: processo4 Assunto: Marcos Tipo: f Processo: 12
+Nome: processo5 Assunto: Barnabe Tipo: a Processo: 10
+Nome: processo6 Assunto: Tiao Tipo: z Processo: 22
+Nome: processo7 Assunto: Marlon Tipo: a Processo: 40
+</pre>
 
-<p>Exemplo de Entrada:</p>
-<pre>13
-11 5 3 4 2 15 7 9 10 8 12 6 16</pre>
-<p>Exemplo de Saída:</p>
-<pre>9</pre>
         </div><!-- description-display-box -->
         <a name="JQ6"></a>
         <p><b>Peso:</b> 1</p>
@@ -446,9 +834,9 @@ f
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2005">
-                <input type="hidden" name="tst_password" value="0b032a7b044faf1483a4875a66f7d2dd1194daee">
-                <input type="hidden" name="id_problema" value="1830">
+                <input type="hidden" name="id_prova" value="2004">
+                <input type="hidden" name="tst_password" value="ccdbd0d95009e2d70496594dd21c76b9770f1a7b">
+                <input type="hidden" name="id_problema" value="2099">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
@@ -459,38 +847,42 @@ f
     </div><!-- problem-try-ct -->
     <div class="problem-try-ct">
         <a name="Q7"></a>
-        <h3>Questão 7: Torneio - Torneio residual - Segundo lugar</h3>
+        <h3>Questão 7: Fila com armazenamento em vetor - Lista de processos em uma repartição pública - colocar na frente da fila processos de um dado tipo</h3>
         <div class="description-display-box">
-<p>Um torneio é uma árvore estritamente binária na qual cada nó não folha contém uma cópia do maior elemento entre seus dois filhos. O conteúdo das folhas de um torneio determina o conteúdo de todos os seus nós. Um torneio com n folhas representa um conjunto de n elementos.</p>
-
-<p>Implemente um torneio utilizando uma estratégia semelhante a um Heap. Entretanto, a cada etapa, o elemento vencedor irá para a próxima etapa com o seu valor reduzido do valor do oponente. Neste caso, a estrutura de dados utilizada para representar um elemento deve possuir um valor base, que é o valor inicial e, caso ele vença o torneio, o valor que será utilizado é um valor relativo que será utilizado para contabilizar a progressão. Caso exista um empate, o elemento com maior valor base avança. O vencedor do torneio deverá ter seu valor base impresso.</p>
-
-<p>Note que normalmente um torneio é uma árvore estritamente binária, cheia. Como, neste problema, temos que o tamanho da entrada pode não ser uma potência de 2, será necessário fazer ajustes para trabalhar com o que costumamos chamar de torneio incompleto. Uma das abordagens possíveis é apresentada nos slides e vídeo do assunto, verifique. </p>
-
-<p>Faça um programa que funcione como um torneio.</p>
-    A entrada deve conter o número de participantes seguido dos participantes. A saída apresenta o valor base do participante vice-campeão do torneio.
-</p>
-<p></p>
-<p>Entradas:</p>
-<ol>
-<li>Quantidade de participantes</li>
-<li>Identificação dos participantes</li>
-</ol>
+<p>Implemente uma função que encontre todos os processos de um determinado tipo e coloque-os na frente da fila (sem quebrar a estrutura). A função deve verificar quando a fila está vazia.</p>
+<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Fila com armazenamento em vetor - Lista de processos em uma repartição pública" como base. </p>
+<p>Com essa finalidade, você deverá adicionar mais um comando, como segue:</p>
+<ul>
+<li>c seguindo de um carácter: para encontrar todos os processos de um determinado tipo e colocá-los na frente da fila .</li>
+</ul>
 <p>Saídas:</p>
-<ol>
-<li>Valor base do vice-campeão do torneio</li>
-</ol>
-<p>Exemplo de Entrada:</p>
-<pre>8
-2 7 4 1 3 9 6 8</pre>
-<p>Exemplo de Saída:</p>
-<pre>7</pre>
-
-<p>Exemplo de Entrada:</p>
-<pre>13
-11 5 3 4 2 15 7 9 10 8 12 6 13</pre>
-<p>Exemplo de Saída:</p>
-<pre>15</pre>
+<p>Todas as saídas de comandos já estão implementadas na função principal código entregue, somente falta implementar a chamada para a remoção. Ao terminar a execução do programa, todos os itens da pilha são desempilhados e escritos.</p>
+<p>Exemplo de Entrada e Saída juntas:</p>
+<pre>
+r
+Erro: fila vazia!
+i processo2 Maria c 5
+i processo1 Joao a 2
+i processo3 Severino d 9
+i processo5 Barnabe a 10
+i processo6 Tiao z 22
+i processo7 Marlon a 40
+i processo4 Marcos f 12
+Erro: fila cheia!
+r
+Nome: processo2 Assunto: Maria Tipo: c Processo: 5
+e
+Nome: processo1 Assunto: Joao Tipo: a Processo: 2
+i processo4 Marcos f 12
+c a
+f
+Nome: processo1 Assunto: Joao Tipo: a Processo: 2
+Nome: processo5 Assunto: Barnabe Tipo: a Processo: 10
+Nome: processo7 Assunto: Marlon Tipo: a Processo: 40
+Nome: processo3 Assunto: Severino Tipo: d Processo: 9
+Nome: processo6 Assunto: Tiao Tipo: z Processo: 22
+Nome: processo4 Assunto: Marcos Tipo: f Processo: 12
+</pre>
         </div><!-- description-display-box -->
         <a name="JQ7"></a>
         <p><b>Peso:</b> 1</p>
@@ -499,9 +891,9 @@ f
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2005">
-                <input type="hidden" name="tst_password" value="0b032a7b044faf1483a4875a66f7d2dd1194daee">
-                <input type="hidden" name="id_problema" value="2204">
+                <input type="hidden" name="id_prova" value="2004">
+                <input type="hidden" name="tst_password" value="ccdbd0d95009e2d70496594dd21c76b9770f1a7b">
+                <input type="hidden" name="id_problema" value="2100">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
@@ -512,38 +904,41 @@ f
     </div><!-- problem-try-ct -->
     <div class="problem-try-ct">
         <a name="Q8"></a>
-        <h3>Questão 8: Torneio - Torneio alternado - Segundo Lugar</h3>
+        <h3>Questão 8: Fila com armazenamento em vetor - Lista de processos em uma repartição pública - retirar da fila todos os processos de um dado assunto</h3>
         <div class="description-display-box">
-<p>Um torneio é uma árvore estritamente binária na qual cada nó não folha contém uma cópia do maior elemento entre seus dois filhos. O conteúdo das folhas de um torneio determina o conteúdo de todos os seus nós. Um torneio com n folhas representa um conjunto de n elementos.</p>
-
-<p>Implemente um torneio utilizando uma estratégia semelhante a um Heap. Entretanto, a cada etapa, a condição de vitória (maior elemento ou menor elemento) é alternada. A primeira etapa sempre começa com a condição de vitória sendo o maior elemento, a segunda é o menor valor, a terceira volta a ser o maior, e continua sucessivamente.</p>
-
-<p>Note que normalmente um torneio é uma árvore estritamente binária, cheia. Como, neste problema, temos que o tamanho da entrada pode não ser uma potência de 2, será necessário fazer ajustes para trabalhar com o que costumamos chamar de torneio incompleto. Uma das abordagens possíveis é apresentada nos slides e vídeo do assunto, verifique. </p>
-
-<p>Faça um programa que funcione como um torneio alternado, onde a cada etapa, alterna a condição de vitória (maior ou menor). A primeira etapa sempre começa com a condição de vitória sendo o maior valor, a segunda é o menor valor, a terceira volta a ser o maior, e continua nessa ordem.</p>
-    A entrada deve conter o número de participantes seguido dos participantes. A saída apresenta o participante vice-campeão do torneio.
-</p>
-<p></p>
-<p>Entradas:</p>
-<ol>
-<li>Quantidade de participantes</li>
-<li>Identificação dos participantes</li>
-</ol>
+<p>Após uma mudança na legislação, todos os processos de um dado assunto devem ser encaminhados para outra repartição pública. Dessa maneira, implemente uma função que exclua da fila de processos atual, todos aqueles que abordam um mesmo assunto. </p>
+<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Fila com armazenamento em vetor - Lista de processos em uma repartição pública" como base. </p>
+<p>Com essa finalidade, você deverá adicionar mais um comando, como segue:</p>
+<ul>
+<li>x seguindo de uma string: retirar da fila todos os processos de um dado assunto.</li>
+</ul>
 <p>Saídas:</p>
-<ol>
-<li>Vice-campeão do torneio</li>
-</ol>
-<p>Exemplo de Entrada:</p>
-<pre>8
-2 7 4 1 3 9 6 8</pre>
-<p>Exemplo de Saída:</p>
-<pre>4</pre>
+<p>Todas as saídas de comandos já estão implementadas na função principal código entregue, somente falta implementar a chamada para a remoção. Ao terminar a execução do programa, todos os itens da pilha são desempilhados e escritos.</p>
+<p>Exemplo de Entrada e Saída juntas:</p>
+<pre>
+r
+Erro: fila vazia!
+i processo2 Assassinato c 5
+i processo1 Furto a 2
+i processo3 Divorcio d 9
+i processo5 ImpostoRenda a 10
+i processo6 Furto z 22
+i processo7 ImpostoRenda a 40
+i processo4 RuaEsburacada f 12
+Erro: fila cheia!
+r
+Nome: processo2 Assunto: Assassinato Tipo: c Processo: 5
+e
+Nome: processo1 Assunto: Furto Tipo: a Processo: 2
+i processo4 RuaEsburacada f 12
+x ImpostoRenda
+f
+Nome: processo1 Assunto: Furto Tipo: a Processo: 2
+Nome: processo3 Assunto: Divorcio Tipo: d Processo: 9
+Nome: processo6 Assunto: Furto Tipo: z Processo: 22
+Nome: processo4 Assunto: RuaEsburacada Tipo: f Processo: 12
+</pre>
 
-<p>Exemplo de Entrada:</p>
-<pre>13
-11 5 3 4 2 15 7 9 10 8 12 6 16</pre>
-<p>Exemplo de Saída:</p>
-<pre>16</pre>
         </div><!-- description-display-box -->
         <a name="JQ8"></a>
         <p><b>Peso:</b> 1</p>
@@ -552,9 +947,9 @@ f
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2005">
-                <input type="hidden" name="tst_password" value="0b032a7b044faf1483a4875a66f7d2dd1194daee">
-                <input type="hidden" name="id_problema" value="2205">
+                <input type="hidden" name="id_prova" value="2004">
+                <input type="hidden" name="tst_password" value="ccdbd0d95009e2d70496594dd21c76b9770f1a7b">
+                <input type="hidden" name="id_problema" value="2101">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
@@ -567,7 +962,7 @@ f
 </div><!-- problem-try-ct -->
 </div><!-- prova -->
 <script type="text/javascript">
-    var serverTime = 1711577047000;
+    var serverTime = 1712106058000;
     var localTime = +Date.now();
     var timeDiff = serverTime - localTime;
     var closingTime = 1712113199000;
