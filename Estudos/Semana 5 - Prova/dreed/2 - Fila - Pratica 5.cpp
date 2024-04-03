@@ -41,7 +41,7 @@ Nome: processo6 Assunto: Tiao Tipo: z Processo: 22
 
 using namespace std;
 
-const int FILAVAZIA = -1;
+// const int FILAVAZIA = -1;
 const int CAPACIDADE_FILA = 6;
 
 // Definição de uma estrutura de dado para armazenar informações
