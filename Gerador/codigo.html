@@ -125,39 +125,39 @@
         <a style="color: #FFF" href="#Q2">Q2: ?</a><br>
         <a style="color: #FFF" href="#Q3">Q3: ?</a><br>
         <a style="color: #FFF" href="#Q4">Q4: ?</a><br>
-        <a style="color: #FFF" href="#Q5">Q5: ?</a><br>
-        <a style="color: #FFF" href="#Q6">Q6: ?</a><br>
-        <a style="color: #FFF" href="#Q7">Q7: ?</a><br>
-        <a style="color: #FFF" href="#Q8">Q8: ?</a><br>
-        <a style="color: #FFF" href="#Q9">Q9: ?</a><br>
-        <a style="color: #FFF" href="#Q10">Q10: ?</a><br>
-        <a style="color: #FFF" href="#Q11">Q11: ?</a><br>
-        <a style="color: #FFF" href="#Q12">Q12: ?</a><br>
-        <a style="color: #FFF" href="#Q13">Q13: ?</a><br>
-        <a style="color: #FFF" href="#Q14">Q14: ?</a><br>
-        <a style="color: #FFF" href="#Q15">Q15: ?</a><br>
-        <a style="color: #FFF" href="#Q16">Q16: ?</a><br>
 Total: 0    </span><br>
 </div>
 <div id="prova">
-    <h1>Atividade Prática de Lista e Tabelas Hash</h1>
-    <p><b>Prova Aberta Até:</b> 24/04/2024 23:59:59</p>
-    <p><b>Número Máximo de Tentativas:</b> 3</p>
+    <h1>Atividade Preparatória Lista e Tabelas Hash</h1>
+    <p><b>Prova Aberta Até:</b> 08/05/2024 12:00:00</p>
+    <p><b>Número Máximo de Tentativas:</b> 6</p>
     <p><b>Atenuação da Nota por Tentativa:</b> 0%</p>
     <p><b>Instruções para a prova:</b> A prova é individual. Desligue seu celular. Não converse com os colegas. Não fique olhando para a tela dos colegas.</p>
     <div class="problem-try-ct">
         <a name="Q1"></a>
-        <h3>Questão 1: Lista Simplesmente Encadeada - Equipes de Maratona - Tamanho da lista</h3>
+        <h3>Questão 1: Lista Simplesmente Encadeada - Equipes de Maratona</h3>
         <div class="description-display-box">
-<p>Implemente uma função que realize a contabilidade dos elementos de uma lista simplesmente encadeada. Para esta atividade você <b>não</b> poderá utilizar a variável tamanho, ou qualquer outra que contabilize o número de elementos na lista, na sua estrutura. Ou seja, a verificação do tamanho deverá ser feita contando os elementos da lista. Caso a lista não possua elementos imprima  <b> 0</b>.</p>
-<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Lista Simplesmente Encadeada - Equipes de Maratona" como base. </p>
-<p>Com essa finalidade, você deverá adicionar mais um comando, como segue:</p>
+<p>Crie um programa que seja capaz de armazenar em uma lista encadeada as equipes de uma maratona de programação. Para cada equipe deverá ser informado o seu nome, o nome do líder da equipe, a linguagem de programação que será utilizada e a quantidade de membros. Você poderá utilizar o <a href="/exemplos/f71d3c12.cpp">código fornecido</a> como base de implementação.</p>
+<p>Os comandos que deverão ser utilizados para execução do programa são:</p>
 <ul>
-<li>t : imprime a quantidade de elementos existentes na lista.</li>
+<li>i: inserir uma nova equipe no inicio da lista. O formato de entrada é: <b>NomeEquipe Lider Linguagem QtdMembros </b></li>
+<li>h: inserir uma nova equipe no fim da lista. O formato de entrada é: <b>NomeEquipe Lider Linguagem QtdMembros </b></li>
+<li>m: inserir uma nova equipe na posição informada pelo usuário através de um número inteiro. Considere 0 como a posição inicial da lista. Caso não seja possível inserir na posição indicada imprima "Posição Inexistente!". O formato de entrada é: <b>posiçãoASerInserida NomeEquipe Lider Linguagem QtdMembros </b></li>
+<li>r: apagar uma determinada equipe do início da lista. Caso não exista a equipe deverá imprimir <b>Remoção em lista vazia!</b></li>
+<li>a: apagar uma determinada equipe do fim da lista. Caso não exista a equipe deverá imprimir <b>Remoção em lista vazia!</b></li>
+<li>p: imprimir lista de equipes cadastradas. Imprimir <b>Lista vazia!</b> quando não tiver elemento a ser impresso.</li>
+<li>s: buscar por uma equipe a partir de seu nome. Imprimir <b>Nao encontrado</b> quando a busca não obtiver sucesso.</li>
+</ul>
+<p>Nota: o formato de saída das equipes deve ser: <b>(Nome, Lider, Linguagem, QtdMembros)</b>. Para mais instâncias de equipes (comando de impressão), cada uma delas devem ser separadas por quebras de linha.</p>
+<p>Entradas:</p>
+<ul>
+<li>Comandos detalhados no exercício</li>
 </ul>
 <p>Saídas:</p>
-<p>Todas as saídas de comandos já estão implementadas na função principal código entregue, somente falta implementar a chamada para a calcular o tamanho da lista. Ao terminar a execução do programa, todos os itens da listas são escritos.</p>
-<p>Exemplo de Entrada e Saída juntas:</p>
+<ul>
+<li>Impressões detalhadas no exercício</li>
+</ul>
+<p>Exemplo de Entrada e Saída misturados:</p>
 <pre>
 r
 Remoção em lista vazia!
@@ -170,8 +170,6 @@ Lista vazia!
 i Vingadores Stark Ruby 3
 h LigaDaJustica Batman C++ 4
 m 1 MuppetBabies Kermit Phyton 9
-t
-3
 p
 (Vingadores, Stark, Ruby, 3)
 (MuppetBabies, Kermit, Phyton, 9)
@@ -185,8 +183,6 @@ p
 a
 p
 (MuppetBabies, Kermit, Phyton, 9)
-t
-1
 f
 </pre>
         </div><!-- description-display-box -->
@@ -197,9 +193,9 @@ f
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2012">
-                <input type="hidden" name="tst_password" value="61dc475e492e7b69f25c35474b4ad049521a690c">
-                <input type="hidden" name="id_problema" value="2121">
+                <input type="hidden" name="id_prova" value="2013">
+                <input type="hidden" name="tst_password" value="9b52ad3257e934929844933048077418f77a488a">
+                <input type="hidden" name="id_problema" value="2110">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
@@ -210,17 +206,29 @@ f
     </div><!-- problem-try-ct -->
     <div class="problem-try-ct">
         <a name="Q2"></a>
-        <h3>Questão 2: Lista Simplesmente Encadeada - Equipes de Maratona - Remover equipe</h3>
+        <h3>Questão 2: Lista Duplamente Encadeada - Ações de usuários em um programa</h3>
         <div class="description-display-box">
-<p>Implemente uma função que realize a remoção de um determinado elemento da lista simplesmente encadeada cujo nome será informado pelo usuário.  Caso a lista não possua elementos imprima  <b> Lista vazia!</b>.</p>
-<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Lista Simplesmente Encadeada - Equipes de Maratona" como base. </p>
-<p>Com essa finalidade, você deverá adicionar mais um comando, como segue:</p>
+<p>Crie um programa que seja capaz de armazenar em uma lista duplamente encadeada as ações de usuários em um programa. Cada elemento da lista deve ter um identificador, o nome da ação, tempo para execução total e tempo já consumido de processamento. Você poderá utilizar o <a href="/exemplos/lista-16ac7715.cpp">código fornecido</a> como base de implementação.</p>
+<p>Os comandos que deverão ser utilizados para execução do programa são:</p>
 <ul>
-<li>x seguido de uma string: remove o elemento da lista que cujo nome do time está de acordo com o especificado pela string..</li>
+<li>i: inserir uma nova ação no inicio da lista. O formato de entrada é: <b>Identificador NomeAcao TempoExecução TempoConsumido </b></li>
+<li>h: inserir uma nova ação no final da lista. O formato de entrada é: <b>Identificador NomeAcao TempoExecução TempoConsumido </b></li>
+<li>m: inserir uma nova equipe na posição informada pelo inteiro. Considere 0 como no início e imprima "Posição Inexistente!" caso não seja possível inserir na posição indicada. O formato de entrada é: <b>posiçãoASerInserida Identificador NomeAcao TempoExecução TempoConsumido </b></li>
+<li>r: apagar uma determinada ação do início da lista. Caso não exista a equipe deverá imprimir <b>Remoção em lista vazia!</b></li>
+<li>a: apagar uma determinada ação do fim da lista. Caso não exista a equipe deverá imprimir <b>Remoção em lista vazia!</b></li>
+<li>p: imprimir lista de ações cadastradas em ordem de inserção e, em seguida, em ordem inversa. Imprimir <b>Lista vazia!</b> quando não tiver elemento a ser impresso.</li>
+<li>s: buscar por uma ação a partir de seu nome. Imprimir <b>Nao encontrado</b> quando a busca não obtiver sucesso.</li>
+</ul>
+<p>Nota: o formato de saída das ações deve ser: <b>(Identificador, NomeAcao, TempoExecução, TempoConsumido)</b>. Para mais instâncias de ações (comando de impressão), separar cada uma delas por quebras de linha.</p>
+<p>Entradas:</p>
+<ul>
+<li>Comandos detalhados no exercício</li>
 </ul>
 <p>Saídas:</p>
-<p>Todas as saídas de comandos já estão implementadas na função principal código entregue, somente falta implementar a chamada para a remoção de um determinado elemento. Ao terminar a execução do programa, todos os itens da listas são escritos.</p>
-<p>Exemplo de Entrada e Saída juntas:</p>
+<ul>
+<li>Impressões detalhadas no exercício</li>
+</ul>
+<p>Exemplo de Entrada e Saída misturados:</p>
 <pre>
 r
 Remoção em lista vazia!
@@ -228,36 +236,33 @@ a
 Remoção em lista vazia!
 p
 Lista vazia!
-s Thundercats
+s empilharProcessos
 Lista vazia!
-i Vingadores Stark Ruby 3
-h LigaDaJustica Batman C++ 4
-m 1 MuppetBabies Kermit Phyton 9
-i Thundercats Lion Dart 6
-h BBT Sheldon Assembly 4
+i 1 limparCache 123 99
+h 2 semaforoProc 32 11
+m 1 3 paralelismoProc 65 23
 p
-(Thundercats, Lion, Dart, 6)
-(Vingadores, Stark, Ruby, 3)
-(MuppetBabies, Kermit, Phyton, 9)
-(LigaDaJustica, Batman, C++, 4)
-(BBT, Sheldon, Assembly, 4)
-x MuppetBabies
-p
-(Thundercats, Lion, Dart, 6)
-(Vingadores, Stark, Ruby, 3)
-(LigaDaJustica, Batman, C++, 4)
-(BBT, Sheldon, Assembly, 4)
-s Thundercats
-0
+(1, limparCache, 123, 99)
+(3, paralelismoProc, 65, 23)
+(2, semaforoProc, 32, 11)
+ IMPRIMINDO REVERSO 
+(2, semaforoProc, 32, 11)
+(3, paralelismoProc, 65, 23)
+(1, limparCache, 123, 99)
+s empilharProcessos
+Nao encontrado
 r
 p
-(Vingadores, Stark, Ruby, 3)
-(LigaDaJustica, Batman, C++, 4)
-(BBT, Sheldon, Assembly, 4)
+(3, paralelismoProc, 65, 23)
+(2, semaforoProc, 32, 11)
+ IMPRIMINDO REVERSO 
+(2, semaforoProc, 32, 11)
+(3, paralelismoProc, 65, 23)
 a
 p
-(Vingadores, Stark, Ruby, 3)
-(LigaDaJustica, Batman, C++, 4)
+(3, paralelismoProc, 65, 23)
+ IMPRIMINDO REVERSO 
+(3, paralelismoProc, 65, 23)
 f
 </pre>
         </div><!-- description-display-box -->
@@ -268,9 +273,9 @@ f
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2012">
-                <input type="hidden" name="tst_password" value="61dc475e492e7b69f25c35474b4ad049521a690c">
-                <input type="hidden" name="id_problema" value="2123">
+                <input type="hidden" name="id_prova" value="2013">
+                <input type="hidden" name="tst_password" value="9b52ad3257e934929844933048077418f77a488a">
+                <input type="hidden" name="id_problema" value="2111">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
@@ -281,535 +286,22 @@ f
     </div><!-- problem-try-ct -->
     <div class="problem-try-ct">
         <a name="Q3"></a>
-        <h3>Questão 3: Lista Simplesmente Encadeada - Equipes de Maratona - Inserir no fim da lista</h3>
+        <h3>Questão 3: Hash com encadeamento - Inventário de itens de jogo</h3>
         <div class="description-display-box">
-<p>Implemente uma função que realize a inserção de um elemento no fim da lista. Para esta atividade você <b>não</b> poderá utilizar um ponteiro para o último elemento.</p>
-<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Lista Simplesmente Encadeada - Equipes de Maratona" como base. </p>
-
-<p>Exemplo de Entrada e Saída juntas:</p>
-<pre>
-r
-Remoção em lista vazia!
-a
-Remoção em lista vazia!
-p
-Lista vazia!
-s Thundercats
-Lista vazia!
-i Vingadores Stark Ruby 3
-h LigaDaJustica Batman C++ 4
-m 1 MuppetBabies Kermit Phyton 9
-h BBT Sheldon Assembly 4
-p
-(Vingadores, Stark, Ruby, 3)
-(MuppetBabies, Kermit, Phyton, 9)
-(LigaDaJustica, Batman, C++, 4)
-(BBT, Sheldon, Assembly, 4)
-s Thundercats
-Nao encontrado
-r
-p
-(MuppetBabies, Kermit, Phyton, 9)
-(LigaDaJustica, Batman, C++, 4)
-(BBT, Sheldon, Assembly, 4)
-a
-p
-(MuppetBabies, Kermit, Phyton, 9)
-(LigaDaJustica, Batman, C++, 4)
-f
-</pre>
-        </div><!-- description-display-box -->
-        <a name="JQ3"></a>
-        <p><b>Peso:</b> 1</p>
-            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                <label style="background: #F9F9F9">Nova Resposta:</label>
-                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                <input type="file" name="arquivo" id="arquivo" required="required">
-                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2012">
-                <input type="hidden" name="tst_password" value="61dc475e492e7b69f25c35474b4ad049521a690c">
-                <input type="hidden" name="id_problema" value="2122">
-                <input type="hidden" name="idUsuario" value="6644">
-                <input type="hidden" name="nroTentativa" value="1">
-                <input type="hidden" name="atenuacao" value="1">
-                <input type="hidden" name="nroQuestao" value="3">
-                <input type="hidden" name="_action" value="save">
-                <input type="submit" name="avaliar" value="Enviar Resposta">
-            </form>
-    </div><!-- problem-try-ct -->
-    <div class="problem-try-ct">
-        <a name="Q4"></a>
-        <h3>Questão 4: Lista Simplesmente Encadeada - Equipes de Maratona - Remover no fim da lista</h3>
-        <div class="description-display-box">
-<p>Implemente uma função que realize a remoção de um elemento no fim da lista. Para esta atividade você <b>não</b> poderá utilizar um ponteiro para o último elemento. Caso a lista não possua elementos imprima  <b> Lista vazia!</b>.</p>
-<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Lista Simplesmente Encadeada - Equipes de Maratona" como base. </p>
-
-<p>Exemplo de Entrada e Saída juntas:</p>
-<pre>
-r
-Remoção em lista vazia!
-a
-Remoção em lista vazia!
-p
-Lista vazia!
-s Thundercats
-Lista vazia!
-i Vingadores Stark Ruby 3
-h LigaDaJustica Batman C++ 4
-m 1 MuppetBabies Kermit Phyton 9
-p
-(Vingadores, Stark, Ruby, 3)
-(MuppetBabies, Kermit, Phyton, 9)
-(LigaDaJustica, Batman, C++, 4)
-s Thundercats
-Nao encontrado
-r
-p
-(MuppetBabies, Kermit, Phyton, 9)
-(LigaDaJustica, Batman, C++, 4)
-a
-p
-(MuppetBabies, Kermit, Phyton, 9)
-f
-</pre>
-        </div><!-- description-display-box -->
-        <a name="JQ4"></a>
-        <p><b>Peso:</b> 1</p>
-            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                <label style="background: #F9F9F9">Nova Resposta:</label>
-                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                <input type="file" name="arquivo" id="arquivo" required="required">
-                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2012">
-                <input type="hidden" name="tst_password" value="61dc475e492e7b69f25c35474b4ad049521a690c">
-                <input type="hidden" name="id_problema" value="2124">
-                <input type="hidden" name="idUsuario" value="6644">
-                <input type="hidden" name="nroTentativa" value="1">
-                <input type="hidden" name="atenuacao" value="1">
-                <input type="hidden" name="nroQuestao" value="4">
-                <input type="hidden" name="_action" value="save">
-                <input type="submit" name="avaliar" value="Enviar Resposta">
-            </form>
-    </div><!-- problem-try-ct -->
-    <div class="problem-try-ct">
-        <a name="Q5"></a>
-        <h3>Questão 5: Lista Duplamente Encadeada - Ações de usuários em um programa - Deque</h3>
-        <div class="description-display-box">
-<p>Utilizando como base o código que você desenvolveu na atividade "Lista Simplesmente Encadeada - Equipes de Maratona" faça as adaptações necessárias para que ela funcione como deque.  Todos os métodos que não devem ser permitidos para uso em uma deque devem retornar ao usuário que o procedimento não é permitido.  </p>
-<p>Uma deque é uma estrutura de dados lista em que a remoção e inserção só é permitida em suas pontas (ou seja: no início e no final da lista).
-</p>
-<p>Feito isso, você deverá adicionar mais um procedimento fora da classe, que recebe uma deque e uma string e remove um elemento qualquer, <b>mas sem quebrar a estrutura</b>. Ou seja: a remoção deverá ser implementada de maneira similar à remoção em uma pilha ou fila. Utilizando esse procedimento, adicione a seguinte opção no menu da função principal:</p>
-<ul>
-<li>x seguido de uma string: remove da lista o elemento que possui o nome da ação informado pelo usuário. Imprimir <b>Remoção em lista vazia!</b> caso a chamada ao procedimento seja chamada com a lista vazia. Imprimir <b>Nao encontrado</b> caso não encontre o elemento em uma lista que possua pelo menos um elemento</li>
-</ul>
-<p>Lembrando novamente: esse comando deverá ser implementado <b>sem quebra de estrutura</b>. </p> 
-<p>Saídas:</p>
-<p>Todas as saídas de comandos já estão implementadas na função principal código entregue, somente falta implementar a chamada para remover o elemento solicitado. Ao terminar a execução do programa, todos os itens da listas são escritos.</p>
-<p>Exemplo de Entrada e Saída juntas:</p>
-<pre>
-r
-Remoção em lista vazia!
-a
-Remoção em lista vazia!
-p
-Lista vazia!
-s empilharProcessos
-Lista vazia!
-i 1 limparCache 123 99
-h 2 semaforoProc 32 11
-m 1 3 paralelismoProc 65 23
-Operação não permitida!
-i 3 paralelismoProc 65 23
-p
-(3, paralelismoProc, 65, 23)
-(1, limparCache, 123, 99)
-(2, semaforoProc, 32, 11)
- IMPRIMINDO REVERSO 
-(2, semaforoProc, 32, 11)
-(1, limparCache, 123, 99)
-(3, paralelismoProc, 65, 23)
-s empilharProcessos
-Nao encontrado
-x limparCache
-p
-(3, paralelismoProc, 65, 23)
-(2, semaforoProc, 32, 11)
- IMPRIMINDO REVERSO 
-(2, semaforoProc, 32, 11)
-(3, paralelismoProc, 65, 23)
-r
-p
-(2, semaforoProc, 32, 11)
- IMPRIMINDO REVERSO 
-(2, semaforoProc, 32, 11)
-f
-</pre>
-        </div><!-- description-display-box -->
-        <a name="JQ5"></a>
-        <p><b>Peso:</b> 1</p>
-            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                <label style="background: #F9F9F9">Nova Resposta:</label>
-                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                <input type="file" name="arquivo" id="arquivo" required="required">
-                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2012">
-                <input type="hidden" name="tst_password" value="61dc475e492e7b69f25c35474b4ad049521a690c">
-                <input type="hidden" name="id_problema" value="2131">
-                <input type="hidden" name="idUsuario" value="6644">
-                <input type="hidden" name="nroTentativa" value="1">
-                <input type="hidden" name="atenuacao" value="1">
-                <input type="hidden" name="nroQuestao" value="5">
-                <input type="hidden" name="_action" value="save">
-                <input type="submit" name="avaliar" value="Enviar Resposta">
-            </form>
-    </div><!-- problem-try-ct -->
-    <div class="problem-try-ct">
-        <a name="Q6"></a>
-        <h3>Questão 6: Lista Duplamente Encadeada - Ações de usuários em um programa - Remoção por nome da ação</h3>
-        <div class="description-display-box">
-<p>Implemente duas funções que realizem a remoção de um determinado elemento da lista duplamente encadeada. A primeira função deve realizar a remoção de um elemento pelo nome da ação, informado pelo usuário. A segunda função deve remover um elemento da lista pelo seu id, também informado pelo usuário.   Caso a lista não possua elementos imprima  <b> Remoção em lista vazia!</b>. Caso a lista possua elementos mas o informado para a remoção pelo usuário não faça parte da mesma, imprima <b>Erro: remoção de valor não encontrado!</b></p>
-<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Lista Duplamente Encadeada - Ações de usuários em um programa" como base. </p>
-<p>Com essa finalidade, você deverá adicionar os seguintes comandos, como segue:</p>
-<ul>
-<li>x seguido de uma string: remove o elemento da lista que cujo nome da ação está de acordo com o especificado pela string.</li>
-<li>w seguido de um inteiro: remove o elemento da lista que cujo id da ação está de acordo com o especificado pelo inteiro.</li>
-</ul>
-<p>Saídas:</p>
-<p>Todas as saídas de comandos já estão implementadas na função principal código entregue, somente falta implementar a chamada para as remoções solicitadas. Ao terminar a execução do programa, todos os itens da listas são escritos.</p>
-<p>Exemplo de Entrada e Saída juntas:</p>
-<pre>
-r
-Remoção em lista vazia!
-a
-Remoção em lista vazia!
-p
-Lista vazia!
-s empilharProcessos
-Lista vazia!
-i 1 limparCache 123 99
-h 2 semaforoProc 32 11
-m 1 3 paralelismoProc 65 23
-p
-(1, limparCache, 123, 99)
-(3, paralelismoProc, 65, 23)
-(2, semaforoProc, 32, 11)
- IMPRIMINDO REVERSO 
-(2, semaforoProc, 32, 11)
-(3, paralelismoProc, 65, 23)
-(1, limparCache, 123, 99)
-x paralelismoProc
-s empilharProcessos
-Nao encontrado
-p
-(1, limparCache, 123, 99)
-(2, semaforoProc, 32, 11)
- IMPRIMINDO REVERSO 
-(2, semaforoProc, 32, 11)
-(1, limparCache, 123, 99)
-w 2
-p
-(1, limparCache, 123, 99)
- IMPRIMINDO REVERSO
-(1, limparCache, 123, 99)
-f
-</pre>
-        </div><!-- description-display-box -->
-        <a name="JQ6"></a>
-        <p><b>Peso:</b> 1</p>
-            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                <label style="background: #F9F9F9">Nova Resposta:</label>
-                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                <input type="file" name="arquivo" id="arquivo" required="required">
-                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2012">
-                <input type="hidden" name="tst_password" value="61dc475e492e7b69f25c35474b4ad049521a690c">
-                <input type="hidden" name="id_problema" value="2132">
-                <input type="hidden" name="idUsuario" value="6644">
-                <input type="hidden" name="nroTentativa" value="1">
-                <input type="hidden" name="atenuacao" value="1">
-                <input type="hidden" name="nroQuestao" value="6">
-                <input type="hidden" name="_action" value="save">
-                <input type="submit" name="avaliar" value="Enviar Resposta">
-            </form>
-    </div><!-- problem-try-ct -->
-    <div class="problem-try-ct">
-        <a name="Q7"></a>
-        <h3>Questão 7: Lista Duplamente Encadeada - Ações de usuários em um programa - Inserção ordenada pelo ID</h3>
-        <div class="description-display-box">
-<p>Utilizando como base o código que você desenvolveu na atividade "Lista Simplesmente Encadeada - Equipes de Maratona", altere as inserções para que a inserção na lista seja ordenada</p>
-<p></p>
-<p>Exemplo de Entrada e Saída juntas:</p>
-<pre>
-r
-Remoção em lista vazia!
-a
-Remoção em lista vazia!
-p
-Lista vazia!
-s empilharProcessos
-Lista vazia!
-i 100 limparCache 123 99
-h 2 semaforoProc 32 11
-m 0 30 paralelismoProc 65 23
-p
-(2, semaforoProc, 32, 11)
-(30, paralelismoProc, 65, 23)
-(100, limparCache, 123, 99)
- IMPRIMINDO REVERSO 
-(100, limparCache, 123, 99)
-(30, paralelismoProc, 65, 23)
-(2, semaforoProc, 32, 11)
-s empilharProcessos
-Nao encontrado
-r
-p
-(30, paralelismoProc, 65, 23)
-(100, limparCache, 123, 99)
- IMPRIMINDO REVERSO 
-(100, limparCache, 123, 99)
-(30, paralelismoProc, 65, 23)
-a
-p
-(30, paralelismoProc, 65, 23)
- IMPRIMINDO REVERSO 
-(30, paralelismoProc, 65, 23)
-f
-</pre>
-        </div><!-- description-display-box -->
-        <a name="JQ7"></a>
-        <p><b>Peso:</b> 1</p>
-            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                <label style="background: #F9F9F9">Nova Resposta:</label>
-                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                <input type="file" name="arquivo" id="arquivo" required="required">
-                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2012">
-                <input type="hidden" name="tst_password" value="61dc475e492e7b69f25c35474b4ad049521a690c">
-                <input type="hidden" name="id_problema" value="2133">
-                <input type="hidden" name="idUsuario" value="6644">
-                <input type="hidden" name="nroTentativa" value="1">
-                <input type="hidden" name="atenuacao" value="1">
-                <input type="hidden" name="nroQuestao" value="7">
-                <input type="hidden" name="_action" value="save">
-                <input type="submit" name="avaliar" value="Enviar Resposta">
-            </form>
-    </div><!-- problem-try-ct -->
-    <div class="problem-try-ct">
-        <a name="Q8"></a>
-        <h3>Questão 8: Lista Duplamente Encadeada - Ações de usuários em um programa - Remoção do elemento com maior tempo para execução total</h3>
-        <div class="description-display-box">
-<p>Faça um procedimento para remover o elemento da lista com maior tempo para execução total.</p>
-<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Lista Duplamente Encadeada - Ações de usuários em um programa" como base. </p>
-<p>Com essa finalidade, você deverá adicionar mais um comando, como segue:</p>
-<ul>
-<li>t : retira e imprime o elemento da lista com maior tempo para execução total.</li>
-</ul>
-<p>Saídas:</p>
-<p>Todas as saídas de comandos já estão implementadas na função principal código entregue, somente falta implementar a chamada para retirada e impressão do elemento da lista com maior tempo para execução total. Ao terminar a execução do programa, todos os itens da listas são escritos.</p>
-<p>Exemplo de Entrada e Saída juntas:</p>
-<pre>
-r
-Remoção em lista vazia!
-a
-Remoção em lista vazia!
-p
-Lista vazia!
-s empilharProcessos
-Lista vazia!
-i 1 limparCache 123 99
-h 2 semaforoProc 32 11
-m 1 3 paralelismoProc 65 23
-p
-(1, limparCache, 123, 99)
-(3, paralelismoProc, 65, 23)
-(2, semaforoProc, 32, 11)
- IMPRIMINDO REVERSO 
-(2, semaforoProc, 32, 11)
-(3, paralelismoProc, 65, 23)
-(1, limparCache, 123, 99)
-t
-(1, limparCache, 123, 99)
-s empilharProcessos
-Nao encontrado
-p
-(3, paralelismoProc, 65, 23)
-(2, semaforoProc, 32, 11)
- IMPRIMINDO REVERSO 
-(2, semaforoProc, 32, 11)
-(3, paralelismoProc, 65, 23)
-f
-</pre>
-        </div><!-- description-display-box -->
-        <a name="JQ8"></a>
-        <p><b>Peso:</b> 1</p>
-            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                <label style="background: #F9F9F9">Nova Resposta:</label>
-                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                <input type="file" name="arquivo" id="arquivo" required="required">
-                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2012">
-                <input type="hidden" name="tst_password" value="61dc475e492e7b69f25c35474b4ad049521a690c">
-                <input type="hidden" name="id_problema" value="2134">
-                <input type="hidden" name="idUsuario" value="6644">
-                <input type="hidden" name="nroTentativa" value="1">
-                <input type="hidden" name="atenuacao" value="1">
-                <input type="hidden" name="nroQuestao" value="8">
-                <input type="hidden" name="_action" value="save">
-                <input type="submit" name="avaliar" value="Enviar Resposta">
-            </form>
-    </div><!-- problem-try-ct -->
-    <div class="problem-try-ct">
-        <a name="Q9"></a>
-        <h3>Questão 9: Hash com encadeamento - Inventário de itens de jogo - Inserção ordenada pelo nome</h3>
-        <div class="description-display-box">
-<p>Utilizando como base o código que você desenvolveu na atividade "Hash com encadeamento - Inventário de itens de jogo", altere as inserções para que a inserção na lista seja ordenada</p>
-<p></p>
-<p>Exemplo de Entrada e Saída juntas:</p>
-<pre>
-6
-r dez
-Erro na remoção: chave não encontrada!
-i um a 1
-chave 'um' inserida na posicao 4
-i dois b 2
-chave 'dois' inserida na posicao 5
-i quatro d 4
-chave 'quatro' inserida na posicao 2
-i sete g 7
-chave 'sete' inserida na posicao 1
-i oito h 8
-chave 'oito' inserida na posicao 5
-i dez j 10
-chave 'dez' inserida na posicao 5
-i tres c 3
-chave 'tres' inserida na posicao 2
-p
-0: 
-1: [sete/7]
-2: [quatro/4][tres/3]
-3: 
-4: [um/1]
-5: [dez/10][dois/2][oito/8]
-l quatro
-Tipo: d Valor: 4
-r dez
-f
-0: 
-1: [sete/7]
-2: [quatro/4][tres/3]
-3: 
-4: [um/1]
-5: [dois/2][oito/8]
-</pre>
-        </div><!-- description-display-box -->
-        <a name="JQ9"></a>
-        <p><b>Peso:</b> 1</p>
-            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                <label style="background: #F9F9F9">Nova Resposta:</label>
-                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                <input type="file" name="arquivo" id="arquivo" required="required">
-                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2012">
-                <input type="hidden" name="tst_password" value="61dc475e492e7b69f25c35474b4ad049521a690c">
-                <input type="hidden" name="id_problema" value="2139">
-                <input type="hidden" name="idUsuario" value="6644">
-                <input type="hidden" name="nroTentativa" value="1">
-                <input type="hidden" name="atenuacao" value="1">
-                <input type="hidden" name="nroQuestao" value="9">
-                <input type="hidden" name="_action" value="save">
-                <input type="submit" name="avaliar" value="Enviar Resposta">
-            </form>
-    </div><!-- problem-try-ct -->
-    <div class="problem-try-ct">
-        <a name="Q10"></a>
-        <h3>Questão 10: Hash com encadeamento - Inventário de itens de jogo - Aumentar capacidade da tabela</h3>
-        <div class="description-display-box">
-<p>Utilizando como base o código que você desenvolveu na atividade "Hash com encadeamento - Inventário de itens de jogo", faça as alterações necessárias para que a tabela hash seja redimensionada em 3 posições caso a taxa de ocupação seja igual ou maior que 70%</p>
-<p></p>
-<p>Exemplo de Entrada e Saída juntas:</p>
-<pre>
-2
-r dez
-Erro na remoção: chave não encontrada!
-i um a 1
-chave 'um' inserida na posicao 0
-i dois b 2
-chave 'dois' inserida na posicao 1
-
-É necessario redimensionar de 2 para 5
-
-p
-0: 
-1: 
-2: 
-3: [um/1]
-4: [dois/2]
-i quatro d 4
-chave 'quatro' inserida na posicao 2
-i sete g 7
-chave 'sete' inserida na posicao 2
-i oito h 8
-chave 'oito' inserida na posicao 1
-
-É necessario redimensionar de 5 para 8
-
-p
-0: [um/1]
-1: 
-2: 
-3: [sete/7]
-4: [quatro/4]
-5: [dois/2][oito/8]
-6: 
-7: 
-i dez j 10
-chave 'dez' inserida na posicao 1
-i tres c 3
-chave 'tres' inserida na posicao 4
-l quatro
-Tipo: d Valor: 4
-f
-0: [um/1]
-1: [dez/10]
-2: 
-3: [sete/7]
-4: [tres/3][quatro/4]
-5: [dois/2][oito/8]
-6: 
-7: 
-</pre>
-        </div><!-- description-display-box -->
-        <a name="JQ10"></a>
-        <p><b>Peso:</b> 1</p>
-            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                <label style="background: #F9F9F9">Nova Resposta:</label>
-                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                <input type="file" name="arquivo" id="arquivo" required="required">
-                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2012">
-                <input type="hidden" name="tst_password" value="61dc475e492e7b69f25c35474b4ad049521a690c">
-                <input type="hidden" name="id_problema" value="2140">
-                <input type="hidden" name="idUsuario" value="6644">
-                <input type="hidden" name="nroTentativa" value="1">
-                <input type="hidden" name="atenuacao" value="1">
-                <input type="hidden" name="nroQuestao" value="10">
-                <input type="hidden" name="_action" value="save">
-                <input type="submit" name="avaliar" value="Enviar Resposta">
-            </form>
-    </div><!-- problem-try-ct -->
-    <div class="problem-try-ct">
-        <a name="Q11"></a>
-        <h3>Questão 11: Hash com encadeamento - Inventário de itens de jogo - Modificar elemento</h3>
-        <div class="description-display-box">
-<p>Implemente uma função que realize a modificação dos dados de um elemento da Hash. Será possível alterar qualquer campo do elemento e após a modificação, a posição do elemento na tabela hash deve ser recalculada. </p>
-<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Hash com encadeamento - Inventário de itens de jogo" como base. </p>
+<p>Implemente uma tabela hash, utilizando tratamento de colisão por encadeamento de nós, para implementar um inventário de itens em um jogo digital. A estrutura deve possibilitar, pelo menos, as seguintes ações: inserção e remoção de itens, localizar um item na estrutura hash. A remoção e busca devem escrever mensagem de erro na saída ("<tt>Erro: hash vazia!</tt>"), quando a hash estiver vazia. Na remoção ou na busca, caso a hash contenha elementos mas o item da busca não se encontra na tabela, o usuário deve ser informado da seguinte forma: ("<tt>Elemento inexistente!</tt>") . Os itens do inventários possuem os seguintes atributos: nome (uma string sem espaços), tipo (um único caracter) e valor (um inteiro). </p>
+<p>Para essa atividade você pode utilizar as seguintes opções de código fonte base: <a href="/exemplos/hash-81960585.cpp">código fornecido 1</a> ou <a href="/exemplos/hash-ea865bf3.cpp">código fornecido2</a>. </p>
+<p>No início da execução, o programa lê o tamanho da tabela hash. </p>
 <p>Entradas:</p>
-<p>Com essa finalidade, você deverá adicionar mais um comando, como segue:</p>
+<p>O programa deve aceitar os seguintes comandos:</p>
 <ul>
-<li>m seguido de duas strings, um char e um inteiro: para alterar um elemento com uma determinada chave, sua nova chave, o novo tipo e o novo valor. </li>
+<li>i: seguido de uma string, um caracter e um inteiro: para inserir um item no inventário. Caso exista colisão, a inserção na lista deve ser no ínicio.</li>
+<li>r seguido de um string: para retirar um item do inventário</li>
+<li>l seguido de um string: para localizar o determinado item no inventário</li>
+<li>p: imprimir toda a tabela hash</li>
+<li>f: para finalizar a execução do programa</li>
 </ul>
 <p>Saídas:</p>
-<p>Todas as saídas de comandos já estão implementadas na função principal código entregue, somente falta implementar a chamada para a modificação. Ao terminar a execução do programa, todos os itens da hash são escritos.</p>
+<p>Todas as saídas de comandos já estão implementadas na função principal dos códigos fontes informados anteriormente. Ao terminar a execução do programa, todos os itens da hash são  escritos.</p>
 <p>Exemplo de Entrada e Saída juntas:</p>
 <pre>
 6
@@ -836,285 +328,53 @@ p
 3: 
 4: [um/1]
 5: [dez/10][oito/8][dois/2]
-m oito oitocentos w 800
-p
-0: 
-1: [sete/7]
-2: [tres/3][quatro/4]
-3: [oitocentos/800]
-4: [um/1]
-5: [dez/10][dois/2]
-l dez
-Tipo: j Valor: 10
-f
-0: 
-1: [sete/7]
-2: [tres/3][quatro/4]
-3: [oitocentos/800]
-4: [um/1]
-5: [dez/10][dois/2]
-</pre>
-        </div><!-- description-display-box -->
-        <a name="JQ11"></a>
-        <p><b>Peso:</b> 1</p>
-            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                <label style="background: #F9F9F9">Nova Resposta:</label>
-                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                <input type="file" name="arquivo" id="arquivo" required="required">
-                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2012">
-                <input type="hidden" name="tst_password" value="61dc475e492e7b69f25c35474b4ad049521a690c">
-                <input type="hidden" name="id_problema" value="2141">
-                <input type="hidden" name="idUsuario" value="6644">
-                <input type="hidden" name="nroTentativa" value="1">
-                <input type="hidden" name="atenuacao" value="1">
-                <input type="hidden" name="nroQuestao" value="11">
-                <input type="hidden" name="_action" value="save">
-                <input type="submit" name="avaliar" value="Enviar Resposta">
-            </form>
-    </div><!-- problem-try-ct -->
-    <div class="problem-try-ct">
-        <a name="Q12"></a>
-        <h3>Questão 12: Hash com encadeamento - Inventário de itens de jogo - Hash com Vetor de Quatro Posições</h3>
-        <div class="description-display-box">
-<p>A implementação de Hash com encadeamento é uma das mais utilizadas. Para o encadeamento, a implementação tradicional faz uso de uma lista encadeada. Entretanto, várias implementações utilizam estruturas diferenciadas para o encadeamento das colisões. Por exemplo, a classe HashMap no Java 8 utiliza uma árvore binária para essa tarefa. </p>
-
-<p>Utilizando como base o código que você desenvolveu na atividade "Hash com encadeamento - Inventário de itens de jogo", implemente uma tabela hash com um número genérico n de posições, informado durante a construção da tabela, com resolução de colisões utilizando um vetor de quatro posições. Inclusive, o primeiro elemento na posição deverá ser armazenado também nesse vetor, na posição 0. Não é necessário implementar métodos para alteração ou remoção de dados, apenas inserção e recuperação. Chaves não utilizadas devem ser mantidas como -1, tendo a string vazia como valor associado.
-
-<p>Exemplo de Entrada e Saída juntas:</p>
-<pre>
-5
+l quatro
+Tipo: d Valor: 4
 r dez
-Erro na remoção: chave não encontrada!
-i um a 1
-chave 'um' inserida na posicao 3
-i dois b 2
-chave 'dois' inserida na posicao 4
-i quatro d 4
-chave 'quatro' inserida na posicao 2
-i sete g 7   
-chave 'sete' inserida na posicao 2
-i oito h 8
-chave 'oito' inserida na posicao 1
-i dez j 10
-chave 'dez' inserida na posicao 4
-i tres c 3
-chave 'tres' inserida na posicao 1
-i onze k 11
-chave 'onze' inserida na posicao 3
-i doze l 12
-chave 'doze' inserida na posicao 4
-i treze m 1
-chave 'treze' inserida na posicao 2
-p
+f
 0: 
-1: [tres/3][oito/8]
-2: [treze/1][sete/7][quatro/4]
-3: [onze/11][um/1]
-4: [doze/12][dez/10][dois/2]
-i quinze o 15
-chave 'quinze' inserida na posicao 3
-i vinte w 20
-chave 'vinte' inserida na posicao 1
-i trinta x 30
-chave 'trinta' inserida na posicao 0
-i quarenta z 40
-chave 'quarenta' inserida na posicao 2
-i cinco e 5
-chave 'cinco' inserida na posicao 3
-i cem t 100
-Posição na tabela já possui 4 elementos!
-f
-0: [trinta/30]
-1: [vinte/20][tres/3][oito/8]
-2: [quarenta/40][treze/1][sete/7][quatro/4]
-3: [cinco/5][quinze/15][onze/11][um/1]
-4: [doze/12][dez/10][dois/2]
+1: [sete/7]
+2: [tres/3][quatro/4]
+3: 
+4: [um/1]
+5: [oito/8][dois/2]
 </pre>
 
-
         </div><!-- description-display-box -->
-        <a name="JQ12"></a>
+        <a name="JQ3"></a>
         <p><b>Peso:</b> 1</p>
             <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
                 <label style="background: #F9F9F9">Nova Resposta:</label>
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2012">
-                <input type="hidden" name="tst_password" value="61dc475e492e7b69f25c35474b4ad049521a690c">
-                <input type="hidden" name="id_problema" value="2142">
+                <input type="hidden" name="id_prova" value="2013">
+                <input type="hidden" name="tst_password" value="9b52ad3257e934929844933048077418f77a488a">
+                <input type="hidden" name="id_problema" value="2137">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
-                <input type="hidden" name="nroQuestao" value="12">
+                <input type="hidden" name="nroQuestao" value="3">
                 <input type="hidden" name="_action" value="save">
                 <input type="submit" name="avaliar" value="Enviar Resposta">
             </form>
     </div><!-- problem-try-ct -->
     <div class="problem-try-ct">
-        <a name="Q13"></a>
-        <h3>Questão 13: Hash com endereçamento aberto - Lista de processos em uma repartição pública - Redimensionamento em 50%</h3>
+        <a name="Q4"></a>
+        <h3>Questão 4: Hash com endereçamento aberto - Lista de processos em uma repartição pública</h3>
         <div class="description-display-box">
-<p>Utilizando como base o código que você desenvolveu na atividade "Hash com endereçamento aberto - Lista de processos em uma repartição pública", faça as alterações necessárias para que a tabela hash seja redimensionada, aumentando sua capacidade em 50%, quando a ocupação chegar ou ultrapassar 60%.</p>
-<p></p>
-<p>Exemplo de Entrada e Saída juntas:</p>
-<pre>
-r Joao
-Impossível remover de hash vazia.
-i processo1 Joao a 2
-i processo2 Maria c 5
-i processo3 Severino d 9
-p
-[0:Severino/9] [1:] [2:] [3:] [4:Joao/2] [5:Maria/5] 
-i processo4 Marcos f 12
-p
-[0:Maria/5] [1:] [2:] [3:] [4:Joao/2] [5:] [6:Severino/9] [7:] [8:Marcos/12] 
-i processo5 Barnabe a 10
-i processo6 Tiao z 22
-p
-[0:] [1:] [2:] [3:] [4:] [5:] [6:Maria/5] [7:Tiao/22] [8:Joao/2] [9:] [10:Barnabe/10] [11:Severino/9] [12:Marcos/12] 
-i processo7 Marlon a 40
-i processo8 PeroVazCaminha f 31
-i processo9 Svetlana w 55
-p
-[0:] [1:] [2:Marlon/40] [3:Maria/5] [4:] [5:] [6:Marcos/12] [7:] [8:Tiao/22] [9:Joao/2] [10:] [11:] [12:] [13:] [14:Svetlana/55] [15:] [16:Barnabe/10] [17:PeroVazCaminha/31] [18:Severino/9] 
-r Tiao
-f
-[0:] [1:] [2:Marlon/40] [3:Maria/5] [4:] [5:] [6:Marcos/12] [7:] [8:REMOVIDO] [9:Joao/2] [10:] [11:] [12:] [13:] [14:Svetlana/55] [15:] [16:Barnabe/10] [17:PeroVazCaminha/31] [18:Severino/9] 
-</pre>
-        </div><!-- description-display-box -->
-        <a name="JQ13"></a>
-        <p><b>Peso:</b> 1</p>
-            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                <label style="background: #F9F9F9">Nova Resposta:</label>
-                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                <input type="file" name="arquivo" id="arquivo" required="required">
-                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2012">
-                <input type="hidden" name="tst_password" value="61dc475e492e7b69f25c35474b4ad049521a690c">
-                <input type="hidden" name="id_problema" value="2143">
-                <input type="hidden" name="idUsuario" value="6644">
-                <input type="hidden" name="nroTentativa" value="1">
-                <input type="hidden" name="atenuacao" value="1">
-                <input type="hidden" name="nroQuestao" value="13">
-                <input type="hidden" name="_action" value="save">
-                <input type="submit" name="avaliar" value="Enviar Resposta">
-            </form>
-    </div><!-- problem-try-ct -->
-    <div class="problem-try-ct">
-        <a name="Q14"></a>
-        <h3>Questão 14: Hash com endereçamento aberto - Lista de processos em uma repartição pública - Redimensionamento pelo dobro</h3>
-        <div class="description-display-box">
-<p>Utilizando como base o código que você desenvolveu na atividade "Hash com endereçamento aberto - Lista de processos em uma repartição pública", faça as alterações necessárias para que a tabela hash seja redimensionada, aumentando sua capacidade em 100%, quando a ocupação chegar ou ultrapassar 70%.</p>
-<p></p>
-<p>Exemplo de Entrada e Saída juntas:</p>
-<pre>
-r Joao
-Impossível remover de hash vazia.
-i processo1 Joao a 2
-i processo2 Maria c 5
-i processo3 Severino d 9
-i processo4 Marcos f 12
-p
-[0:Severino/9] [1:] [2:Marcos/12] [3:] [4:Joao/2] [5:Maria/5] 
-i processo5 Barnabe a 10
-p
-[0:Severino/9] [1:Barnabe/10] [2:Marcos/12] [3:] [4:] [5:] [6:] [7:] [8:] [9:] [10:Joao/2] [11:Maria/5] 
-i processo6 Tiao z 22
-i processo7 Marlon a 40
-i processo8 Manoel m 88
-p
-[0:Severino/9] [1:Barnabe/10] [2:Marcos/12] [3:Tiao/22] [4:] [5:Manoel/88] [6:Marlon/40] [7:] [8:] [9:] [10:Joao/2] [11:Maria/5] 
-r severino
-Chave não encontrada para remoção.
-r Severino
-f
-[0:REMOVIDO] [1:Barnabe/10] [2:Marcos/12] [3:Tiao/22] [4:] [5:Manoel/88] [6:Marlon/40] [7:] [8:] [9:] [10:Joao/2] [11:Maria/5] 
-</pre>
-        </div><!-- description-display-box -->
-        <a name="JQ14"></a>
-        <p><b>Peso:</b> 1</p>
-            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                <label style="background: #F9F9F9">Nova Resposta:</label>
-                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                <input type="file" name="arquivo" id="arquivo" required="required">
-                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2012">
-                <input type="hidden" name="tst_password" value="61dc475e492e7b69f25c35474b4ad049521a690c">
-                <input type="hidden" name="id_problema" value="2144">
-                <input type="hidden" name="idUsuario" value="6644">
-                <input type="hidden" name="nroTentativa" value="1">
-                <input type="hidden" name="atenuacao" value="1">
-                <input type="hidden" name="nroQuestao" value="14">
-                <input type="hidden" name="_action" value="save">
-                <input type="submit" name="avaliar" value="Enviar Resposta">
-            </form>
-    </div><!-- problem-try-ct -->
-    <div class="problem-try-ct">
-        <a name="Q15"></a>
-        <h3>Questão 15: Hash com endereçamento aberto - Lista de processos em uma repartição pública - Modificar elemento</h3>
-        <div class="description-display-box">
-<p>Implemente uma função que realize a modificação dos dados de um elemento da Hash. Será possível alterar qualquer campo do elemento e após a modificação, a posição do elemento na tabela hash deve ser recalculada. </p>
-<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Hash com endereçamento aberto - Lista de processos em uma repartição pública" como base. </p>
+<p>Implemente uma tabela hash, utilizando tratamento de colisão por endereçamento aberto, para implementar uma lista de processos para uma repartição pública, utilizando como base o <a href="/exemplos/hash-f13c8664.cpp">código fornecido</a>. A estrutura deve possibilitar, pelo menos, as seguintes ações: inserção e remoção de um determinado item, localização de um processo na estrutura hash. A remoção ou busca deve escrever mensagem de erro na saída ("<tt>Erro: hash vazia!</tt>"), quando a hash estiver vazia. Na remoção ou na busca, caso a hash contenha elementos mas o item da busca não se encontra na tabela, o usuário deve ser informado da seguinte forma: ("<tt>Elemento inexistente!</tt>"). O enfileiramento também deve gerar mensagem de erro ("<tt>Erro: hash cheia!</tt>"), quanto todas as posições do vetor estiverem ocupadas. Os itens da lista de processos possuem os seguintes atributos: assunto (uma string sem espaços), nome do interessado(uma string sem espaços), tipo (um único caracter) e numero do processo (um inteiro). Além disso, essa repartição tem capacidade para trabalhar com <strong>apenas seis processos por vez</strong>.</p>
 <p>Entradas:</p>
-<p>Com essa finalidade, você deverá adicionar mais um comando, como segue:</p>
-<ul>
-<li>m seguido de duas strings, um char e um inteiro: para alterar um elemento com uma determinada chave, sua nova chave, o novo tipo e o novo valor. </li>
-</ul>
+<p>O programa deve aceitar os seguintes comandos:</p>
+<ol>
+<li>i seguido de uma string, um caracter e um inteiro: para inserir um item na lista de processos</li>
+<li>r seguido de um inteiro: para retirar um item da lista de processos</li>
+<li>l seguido de um inteiro: para localizar um item na hash</li>
+<li>f: para finalizar a execução do programa</li>
+</ol>
 <p>Saídas:</p>
-<p>Todas as saídas de comandos já estão implementadas na função principal código entregue, somente falta implementar a chamada para a modificação. Ao terminar a execução do programa, todos os itens da hash são escritos.</p>
-<p>Exemplo de Entrada e Saída juntas:</p>
-<pre>
-r Joao
-Impossível remover de hash vazia.
-i processo1 Joao a 2
-i processo2 Maria c 5
-i processo3 Severino d 9
-i processo4 Marcos f 12
-i processo5 Barnabe a 10
-i processo6 Tiao z 22
-i processo7 Marlon a 40
-Tabela hash cheia.
-p
-[0:Severino/9] [1:Barnabe/10] [2:Marcos/12] [3:Tiao/22] [4:Joao/2] [5:Maria/5] 
-r Marcos
-m processo11 Tiao Manoel g 25 
-f
-[0:Severino/9] [1:Barnabe/10] [2:Manoel/25] [3:REMOVIDO] [4:Joao/2] [5:Maria/5]
-</pre>
-        </div><!-- description-display-box -->
-        <a name="JQ15"></a>
-        <p><b>Peso:</b> 1</p>
-            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
-                <label style="background: #F9F9F9">Nova Resposta:</label>
-                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
-                <input type="file" name="arquivo" id="arquivo" required="required">
-                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2012">
-                <input type="hidden" name="tst_password" value="61dc475e492e7b69f25c35474b4ad049521a690c">
-                <input type="hidden" name="id_problema" value="2145">
-                <input type="hidden" name="idUsuario" value="6644">
-                <input type="hidden" name="nroTentativa" value="1">
-                <input type="hidden" name="atenuacao" value="1">
-                <input type="hidden" name="nroQuestao" value="15">
-                <input type="hidden" name="_action" value="save">
-                <input type="submit" name="avaliar" value="Enviar Resposta">
-            </form>
-    </div><!-- problem-try-ct -->
-    <div class="problem-try-ct">
-        <a name="Q16"></a>
-        <h3>Questão 16: Hash com endereçamento aberto - Lista de processos em uma repartição pública - Defragmentação da estrutura</h3>
-        <div class="description-display-box">
-<p>Implemente uma função que realize a defragmentação de estrutura Hash. Para essa atividade é assumido que a flag de REMOVIDO é utilizado e os elementos não foram reorganizados. Ao executar a função de defragmentação, as flagas de removidos devem ser convertidos para INVALIDO e os elementos devem ser reposicionados. </p>
-<p>Você pode (<b>e deve!</b>) utilizar o código que você desenvolveu na atividade "Hash com endereçamento aberto - Lista de processos em uma repartição pública" como base. </p>
-<p>Entradas:</p>
-<p>Com essa finalidade, você deverá adicionar mais um comando, como segue:</p>
-<ul>
-<li>d: para defragmentar a estrutura. </li>
-</ul>
-<p>Saídas:</p>
-<p>Todas as saídas de comandos já estão implementadas na função principal código entregue, somente falta implementar a chamada para a modificação. Ao terminar a execução do programa, todos os itens da hash são escritos.</p>
+<p>Todas as saídas de comandos já estão implementadas na função principal desse código exemplo fornecido. Ao terminar a execução do programa, todos os itens da hash são escritos.</p>
+</ol>
 <p>Exemplo de Entrada e Saída juntas:</p>
 <pre>
 r Joao
@@ -1130,29 +390,27 @@ Tabela hash cheia.
 p
 [0:Severino/9] [1:Barnabe/10] [2:Marcos/12] [3:Tiao/22] [4:Joao/2] [5:Maria/5] 
 r Severino
-r Marcos
 p
-[0:REMOVIDO] [1:Barnabe/10] [2:REMOVIDO] [3:Tiao/22] [4:Joao/2] [5:Maria/5]
-d
-[0:Barnabe/10] [1:] [2:Tiao/22] [3:] [4:Joao/2] [5:Maria/5]
+[0:] [1:Barnabe/10] [2:Marcos/12] [3:Tiao/22] [4:Joao/2] [5:Maria/5] 
+i processo7 Marlon a 40
 f
-[0:Barnabe/10] [1:] [2:Tiao/22] [3:] [4:Joao/2] [5:Maria/5]
+[0:Marlon/40] [1:Barnabe/10] [2:Marcos/12] [3:Tiao/22] [4:Joao/2] [5:Maria/5] 
 </pre>
         </div><!-- description-display-box -->
-        <a name="JQ16"></a>
+        <a name="JQ4"></a>
         <p><b>Peso:</b> 1</p>
             <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
                 <label style="background: #F9F9F9">Nova Resposta:</label>
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2012">
-                <input type="hidden" name="tst_password" value="61dc475e492e7b69f25c35474b4ad049521a690c">
-                <input type="hidden" name="id_problema" value="2146">
+                <input type="hidden" name="id_prova" value="2013">
+                <input type="hidden" name="tst_password" value="9b52ad3257e934929844933048077418f77a488a">
+                <input type="hidden" name="id_problema" value="2138">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
-                <input type="hidden" name="nroQuestao" value="16">
+                <input type="hidden" name="nroQuestao" value="4">
                 <input type="hidden" name="_action" value="save">
                 <input type="submit" name="avaliar" value="Enviar Resposta">
             </form>
@@ -1161,10 +419,10 @@ f
 </div><!-- problem-try-ct -->
 </div><!-- prova -->
 <script type="text/javascript">
-    var serverTime = 1713392518000;
+    var serverTime = 1713392637000;
     var localTime = +Date.now();
     var timeDiff = serverTime - localTime;
-    var closingTime = 1714013999000;
+    var closingTime = 1715180400000;
     var nomeUsuario = "Lucas Henrique Lopes Costa";
     $('#usuario').text(nomeUsuario);
     if (true) {
