@@ -144,7 +144,7 @@ void Pilha::ordenar()
             if (!pilhaAux->Vazia() and !Vazia())
             {
                 dadoAux = pilhaAux->espiar(); // Pega o dado no topo da pilha auxiliar
-                dadoPrincipal = espiar(); // Pega o dado no topo da pilha original
+                dadoPrincipal = espiar();     // Pega o dado no topo da pilha original
 
                 // Compara os nomes dos dados na pilha auxiliar e na pilha original
                 // Se o nome na pilha auxiliar for menor, realiza a troca
@@ -152,7 +152,7 @@ void Pilha::ordenar()
                 {
                     dadoAux = pilhaAux->Desempilhar(); // Desempilha o dado da pilha auxiliar
                     pilhaAux->Empilhar(Desempilhar()); // Empilha o dado da pilha original na pilha auxiliar
-                    Empilhar(dadoAux); // Empilha o dado da pilha auxiliar na pilha original
+                    Empilhar(dadoAux);                 // Empilha o dado da pilha auxiliar na pilha original
 
                     // Transfere os elementos restantes da pilha auxiliar para a pilha original
                     while (!pilhaAux->Vazia())

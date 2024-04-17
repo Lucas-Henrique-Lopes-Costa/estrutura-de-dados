@@ -14,9 +14,18 @@ private:
   int capacidade;
   int tamanho;
   int inicioDados;
-  inline int pai(int i);
-  inline int esquerdo(int i);
-  inline int direito(int i);
+  inline int pai(int i)
+  {
+    return (i - 1) / 2;
+  }
+  inline int esquerdo(int i)
+  {
+    return 2 * i + 1;
+  }
+  inline int direito(int i)
+  {
+    return 2 * i + 2;
+  }
   void arruma();
   void copiaMaior(int i);
   void copiaSubindo(int i);
@@ -69,6 +78,16 @@ torneio::torneio(int numFolhas)
   for (int i = 0; i < capacidade; i++)
   {
     heap[i] = INVALIDO;
+  }
+}
+
+void torneio::arruma()
+{
+  cout << "arruma: " << inicioDados - 1 << endl;
+
+  for (int i = inicioDados - 1; i >= 0; i--)
+  {
+    copiaMaior(i);
   }
 }
 
@@ -137,12 +156,17 @@ void torneio::imprime()
   cout << endl;
 }
 
-
-
 int main()
 {
-  int tam = 13;
-  dado vet[] = {11, 5, 3, 4, 2, 15, 7, 9, 10, 8, 12, 6, 13};
+  int tam = 8;
+  dado vet[] = {1, 2, 3, 4, 5, 6, 7, 8};
+
+  /*
+  8
+  4, 8
+  2, 4, 6, 8
+  1, 2, 3, 4, 5, 6, 7, 8
+  */
 
   torneio *h = new torneio(vet, tam);
   h->imprime();

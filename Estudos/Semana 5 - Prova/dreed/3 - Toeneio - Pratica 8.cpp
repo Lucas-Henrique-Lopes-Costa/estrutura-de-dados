@@ -32,172 +32,206 @@ Exemplo de Saída:
 */
 
 #include <iostream>
+#include <cstdlib>
 #include <cstring>
-#include <algorithm>
+
 using namespace std;
 
+typedef int dado;
 const int INVALIDO = -1;
 
 class torneio
 {
 private:
-    int *heap;                               // Array para armazenar os participantes do torneio
-    int capacidade;                          // Capacidade total da heap
-    int inicioDados;                         // Índice onde começam os dados reais na heap
-    bool competirMaior;                      // Variável para alternar entre competir pelo maior ou menor valor
-    inline int pai(int filho);                // Função auxiliar para encontrar o pai de um nó na heap
-    inline int esquerda(int getPai);         // Função auxiliar para encontrar o filho esquerdo de um nó na heap
-    inline int direita(int getPai);          // Função auxiliar para encontrar o filho direito de um nó na heap
-    void arruma();                           // Método para organizar a heap
-    void compete(int i, bool competirMaior); // Método para realizar a competição entre os elementos
+    dado *heap;
+    int capacidade;
+    int tamanho;
+    int inicioDados;
+    inline int pai(int i)
+    {
+        return (i - 1) / 2;
+    }
+    inline int esquerdo(int i)
+    {
+        return 2 * i + 1;
+    }
+    inline int direito(int i)
+    {
+        return 2 * i + 2;
+    }
+    void arruma();
+    void copiaVencedor(int i, bool alternar);
+    void copiaSubindo(int i);
 
 public:
-    torneio(int vet[], int tam); // Construtor da classe
-    ~torneio();                  // Destrutor da classe
-    int viceCampeao();           // Método para encontrar o vice-campeão do torneio
+    torneio(dado vet[], int tam);
+    torneio(int numFolhas);
+    ~torneio();
+    void insere(dado d);
+    void imprime();
+    int compeao();
 };
 
-// Construtor da classe
-torneio::torneio(int vet[], int tam)
+torneio::torneio(dado vet[], int tam)
 {
-    // Inicialização das variáveis
-    int numPais = 1;
-    while (numPais < tam)
+    capacidade = 1;
+    while (capacidade < tam)
     {
-        numPais *= 2;
+        capacidade *= 2;
     }
-    capacidade = numPais - 1 + tam;
+
+    capacidade = capacidade - 1 + tam;
+
+    heap = new dado[capacidade];
     inicioDados = capacidade - tam;
-    heap = new int[capacidade];
-    memcpy(&heap[inicioDados], vet, sizeof(int) * tam);
-    competirMaior = true;
-    arruma(); // Organiza a heap após a inicialização
+
+    memcpy(&heap[inicioDados], vet, tam * sizeof(dado));
+
+    tamanho = tam;
+    arruma();
 }
 
-// Destrutor da classe
+torneio::torneio(int numFolhas)
+{
+    capacidade = 1;
+    while (capacidade < numFolhas)
+    {
+        capacidade *= 2;
+    }
+
+    capacidade = capacidade - 1 + numFolhas;
+    heap = new dado[capacidade];
+    inicioDados = capacidade - numFolhas;
+
+    for (int i = 0; i < capacidade; i++)
+    {
+        heap[i] = INVALIDO;
+    }
+}
+
+void torneio::arruma()
+{
+    for (int i = inicioDados - 1; i >= 0; i--)
+    {
+        // cout << "i: " << i << endl;
+
+        if (i % 2 == 0)
+        {
+            copiaVencedor(i, false);
+        }
+        else
+        {
+            copiaVencedor(i, true);
+        }
+    }
+}
+
 torneio::~torneio()
 {
     delete[] heap;
 }
 
-// Retorna a posição do pai de um determinado elemento na heap
-int torneio::pai(int i)
+void torneio::copiaVencedor(int i, bool alternar)
 {
-    return (i - 1) / 2;
-}
+    int esq = esquerdo(i);
+    int dir = direito(i);
 
-// Retorna a posição do filho esquerdo de um determinado nó na heap
-int torneio::esquerda(int i)
-{
-    return 2 * i + 1;
-}
+    int maior = INVALIDO;
 
-// Retorna a posição do filho direito de um determinado nó na heap
-int torneio::direita(int i)
-{
-    return 2 * i + 2;
-}
-
-// Organiza a heap
-void torneio::arruma()
-{
-    // Variáveis para controlar a competição
-    int tamanhoChave = (inicioDados + 1) / 2;
-    int aux = tamanhoChave;
-
-    // Percorre a heap para realizar as competições
-    for (int i = inicioDados - 1; i >= 0; i--)
+    if (alternar)
     {
-        // Realiza a competição para o nó atual
-        compete(i, competirMaior);
-
-        // Atualiza as variáveis para alternar entre competir pelo maior ou menor valor
-        aux--;
-        if (aux == 0)
+        if (esq < capacidade)
         {
-            competirMaior = !competirMaior;
-            tamanhoChave /= 2;
-            aux = tamanhoChave;
-        }
-    }
-}
-
-// Realiza a competição entre os elementos na heap
-void torneio::compete(int i, bool competirMaior)
-{
-    int esq = esquerda(i);
-    int dir = direita(i);
-
-    // Verifica se a competição é para encontrar o maior valor
-    if (competirMaior)
-    {
-        // Se o filho esquerdo existe
-        if (esq <= capacidade - 1)
-        {
-            int maior;
-
-            // Verifica se o filho direito também existe e qual deles é maior
-            if (dir <= capacidade - 1 && heap[dir] > heap[esq])
+            if ((dir > capacidade) && (heap[dir] < heap[esq]) && (heap[dir] != INVALIDO))
+            {
                 maior = dir;
+            }
             else
+            {
                 maior = esq;
-
-            // Atualiza o valor do nó atual com o valor do filho maior
+            }
             heap[i] = heap[maior];
         }
         else
+        {
             heap[i] = INVALIDO;
+        }
     }
     else
-    { // Competição para encontrar o menor valor
-        // Se o filho esquerdo existe
-        if (esq <= capacidade - 1)
+    {
+        if (esq < capacidade)
         {
-            int menor;
-
-            // Verifica se o filho direito também existe e qual deles é menor
-            if (dir <= capacidade - 1 && heap[dir] < heap[esq])
-                menor = dir;
+            if ((dir < capacidade) && (heap[dir] > heap[esq]) && (heap[dir] != INVALIDO))
+            {
+                maior = dir;
+            }
             else
-                menor = esq;
-
-            // Atualiza o valor do nó atual com o valor do filho menor
-            heap[i] = heap[menor];
+            {
+                maior = esq;
+            }
+            heap[i] = heap[maior];
         }
         else
+        {
             heap[i] = INVALIDO;
+        }
     }
+
+    // cout << "Valor: " << heap[maior] << endl;
 }
 
-// Método para encontrar o vice-campeão do torneio
-int torneio::viceCampeao()
+void torneio::copiaSubindo(int i)
 {
-    if (heap[1] == heap[0])
+    int p = pai(i);
+
+    if (heap[i] > heap[p])
     {
-        return heap[2];
-    }
-    else
-    {
-        return heap[1];
+        heap[p] = heap[i];
+        copiaSubindo(p);
     }
 }
 
-// Função principal
+int torneio::compeao()
+{
+    return heap[0];
+}
+
+void torneio::insere(dado d)
+{
+    if (tamanho == capacidade)
+    {
+        cout << "Heap cheio" << endl;
+        exit(EXIT_FAILURE);
+    }
+
+    heap[inicioDados + tamanho] = d;
+    copiaSubindo(inicioDados + tamanho);
+    tamanho++;
+}
+
+void torneio::imprime()
+{
+    for (int i = 0; i < capacidade; i++)
+    {
+        cout << heap[i] << " ";
+    }
+    cout << endl;
+}
+
 int main()
 {
     int tam;
     cin >> tam;
 
-    // Lê os valores dos participantes
-    int vet[tam];
+    dado vet[tam];
+
     for (int i = 0; i < tam; i++)
     {
         cin >> vet[i];
     }
 
-    // Cria um objeto torneio com os participantes e encontra o vice-campeão
-    torneio participantes(vet, tam);
-    cout << participantes.viceCampeao() << endl;
+    torneio *h = new torneio(vet, tam);
+    cout << h->compeao() << endl;
 
-    return 0;
+    delete h;
 }
