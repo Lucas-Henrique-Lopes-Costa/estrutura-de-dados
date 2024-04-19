@@ -134,20 +134,21 @@ lista::lista()
     tamanho = 0;
 }
 
-// // construtor de cópia
-// lista::lista(const lista &umaLista)
-// {
-//     primeiro = NULL;
-//     ultimo = NULL;
-//     tamanho = 0;
+// construtor de cópia
+lista::lista(const lista &umaLista)
+{
+    primeiro = NULL;
+    ultimo = NULL;
+    tamanho = 0;
+    noh *aux = umaLista.primeiro;
 
-//     noh *aux = umaLista.primeiro;
-//     while (aux != NULL)
-//     {
-//         insereNoFim(aux->elenco);
-//         aux = aux->proximo;
-//     }
-// }
+    // Copia os elementos da lista umaLista para a nova lista
+    while (aux != NULL)
+    {
+        insereNoFim(aux->elenco);
+        aux = aux->proximo;
+    }
+}
 
 // destrutor da lista (chama função privada auxiliar)
 lista::~lista()
@@ -269,7 +270,7 @@ void lista::insereNaPosicao(int posicao, equipe elenco)
     }
     else
     {
-        cerr << "Remoção em lista vazia!" << endl;
+        throw runtime_error("Remoção em lista vazia!");
     }
 }
 
@@ -326,20 +327,22 @@ void lista::removeNoFim()
 {
     if (vazia())
     {
-        cerr << "Remoção em lista vazia!" << endl;
+        throw runtime_error("Remoção em lista vazia!");
     }
     else
     {
         noh *aux = primeiro;
+        noh *anterior;
 
         while (aux->proximo != ultimo)
         {
+            anterior = aux;
             aux = aux->proximo;
         }
 
         delete ultimo;
-        aux->proximo = NULL;
-        ultimo = aux;
+        anterior->proximo = NULL;
+        ultimo = anterior;
 
         if (vazia())
         {
@@ -354,7 +357,7 @@ void lista::removeNoInicio()
 {
     if (vazia())
     {
-        cerr << "Remoção em lista vazia!" << endl;
+        throw runtime_error("Remoção em lista vazia!");
     }
     else
     {
@@ -362,6 +365,11 @@ void lista::removeNoInicio()
         primeiro = primeiro->proximo;
         delete removido;
         tamanho--;
+
+        if (vazia())
+        {
+            ultimo = NULL;
+        }
     }
 }
 
