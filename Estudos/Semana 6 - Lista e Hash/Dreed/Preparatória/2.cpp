@@ -63,6 +63,12 @@ p
 (3, paralelismoProc, 65, 23)
 f
 */
+/*
+ * Classe listadup, uma lista dinamicamente duplamente encadeada
+ *
+ * by Joukim, 2017-2019, Estruturas de Dados
+ * alterado em 2023 by Renato
+ */
 
 #include <iostream>
 #include <cstdlib>
@@ -127,21 +133,21 @@ public:
 // constrói uma lista inicialmente vazia
 listadup::listadup()
 {
-    primeiro = NULL;
-    ultimo = NULL;
     tamanho = 0;
+    primeiro = nullptr;
+    ultimo = nullptr;
 }
 
 // construtor de cópia
 listadup::listadup(const listadup &umaLista)
 {
-    primeiro = NULL;
-    ultimo = NULL;
     tamanho = 0;
-    noh* aux = umaLista.primeiro;
+    primeiro = nullptr;
+    ultimo = nullptr;
 
-    // Copia os elementos da lista umaLista para a nova lista
-    while (aux != NULL) {
+    noh *aux = umaLista.primeiro;
+    while (aux != nullptr)
+    {
         insereNoFim(aux->acao);
         aux = aux->proximo;
     }
@@ -156,7 +162,19 @@ listadup::~listadup()
 // remove todos os elementos da lista
 void listadup::removeTodos()
 {
-    
+    noh *aux = primeiro;
+    noh *temp;
+
+    while (aux != nullptr)
+    {
+        temp = aux;
+        aux = aux->proximo;
+        delete temp;
+    }
+
+    tamanho = 0;
+    primeiro = nullptr;
+    ultimo = nullptr;
 }
 
 // sobrecarga do operador de atribuição
@@ -179,38 +197,198 @@ listadup &listadup::operator=(const listadup &umaLista)
 // insere por no final da lista
 void listadup::insereNoFim(acaoPrograma acao)
 {
+    noh *novo = new noh(acao);
+
+    if (vazia())
+    {
+        primeiro = novo;
+        ultimo = novo;
+    }
+    else
+    {
+        ultimo->proximo = novo;
+        novo->anterior = ultimo;
+        ultimo = novo;
+    }
+
+    tamanho++;
 }
 
 // insere no início da lista
 void listadup::insereNoInicio(acaoPrograma acao)
 {
+    noh *novo = new noh(acao);
+
+    if (vazia())
+    {
+        primeiro = novo;
+        ultimo = novo;
+    }
+    else
+    {
+        novo->proximo = primeiro;
+        primeiro->anterior = novo;
+        primeiro = novo;
+    }
+
+    tamanho++;
 }
 
 // insere em uma determinada posição da lista
 void listadup::insereNaPosicao(int posicao, acaoPrograma acao)
 {
+    if (posicao >= 0 && posicao <= tamanho)
+    {
+        noh *novo = new noh(acao);
+
+        if (vazia())
+        {
+            primeiro = novo;
+            ultimo = novo;
+        }
+        else if (posicao == 0)
+        {
+            novo->proximo = primeiro;
+            primeiro->anterior = novo;
+            primeiro = novo;
+        }
+        else if (posicao == tamanho)
+        {
+            ultimo->proximo = novo;
+            novo->anterior = ultimo;
+            ultimo = novo;
+        }
+        else
+        {
+            noh *aux = primeiro;
+            int posAux = 0;
+
+            while (posAux < posicao - 1)
+            {
+                aux = aux->proximo;
+                posAux++;
+            }
+
+            novo->proximo = aux->proximo;
+            aux->proximo->anterior = novo;
+            aux->proximo = novo;
+            novo->anterior = aux;
+        }
+
+        tamanho++;
+    }
+    else
+    {
+        throw runtime_error("Posição inválida");
+    }
 }
 
 int listadup::procura(string valor)
 {
+    if (vazia())
+    {
+        throw runtime_error("Lista vazia!");
+    }
+
+    noh *aux = primeiro;
+    int pos = 0;
+
+    while (aux != NULL && aux->acao.nomeAcao != valor)
+    {
+        aux = aux->proximo;
+        pos++;
+    }
+
+    if (aux == NULL)
+    {
+        return -1;
+    }
+    return pos;
 }
 
 // método básico que *percorre* uma lista, imprimindo seus elementos
 void listadup::imprime()
 {
+    noh *aux = primeiro;
+
+    if (vazia())
+    {
+        throw runtime_error("Lista vazia!");
+    }
+
+    while (aux != NULL)
+    {
+        cout << "(" << aux->acao.identificador << " " << aux->acao.nomeAcao << " " << aux->acao.tempoExecucao << " " << aux->acao.tempoConsumido << ")" << endl;
+        aux = aux->proximo;
+    }
+
+    cout << " IMPRIMINDO REVERSO" << endl;
+
+    aux = ultimo;
+
+    while (aux != NULL)
+    {
+        cout << "(" << aux->acao.identificador << " " << aux->acao.nomeAcao << " " << aux->acao.tempoExecucao << " " << aux->acao.tempoConsumido << ")" << endl;
+        aux = aux->anterior;
+    }
+
+    cout << endl;
 }
 
 // verifica se a lista está vazia
 inline bool listadup::vazia()
 {
+    return (tamanho == 0);
 }
 
 void listadup::removeNoInicio()
 {
+    if (vazia())
+    {
+        throw runtime_error("Remoção em lista vazia!");
+    }
+    else
+    {
+        noh *removido = primeiro;
+        primeiro = primeiro->proximo;
+
+        if (primeiro != NULL)
+            primeiro->anterior = NULL;
+
+        delete removido;
+        tamanho--;
+
+        if (vazia())
+        {
+            ultimo = NULL;
+        }
+    }
 }
 
 void listadup::removeNoFim()
 {
+    if (vazia())
+    {
+        throw runtime_error("Remoção em lista vazia!");
+    }
+    else
+    {
+        noh *aux = ultimo;
+
+        ultimo = ultimo->anterior;
+
+        if (ultimo != NULL)
+            ultimo->proximo = NULL;
+
+        delete aux;
+
+        tamanho--;
+
+        if (vazia())
+        {
+            ultimo = NULL;
+        }
+    }
 }
 
 int main()

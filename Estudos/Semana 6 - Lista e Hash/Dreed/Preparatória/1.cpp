@@ -343,13 +343,12 @@ void lista::removeNoFim()
         delete ultimo;
         anterior->proximo = NULL;
         ultimo = anterior;
+        tamanho--;
 
         if (vazia())
         {
             primeiro = NULL;
         }
-
-        tamanho--;
     }
 }
 
