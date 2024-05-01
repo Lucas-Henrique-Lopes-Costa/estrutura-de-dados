@@ -1,43 +1,6 @@
 /*
-Questão 4: Hash com endereçamento aberto - Lista de processos em uma repartição pública
-Implemente uma tabela hash, utilizando tratamento de colisão por endereçamento aberto, para implementar uma lista de processos para uma repartição pública, utilizando como base o
-código fornecido
-. A estrutura deve possibilitar, pelo menos, as seguintes ações: inserção e remoção de um determinado item, localização de um processo na estrutura hash. A remoção ou busca deve escrever mensagem de erro na saída ("
-Erro: hash vazia!
-"), quando a hash estiver vazia. Na remoção ou na busca, caso a hash contenha elementos mas o item da busca não se encontra na tabela, o usuário deve ser informado da seguinte forma: ("
-Elemento inexistente!
-"). O enfileiramento também deve gerar mensagem de erro ("
-Erro: hash cheia!
-"), quanto todas as posições do vetor estiverem ocupadas. Os itens da lista de processos possuem os seguintes atributos: assunto (uma string sem espaços), nome do interessado(uma string sem espaços), tipo (um único caracter) e numero do processo (um inteiro). Além disso, essa repartição tem capacidade para trabalhar com
-apenas seis processos por vez
-.
-Entradas:
-O programa deve aceitar os seguintes comandos:
-i seguido de uma string, um caracter e um inteiro: para inserir um item na lista de processos
-r seguido de um inteiro: para retirar um item da lista de processos
-l seguido de um inteiro: para localizar um item na hash
-f: para finalizar a execução do programa
-Saídas:
-Todas as saídas de comandos já estão implementadas na função principal desse código exemplo fornecido. Ao terminar a execução do programa, todos os itens da hash são escritos.
-Exemplo de Entrada e Saída juntas:
-r Joao
-Impossível remover de hash vazia.
-i processo1 Joao a 2
-i processo2 Maria c 5
-i processo3 Severino d 9
-i processo4 Marcos f 12
-i processo5 Barnabe a 10
-i processo6 Tiao z 22
-i processo7 Marlon a 40
-Tabela hash cheia.
-p
-[0:Severino/9] [1:Barnabe/10] [2:Marcos/12] [3:Tiao/22] [4:Joao/2] [5:Maria/5]
-r Severino
-p
-[0:] [1:Barnabe/10] [2:Marcos/12] [3:Tiao/22] [4:Joao/2] [5:Maria/5]
-i processo7 Marlon a 40
-f
-[0:Marlon/40] [1:Barnabe/10] [2:Marcos/12] [3:Tiao/22] [4:Joao/2] [5:Maria/5]
+Utilizando como base o código que você desenvolveu na atividade "Hash com endereçamento aberto - Lista de processos em uma repartição pública",
+faça as alterações necessárias para que a tabela hash seja redimensionada, aumentando sua capacidade em 50%, quando a ocupação chegar ou ultrapassar 60%.
 */
 
 #include <iostream>
@@ -55,12 +18,12 @@ struct dado
 
 bool operator==(const dado &d1, const dado &d2)
 {
-    return (d1.nomeInteressado == d2.nomeInteressado and d1.nomeInteressado == d2.nomeInteressado);
+    return (d1.nomeInteressado == d2.nomeInteressado and d1.numeroProcesso == d2.numeroProcesso);
 }
 
 bool operator!=(const dado &d1, const dado &d2)
 {
-    return (d1.nomeInteressado != d2.nomeInteressado or d1.nomeInteressado != d2.nomeInteressado);
+    return (d1.nomeInteressado != d2.nomeInteressado or d1.numeroProcesso != d2.numeroProcesso);
 }
 
 const int UMPRIMO = 13;
@@ -93,6 +56,7 @@ public:
     void remover(const string &chave);
     // Retorna o valor associado a uma chave
     int consultar(const string &chave);
+    void redimensiona();
 };
 
 hashEA::hashEA(unsigned cap)
@@ -143,24 +107,51 @@ int hashEA::buscarChave(const string &chave)
 void hashEA::inserir(const string &assunto, const string &interessado, const char &tipo, const int &valor)
 {
     // Insere uma cópia do valor. Não permite inserção de chave repetida.
-    if (interessado.empty())
+    if (interessado.empty()) // Verifica se a chave é vazia
         throw invalid_argument("Chave inválida.");
-    if (tamanho == capacidade)
+    if (tamanho == capacidade) // Verifica se a tabela está cheia
         throw runtime_error("Tabela hash cheia.");
 
-    if (buscarChave(interessado) != POSINVALIDA)
+    if (buscarChave(interessado) != POSINVALIDA) // Verifica se a chave já existe na tabela
         throw runtime_error("Inserção de chave que já existe.");
 
-    unsigned pos = posicao(interessado);
-    //    cout << "posição original: " << pos << endl;
-    while ((vetDados[pos] != INVALIDO) and (vetDados[pos] != REMOVIDO))
-        pos = (pos + 1) % capacidade;
-    //    cout << "posição final: " << pos << endl;
+    unsigned pos = posicao(interessado);                                // Calcula a posição para inserir o novo elemento
+    while ((vetDados[pos] != INVALIDO) and (vetDados[pos] != REMOVIDO)) // Trata colisões por sondagem linear
+        pos = (pos + 1) % capacidade;                                   // Incrementa a posição até encontrar um espaço vazio na tabela
+
+    // Insere o novo elemento na posição encontrada
     vetDados[pos].assunto = assunto;
     vetDados[pos].nomeInteressado = interessado;
     vetDados[pos].tipo = tipo;
     vetDados[pos].numeroProcesso = valor;
     tamanho++;
+
+    // Verifica se é necessário redimensionar a tabela
+    if (tamanho >= 0.6 * capacidade)
+        redimensiona();
+}
+
+void hashEA::redimensiona()
+{
+    int capAux = capacidade;          // Armazena a capacidade atual da tabela
+    capacidade *= 1.5;                // Aumenta a capacidade da tabela em 50%
+    dado *aux = new dado[capacidade]; // Cria um novo vetor de dados com a nova capacidade
+    for (int i = 0; i < capacidade; i++)
+        aux[i] = INVALIDO; // Inicializa o novo vetor com dados inválidos
+
+    // Transfere os dados válidos da tabela antiga para a nova
+    for (int i = 0; i < capAux; i++)
+    {
+        if (vetDados[i] != INVALIDO and vetDados[i] != REMOVIDO)
+        {
+            unsigned pos = posicao(vetDados[i].nomeInteressado); // Calcula a posição na nova tabela
+            while ((aux[pos] != INVALIDO))
+                pos = (pos + 1) % capacidade; // Trata colisões por sondagem linear
+            aux[pos] = vetDados[i];           // Insere o dado na nova tabela
+        }
+    }
+    delete[] vetDados; // Libera a memória ocupada pela tabela antiga
+    vetDados = aux;    // Atualiza o ponteiro da tabela para apontar para a nova tabela
 }
 
 void hashEA::imprimir()

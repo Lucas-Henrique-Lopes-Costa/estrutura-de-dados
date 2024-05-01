@@ -17,48 +17,55 @@ Todas as saídas de comandos já estão implementadas na função principal cód
 using namespace std;
 
 // Definição da estrutura de dados para representar uma ação do programa
-struct acaoPrograma{
+struct acaoPrograma
+{
     int identificador;
     string nomeAcao;
-    int tempoExecucao; 
+    int tempoExecucao;
     int tempoConsumido;
 };
 
 // Função para imprimir uma ação do programa
-void imprimeAcao(acaoPrograma acao) {
+void imprimeAcao(acaoPrograma acao)
+{
     cout << "(" << acao.identificador << ", " << acao.nomeAcao << ", " << acao.tempoExecucao << ", " << acao.tempoConsumido << ")\n";
 }
 
 // Definição da classe nó
-class noh {
-friend class listadup;
-private: 
+class noh
+{
+    friend class listadup;
+
+private:
     acaoPrograma acao; // poderia ser outro tipo de variável
-    noh* proximo;
-    noh* anterior;
+    noh *proximo;
+    noh *anterior;
+
 public:
     noh(acaoPrograma d);
 };
 
 // Construtor da classe nó
-noh::noh(acaoPrograma d){
+noh::noh(acaoPrograma d)
+{
     acao = d;
     proximo = NULL;
     anterior = NULL;
 }
 
 // Definição da classe lista duplamente encadeada
-class listadup {
+class listadup
+{
 private:
-    noh* primeiro;
-    noh* ultimo;
+    noh *primeiro;
+    noh *ultimo;
     int tamanho;
-    void removeTodos(); // remove todos os elementos da lista    
+    void removeTodos(); // remove todos os elementos da lista
 public:
     listadup();
-    listadup(const listadup& umaLista);
+    listadup(const listadup &umaLista);
     ~listadup();
-    listadup& operator=(const listadup& umaLista);  
+    listadup &operator=(const listadup &umaLista);
     void insereNoFim(acaoPrograma acao);
     void insereNoInicio(acaoPrograma acao);
     void insereNaPosicao(int posicao, acaoPrograma acao);
@@ -66,68 +73,80 @@ public:
     void imprime();
     inline bool vazia();
     acaoPrograma removeNoFim();
-    acaoPrograma removeNoInicio();    
+    acaoPrograma removeNoInicio();
     void removeMaiorTempo();
 };
 
 // Construtor da lista duplamente encadeada
-listadup::listadup() {
+listadup::listadup()
+{
     primeiro = NULL;
     ultimo = NULL;
     tamanho = 0;
 }
 
 // Construtor de cópia da lista duplamente encadeada
-listadup::listadup(const listadup& umaLista) {
+listadup::listadup(const listadup &umaLista)
+{
     primeiro = NULL;
     ultimo = NULL;
     tamanho = 0;
-    noh* aux = umaLista.primeiro;
+    noh *aux = umaLista.primeiro;
 
     // Copia os elementos da lista umaLista para a nova lista
-    while (aux != NULL) {
+    while (aux != NULL)
+    {
         insereNoFim(aux->acao);
         aux = aux->proximo;
     }
 }
 
 // Destrutor da lista duplamente encadeada
-listadup::~listadup( ) {
+listadup::~listadup()
+{
     removeTodos();
-}    
+}
 
 // Função privada para remover todos os elementos da lista
-void listadup::removeTodos( ) {
-    while (!vazia()) {
+void listadup::removeTodos()
+{
+    while (!vazia())
+    {
         removeNoFim();
     }
-}    
+}
 
 // Sobrecarga do operador de atribuição
-listadup& listadup::operator=(const listadup& umaLista){
+listadup &listadup::operator=(const listadup &umaLista)
+{
     // Limpa a lista atual
     removeTodos();
-    
+
     // Percorre a lista recebida como parâmetro, copiando os dados
-    noh* aux = umaLista.primeiro;
-    
-    while (aux != NULL) {
+    noh *aux = umaLista.primeiro;
+
+    while (aux != NULL)
+    {
         insereNoFim(aux->acao);
-        aux = aux->proximo;  
+        aux = aux->proximo;
     }
-    
-    return *this; 
-}  
+
+    return *this;
+}
 
 // Insere um elemento no final da lista
-void listadup::insereNoFim(acaoPrograma acao) {
-    if (vazia()) {
+void listadup::insereNoFim(acaoPrograma acao)
+{
+    if (vazia())
+    {
         // Se a lista estiver vazia, insere como único elemento
         primeiro = new noh(acao);
         ultimo = primeiro;
-    } else {
+    }
+    else
+    {
         // Caso contrário, insere após o último elemento
-        noh* novo = new noh(acao);
+        noh *novo = new noh(acao);
         ultimo->proximo = novo;
         novo->anterior = ultimo;
         ultimo = novo;
@@ -136,40 +155,53 @@ void listadup::insereNoFim(acaoPrograma acao) {
 }
 
 // Insere um elemento no início da lista
-void listadup::insereNoInicio(acaoPrograma acao) {
-    if (vazia()) {
+void listadup::insereNoInicio(acaoPrograma acao)
+{
+    if (vazia())
+    {
         // Se a lista estiver vazia, insere como único elemento
         primeiro = new noh(acao);
         ultimo = primeiro;
-    } else {
+    }
+    else
+    {
         // Caso contrário, insere antes do primeiro elemento
-        noh* novo = new noh(acao);
+        noh *novo = new noh(acao);
         primeiro->anterior = novo;
         novo->proximo = primeiro;
         primeiro = novo;
     }
-    tamanho++; 
+    tamanho++;
 }
 
 // Insere um elemento em uma determinada posição da lista
-void listadup::insereNaPosicao(int posicao, acaoPrograma acao) {
-    if (posicao < 0 || posicao > tamanho) {
+void listadup::insereNaPosicao(int posicao, acaoPrograma acao)
+{
+    if (posicao < 0 || posicao > tamanho)
+    {
         cout << "Posição Inexistente!\n";
         return;
     }
 
-    if (posicao == 0) {
+    if (posicao == 0)
+    {
         insereNoInicio(acao);
-    } else if (posicao == tamanho) {
+    }
+    else if (posicao == tamanho)
+    {
         insereNoFim(acao);
-    } else {
-        noh* novo = new noh(acao);
+    }
+    else
+    {
+        noh *novo = new noh(acao);
         // Verifica se a posição está na primeira metade da lista
-        if (posicao <= tamanho / 2) {
+        if (posicao <= tamanho / 2)
+        {
             // Inserção na primeira metade (avançando com próximo)
-            noh* aux = primeiro;
+            noh *aux = primeiro;
 
-            for (int i = 0; i < posicao - 1; i++) {
+            for (int i = 0; i < posicao - 1; i++)
+            {
                 aux = aux->proximo;
             }
 
@@ -177,11 +209,14 @@ void listadup::insereNaPosicao(int posicao, acaoPrograma acao) {
             novo->anterior = aux;
             aux->proximo->anterior = novo;
             aux->proximo = novo;
-        } else {
+        }
+        else
+        {
             // Inserção na segunda metade (recuando com anterior)
-            noh* aux = ultimo;
+            noh *aux = ultimo;
 
-            for (int i = tamanho - 1; i > posicao; i--) {
+            for (int i = tamanho - 1; i > posicao; i--)
+            {
                 aux = aux->anterior;
             }
 
@@ -196,27 +231,34 @@ void listadup::insereNaPosicao(int posicao, acaoPrograma acao) {
 }
 
 // Procura um elemento na lista e retorna a posição
-int listadup::procura(string valor) {
-    if (vazia()) {
+int listadup::procura(string valor)
+{
+    if (vazia())
+    {
         throw runtime_error("Lista vazia!");
     }
     int posicao = -1;
-    for (int i = 0; i<tamanho; i++){
+    for (int i = 0; i < tamanho; i++)
+    {
         acaoPrograma info = removeNoInicio();
-        if (info.nomeAcao == valor) posicao = i;
+        if (info.nomeAcao == valor)
+            posicao = i;
         insereNoFim(info);
     }
     return posicao;
 }
 
 // Imprime os elementos da lista
-void listadup::imprime() {
-   if (vazia()) {
+void listadup::imprime()
+{
+    if (vazia())
+    {
         throw runtime_error("Lista vazia!");
     }
 
-    noh* aux = primeiro;
-    while (aux != NULL) {
+    noh *aux = primeiro;
+    while (aux != NULL)
+    {
         imprimeAcao(aux->acao);
         aux = aux->proximo;
     }
@@ -224,33 +266,39 @@ void listadup::imprime() {
     cout << " IMPRIMINDO REVERSO \n";
 
     aux = ultimo;
-    while (aux != NULL) {
+    while (aux != NULL)
+    {
         imprimeAcao(aux->acao);
         aux = aux->anterior;
     }
 }
 
 // Verifica se a lista está vazia
-inline bool listadup::vazia() {
+inline bool listadup::vazia()
+{
     return (primeiro == NULL);
 }
 
 // Remove o elemento do início da lista
-acaoPrograma listadup::removeNoInicio() {
-    if (vazia()) {
+acaoPrograma listadup::removeNoInicio()
+{
+    if (vazia())
+    {
         throw runtime_error("Remoção em lista vazia!");
     }
 
     acaoPrograma acao = primeiro->acao;
-    if (primeiro == ultimo) {
+    if (primeiro == ultimo)
+    {
         // Lista com apenas um elemento
         delete primeiro;
         primeiro = NULL;
         ultimo = NULL;
-    } 
-    else {
+    }
+    else
+    {
         // Lista com mais de um elemento
-        noh* aux = primeiro;
+        noh *aux = primeiro;
         primeiro = primeiro->proximo;
         primeiro->anterior = NULL;
         delete aux;
@@ -260,21 +308,25 @@ acaoPrograma listadup::removeNoInicio() {
 }
 
 // Remove o elemento do final da lista
-acaoPrograma listadup::removeNoFim() {
-    if (vazia()) {
+acaoPrograma listadup::removeNoFim()
+{
+    if (vazia())
+    {
         throw runtime_error("Remoção em lista vazia!");
     }
 
     acaoPrograma acao = ultimo->acao;
-    if (primeiro == ultimo) {
+    if (primeiro == ultimo)
+    {
         // Lista com apenas um elemento
         delete primeiro;
         primeiro = NULL;
         ultimo = NULL;
-    } 
-    else {
+    }
+    else
+    {
         // Lista com mais de um elemento
-        noh* aux = ultimo;
+        noh *aux = ultimo;
         ultimo = ultimo->anterior;
         ultimo->proximo = NULL;
         delete aux;
@@ -284,22 +336,30 @@ acaoPrograma listadup::removeNoFim() {
 }
 
 // Função para remover o elemento da lista com maior tempo para execução total
-void listadup::removeMaiorTempo() {
-    if (vazia()) {
+void listadup::removeMaiorTempo()
+{
+    if (vazia())
+    {
         throw runtime_error("Remoção em lista vazia!");
     }
-    noh* aux = primeiro;
+    noh *aux = primeiro;
     int maior = aux->acao.tempoExecucao;
-    while(aux->proximo != NULL){
+    while (aux->proximo != NULL)
+    {
         aux = aux->proximo;
-        if (aux->acao.tempoExecucao > maior) maior = aux->acao.tempoExecucao;
+        if (aux->acao.tempoExecucao > maior)
+            maior = aux->acao.tempoExecucao;
     }
-    while (aux->acao.tempoExecucao != maior){
+    while (aux->acao.tempoExecucao != maior)
+    {
         aux = aux->anterior;
     }
-    if (aux == primeiro) imprimeAcao(removeNoInicio());
-    else if (aux == ultimo) imprimeAcao(removeNoFim());
-    else{
+    if (aux == primeiro)
+        imprimeAcao(removeNoInicio());
+    else if (aux == ultimo)
+        imprimeAcao(removeNoFim());
+    else
+    {
         aux->anterior->proximo = aux->proximo;
         aux->proximo->anterior = aux->anterior;
         imprimeAcao(aux->acao);
@@ -308,57 +368,63 @@ void listadup::removeMaiorTempo() {
     }
 }
 // Função principal
-int main() {
+int main()
+{
     listadup minhaLista;
     acaoPrograma info;
     char comando;
     int posicao;
     string nomeEquipe;
 
-    do {
-        try {
+    do
+    {
+        try
+        {
             cin >> comando;
-            switch (comando) {
-                case 'i': // inserir no início
-                    cin >> info.identificador >> info.nomeAcao >> info.tempoExecucao >> info.tempoConsumido;
-                    minhaLista.insereNoInicio(info);
-                    break;
-                case 'h': // inserir no fim
-                    cin >> info.identificador >> info.nomeAcao >> info.tempoExecucao >> info.tempoConsumido;
-                    minhaLista.insereNoFim(info);
-                    break;             
-                case 'm': // inserir em uma posição específica
-                    cin >> posicao;
-                    cin >> info.identificador >> info.nomeAcao >> info.tempoExecucao >> info.tempoConsumido;
-                    minhaLista.insereNaPosicao(posicao,info);
-                    break;             
-                case 's': // procurar
-                    cin >> nomeEquipe;
-                    posicao = minhaLista.procura(nomeEquipe);
-                    if(posicao == -1)
-                        cout << "Nao encontrado"<< endl;
-                    else
-                        cout << posicao << endl;
-                    break;                    
-                case 'r': // remover do início
-                    minhaLista.removeNoInicio();
-                    break;
-                case 'a': // remover do fim
-                    minhaLista.removeNoFim();
-                    break;
-                case 't': // remover do fim
-                    minhaLista.removeMaiorTempo();
-                    break;                                  
-                case 'p': // imprimir lista
-                    minhaLista.imprime();
-                    break;
-                case 'f': // finalizar
-                    // checado no do-while
-                    break;
-                default:
-                    cerr << "comando inválido\n";
+            switch (comando)
+            {
+            case 'i': // inserir no início
+                cin >> info.identificador >> info.nomeAcao >> info.tempoExecucao >> info.tempoConsumido;
+                minhaLista.insereNoInicio(info);
+                break;
+            case 'h': // inserir no fim
+                cin >> info.identificador >> info.nomeAcao >> info.tempoExecucao >> info.tempoConsumido;
+                minhaLista.insereNoFim(info);
+                break;
+            case 'm': // inserir em uma posição específica
+                cin >> posicao;
+                cin >> info.identificador >> info.nomeAcao >> info.tempoExecucao >> info.tempoConsumido;
+                minhaLista.insereNaPosicao(posicao, info);
+                break;
+            case 's': // procurar
+                cin >> nomeEquipe;
+                posicao = minhaLista.procura(nomeEquipe);
+                if (posicao == -1)
+                    cout << "Nao encontrado" << endl;
+                else
+                    cout << posicao << endl;
+                break;
+            case 'r': // remover do início
+                minhaLista.removeNoInicio();
+                break;
+            case 'a': // remover do fim
+                minhaLista.removeNoFim();
+                break;
+            case 't': // remover do fim
+                minhaLista.removeMaiorTempo();
+                break;
+            case 'p': // imprimir lista
+                minhaLista.imprime();
+                break;
+            case 'f': // finalizar
+                // checado no do-while
+                break;
+            default:
+                cerr << "comando inválido\n";
             }
-        } catch (runtime_error& e) {
+        }
+        catch (runtime_error &e)
+        {
             cout << e.what() << endl;
         }
     } while (comando != 'f'); // finalizar execução
