@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 typedef int Dado;
@@ -124,7 +123,7 @@ void lista::insereNoFim(Dado d)
   else
   {
     ultimo->proximo = novo;
-    novo->anterior = ultimo;
+    novo->anterior = ultimo; // dinamicante encadeada
     ultimo = novo;
   }
 
@@ -143,7 +142,7 @@ void lista::insereNoInicio(Dado d)
   else
   {
     novo->proximo = primeiro;
-    primeiro->anterior = novo;
+    primeiro->anterior = novo; // dinamicante encadeada
     primeiro = novo;
   }
 
@@ -189,7 +188,6 @@ void lista::insereNaPosicao(int pos, Dado d)
       aux->proximo = novo;
       novo->anterior = aux;
     }
-
     tamanho++;
   }
   else
@@ -224,6 +222,7 @@ void lista::removeNoInicio()
   }
 }
 
+// aqui a gente já tem um ponteiro, logo é mais simples
 void lista::removeNoFim()
 {
   if (vazia())

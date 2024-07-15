@@ -89,8 +89,7 @@ public:
     void insereNoFim(equipe elenco);
     void insereNoInicio(equipe elenco);
     void insereNaPosicao(int posicao, equipe elenco);
-    int procura(string valor); // retorna a posição do nó com va
-    // métodos adicionais (impressão, vazia)
+    int procura(string valor); // retorna a posição do nó com aquele valor
     void imprime();
     void imprimeReverso();
     inline bool vazia();
@@ -115,6 +114,7 @@ int lista::Tamanho()
     }
     return tam;
 }
+
 // constrói uma lista inicialmente vazia
 lista::lista()
 {
@@ -132,7 +132,7 @@ lista::lista(const lista &umaLista)
 
     noh *aux = umaLista.primeiro;
 
-    while (aux != nullptr)
+    while (aux != nullptr) // mecanismo de percorrimento
     {
         insereNoFim(aux->elenco);
         aux = aux->proximo;
@@ -184,7 +184,6 @@ lista &lista::operator=(const lista &umaLista)
 // insere no final da lista
 void lista::insereNoFim(equipe elenco)
 {
-
     noh *novo = new noh(elenco);
 
     if (vazia())
@@ -249,8 +248,8 @@ void lista::insereNaPosicao(int posicao, equipe elenco)
             }
             novo->proximo = aux->proximo;
             aux->proximo = novo;
+            tamanho++;
         }
-        tamanho++;
     }
     else
     {
@@ -270,8 +269,8 @@ int lista::procura(string valor)
 
     while ((aux != nullptr) && (aux->elenco.nomeEquipe != valor))
     {
-        posAux++;
         aux = aux->proximo;
+        posAux++;
     }
 
     if (aux == nullptr)
@@ -314,17 +313,15 @@ void lista::removeNoFim()
     }
 
     noh *aux = primeiro;
-    noh *anterior;
 
-    while (aux->proximo != nullptr)
+    while (aux->proximo != ultimo)
     {
-        anterior = aux;
         aux = aux->proximo;
     }
 
     delete ultimo;
-    anterior->proximo = nullptr;
-    ultimo = anterior;
+    aux->proximo = nullptr;
+    ultimo = aux;
 
     tamanho--;
     if (tamanho == 0)
@@ -339,12 +336,15 @@ void lista::removeNoInicio()
     {
         throw runtime_error("Remoção em lista vazia!");
     }
-    noh *aux = primeiro;
-    primeiro = primeiro->proximo;
-    delete aux;
+    else
+    {
+        noh *aux = primeiro;
+        primeiro = primeiro->proximo;
+        delete aux;
+        tamanho--;
+    }
 
-    tamanho--;
-    if (vazia())
+    if (tamanho == 0)
     {
         ultimo = nullptr;
     }

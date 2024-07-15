@@ -148,7 +148,7 @@ void listadup::insereNoFim(acaoPrograma acao)
         // Caso contrário, insere após o último elemento
         noh *novo = new noh(acao);
         ultimo->proximo = novo;
-        novo->anterior = ultimo;
+        novo->anterior = ultimo; // ajuste por se duplamente
         ultimo = novo;
     }
     tamanho++;
@@ -167,7 +167,7 @@ void listadup::insereNoInicio(acaoPrograma acao)
     {
         // Caso contrário, insere antes do primeiro elemento
         noh *novo = new noh(acao);
-        primeiro->anterior = novo;
+        primeiro->anterior = novo; // ajuste por ser duplamente
         novo->proximo = primeiro;
         primeiro = novo;
     }
@@ -224,11 +224,61 @@ void listadup::insereNaPosicao(int posicao, acaoPrograma acao)
             novo->anterior = aux->anterior;
             aux->anterior->proximo = novo;
             aux->anterior = novo;
+            tamanho++;
         }
-
-        tamanho++;
     }
 }
+
+// Versão padrão:
+/*
+void listadup::insereNaPosicao(int pos, acaoPrograma d)
+{
+  if (pos >= 0 && pos <= tamanho)
+  {
+    noh *novo = new noh(d);
+
+    if (vazia())
+    {
+      primeiro = novo;
+      ultimo = novo;
+    }
+    else if (pos == 0)
+    {
+      novo->proximo = primeiro;
+      primeiro->anterior = novo;
+      primeiro = novo;
+    }
+    else if (pos == tamanho)
+    {
+      ultimo->proximo = novo;
+      novo->anterior = ultimo;
+      ultimo = novo;
+    }
+    else
+    {
+      noh *aux = primeiro;
+      int posAux = 0;
+
+      while (posAux < pos - 1)
+      {
+        aux = aux->proximo;
+        posAux++;
+      }
+
+      novo->proximo = aux->proximo;
+      aux->proximo->anterior = novo;
+      aux->proximo = novo;
+      novo->anterior = aux;
+    }
+    tamanho++;
+  }
+  else
+  {
+    cerr << "Posição inválida" << endl;
+    exit(EXIT_FAILURE);
+  }
+}
+*/
 
 // Procura um elemento na lista e retorna a posição
 int listadup::procura(string valor)
@@ -344,6 +394,7 @@ void listadup::removeMaiorTempo()
     }
     noh *aux = primeiro;
     int maior = aux->acao.tempoExecucao;
+    
     while (aux->proximo != NULL)
     {
         aux = aux->proximo;

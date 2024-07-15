@@ -1,9 +1,7 @@
 #include <iostream>
-
 using namespace std;
 
 typedef int Dado;
-
 class noh
 {
   friend class lista;
@@ -56,12 +54,13 @@ lista::lista()
 
 lista::lista(const lista &umaLista)
 {
+  // insere na lista aquilo que veio de copy
   primeiro = NULL;
   ultimo = NULL;
   tamanho = 0;
 
   noh *aux = umaLista.primeiro;
-  while (aux != NULL)
+  while (aux != NULL) // menanismo de percorrimento
   {
     insereNoFim(aux->dado);
     aux = aux->proximo;
@@ -70,7 +69,7 @@ lista::lista(const lista &umaLista)
 
 lista::~lista()
 {
-  removeTodos();
+  removeTodos(); // a lista em si não aloca nada, os nós que tem os dados
 }
 
 void lista::removeTodos()
@@ -84,7 +83,7 @@ void lista::removeTodos()
     aux = aux->proximo;
     delete temp;
   }
-
+  // redirecioina
   primeiro = NULL;
   ultimo = NULL;
   tamanho = 0;
@@ -101,7 +100,7 @@ lista &lista::operator=(const lista &umaLista)
     aux = aux->proximo;
   }
 
-  return *this;
+  return *this; //this é o ponteiro atual, e a gente está fazendo um retorno da referencia do atual
 }
 
 void lista::inserir(Dado d)
@@ -266,6 +265,7 @@ void lista::imprimir()
   cout << endl;
 }
 
+// para imprimir reverso, podemos usar pilha
 void lista::imprimeReverso()
 {
   imprimeReversoAux(primeiro);
@@ -276,7 +276,7 @@ void lista::imprimeReversoAux(noh *umNoh)
 {
   if (umNoh != NULL)
   {
-    imprimeReversoAux(umNoh->proximo);
+    imprimeReversoAux(umNoh->proximo); // pilha de recursão
     cout << umNoh->dado << " ";
   }
 }
@@ -308,7 +308,6 @@ int main()
   minhaLista.insereNoInicio(18);
   minhaLista.insereNaPosicao(3, 25);
   minhaLista.imprimir();
-
   minhaLista.imprimeReverso();
 
   cout << minhaLista.procura(0) << endl;
