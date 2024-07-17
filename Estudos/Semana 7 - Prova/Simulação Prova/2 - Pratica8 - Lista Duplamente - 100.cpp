@@ -209,6 +209,7 @@ void listadup::insereNaPosicao(int posicao, acaoPrograma acao)
             novo->anterior = aux;
             aux->proximo->anterior = novo;
             aux->proximo = novo;
+            tamanho++;
         }
         else
         {
@@ -224,9 +225,8 @@ void listadup::insereNaPosicao(int posicao, acaoPrograma acao)
             novo->anterior = aux->anterior;
             aux->anterior->proximo = novo;
             aux->anterior = novo;
+            tamanho++;
         }
-
-        tamanho++;
     }
 }
 
@@ -237,15 +237,19 @@ int listadup::procura(string valor)
     {
         throw runtime_error("Lista vazia!");
     }
-    int posicao = -1;
-    for (int i = 0; i < tamanho; i++)
+    noh *aux = primeiro;
+    int pos = 0;
+
+    while (aux != nullptr && aux->acao.nomeAcao != valor)
     {
-        acaoPrograma info = removeNoInicio();
-        if (info.nomeAcao == valor)
-            posicao = i;
-        insereNoFim(info);
+        aux = aux->proximo;
+        pos++;
     }
-    return posicao;
+
+    if (aux == nullptr)
+        return -1;
+
+    return pos;
 }
 
 // Imprime os elementos da lista

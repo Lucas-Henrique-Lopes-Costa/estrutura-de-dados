@@ -268,7 +268,7 @@ int main()
                 if (not tabela.remove(chave))
                     cout << "Erro na remoção: chave não encontrada!" << endl;
                 break;
-            case 'l': // remover
+            case 'l': // procura
                 cin >> chave;
                 if (not tabela.valor(chave, tipo, valor))
                     cout << "Erro na busca: chave não encontrada!" << endl;
@@ -278,7 +278,6 @@ int main()
             case 'p': // mostrar estrutura
                 tabela.imprime();
                 break;
-
             case 'f': // finalizar
                 // checado no do-while
                 break;

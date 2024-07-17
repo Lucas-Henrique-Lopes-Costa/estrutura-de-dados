@@ -249,8 +249,8 @@ void lista::insereNaPosicao(int posicao, equipe elenco)
             }
             novo->proximo = aux->proximo;
             aux->proximo = novo;
+            tamanho++;
         }
-        tamanho++;
     }
     else
     {
@@ -307,7 +307,6 @@ inline bool lista::vazia()
 
 void lista::removeNoFim()
 {
-
     if (vazia())
     {
         throw runtime_error("Remoção em lista vazia!");
@@ -378,13 +377,6 @@ int main()
                 cin >> info.nomeEquipe >> info.lider >> info.linguagem >> info.qtdMembros;
                 minhaLista.insereNaPosicao(posicao, info);
                 break;
-            case 's': // remover
-                cin >> nomeEquipe;
-                if (minhaLista.procura(nomeEquipe) != -1)
-                    cout << minhaLista.procura(nomeEquipe) << endl;
-                else
-                    cout << "Nao encontrado" << endl;
-                break;
             case 'r': // remover
                 minhaLista.removeNoInicio();
                 break;
@@ -394,8 +386,12 @@ int main()
             case 'p': // limpar tudo
                 minhaLista.imprime();
                 break;
-            case 't':
-                cout << minhaLista.Tamanho() << endl;
+            case 's': // busca
+                cin >> nomeEquipe;
+                if (minhaLista.procura(nomeEquipe) != -1)
+                    cout << minhaLista.procura(nomeEquipe) << endl;
+                else
+                    cout << "Nao encontrado" << endl;
                 break;
             case 'f': // finalizar
                 // checado no do-while

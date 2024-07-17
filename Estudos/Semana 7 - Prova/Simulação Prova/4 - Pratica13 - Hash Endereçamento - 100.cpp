@@ -56,7 +56,6 @@ public:
     void remover(const string &chave);
     // Retorna o valor associado a uma chave
     int consultar(const string &chave);
-    void redimensiona();
 };
 
 hashEA::hashEA(unsigned cap)
@@ -125,33 +124,6 @@ void hashEA::inserir(const string &assunto, const string &interessado, const cha
     vetDados[pos].tipo = tipo;
     vetDados[pos].numeroProcesso = valor;
     tamanho++;
-
-    // Verifica se é necessário redimensionar a tabela
-    if (tamanho >= 0.6 * capacidade)
-        redimensiona();
-}
-
-void hashEA::redimensiona()
-{
-    int capAux = capacidade;          // Armazena a capacidade atual da tabela
-    capacidade *= 1.5;                // Aumenta a capacidade da tabela em 50%
-    dado *aux = new dado[capacidade]; // Cria um novo vetor de dados com a nova capacidade
-    for (unsigned i = 0; i < capacidade; i++)
-        aux[i] = INVALIDO; // Inicializa o novo vetor com dados inválidos
-
-    // Transfere os dados válidos da tabela antiga para a nova
-    for (int i = 0; i < capAux; i++)
-    {
-        if (vetDados[i] != INVALIDO and vetDados[i] != REMOVIDO)
-        {
-            unsigned pos = posicao(vetDados[i].nomeInteressado); // Calcula a posição na nova tabela
-            while ((aux[pos] != INVALIDO))
-                pos = (pos + 1) % capacidade; // Trata colisões por sondagem linear
-            aux[pos] = vetDados[i];           // Insere o dado na nova tabela
-        }
-    }
-    delete[] vetDados; // Libera a memória ocupada pela tabela antiga
-    vetDados = aux;    // Atualiza o ponteiro da tabela para apontar para a nova tabela
 }
 
 void hashEA::imprimir()
@@ -163,7 +135,7 @@ void hashEA::imprimir()
         if (vetDados[i] != INVALIDO)
         {
             if (vetDados[i] == REMOVIDO)
-                cout << "REMOVIDO";
+                cout << "";
             else
                 cout << vetDados[i].nomeInteressado << '/' << vetDados[i].numeroProcesso;
         }
