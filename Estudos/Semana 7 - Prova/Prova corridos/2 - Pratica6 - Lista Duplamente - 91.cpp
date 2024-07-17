@@ -74,6 +74,8 @@ public:
     inline bool vazia();
     acaoPrograma removeNoFim();
     acaoPrograma removeNoInicio();
+    void removeNome(string nome);
+    void removeID(int ID);
     void removeMaiorTempo();
 };
 
@@ -148,7 +150,7 @@ void listadup::insereNoFim(acaoPrograma acao)
         // Caso contrário, insere após o último elemento
         noh *novo = new noh(acao);
         ultimo->proximo = novo;
-        novo->anterior = ultimo;
+        novo->anterior = ultimo; // ajuste por se duplamente
         ultimo = novo;
     }
     tamanho++;
@@ -167,7 +169,7 @@ void listadup::insereNoInicio(acaoPrograma acao)
     {
         // Caso contrário, insere antes do primeiro elemento
         noh *novo = new noh(acao);
-        primeiro->anterior = novo;
+        primeiro->anterior = novo; // ajuste por ser duplamente
         novo->proximo = primeiro;
         primeiro = novo;
     }
@@ -209,6 +211,7 @@ void listadup::insereNaPosicao(int posicao, acaoPrograma acao)
             novo->anterior = aux;
             aux->proximo->anterior = novo;
             aux->proximo = novo;
+            tamanho++;
         }
         else
         {
@@ -224,9 +227,8 @@ void listadup::insereNaPosicao(int posicao, acaoPrograma acao)
             novo->anterior = aux->anterior;
             aux->anterior->proximo = novo;
             aux->anterior = novo;
+            tamanho++;
         }
-
-        tamanho++;
     }
 }
 
@@ -237,15 +239,20 @@ int listadup::procura(string valor)
     {
         throw runtime_error("Lista vazia!");
     }
-    int posicao = -1;
-    for (int i = 0; i < tamanho; i++)
+    noh *aux = primeiro;
+    int pos = 0;
+
+    while (aux != NULL && aux->acao.nomeAcao != valor)
     {
-        acaoPrograma info = removeNoInicio();
-        if (info.nomeAcao == valor)
-            posicao = i;
-        insereNoFim(info);
+        aux = aux->proximo;
+        pos++;
     }
-    return posicao;
+
+    if (aux == NULL)
+    {
+        return -1;
+    }
+    return pos;
 }
 
 // Imprime os elementos da lista
@@ -344,6 +351,7 @@ void listadup::removeMaiorTempo()
     }
     noh *aux = primeiro;
     int maior = aux->acao.tempoExecucao;
+
     while (aux->proximo != NULL)
     {
         aux = aux->proximo;
@@ -367,6 +375,109 @@ void listadup::removeMaiorTempo()
         tamanho--;
     }
 }
+
+// remover pelo nome
+void listadup::removeNome(string nome)
+{
+    if (vazia())
+    {
+        throw runtime_error("Remoção em lista vazia!");
+    }
+
+    noh *aux = primeiro;
+
+    while (aux != nullptr && aux->acao.nomeAcao != nome)
+    {
+        aux = aux->proximo;
+    }
+
+    if (aux == nullptr)
+    {
+        cout << "Erro: remoção de valor não encontrado!" << endl;
+    }
+
+    if (aux != nullptr)
+    {
+        if (aux == primeiro)
+        {
+            removeNoInicio();
+        }
+        else if (aux == ultimo)
+        {
+            removeNoFim();
+        }
+        else
+        {
+            noh *anterior = aux->anterior;
+            noh *proximo = aux->proximo;
+
+            if (anterior != NULL)
+                anterior->proximo = proximo;
+            else
+                primeiro = aux->proximo;
+
+            if (proximo != NULL)
+                proximo->anterior = anterior;
+            else
+                ultimo = aux->anterior;
+
+            delete aux;
+            tamanho--;
+        }
+    }
+}
+
+// remover pelo id
+void listadup::removeID(int id)
+{
+    if (vazia())
+    {
+        throw runtime_error("Remoção em lista vazia!");
+    }
+
+    noh *aux = primeiro;
+
+    while (aux != nullptr && aux->acao.identificador != id)
+    {
+        aux = aux->proximo;
+    }
+
+    if (aux == nullptr)
+    {
+        cout << "Erro: remoção de valor não encontrado!" << endl;
+    }
+
+    if (aux != nullptr)
+    {
+        if (aux == primeiro)
+        {
+            removeNoInicio();
+        }
+        else if (aux == ultimo)
+        {
+            removeNoFim();
+        }
+        else
+        {
+            noh *anterior = aux->anterior;
+            noh *proximo = aux->proximo;
+
+            if (anterior != NULL)
+                anterior->proximo = proximo;
+            else
+                primeiro = aux->proximo;
+
+            if (proximo != NULL)
+                proximo->anterior = anterior;
+            else
+                ultimo = aux->anterior;
+
+            delete aux;
+            tamanho--;
+        }
+    }
+}
+
 // Função principal
 int main()
 {
@@ -375,6 +486,8 @@ int main()
     char comando;
     int posicao;
     string nomeEquipe;
+    string nome;
+    int id;
 
     do
     {
@@ -404,14 +517,19 @@ int main()
                 else
                     cout << posicao << endl;
                 break;
+            case 'x':
+                cin >> nome;
+                minhaLista.removeNome(nome);
+                break;
+            case 'w':
+                cin >> id;
+                minhaLista.removeID(id);
+                break;
             case 'r': // remover do início
                 minhaLista.removeNoInicio();
                 break;
             case 'a': // remover do fim
                 minhaLista.removeNoFim();
-                break;
-            case 't': // remover do fim
-                minhaLista.removeMaiorTempo();
                 break;
             case 'p': // imprimir lista
                 minhaLista.imprime();

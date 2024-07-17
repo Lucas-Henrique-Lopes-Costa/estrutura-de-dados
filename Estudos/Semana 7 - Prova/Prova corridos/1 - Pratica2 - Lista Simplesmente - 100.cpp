@@ -1,11 +1,16 @@
 /*
-Questão 4: Lista Simplesmente Encadeada - Equipes de Maratona - Remover no fim da lista
-Implemente uma função que realize a remoção de um elemento no fim da lista. Para esta atividade você não poderá utilizar um ponteiro para o último elemento. Caso a lista não possua elementos imprima Lista vazia!.
-
-Você pode (e deve!) utilizar o código que você desenvolveu na atividade "Lista Simplesmente Encadeada - Equipes de Maratona" como base.
-
+Questão 2: Lista Simplesmente Encadeada - Equipes de Maratona - Remover equipe
+Implemente uma função que realize a remoção de um determinado elemento da lista simplesmente encadeada cujo nome será informado pelo usuário.  Caso a lista não possua elementos imprima
+Lista vazia!
+.
+Você pode (
+e deve!
+) utilizar o código que você desenvolveu na atividade "Lista Simplesmente Encadeada - Equipes de Maratona" como base.
+Com essa finalidade, você deverá adicionar mais um comando, como segue:
+x seguido de uma string: remove o elemento da lista que cujo nome do time está de acordo com o especificado pela string..
+Saídas:
+Todas as saídas de comandos já estão implementadas na função principal código entregue, somente falta implementar a chamada para a remoção de um determinado elemento. Ao terminar a execução do programa, todos os itens da listas são escritos.
 Exemplo de Entrada e Saída juntas:
-
 r
 Remoção em lista vazia!
 a
@@ -17,19 +22,31 @@ Lista vazia!
 i Vingadores Stark Ruby 3
 h LigaDaJustica Batman C++ 4
 m 1 MuppetBabies Kermit Phyton 9
+i Thundercats Lion Dart 6
+h BBT Sheldon Assembly 4
 p
+(Thundercats, Lion, Dart, 6)
 (Vingadores, Stark, Ruby, 3)
 (MuppetBabies, Kermit, Phyton, 9)
 (LigaDaJustica, Batman, C++, 4)
+(BBT, Sheldon, Assembly, 4)
+x MuppetBabies
+p
+(Thundercats, Lion, Dart, 6)
+(Vingadores, Stark, Ruby, 3)
+(LigaDaJustica, Batman, C++, 4)
+(BBT, Sheldon, Assembly, 4)
 s Thundercats
-Nao encontrado
+0
 r
 p
-(MuppetBabies, Kermit, Phyton, 9)
+(Vingadores, Stark, Ruby, 3)
 (LigaDaJustica, Batman, C++, 4)
+(BBT, Sheldon, Assembly, 4)
 a
 p
-(MuppetBabies, Kermit, Phyton, 9)
+(Vingadores, Stark, Ruby, 3)
+(LigaDaJustica, Batman, C++, 4)
 f
 */
 
@@ -96,25 +113,9 @@ public:
     inline bool vazia();
     void removeNoFim();
     void removeNoInicio();
-    int Tamanho();
+    void removerPosicao(string remover);
 };
 
-int lista::Tamanho()
-{
-    if (vazia())
-        return 0;
-
-    noh *aux = primeiro;
-
-    int tam = 0;
-
-    while (aux != nullptr)
-    {
-        aux = aux->proximo;
-        tam++;
-    }
-    return tam;
-}
 // constrói uma lista inicialmente vazia
 lista::lista()
 {
@@ -350,6 +351,47 @@ void lista::removeNoInicio()
     }
 }
 
+void lista::removerPosicao(string remover)
+{
+    if (vazia())
+    {
+        throw runtime_error("Remoção em lista vazia!");
+    }
+    noh *aux = primeiro;
+
+    noh *anterior = nullptr;
+    // noh *proximo = nullptr;
+
+    while ((aux != nullptr) && (aux->elenco.nomeEquipe != remover))
+    {
+        anterior = aux;
+        aux = aux->proximo;
+        //proximo = aux->proximo;
+    }
+
+    if (aux != nullptr)
+    {
+        if (aux == primeiro)
+        {
+            removeNoInicio();
+        }
+        else if (aux == ultimo)
+        {
+            removeNoFim();
+        }
+        else
+        {
+            anterior->proximo = aux->proximo;
+            delete aux;
+            tamanho--;
+        }
+    }
+    else
+    {
+        cout << "Nao encontrado" << endl;
+    }
+}
+
 int main()
 {
     lista minhaLista;
@@ -394,9 +436,9 @@ int main()
             case 'p': // limpar tudo
                 minhaLista.imprime();
                 break;
-            case 't':
-                cout << minhaLista.Tamanho() << endl;
-                break;
+            case 'x': // remover
+                cin >> nomeEquipe;
+                minhaLista.removerPosicao(nomeEquipe);
             case 'f': // finalizar
                 // checado no do-while
                 break;
