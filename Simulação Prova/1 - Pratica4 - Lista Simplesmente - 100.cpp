@@ -1,3 +1,38 @@
+/*
+Questão 4: Lista Simplesmente Encadeada - Equipes de Maratona - Remover no fim da lista
+Implemente uma função que realize a remoção de um elemento no fim da lista. Para esta atividade você não poderá utilizar um ponteiro para o último elemento. Caso a lista não possua elementos imprima Lista vazia!.
+
+Você pode (e deve!) utilizar o código que você desenvolveu na atividade "Lista Simplesmente Encadeada - Equipes de Maratona" como base.
+
+Exemplo de Entrada e Saída juntas:
+
+r
+Remoção em lista vazia!
+a
+Remoção em lista vazia!
+p
+Lista vazia!
+s Thundercats
+Lista vazia!
+i Vingadores Stark Ruby 3
+h LigaDaJustica Batman C++ 4
+m 1 MuppetBabies Kermit Phyton 9
+p
+(Vingadores, Stark, Ruby, 3)
+(MuppetBabies, Kermit, Phyton, 9)
+(LigaDaJustica, Batman, C++, 4)
+s Thundercats
+Nao encontrado
+r
+p
+(MuppetBabies, Kermit, Phyton, 9)
+(LigaDaJustica, Batman, C++, 4)
+a
+p
+(MuppetBabies, Kermit, Phyton, 9)
+f
+*/
+
 #include <iostream>
 #include <cstdlib>
 
@@ -61,9 +96,25 @@ public:
     inline bool vazia();
     void removeNoFim();
     void removeNoInicio();
-    void removerPosicao(string remover);
+    int Tamanho();
 };
 
+int lista::Tamanho()
+{
+    if (vazia())
+        return 0;
+
+    noh *aux = primeiro;
+
+    int tam = 0;
+
+    while (aux != nullptr)
+    {
+        aux = aux->proximo;
+        tam++;
+    }
+    return tam;
+}
 // constrói uma lista inicialmente vazia
 lista::lista()
 {
@@ -299,47 +350,6 @@ void lista::removeNoInicio()
     }
 }
 
-void lista::removerPosicao(string remover)
-{
-    if (vazia())
-    {
-        throw runtime_error("Remoção em lista vazia!");
-    }
-    noh *aux = primeiro;
-
-    noh *anterior = nullptr;
-    // noh *proximo = nullptr;
-
-    while ((aux != nullptr) && (aux->elenco.nomeEquipe != remover))
-    {
-        anterior = aux;
-        aux = aux->proximo;
-        // proximo = aux->proximo;
-    }
-
-    if (aux != nullptr)
-    {
-        if (aux == primeiro)
-        {
-            removeNoInicio();
-        }
-        else if (aux == ultimo)
-        {
-            removeNoFim();
-        }
-        else
-        {
-            anterior->proximo = aux->proximo;
-            delete aux;
-            tamanho--;
-        }
-    }
-    else
-    {
-        cout << "Nao encontrado" << endl;
-    }
-}
-
 int main()
 {
     lista minhaLista;
@@ -384,9 +394,9 @@ int main()
             case 'p': // limpar tudo
                 minhaLista.imprime();
                 break;
-            case 'x': // remover
-                cin >> nomeEquipe;
-                minhaLista.removerPosicao(nomeEquipe);
+            case 't':
+                cout << minhaLista.Tamanho() << endl;
+                break;
             case 'f': // finalizar
                 // checado no do-while
                 break;
