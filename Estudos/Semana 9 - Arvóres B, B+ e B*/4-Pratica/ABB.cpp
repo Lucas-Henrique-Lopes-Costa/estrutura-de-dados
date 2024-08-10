@@ -84,8 +84,8 @@ int abb::calculaAlturaAux(noh *atual)
 {
   if (atual == NULL)
   {
-    // Se o nó é nulo, a altura é -1 (árvore vazia)
-    return -1;
+    // Retorna 0 para que folhas tenham altura 1
+    return 0;
   }
   else
   {
