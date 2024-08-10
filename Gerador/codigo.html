@@ -121,83 +121,473 @@
     <div id="usuario">?</div><br>
     <b>Notas</b>:<br>
     <span id="notas">
-        <a style="color: #FFF" href="#Q1">Q1: ?</a><br>
+        <a style="color: #FFF" href="#Q1">Q1: 100</a><br>
         <a style="color: #FFF" href="#Q2">Q2: ?</a><br>
         <a style="color: #FFF" href="#Q3">Q3: ?</a><br>
         <a style="color: #FFF" href="#Q4">Q4: ?</a><br>
-Total: 0    </span><br>
+        <a style="color: #FFF" href="#Q5">Q5: ?</a><br>
+        <a style="color: #FFF" href="#Q6">Q6: ?</a><br>
+Total: 17    </span><br>
 </div>
 <div id="prova">
-    <h1>Atividade Preparatória Lista e Tabelas Hash</h1>
-    <p><b>Prova Aberta Até:</b> 08/05/2024 12:00:00</p>
+    <h1>Atividade Prática de ABB</h1>
+    <p><b>Prova Aberta Até:</b> 13/08/2024 23:59:59</p>
     <p><b>Número Máximo de Tentativas:</b> 6</p>
     <p><b>Atenuação da Nota por Tentativa:</b> 0%</p>
     <p><b>Instruções para a prova:</b> A prova é individual. Desligue seu celular. Não converse com os colegas. Não fique olhando para a tela dos colegas.</p>
     <div class="problem-try-ct">
         <a name="Q1"></a>
-        <h3>Questão 1: Lista Simplesmente Encadeada - Equipes de Maratona</h3>
+        <h3>Questão 1: Altura de Árvore Binária (ABB)</h3>
         <div class="description-display-box">
-<p>Crie um programa que seja capaz de armazenar em uma lista encadeada as equipes de uma maratona de programação. Para cada equipe deverá ser informado o seu nome, o nome do líder da equipe, a linguagem de programação que será utilizada e a quantidade de membros. Você poderá utilizar o <a href="/exemplos/f71d3c12.cpp">código fornecido</a> como base de implementação.</p>
-<p>Os comandos que deverão ser utilizados para execução do programa são:</p>
-<ul>
-<li>i: inserir uma nova equipe no inicio da lista. O formato de entrada é: <b>NomeEquipe Lider Linguagem QtdMembros </b></li>
-<li>h: inserir uma nova equipe no fim da lista. O formato de entrada é: <b>NomeEquipe Lider Linguagem QtdMembros </b></li>
-<li>m: inserir uma nova equipe na posição informada pelo usuário através de um número inteiro. Considere 0 como a posição inicial da lista. Caso não seja possível inserir na posição indicada imprima "Posição Inexistente!". O formato de entrada é: <b>posiçãoASerInserida NomeEquipe Lider Linguagem QtdMembros </b></li>
-<li>r: apagar uma determinada equipe do início da lista. Caso não exista a equipe deverá imprimir <b>Remoção em lista vazia!</b></li>
-<li>a: apagar uma determinada equipe do fim da lista. Caso não exista a equipe deverá imprimir <b>Remoção em lista vazia!</b></li>
-<li>p: imprimir lista de equipes cadastradas. Imprimir <b>Lista vazia!</b> quando não tiver elemento a ser impresso.</li>
-<li>s: buscar por uma equipe a partir de seu nome. Imprimir <b>Nao encontrado</b> quando a busca não obtiver sucesso.</li>
-</ul>
-<p>Nota: o formato de saída das equipes deve ser: <b>(Nome, Lider, Linguagem, QtdMembros)</b>. Para mais instâncias de equipes (comando de impressão), cada uma delas devem ser separadas por quebras de linha.</p>
+<p>Utilizando como base o <a href="/exemplos/abb-9ec2b549.cpp">código fornecido</a> pelos professores, implemente um método para calcular a altura de uma árvore binária. Utilize o método implementado para apresentar a altura de uma dada árvore, a cada inserção ou remoção feita. A aplicação principal já faz os testes necessários, faltando apenas o método solicitado. Você pode implementar métodos auxiliares privados, se necessário.</p>
 <p>Entradas:</p>
-<ul>
-<li>Comandos detalhados no exercício</li>
-</ul>
+<ol>
+<li>Número de elementos a serem inseridos na árvore.</li>
+<li>Elementos a serem inseridos na árvore.</li>
+<li>Número de elementos a serem removidos da árvore.</li>
+<li>Elementos a serem removidos da árvore.</li>
+</ol>
 <p>Saídas:</p>
-<ul>
-<li>Impressões detalhadas no exercício</li>
-</ul>
-<p>Exemplo de Entrada e Saída misturados:</p>
+<ol>
+<li>Impressão da altura da árvore após cada inserção.</li>
+<li>Impressão da árvore final  (usando percorreEmOrdem) após inserções.</li>
+<li>Impressão da altura da árvore após cada remoção.</li>
+<li>Impressão da árvore final (usando percorreEmOrdem) após remoções.</li>
+</ol>
+<p>Exemplo de Entrada:</p>
 <pre>
-r
-Remoção em lista vazia!
-a
-Remoção em lista vazia!
-p
-Lista vazia!
-s Thundercats
-Lista vazia!
-i Vingadores Stark Ruby 3
-h LigaDaJustica Batman C++ 4
-m 1 MuppetBabies Kermit Phyton 9
-p
-(Vingadores, Stark, Ruby, 3)
-(MuppetBabies, Kermit, Phyton, 9)
-(LigaDaJustica, Batman, C++, 4)
-s Thundercats
-Nao encontrado
-r
-p
-(MuppetBabies, Kermit, Phyton, 9)
-(LigaDaJustica, Batman, C++, 4)
-a
-p
-(MuppetBabies, Kermit, Phyton, 9)
-f
+20
+1 23 83 4 2 11 20 30 40 50 8 9 18 12 13 15 17 31 41 51
+10
+23 4 11 30 50 9 12 17 83 2
 </pre>
+<p>Exemplo de Saída:</p>
+<pre>
+1 2 3 3 4 4 5 5 5 6 6 6 6 7 8 9 10 10 10 10 
+1/0 2/3 4/2 8/4 9/5 11/3 12/6 13/7 15/8 17/9 18/5 20/4 23/1 30/3 31/5 40/4 41/6 50/5 51/6 83/2 
+10 10 9 9 9 9 8 7 7 7 
+1/0 8/2 13/5 15/6 18/4 20/3 31/1 40/2 41/4 51/3 
+</pre>
+
+<p>Exemplo de Entrada:</p>
+<pre>
+10
+10 9 8 7 6 5 4 3 2 1
+5
+9 7 5 3 1
+</pre>
+<p>Exemplo de Saída:</p>
+<pre>
+1 2 3 4 5 6 7 8 9 10 
+1/9 2/8 3/7 4/6 5/5 6/4 7/3 8/2 9/1 10/0 
+9 8 7 6 5 
+2/4 4/3 6/2 8/1 10/0 
+</pre>
+
+
         </div><!-- description-display-box -->
         <a name="JQ1"></a>
         <p><b>Peso:</b> 1</p>
+        <p><b>Última tentativa realizada em:</b> 10/08/2024 09:47:51</p>
+        <p><b>Tentativas:</b> 1 de 6</p>
+        <p><b>Nota (0 a 100):</b> 100</p>
+        <p><b>Status ou Justificativa de Nota:</b> Nenhum erro encontrado.</p>
+        <button onClick="openDivAsDialog('lastTrial1103');">Ver Código da Última Tentativa</button>
+        <div style="height: 6px"></div>
+        <div style="display:none" id='lastTrial1103'>
+            <textarea class="cpp-code-view" style="font-family: monospace">#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+
+using namespace std;
+
+typedef int Dado; // Facilita a troca de tipo, se necessário, por exemplo, para float ou string
+
+// Enumeração para identificar a posição do nó na árvore
+enum posicao
+{
+  dir,
+  esq
+};
+
+// Classe que representa um nó da árvore binária de busca (ABB)
+class noh
+{
+  friend class abb; // A classe abb pode acessar os membros privados de noh
+private:
+  Dado valor; // Valor armazenado no nó
+  noh *esq;   // Ponteiro para o filho à esquerda
+  noh *dir;   // Ponteiro para o filho à direita
+  noh *pai;   // Ponteiro para o pai do nó
+public:
+  noh(Dado d = 0); // Construtor que inicializa o nó com um valor
+  ~noh();          // Destrutor que desaloca memória dos filhos
+};
+
+// Implementação do construtor da classe noh
+noh::noh(Dado d)
+{
+  valor = d;
+  esq = NULL; // Inicializa o ponteiro da esquerda como NULL
+  dir = NULL; // Inicializa o ponteiro da direita como NULL
+  pai = NULL; // Inicializa o ponteiro do pai como NULL
+}
+
+// Implementação do destrutor da classe noh
+noh::~noh()
+{
+  // Chama recursivamente o destrutor para os nós filhos
+  delete esq;
+  delete dir;
+}
+
+// Classe que representa a árvore binária de busca (ABB)
+class abb
+{
+private:
+  noh *raiz; // Ponteiro para a raiz da árvore
+  // Métodos auxiliares privados para percorrer a árvore e encontrar mínimo/máximo
+  void percorreEmOrdemAux(noh *atual, int nivel);
+  void percorrePreOrdemAux(noh *atual);
+  void percorrePosOrdemAux(noh *atual);
+  noh *minimoAux(noh *raizSub);
+  noh *maximoAux(noh *raizSub);
+  // Método auxiliar privado para substituir um nó na árvore
+  void transplanta(noh *antigo, noh *novo);
+  // Método auxiliar privado para calcular a altura de um nó na árvore
+  int calculaAlturaAux(noh *atual);
+
+public:
+  abb() { raiz = NULL; }   // Construtor inicializa a árvore vazia
+  ~abb();                  // Destrutor que desaloca a memória da árvore
+  void insere(Dado d);     // Método para inserir um elemento na árvore
+  void remove(Dado d);     // Método para remover um elemento da árvore
+  noh *busca(Dado d);      // Método para buscar um elemento na árvore
+  Dado minimo();           // Método para encontrar o menor valor na árvore
+  Dado maximo();           // Método para encontrar o maior valor na árvore
+  void percorreEmOrdem();  // Método para percorrer a árvore em ordem (in-order)
+  void percorrePreOrdem(); // Método para percorrer a árvore em pré-ordem (pre-order)
+  void percorrePosOrdem(); // Método para percorrer a árvore em pós-ordem (post-order)
+  int calculaAltura();     // Método para calcular a altura da árvore
+};
+
+// Destrutor da classe abb que deleta a raiz e, consequentemente, todos os nós
+abb::~abb()
+{
+  delete raiz;
+}
+
+// Método auxiliar recursivo que calcula a altura da subárvore enraizada em 'atual'
+int abb::calculaAlturaAux(noh *atual)
+{
+  if (atual == NULL)
+  {
+    // Retorna 0 para que folhas tenham altura 1
+    return 0;
+  }
+  else
+  {
+    // Calcula a altura das subárvores esquerda e direita
+    int alturaEsq = calculaAlturaAux(atual-&gt;esq);
+    int alturaDir = calculaAlturaAux(atual-&gt;dir);
+    // A altura do nó atual é 1 + a maior altura entre seus filhos
+    return 1 + max(alturaEsq, alturaDir);
+  }
+}
+
+// Método público que chama o auxiliar para calcular a altura da árvore a partir da raiz
+int abb::calculaAltura()
+{
+  return calculaAlturaAux(raiz);
+}
+
+// Método para inserir um novo nó na árvore
+void abb::insere(Dado d)
+{
+  noh *novo = new noh(d); // Cria um novo nó com o valor fornecido
+  posicao posInsercao;    // Variável para guardar a posição de inserção
+
+  // Primeiro caso: se a árvore está vazia, o novo nó será a raiz
+  if (raiz == NULL)
+  {
+    raiz = novo;
+  }
+  else
+  {
+    noh *atual = raiz;
+    noh *anterior;
+
+    // Loop para encontrar o ponto de inserção
+    while (atual != NULL)
+    {
+      anterior = atual;
+      if (atual-&gt;valor &gt; d)
+      { // Se o valor é menor, vá para a esquerda
+        atual = atual-&gt;esq;
+        posInsercao = esq;
+      }
+      else
+      { // Se o valor é maior ou igual, vá para a direita
+        atual = atual-&gt;dir;
+        posInsercao = dir;
+      }
+    }
+
+    // Conecta o novo nó ao pai
+    novo-&gt;pai = anterior;
+    if (posInsercao == dir)
+    {
+      anterior-&gt;dir = novo;
+    }
+    else
+    {
+      anterior-&gt;esq = novo;
+    }
+  }
+
+  // Após a inserção, imprime a altura atual da árvore
+  cout &lt;&lt; calculaAltura() &lt;&lt; &quot; &quot;;
+}
+
+// Método para buscar um nó com determinado valor na árvore
+noh *abb::busca(Dado d)
+{
+  noh *atual = raiz;
+
+  // Loop para percorrer a árvore até encontrar o valor ou chegar ao fim
+  while (atual != NULL)
+  {
+    if (atual-&gt;valor == d)
+    {
+      return atual; // Retorna o nó se encontrar o valor
+    }
+    else if (atual-&gt;valor &gt; d)
+    {
+      atual = atual-&gt;esq; // Vá para a esquerda se o valor é menor
+    }
+    else
+    {
+      atual = atual-&gt;dir; // Vá para a direita se o valor é maior
+    }
+  }
+
+  return atual; // Retorna NULL se o valor não está na árvore
+}
+
+// Método para encontrar o menor valor na árvore
+Dado abb::minimo()
+{
+  if (raiz == NULL)
+  {
+    cerr &lt;&lt; &quot;Árvore vazia!&quot; &lt;&lt; endl;
+    exit(EXIT_FAILURE);
+  }
+  else
+  {
+    noh *nohMin = minimoAux(raiz); // Chama o auxiliar para encontrar o mínimo
+    return nohMin-&gt;valor;
+  }
+}
+
+// Método auxiliar que encontra o menor valor em uma subárvore
+noh *abb::minimoAux(noh *raizSub)
+{
+  while (raizSub-&gt;esq != NULL)
+  {
+    raizSub = raizSub-&gt;esq;
+  }
+  return raizSub;
+}
+
+// Método para encontrar o maior valor na árvore
+Dado abb::maximo()
+{
+  if (raiz == NULL)
+  {
+    cerr &lt;&lt; &quot;Árvore vazia!&quot; &lt;&lt; endl;
+    exit(EXIT_FAILURE);
+  }
+  else
+  {
+    noh *nohMax = maximoAux(raiz); // Chama o auxiliar para encontrar o máximo
+    return nohMax-&gt;valor;
+  }
+}
+
+// Método auxiliar que encontra o maior valor em uma subárvore
+noh *abb::maximoAux(noh *raizSub)
+{
+  while (raizSub-&gt;dir != NULL)
+  {
+    raizSub = raizSub-&gt;dir;
+  }
+  return raizSub;
+}
+
+// Método para substituir um nó antigo por um novo na árvore
+void abb::transplanta(noh *antigo, noh *novo)
+{
+  if (raiz == antigo)
+  {
+    raiz = novo;
+  }
+  else if (antigo == antigo-&gt;pai-&gt;esq)
+  {
+    antigo-&gt;pai-&gt;esq = novo;
+  }
+  else
+  {
+    antigo-&gt;pai-&gt;dir = novo;
+  }
+  if (novo != NULL)
+  {
+    novo-&gt;pai = antigo-&gt;pai;
+  }
+}
+
+// Método para remover um nó da árvore
+void abb::remove(Dado dado)
+{
+  noh *nohRemover = busca(dado); // Busca o nó a ser removido
+
+  if (nohRemover == NULL)
+  {
+    cerr &lt;&lt; &quot;valor não está na árvore!&quot; &lt;&lt; endl;
+  }
+  else
+  {
+    if (nohRemover-&gt;esq == NULL)
+    { // Se não tem filho à esquerda
+      transplanta(nohRemover, nohRemover-&gt;dir);
+    }
+    else if (nohRemover-&gt;dir == NULL)
+    { // Se não tem filho à direita
+      transplanta(nohRemover, nohRemover-&gt;esq);
+    }
+    else
+    {                                             // Nó tem dois filhos
+      noh *sucessor = minimoAux(nohRemover-&gt;dir); // Encontra o sucessor
+
+      if (sucessor-&gt;pai != nohRemover)
+      {
+        transplanta(sucessor, sucessor-&gt;dir);
+        sucessor-&gt;dir = nohRemover-&gt;dir;
+        sucessor-&gt;dir-&gt;pai = sucessor;
+      }
+
+      transplanta(nohRemover, sucessor);
+      sucessor-&gt;esq = nohRemover-&gt;esq;
+      sucessor-&gt;esq-&gt;pai = sucessor;
+    }
+
+    // Após a remoção, desconecta os ponteiros e deleta o nó
+    nohRemover-&gt;esq = NULL;
+    nohRemover-&gt;dir = NULL;
+    delete nohRemover;
+  }
+
+  // Após a remoção, imprime a altura atual da árvore
+  cout &lt;&lt; calculaAltura() &lt;&lt; &quot; &quot;;
+}
+
+// Método para percorrer a árvore em ordem (in-order) e imprimir os valores
+void abb::percorreEmOrdem()
+{
+  percorreEmOrdemAux(raiz, 0); // Chama o auxiliar com a raiz e nível inicial 0
+  cout &lt;&lt; endl;
+}
+
+// Método auxiliar que percorre a árvore em ordem (in-order)
+void abb::percorreEmOrdemAux(noh *atual, int nivel)
+{
+  if (atual != NULL)
+  {
+    percorreEmOrdemAux(atual-&gt;esq, nivel + 1);   // Primeiro visita a subárvore esquerda
+    cout &lt;&lt; atual-&gt;valor &lt;&lt; &quot;/&quot; &lt;&lt; nivel &lt;&lt; &quot; &quot;; // Depois processa o nó atual
+    percorreEmOrdemAux(atual-&gt;dir, nivel + 1);   // Finalmente, visita a subárvore direita
+  }
+}
+
+// Método para percorrer a árvore em pré-ordem (pre-order) e imprimir os valores
+void abb::percorrePreOrdem()
+{
+  percorrePreOrdemAux(raiz);
+  cout &lt;&lt; endl;
+}
+
+// Método auxiliar que percorre a árvore em pré-ordem (pre-order)
+void abb::percorrePreOrdemAux(noh *atual)
+{
+  if (atual != NULL)
+  {
+    cout &lt;&lt; atual-&gt;valor &lt;&lt; &quot; &quot;;     // Primeiro processa o nó atual
+    percorrePreOrdemAux(atual-&gt;esq); // Depois visita a subárvore esquerda
+    percorrePreOrdemAux(atual-&gt;dir); // Finalmente, visita a subárvore direita
+  }
+}
+
+// Método para percorrer a árvore em pós-ordem (post-order) e imprimir os valores
+void abb::percorrePosOrdem()
+{
+  percorrePosOrdemAux(raiz);
+  cout &lt;&lt; endl;
+}
+
+// Método auxiliar que percorre a árvore em pós-ordem (post-order)
+void abb::percorrePosOrdemAux(noh *atual)
+{
+  if (atual != NULL)
+  {
+    percorrePosOrdemAux(atual-&gt;esq); // Primeiro visita a subárvore esquerda
+    percorrePosOrdemAux(atual-&gt;dir); // Depois visita a subárvore direita
+    cout &lt;&lt; atual-&gt;valor &lt;&lt; &quot; &quot;;     // Finalmente, processa o nó atual
+  }
+}
+
+// Função principal (main) que realiza a leitura dos dados, inserção e remoção na árvore
+int main()
+{
+  abb minhaArvore; // Cria uma nova árvore
+  int valor;       // Variável para armazenar os valores de entrada
+  int num;         // Variável para armazenar a quantidade de elementos
+
+  // Leitura do número de elementos a serem inseridos
+  cin &gt;&gt; num;
+
+  // Loop para inserir os elementos na árvore
+  for (int i = 0; i &lt; num; i++)
+  {
+    cin &gt;&gt; valor;
+    minhaArvore.insere(valor); // Insere o valor e imprime a altura após cada inserção
+  }
+  cout &lt;&lt; endl;
+  minhaArvore.percorreEmOrdem(); // Imprime a árvore em ordem após todas as inserções
+
+  // Leitura do número de elementos a serem removidos
+  cin &gt;&gt; num;
+
+  // Loop para remover os elementos da árvore
+  for (int i = 0; i &lt; num; i++)
+  {
+    cin &gt;&gt; valor;
+    minhaArvore.remove(valor); // Remove o valor e imprime a altura após cada remoção
+  }
+  cout &lt;&lt; endl;
+  minhaArvore.percorreEmOrdem(); // Imprime a árvore em ordem após todas as remoções
+
+  return 0; // Retorna 0 para indicar que o programa terminou com sucesso
+}
+</textarea>
+        </div><!-- ultima tentativa -->
             <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
                 <label style="background: #F9F9F9">Nova Resposta:</label>
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2013">
-                <input type="hidden" name="tst_password" value="9b52ad3257e934929844933048077418f77a488a">
-                <input type="hidden" name="id_problema" value="2110">
+                <input type="hidden" name="id_prova" value="2079">
+                <input type="hidden" name="tst_password" value="15d2dd5df56307ad60149b3798945dd6452e42e4">
+                <input type="hidden" name="id_problema" value="1103">
                 <input type="hidden" name="idUsuario" value="6644">
-                <input type="hidden" name="nroTentativa" value="1">
+                <input type="hidden" name="nroTentativa" value="2">
                 <input type="hidden" name="atenuacao" value="1">
                 <input type="hidden" name="nroQuestao" value="1">
                 <input type="hidden" name="_action" value="save">
@@ -206,65 +596,30 @@ f
     </div><!-- problem-try-ct -->
     <div class="problem-try-ct">
         <a name="Q2"></a>
-        <h3>Questão 2: Lista Duplamente Encadeada - Ações de usuários em um programa</h3>
+        <h3>Questão 2: Árvore ABB - Altura de um Nó</h3>
         <div class="description-display-box">
-<p>Crie um programa que seja capaz de armazenar em uma lista duplamente encadeada as ações de usuários em um programa. Cada elemento da lista deve ter um identificador, o nome da ação, tempo para execução total e tempo já consumido de processamento. Você poderá utilizar o <a href="/exemplos/lista-16ac7715.cpp">código fornecido</a> como base de implementação.</p>
-<p>Os comandos que deverão ser utilizados para execução do programa são:</p>
-<ul>
-<li>i: inserir uma nova ação no inicio da lista. O formato de entrada é: <b>Identificador NomeAcao TempoExecução TempoConsumido </b></li>
-<li>h: inserir uma nova ação no final da lista. O formato de entrada é: <b>Identificador NomeAcao TempoExecução TempoConsumido </b></li>
-<li>m: inserir uma nova equipe na posição informada pelo inteiro. Considere 0 como no início e imprima "Posição Inexistente!" caso não seja possível inserir na posição indicada. O formato de entrada é: <b>posiçãoASerInserida Identificador NomeAcao TempoExecução TempoConsumido </b></li>
-<li>r: apagar uma determinada ação do início da lista. Caso não exista a equipe deverá imprimir <b>Remoção em lista vazia!</b></li>
-<li>a: apagar uma determinada ação do fim da lista. Caso não exista a equipe deverá imprimir <b>Remoção em lista vazia!</b></li>
-<li>p: imprimir lista de ações cadastradas em ordem de inserção e, em seguida, em ordem inversa. Imprimir <b>Lista vazia!</b> quando não tiver elemento a ser impresso.</li>
-<li>s: buscar por uma ação a partir de seu nome. Imprimir <b>Nao encontrado</b> quando a busca não obtiver sucesso.</li>
-</ul>
-<p>Nota: o formato de saída das ações deve ser: <b>(Identificador, NomeAcao, TempoExecução, TempoConsumido)</b>. Para mais instâncias de ações (comando de impressão), separar cada uma delas por quebras de linha.</p>
+<img style="float:right; margin:2em" width="240" height="260" src="/public/img/abb-altura-de-noh2.png">
+<p>O <a href="/exemplos/abb-6e0f8f87.cpp">código fornecido</a> implementa uma Árvore Binária de Busca, com operações de inserir, buscar e percorrer escrevendo. Crie um método (e seus auxiliares) para calcular a altura de um nó. A figura à direita mostra uma árvore com anotação da altura de cada nó em vermelho. A altura de uma folha é zero.</p>
+<p>Usando esses métodos, o programa deverá ser modificado para ler vários valores e escrever a altura dos nós em que os valores estão. Suponha que os nós sempre estarão na árvore. A operação de escrita da altura deve estar no programa e não na classe.</p>
+<p>A operação de percorrer escrevendo, está disponível para ajudar na depuração, se necessário.</p>
 <p>Entradas:</p>
-<ul>
-<li>Comandos detalhados no exercício</li>
-</ul>
+<ol>
+<li>A quantidade de valores a inserir na árvore.</li>
+<li>Os valores (inteiros) a serem inseridos.</li>
+<li>A quantidade de valores a serem buscados na árvore.</li>
+<li>Os valores (inteiros, pertencentes à árvore) a serem buscados.</li>
+</ol>
 <p>Saídas:</p>
-<ul>
-<li>Impressões detalhadas no exercício</li>
-</ul>
-<p>Exemplo de Entrada e Saída misturados:</p>
-<pre>
-r
-Remoção em lista vazia!
-a
-Remoção em lista vazia!
-p
-Lista vazia!
-s empilharProcessos
-Lista vazia!
-i 1 limparCache 123 99
-h 2 semaforoProc 32 11
-m 1 3 paralelismoProc 65 23
-p
-(1, limparCache, 123, 99)
-(3, paralelismoProc, 65, 23)
-(2, semaforoProc, 32, 11)
- IMPRIMINDO REVERSO 
-(2, semaforoProc, 32, 11)
-(3, paralelismoProc, 65, 23)
-(1, limparCache, 123, 99)
-s empilharProcessos
-Nao encontrado
-r
-p
-(3, paralelismoProc, 65, 23)
-(2, semaforoProc, 32, 11)
- IMPRIMINDO REVERSO 
-(2, semaforoProc, 32, 11)
-(3, paralelismoProc, 65, 23)
-a
-p
-(3, paralelismoProc, 65, 23)
- IMPRIMINDO REVERSO 
-(3, paralelismoProc, 65, 23)
-f
-</pre>
+<ol>
+<li>A altura do nó que contém cada um dos valores buscados.</li>
+</ol>
+<p>Exemplo de Entrada:</p>
+<pre>7
+5 1 10 8 3 7 9
+3
+7 8 10</pre>
+<p>Exemplo de Saída:</p>
+<pre>0 1 2</pre>
         </div><!-- description-display-box -->
         <a name="JQ2"></a>
         <p><b>Peso:</b> 1</p>
@@ -273,9 +628,9 @@ f
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2013">
-                <input type="hidden" name="tst_password" value="9b52ad3257e934929844933048077418f77a488a">
-                <input type="hidden" name="id_problema" value="2111">
+                <input type="hidden" name="id_prova" value="2079">
+                <input type="hidden" name="tst_password" value="15d2dd5df56307ad60149b3798945dd6452e42e4">
+                <input type="hidden" name="id_problema" value="1396">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
@@ -286,60 +641,24 @@ f
     </div><!-- problem-try-ct -->
     <div class="problem-try-ct">
         <a name="Q3"></a>
-        <h3>Questão 3: Hash com encadeamento - Inventário de itens de jogo</h3>
+        <h3>Questão 3: Árvore binária (ABB) – Contagem de nós folha</h3>
         <div class="description-display-box">
-<p>Implemente uma tabela hash, utilizando tratamento de colisão por encadeamento de nós, para implementar um inventário de itens em um jogo digital. A estrutura deve possibilitar, pelo menos, as seguintes ações: inserção e remoção de itens, localizar um item na estrutura hash. A remoção e busca devem escrever mensagem de erro na saída ("<tt>Erro: hash vazia!</tt>"), quando a hash estiver vazia. Na remoção ou na busca, caso a hash contenha elementos mas o item da busca não se encontra na tabela, o usuário deve ser informado da seguinte forma: ("<tt>Elemento inexistente!</tt>") . Os itens do inventários possuem os seguintes atributos: nome (uma string sem espaços), tipo (um único caracter) e valor (um inteiro). </p>
-<p>Para essa atividade você pode utilizar as seguintes opções de código fonte base: <a href="/exemplos/hash-81960585.cpp">código fornecido 1</a> ou <a href="/exemplos/hash-ea865bf3.cpp">código fornecido2</a>. </p>
-<p>No início da execução, o programa lê o tamanho da tabela hash. </p>
+<p>A partir do <a href="/exemplos/abb-32c9421c.cpp">código fornecido</a>, implemente os métodos que calculam a quantidade de nós folhas em uma árvore binária. Não é necessário manter o projeto do programa exemplo. Métodos auxiliares podem ser criados. Métodos da contagem de folhas que não forem usados devem ser apagados.</p>
+<p>A quantidade de folhas numa árvore vazia é zero.</p>
 <p>Entradas:</p>
-<p>O programa deve aceitar os seguintes comandos:</p>
-<ul>
-<li>i: seguido de uma string, um caracter e um inteiro: para inserir um item no inventário. Caso exista colisão, a inserção na lista deve ser no ínicio.</li>
-<li>r seguido de um string: para retirar um item do inventário</li>
-<li>l seguido de um string: para localizar o determinado item no inventário</li>
-<li>p: imprimir toda a tabela hash</li>
-<li>f: para finalizar a execução do programa</li>
-</ul>
+<ol>
+<li>Número de valores a serem lidos.</li>
+<li>Valores (inteiros) a inserir na árvore.</li>
+</ol>
 <p>Saídas:</p>
-<p>Todas as saídas de comandos já estão implementadas na função principal dos códigos fontes informados anteriormente. Ao terminar a execução do programa, todos os itens da hash são  escritos.</p>
-<p>Exemplo de Entrada e Saída juntas:</p>
-<pre>
-6
-r dez
-Erro na remoção: chave não encontrada!
-i um a 1
-chave 'um' inserida na posicao 4
-i dois b 2
-chave 'dois' inserida na posicao 5
-i quatro d 4
-chave 'quatro' inserida na posicao 2
-i sete g 7
-chave 'sete' inserida na posicao 1
-i oito h 8
-chave 'oito' inserida na posicao 5
-i dez j 10
-chave 'dez' inserida na posicao 5
-i tres c 3
-chave 'tres' inserida na posicao 2
-p
-0: 
-1: [sete/7]
-2: [tres/3][quatro/4]
-3: 
-4: [um/1]
-5: [dez/10][oito/8][dois/2]
-l quatro
-Tipo: d Valor: 4
-r dez
-f
-0: 
-1: [sete/7]
-2: [tres/3][quatro/4]
-3: 
-4: [um/1]
-5: [oito/8][dois/2]
-</pre>
-
+<ul>
+<li>Quantidade de nós folha.</li>
+</ul>
+<p>Exemplo de Entrada:</p>
+<pre>8
+30 15 50 41 10 60 32 45</pre>
+<p>Exemplo de Saída:</p>
+<pre>4</pre>
         </div><!-- description-display-box -->
         <a name="JQ3"></a>
         <p><b>Peso:</b> 1</p>
@@ -348,9 +667,9 @@ f
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2013">
-                <input type="hidden" name="tst_password" value="9b52ad3257e934929844933048077418f77a488a">
-                <input type="hidden" name="id_problema" value="2137">
+                <input type="hidden" name="id_prova" value="2079">
+                <input type="hidden" name="tst_password" value="15d2dd5df56307ad60149b3798945dd6452e42e4">
+                <input type="hidden" name="id_problema" value="1400">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
@@ -361,41 +680,33 @@ f
     </div><!-- problem-try-ct -->
     <div class="problem-try-ct">
         <a name="Q4"></a>
-        <h3>Questão 4: Hash com endereçamento aberto - Lista de processos em uma repartição pública</h3>
+        <h3>Questão 4: Árvore binária (ABB) - sucessor</h3>
         <div class="description-display-box">
-<p>Implemente uma tabela hash, utilizando tratamento de colisão por endereçamento aberto, para implementar uma lista de processos para uma repartição pública, utilizando como base o <a href="/exemplos/hash-f13c8664.cpp">código fornecido</a>. A estrutura deve possibilitar, pelo menos, as seguintes ações: inserção e remoção de um determinado item, localização de um processo na estrutura hash. A remoção ou busca deve escrever mensagem de erro na saída ("<tt>Erro: hash vazia!</tt>"), quando a hash estiver vazia. Na remoção ou na busca, caso a hash contenha elementos mas o item da busca não se encontra na tabela, o usuário deve ser informado da seguinte forma: ("<tt>Elemento inexistente!</tt>"). O enfileiramento também deve gerar mensagem de erro ("<tt>Erro: hash cheia!</tt>"), quanto todas as posições do vetor estiverem ocupadas. Os itens da lista de processos possuem os seguintes atributos: assunto (uma string sem espaços), nome do interessado(uma string sem espaços), tipo (um único caracter) e numero do processo (um inteiro). Além disso, essa repartição tem capacidade para trabalhar com <strong>apenas seis processos por vez</strong>.</p>
+<img src="public/img/abb-3ebf316b.png" style="float: right; margin-left: 20px" width="288" height="240">
+<p>Implemente um método para encontrar o sucessor de uma chave numa árvore binária. Suponha que a chave pertence à árvore. É importante que haja um mínimo de eficiência: buscar a chave (já pronto) e depois caminhar até o sucessor, sem processar outros nós.</p>
+<p>Use <a href="/exemplos/abb-4e8d82bb.cpp">esta implementação</a> que já tem prontos métodos para inserir chave, buscar chave e escrever a árvore, além de uma interface que ativa os métodos implementados. A interface não deve ser alterada.</p>
+<p>Antes de implementar, planeje. Note que um nó que não tem filho à direita tem um sucessor que não está numa subárvore. Na árvore da figura, por exemplo, o sucessor de 7 está na raiz.</p>
 <p>Entradas:</p>
-<p>O programa deve aceitar os seguintes comandos:</p>
-<ol>
-<li>i seguido de uma string, um caracter e um inteiro: para inserir um item na lista de processos</li>
-<li>r seguido de um inteiro: para retirar um item da lista de processos</li>
-<li>l seguido de um inteiro: para localizar um item na hash</li>
-<li>f: para finalizar a execução do programa</li>
-</ol>
+<p>O programa lê comandos e os executa. Os sucessores são encontrados chamando repetidamente o método que encontra um sucessor. Basta usar a interface providenciada. Os comandos são:</p>
+<ul>
+<li>f - para finalizar a execução do programa</li>
+<li>i - para inserir uma chave, seguido da chave (inteiro)</li>
+<li>e - para escrever o conteúdo da árvore, nível a nível para facilitar o entendimento da estrutura</li>
+<li>s - para escrever todos os sucessores de uma chave, seguido da chave (inteiro)</li>
+</ul>
 <p>Saídas:</p>
-<p>Todas as saídas de comandos já estão implementadas na função principal desse código exemplo fornecido. Ao terminar a execução do programa, todos os itens da hash são escritos.</p>
-</ol>
-<p>Exemplo de Entrada e Saída juntas:</p>
-<pre>
-r Joao
-Impossível remover de hash vazia.
-i processo1 Joao a 2
-i processo2 Maria c 5
-i processo3 Severino d 9
-i processo4 Marcos f 12
-i processo5 Barnabe a 10
-i processo6 Tiao z 22
-i processo7 Marlon a 40
-Tabela hash cheia.
-p
-[0:Severino/9] [1:Barnabe/10] [2:Marcos/12] [3:Tiao/22] [4:Joao/2] [5:Maria/5] 
-r Severino
-p
-[0:] [1:Barnabe/10] [2:Marcos/12] [3:Tiao/22] [4:Joao/2] [5:Maria/5] 
-i processo7 Marlon a 40
-f
-[0:Marlon/40] [1:Barnabe/10] [2:Marcos/12] [3:Tiao/22] [4:Joao/2] [5:Maria/5] 
-</pre>
+<p>Cada comando produz uma saída específica. Apenas mantenha as saídas já implementadas.</p>
+<p>Exemplo de entrada e saída juntos:</p>
+<pre>i 300
+i 20
+i 430
+i 12
+i 360
+i 451
+s 20
+300 360 430 451 
+f</pre>
+
         </div><!-- description-display-box -->
         <a name="JQ4"></a>
         <p><b>Peso:</b> 1</p>
@@ -404,9 +715,9 @@ f
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2013">
-                <input type="hidden" name="tst_password" value="9b52ad3257e934929844933048077418f77a488a">
-                <input type="hidden" name="id_problema" value="2138">
+                <input type="hidden" name="id_prova" value="2079">
+                <input type="hidden" name="tst_password" value="15d2dd5df56307ad60149b3798945dd6452e42e4">
+                <input type="hidden" name="id_problema" value="1415">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
@@ -415,14 +726,105 @@ f
                 <input type="submit" name="avaliar" value="Enviar Resposta">
             </form>
     </div><!-- problem-try-ct -->
+    <div class="problem-try-ct">
+        <a name="Q5"></a>
+        <h3>Questão 5: Árvore binária (ABB) - Contagem de nós</h3>
+        <div class="description-display-box">
+<p>Faça um programa que calcula a quantidade de nós em uma árvore binária. Seu programa também deve exibir a diferença de nós da sub-árvore esquerda com a sub-árvore direita da raiz (esquerda menos direita). A leitura dos valores deve ser feita até que o valor -1 seja lido (ele representará que a entrada acabou).</p>
+<p>A quantidade de nós numa árvore vazia é zero.</p>
+<p>Não é permitido usar atributos que indiquem quantidade de nós na árvore e nem no nó.</p>
+<p>Entradas:</p>
+<ol>
+<li>Valores (inteiros) a inserir na árvore.</li>
+</ol>
+<p>Saídas:</p>
+<ol>
+<li>Quantidade de nós da árvore.</li>
+<li>Diferença de nós da sub-árvore esquerda com a sub-árvore direita da raiz.</li>
+</ol>
+<p>Exemplo de Entrada:</p>
+<pre>45 30 10 69 5 187 100 50 25 2 -1</pre>
+<p>Exemplo de Saída:</p>
+<pre>10 1</pre>
+        </div><!-- description-display-box -->
+        <a name="JQ5"></a>
+        <p><b>Peso:</b> 1</p>
+            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
+                <label style="background: #F9F9F9">Nova Resposta:</label>
+                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
+                <input type="file" name="arquivo" id="arquivo" required="required">
+                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
+                <input type="hidden" name="id_prova" value="2079">
+                <input type="hidden" name="tst_password" value="15d2dd5df56307ad60149b3798945dd6452e42e4">
+                <input type="hidden" name="id_problema" value="1428">
+                <input type="hidden" name="idUsuario" value="6644">
+                <input type="hidden" name="nroTentativa" value="1">
+                <input type="hidden" name="atenuacao" value="1">
+                <input type="hidden" name="nroQuestao" value="5">
+                <input type="hidden" name="_action" value="save">
+                <input type="submit" name="avaliar" value="Enviar Resposta">
+            </form>
+    </div><!-- problem-try-ct -->
+    <div class="problem-try-ct">
+        <a name="Q6"></a>
+        <h3>Questão 6: Árvore ABB - Eficiência da busca</h3>
+        <div class="description-display-box">
+<p>A árvore binária de busca serve para reduzir os passos necessários na recuperação de informações de um conjunto grande. Para investigar essa eficiência você vai implementar uma árvore com as operações de inserção e busca, de tal forma que seja possível saber o número de nós visitados durante uma busca na árvore.</p>
+<p><a href="/exemplos/abb-334ae6bd.cpp">Este código</a> já tem um começo de implementação, em que a função principal já está pronta, e também está implementado um tipo de dados que o programa vai usar para armazenar na árvore. Esse tipo consiste de uma chave (número inteiro) e um valor (texto). Você pode alterar a função principal se decidir que não deseja usar manipulação de exceções, porém o programa deverá continuar funcionando do mesmo jeito.</p>
+<p>Entradas:</p>
+<p>O programa consiste em um laço com as opções de <u>inserção</u>, <u>busca</u>, <u>escrita em ordem</u> e <u>encerramento</u>. A operação de escrita não é importante na nota. Se você decidir implementar, adicione o comando para escrever na função principal. As opções são identificados por letras seguidas de parâmetros, a saber:</p>
+<ol>
+<li>i - para <b>inserir</b> uma informação na árvore. A letra i deve ser seguida da chave (número inteiro) e valor (palavra).</li>
+<li>b - para <b>buscar</b> uma informação na árvore. A letra b deve ser seguida da chave a ser buscada.</li>
+<li>e - para escrever o conteúdo da árvore, em ordem.</li>
+<li>f - para finalizar a execução do programa.</li>
+</ol>
+<p>Saídas:</p>
+<p>A operação de inserção não produz saída. A operação de busca escreve o valor associado à chave, seguida do número de nós visitados na árvore durante a busca. Caso a informação busca não esteja na árvore, a função principal escreve "INEXISTENTE" no lugar do valor. A operação de escrever escreve todos os valores da árvore e <b>não tem influência na avaliação</b>.</p>
+<p>Exemplo de Entrada:</p>
+<pre>i 2 dois
+i 5 cinco
+i 6 seis
+i 4 quatro
+i 1 um
+i 3 tres
+b 1
+b 3
+b 7
+b 2
+f</pre>
+<p>Exemplo de Saída:</p>
+<pre>um 2
+tres 4
+INEXISTENTE 3
+dois 1</pre>
+        </div><!-- description-display-box -->
+        <a name="JQ6"></a>
+        <p><b>Peso:</b> 1</p>
+            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
+                <label style="background: #F9F9F9">Nova Resposta:</label>
+                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
+                <input type="file" name="arquivo" id="arquivo" required="required">
+                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
+                <input type="hidden" name="id_prova" value="2079">
+                <input type="hidden" name="tst_password" value="15d2dd5df56307ad60149b3798945dd6452e42e4">
+                <input type="hidden" name="id_problema" value="1670">
+                <input type="hidden" name="idUsuario" value="6644">
+                <input type="hidden" name="nroTentativa" value="1">
+                <input type="hidden" name="atenuacao" value="1">
+                <input type="hidden" name="nroQuestao" value="6">
+                <input type="hidden" name="_action" value="save">
+                <input type="submit" name="avaliar" value="Enviar Resposta">
+            </form>
+    </div><!-- problem-try-ct -->
     <div style="clear: both"></div>
 </div><!-- problem-try-ct -->
 </div><!-- prova -->
 <script type="text/javascript">
-    var serverTime = 1713392637000;
+    var serverTime = 1723295246000;
     var localTime = +Date.now();
     var timeDiff = serverTime - localTime;
-    var closingTime = 1715180400000;
+    var closingTime = 1723604399000;
     var nomeUsuario = "Lucas Henrique Lopes Costa";
     $('#usuario').text(nomeUsuario);
     if (true) {
