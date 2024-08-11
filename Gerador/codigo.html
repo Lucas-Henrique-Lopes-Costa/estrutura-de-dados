@@ -121,473 +121,194 @@
     <div id="usuario">?</div><br>
     <b>Notas</b>:<br>
     <span id="notas">
-        <a style="color: #FFF" href="#Q1">Q1: 100</a><br>
+        <a style="color: #FFF" href="#Q1">Q1: ?</a><br>
         <a style="color: #FFF" href="#Q2">Q2: ?</a><br>
         <a style="color: #FFF" href="#Q3">Q3: ?</a><br>
         <a style="color: #FFF" href="#Q4">Q4: ?</a><br>
         <a style="color: #FFF" href="#Q5">Q5: ?</a><br>
         <a style="color: #FFF" href="#Q6">Q6: ?</a><br>
-Total: 17    </span><br>
+        <a style="color: #FFF" href="#Q7">Q7: ?</a><br>
+        <a style="color: #FFF" href="#Q8">Q8: ?</a><br>
+        <a style="color: #FFF" href="#Q9">Q9: ?</a><br>
+Total: 0    </span><br>
 </div>
 <div id="prova">
-    <h1>Atividade Prática de ABB</h1>
+    <h1>Atividade Prática de AVL</h1>
     <p><b>Prova Aberta Até:</b> 13/08/2024 23:59:59</p>
     <p><b>Número Máximo de Tentativas:</b> 6</p>
     <p><b>Atenuação da Nota por Tentativa:</b> 0%</p>
     <p><b>Instruções para a prova:</b> A prova é individual. Desligue seu celular. Não converse com os colegas. Não fique olhando para a tela dos colegas.</p>
     <div class="problem-try-ct">
         <a name="Q1"></a>
-        <h3>Questão 1: Altura de Árvore Binária (ABB)</h3>
+        <h3>Questão 1: Estrutura de dados AVL recursiva - Ferramentas</h3>
         <div class="description-display-box">
-<p>Utilizando como base o <a href="/exemplos/abb-9ec2b549.cpp">código fornecido</a> pelos professores, implemente um método para calcular a altura de uma árvore binária. Utilize o método implementado para apresentar a altura de uma dada árvore, a cada inserção ou remoção feita. A aplicação principal já faz os testes necessários, faltando apenas o método solicitado. Você pode implementar métodos auxiliares privados, se necessário.</p>
+<p>Uma loja de ferramentas decidiu mudar sua estratégia de vendas e, sempre que um cliente pergunta por uma ferramenta, o vendedor oferece a de maior potência que tiver na loja. As ferramentas estão cadastradas com uma chave, o nome da ferramenta, a marca e a potência. Utilizando o <a href="/exemplos/avl-a7d397d7.cpp">código fornecido</a>, implemente um árvore AVL com as funções de inserir e remover elementos. A ideia principal do problema é que implementação da remoção seja utilizando recursão, não sendo necessário o uso da função transplanta. A estratégia de remoção de elementos que não estejam em nós folhas é a substituição pelo elemento posterior (sucessor). </p>
+<p>
+O código fornecido já tem o menu de entrada e o método de impressão. <strong>Não</strong> altere essas funções. O caminho mais fácil para a solução do exercício é não alterar a assinaturas das funções, dessa forma, não resultará em conflito com o código fornecido. 
+O dado a ser armazenado na árvore é composto por uma <b>chave</b> do tipo <i>inteiro</i>, o <b>nome da ferramenta</b> do tipo <i>string</i>, a <b>marca</b> do tipo <i>string</i> e  a <b>potência</b> do tipo <i>inteiro</i>. Não existem ferramentas diferentes com a mesma chave. </p>
 <p>Entradas:</p>
 <ol>
-<li>Número de elementos a serem inseridos na árvore.</li>
-<li>Elementos a serem inseridos na árvore.</li>
-<li>Número de elementos a serem removidos da árvore.</li>
-<li>Elementos a serem removidos da árvore.</li>
+<li> i - para <b>inserir</b> elemento : deve ler chave [inteiro] , nome da ferramenta [string], marca [string] e a potência [inteiro]</li>
+<li> r - para <b>remover</b> elemento : deve ler chave [inteiro] </li>
+<li> b - para <b>buscar</b> elemento : deve ler chave [inteiro] </li>
+<li> l - para fazer o <b>levantamento</b> da marca com maior potência de uma dada ferramenta : deve ler nome da ferramenta [string]</li>
+<li> e - para <b>imprimir</b> árvore  </li>
+<li> f - finalizar </li>
 </ol>
 <p>Saídas:</p>
 <ol>
-<li>Impressão da altura da árvore após cada inserção.</li>
-<li>Impressão da árvore final  (usando percorreEmOrdem) após inserções.</li>
-<li>Impressão da altura da árvore após cada remoção.</li>
-<li>Impressão da árvore final (usando percorreEmOrdem) após remoções.</li>
+<li> i - inserir elemento : A operação de inserção <b>não</b> produz saída</li>
+<li> r - remover elemento : A operação de remoção <b>não</b> produz saída</li>
+<li> b - buscar elemento : A operação de busca escreve a frase: "Informações sobre a ferramenta: ([chave],[nome],[marca],[potencia])", em que [chave], [nome], [marca] e [potencia] devem ser substituídos pela respectiva chave, nome da ferramenta, marca da ferramenta e potência da ferramenta</li>
+<li> l - levantamento de ferramenta: Imprime: "Levantamento do ferramenta [ferramenta]: [marca]", em que [ferramenta] é dada como entrada para o levantamento e  [marca] deve ser substituída pela marca da ferramenta mais potente -- no caso de haver mais de uma marca com a mesma potência, o resultado deverá mostrar a marca da ferramenta de menor chave</li>
+<li> e - imprimir árvore : imprime a árvore seguindo o padrão de formatação tree </li>
+<li> f - finalizar : finaliza o programa </li>
 </ol>
-<p>Exemplo de Entrada:</p>
-<pre>
-20
-1 23 83 4 2 11 20 30 40 50 8 9 18 12 13 15 17 31 41 51
-10
-23 4 11 30 50 9 12 17 83 2
-</pre>
-<p>Exemplo de Saída:</p>
-<pre>
-1 2 3 3 4 4 5 5 5 6 6 6 6 7 8 9 10 10 10 10 
-1/0 2/3 4/2 8/4 9/5 11/3 12/6 13/7 15/8 17/9 18/5 20/4 23/1 30/3 31/5 40/4 41/6 50/5 51/6 83/2 
-10 10 9 9 9 9 8 7 7 7 
-1/0 8/2 13/5 15/6 18/4 20/3 31/1 40/2 41/4 51/3 
-</pre>
 
 <p>Exemplo de Entrada:</p>
 <pre>
-10
-10 9 8 7 6 5 4 3 2 1
-5
-9 7 5 3 1
+i 5 tupia Makita 650
+i 7 serra_circular DeWalt 200
+i 9 lixadeira Vonder 275
+i 6 tupia Fort 1200
+i 11 lixadeira Skill 250
+i 42 serra_sabre Makita 850
+i 43 serra_circular Bosch 200
+i 44 furadeira Fort 650
+i 45 esmerilhadeira Black&Decker 650
+i 46 furadeira  Schulz 500
+i 101 martelete DeWalt 500
+i 103 serra_circular Fort 200
+e
+b 45
+l lixadeira
+l serra_circular
+f
 </pre>
 <p>Exemplo de Saída:</p>
 <pre>
-1 2 3 4 5 6 7 8 9 10 
-1/9 2/8 3/7 4/6 5/5 6/4 7/3 8/2 9/1 10/0 
-9 8 7 6 5 
-2/4 4/3 6/2 8/1 10/0 
+(43,serra_circular)
+ ├e─(7,serra_circular)
+ │   ├e─(5,tupia)
+ │   │   └d─(6,tupia)
+ │   └d─(11,lixadeira)
+ │       ├e─(9,lixadeira)
+ │       └d─(42,serra_sabre)
+ └d─(45,esmerilhadeira)
+     ├e─(44,furadeira)
+     └d─(101,martelete)
+         ├e─(46,furadeira)
+         └d─(103,serra_circular)
+Elemento buscado: (45,esmerilhadeira,Black&Decker,650)
+Levantamento do ferramenta lixadeira: Vonder
+Levantamento do ferramenta serra_circular: DeWalt
+</pre>
+<p>Exemplo de Entrada 2:</p>
+<pre>
+i 5 tupia Makita 650
+i 7 serra_circular DeWalt 200
+i 9 lixadeira Vonder 275
+i 6 tupia Fort 1200
+i 11 lixadeira Skill 250
+i 42 serra_sabre Makita 850
+i 43 serra_circular Bosch 200
+i 44 furadeira Fort 650
+i 45 esmerilhadeira Black&Decker 650
+i 46 furadeira  Schulz 500
+i 101 martelete DeWalt 500
+i 103 serra_circular Fort 200
+e
+b 45
+r 45
+b 45
+r 43
+r 7
+i 303 martelete Fort 600
+i 404 martelete Schulz 500
+i 505 martelete Makita 550
+e
+l lixadeira
+l serra_circular
+l martelete
+f
 </pre>
 
+<p>Exemplo de Saída 2:</p>
+<pre>
+(43,serra_circular)
+ ├e─(7,serra_circular)
+ │   ├e─(5,tupia)
+ │   │   └d─(6,tupia)
+ │   └d─(11,lixadeira)
+ │       ├e─(9,lixadeira)
+ │       └d─(42,serra_sabre)
+ └d─(45,esmerilhadeira)
+     ├e─(44,furadeira)
+     └d─(101,martelete)
+         ├e─(46,furadeira)
+         └d─(103,serra_circular)
+Elemento buscado: (45,esmerilhadeira,Black&Decker,650)
+Erro na busca: elemento não encontrado!
+(44,furadeira)
+ ├e─(9,lixadeira)
+ │   ├e─(5,tupia)
+ │   │   └d─(6,tupia)
+ │   └d─(11,lixadeira)
+ │       └d─(42,serra_sabre)
+ └d─(303,martelete)
+     ├e─(101,martelete)
+     │   ├e─(46,furadeira)
+     │   └d─(103,serra_circular)
+     └d─(404,martelete)
+         └d─(505,martelete)
+Levantamento do ferramenta lixadeira: Vonder
+Levantamento do ferramenta serra_circular: Fort
+Levantamento do ferramenta martelete: Fort
+</pre>
 
+<p>Exemplo de Entrada 3:</p>
+<pre>
+i 5 tupia Makita 1200
+i 7 serra_circular DeWalt 200
+i 9 lixadeira Vonder 250
+i 6 tupia Fort 1200
+i 11 lixadeira Skill 250
+i 42 serra_sabre Makita 850
+i 43 serra_circular Bosch 250
+i 44 furadeira Fort 650
+l lixadeira
+l tupia
+e
+f
+</pre>
+<p>Exemplo de Saída 3:</p>
+<pre>
+Levantamento do ferramenta lixadeira: Vonder
+Levantamento do ferramenta tupia: Makita
+(7,serra_circular)
+ ├e─(5,tupia)
+ │   └d─(6,tupia)
+ └d─(11,lixadeira)
+     ├e─(9,lixadeira)
+     └d─(43,serra_circular)
+         ├e─(42,serra_sabre)
+         └d─(44,furadeira)
+</pre>
+<br>
+<strong>Observação</strong>: para baixar o arquivo, clique com o botão direito do mouse, depois clique em "salvar link como" e escolha uma pasta do seu computador. Não tente abrir o código no navegador e copiar o texto. Isso resultará em mudança na codificação do texto de UTF-8 para ISO, deformando a saída formatada da árvore.
         </div><!-- description-display-box -->
         <a name="JQ1"></a>
         <p><b>Peso:</b> 1</p>
-        <p><b>Última tentativa realizada em:</b> 10/08/2024 09:47:51</p>
-        <p><b>Tentativas:</b> 1 de 6</p>
-        <p><b>Nota (0 a 100):</b> 100</p>
-        <p><b>Status ou Justificativa de Nota:</b> Nenhum erro encontrado.</p>
-        <button onClick="openDivAsDialog('lastTrial1103');">Ver Código da Última Tentativa</button>
-        <div style="height: 6px"></div>
-        <div style="display:none" id='lastTrial1103'>
-            <textarea class="cpp-code-view" style="font-family: monospace">#include &lt;iostream&gt;
-#include &lt;cstdlib&gt;
-
-using namespace std;
-
-typedef int Dado; // Facilita a troca de tipo, se necessário, por exemplo, para float ou string
-
-// Enumeração para identificar a posição do nó na árvore
-enum posicao
-{
-  dir,
-  esq
-};
-
-// Classe que representa um nó da árvore binária de busca (ABB)
-class noh
-{
-  friend class abb; // A classe abb pode acessar os membros privados de noh
-private:
-  Dado valor; // Valor armazenado no nó
-  noh *esq;   // Ponteiro para o filho à esquerda
-  noh *dir;   // Ponteiro para o filho à direita
-  noh *pai;   // Ponteiro para o pai do nó
-public:
-  noh(Dado d = 0); // Construtor que inicializa o nó com um valor
-  ~noh();          // Destrutor que desaloca memória dos filhos
-};
-
-// Implementação do construtor da classe noh
-noh::noh(Dado d)
-{
-  valor = d;
-  esq = NULL; // Inicializa o ponteiro da esquerda como NULL
-  dir = NULL; // Inicializa o ponteiro da direita como NULL
-  pai = NULL; // Inicializa o ponteiro do pai como NULL
-}
-
-// Implementação do destrutor da classe noh
-noh::~noh()
-{
-  // Chama recursivamente o destrutor para os nós filhos
-  delete esq;
-  delete dir;
-}
-
-// Classe que representa a árvore binária de busca (ABB)
-class abb
-{
-private:
-  noh *raiz; // Ponteiro para a raiz da árvore
-  // Métodos auxiliares privados para percorrer a árvore e encontrar mínimo/máximo
-  void percorreEmOrdemAux(noh *atual, int nivel);
-  void percorrePreOrdemAux(noh *atual);
-  void percorrePosOrdemAux(noh *atual);
-  noh *minimoAux(noh *raizSub);
-  noh *maximoAux(noh *raizSub);
-  // Método auxiliar privado para substituir um nó na árvore
-  void transplanta(noh *antigo, noh *novo);
-  // Método auxiliar privado para calcular a altura de um nó na árvore
-  int calculaAlturaAux(noh *atual);
-
-public:
-  abb() { raiz = NULL; }   // Construtor inicializa a árvore vazia
-  ~abb();                  // Destrutor que desaloca a memória da árvore
-  void insere(Dado d);     // Método para inserir um elemento na árvore
-  void remove(Dado d);     // Método para remover um elemento da árvore
-  noh *busca(Dado d);      // Método para buscar um elemento na árvore
-  Dado minimo();           // Método para encontrar o menor valor na árvore
-  Dado maximo();           // Método para encontrar o maior valor na árvore
-  void percorreEmOrdem();  // Método para percorrer a árvore em ordem (in-order)
-  void percorrePreOrdem(); // Método para percorrer a árvore em pré-ordem (pre-order)
-  void percorrePosOrdem(); // Método para percorrer a árvore em pós-ordem (post-order)
-  int calculaAltura();     // Método para calcular a altura da árvore
-};
-
-// Destrutor da classe abb que deleta a raiz e, consequentemente, todos os nós
-abb::~abb()
-{
-  delete raiz;
-}
-
-// Método auxiliar recursivo que calcula a altura da subárvore enraizada em 'atual'
-int abb::calculaAlturaAux(noh *atual)
-{
-  if (atual == NULL)
-  {
-    // Retorna 0 para que folhas tenham altura 1
-    return 0;
-  }
-  else
-  {
-    // Calcula a altura das subárvores esquerda e direita
-    int alturaEsq = calculaAlturaAux(atual-&gt;esq);
-    int alturaDir = calculaAlturaAux(atual-&gt;dir);
-    // A altura do nó atual é 1 + a maior altura entre seus filhos
-    return 1 + max(alturaEsq, alturaDir);
-  }
-}
-
-// Método público que chama o auxiliar para calcular a altura da árvore a partir da raiz
-int abb::calculaAltura()
-{
-  return calculaAlturaAux(raiz);
-}
-
-// Método para inserir um novo nó na árvore
-void abb::insere(Dado d)
-{
-  noh *novo = new noh(d); // Cria um novo nó com o valor fornecido
-  posicao posInsercao;    // Variável para guardar a posição de inserção
-
-  // Primeiro caso: se a árvore está vazia, o novo nó será a raiz
-  if (raiz == NULL)
-  {
-    raiz = novo;
-  }
-  else
-  {
-    noh *atual = raiz;
-    noh *anterior;
-
-    // Loop para encontrar o ponto de inserção
-    while (atual != NULL)
-    {
-      anterior = atual;
-      if (atual-&gt;valor &gt; d)
-      { // Se o valor é menor, vá para a esquerda
-        atual = atual-&gt;esq;
-        posInsercao = esq;
-      }
-      else
-      { // Se o valor é maior ou igual, vá para a direita
-        atual = atual-&gt;dir;
-        posInsercao = dir;
-      }
-    }
-
-    // Conecta o novo nó ao pai
-    novo-&gt;pai = anterior;
-    if (posInsercao == dir)
-    {
-      anterior-&gt;dir = novo;
-    }
-    else
-    {
-      anterior-&gt;esq = novo;
-    }
-  }
-
-  // Após a inserção, imprime a altura atual da árvore
-  cout &lt;&lt; calculaAltura() &lt;&lt; &quot; &quot;;
-}
-
-// Método para buscar um nó com determinado valor na árvore
-noh *abb::busca(Dado d)
-{
-  noh *atual = raiz;
-
-  // Loop para percorrer a árvore até encontrar o valor ou chegar ao fim
-  while (atual != NULL)
-  {
-    if (atual-&gt;valor == d)
-    {
-      return atual; // Retorna o nó se encontrar o valor
-    }
-    else if (atual-&gt;valor &gt; d)
-    {
-      atual = atual-&gt;esq; // Vá para a esquerda se o valor é menor
-    }
-    else
-    {
-      atual = atual-&gt;dir; // Vá para a direita se o valor é maior
-    }
-  }
-
-  return atual; // Retorna NULL se o valor não está na árvore
-}
-
-// Método para encontrar o menor valor na árvore
-Dado abb::minimo()
-{
-  if (raiz == NULL)
-  {
-    cerr &lt;&lt; &quot;Árvore vazia!&quot; &lt;&lt; endl;
-    exit(EXIT_FAILURE);
-  }
-  else
-  {
-    noh *nohMin = minimoAux(raiz); // Chama o auxiliar para encontrar o mínimo
-    return nohMin-&gt;valor;
-  }
-}
-
-// Método auxiliar que encontra o menor valor em uma subárvore
-noh *abb::minimoAux(noh *raizSub)
-{
-  while (raizSub-&gt;esq != NULL)
-  {
-    raizSub = raizSub-&gt;esq;
-  }
-  return raizSub;
-}
-
-// Método para encontrar o maior valor na árvore
-Dado abb::maximo()
-{
-  if (raiz == NULL)
-  {
-    cerr &lt;&lt; &quot;Árvore vazia!&quot; &lt;&lt; endl;
-    exit(EXIT_FAILURE);
-  }
-  else
-  {
-    noh *nohMax = maximoAux(raiz); // Chama o auxiliar para encontrar o máximo
-    return nohMax-&gt;valor;
-  }
-}
-
-// Método auxiliar que encontra o maior valor em uma subárvore
-noh *abb::maximoAux(noh *raizSub)
-{
-  while (raizSub-&gt;dir != NULL)
-  {
-    raizSub = raizSub-&gt;dir;
-  }
-  return raizSub;
-}
-
-// Método para substituir um nó antigo por um novo na árvore
-void abb::transplanta(noh *antigo, noh *novo)
-{
-  if (raiz == antigo)
-  {
-    raiz = novo;
-  }
-  else if (antigo == antigo-&gt;pai-&gt;esq)
-  {
-    antigo-&gt;pai-&gt;esq = novo;
-  }
-  else
-  {
-    antigo-&gt;pai-&gt;dir = novo;
-  }
-  if (novo != NULL)
-  {
-    novo-&gt;pai = antigo-&gt;pai;
-  }
-}
-
-// Método para remover um nó da árvore
-void abb::remove(Dado dado)
-{
-  noh *nohRemover = busca(dado); // Busca o nó a ser removido
-
-  if (nohRemover == NULL)
-  {
-    cerr &lt;&lt; &quot;valor não está na árvore!&quot; &lt;&lt; endl;
-  }
-  else
-  {
-    if (nohRemover-&gt;esq == NULL)
-    { // Se não tem filho à esquerda
-      transplanta(nohRemover, nohRemover-&gt;dir);
-    }
-    else if (nohRemover-&gt;dir == NULL)
-    { // Se não tem filho à direita
-      transplanta(nohRemover, nohRemover-&gt;esq);
-    }
-    else
-    {                                             // Nó tem dois filhos
-      noh *sucessor = minimoAux(nohRemover-&gt;dir); // Encontra o sucessor
-
-      if (sucessor-&gt;pai != nohRemover)
-      {
-        transplanta(sucessor, sucessor-&gt;dir);
-        sucessor-&gt;dir = nohRemover-&gt;dir;
-        sucessor-&gt;dir-&gt;pai = sucessor;
-      }
-
-      transplanta(nohRemover, sucessor);
-      sucessor-&gt;esq = nohRemover-&gt;esq;
-      sucessor-&gt;esq-&gt;pai = sucessor;
-    }
-
-    // Após a remoção, desconecta os ponteiros e deleta o nó
-    nohRemover-&gt;esq = NULL;
-    nohRemover-&gt;dir = NULL;
-    delete nohRemover;
-  }
-
-  // Após a remoção, imprime a altura atual da árvore
-  cout &lt;&lt; calculaAltura() &lt;&lt; &quot; &quot;;
-}
-
-// Método para percorrer a árvore em ordem (in-order) e imprimir os valores
-void abb::percorreEmOrdem()
-{
-  percorreEmOrdemAux(raiz, 0); // Chama o auxiliar com a raiz e nível inicial 0
-  cout &lt;&lt; endl;
-}
-
-// Método auxiliar que percorre a árvore em ordem (in-order)
-void abb::percorreEmOrdemAux(noh *atual, int nivel)
-{
-  if (atual != NULL)
-  {
-    percorreEmOrdemAux(atual-&gt;esq, nivel + 1);   // Primeiro visita a subárvore esquerda
-    cout &lt;&lt; atual-&gt;valor &lt;&lt; &quot;/&quot; &lt;&lt; nivel &lt;&lt; &quot; &quot;; // Depois processa o nó atual
-    percorreEmOrdemAux(atual-&gt;dir, nivel + 1);   // Finalmente, visita a subárvore direita
-  }
-}
-
-// Método para percorrer a árvore em pré-ordem (pre-order) e imprimir os valores
-void abb::percorrePreOrdem()
-{
-  percorrePreOrdemAux(raiz);
-  cout &lt;&lt; endl;
-}
-
-// Método auxiliar que percorre a árvore em pré-ordem (pre-order)
-void abb::percorrePreOrdemAux(noh *atual)
-{
-  if (atual != NULL)
-  {
-    cout &lt;&lt; atual-&gt;valor &lt;&lt; &quot; &quot;;     // Primeiro processa o nó atual
-    percorrePreOrdemAux(atual-&gt;esq); // Depois visita a subárvore esquerda
-    percorrePreOrdemAux(atual-&gt;dir); // Finalmente, visita a subárvore direita
-  }
-}
-
-// Método para percorrer a árvore em pós-ordem (post-order) e imprimir os valores
-void abb::percorrePosOrdem()
-{
-  percorrePosOrdemAux(raiz);
-  cout &lt;&lt; endl;
-}
-
-// Método auxiliar que percorre a árvore em pós-ordem (post-order)
-void abb::percorrePosOrdemAux(noh *atual)
-{
-  if (atual != NULL)
-  {
-    percorrePosOrdemAux(atual-&gt;esq); // Primeiro visita a subárvore esquerda
-    percorrePosOrdemAux(atual-&gt;dir); // Depois visita a subárvore direita
-    cout &lt;&lt; atual-&gt;valor &lt;&lt; &quot; &quot;;     // Finalmente, processa o nó atual
-  }
-}
-
-// Função principal (main) que realiza a leitura dos dados, inserção e remoção na árvore
-int main()
-{
-  abb minhaArvore; // Cria uma nova árvore
-  int valor;       // Variável para armazenar os valores de entrada
-  int num;         // Variável para armazenar a quantidade de elementos
-
-  // Leitura do número de elementos a serem inseridos
-  cin &gt;&gt; num;
-
-  // Loop para inserir os elementos na árvore
-  for (int i = 0; i &lt; num; i++)
-  {
-    cin &gt;&gt; valor;
-    minhaArvore.insere(valor); // Insere o valor e imprime a altura após cada inserção
-  }
-  cout &lt;&lt; endl;
-  minhaArvore.percorreEmOrdem(); // Imprime a árvore em ordem após todas as inserções
-
-  // Leitura do número de elementos a serem removidos
-  cin &gt;&gt; num;
-
-  // Loop para remover os elementos da árvore
-  for (int i = 0; i &lt; num; i++)
-  {
-    cin &gt;&gt; valor;
-    minhaArvore.remove(valor); // Remove o valor e imprime a altura após cada remoção
-  }
-  cout &lt;&lt; endl;
-  minhaArvore.percorreEmOrdem(); // Imprime a árvore em ordem após todas as remoções
-
-  return 0; // Retorna 0 para indicar que o programa terminou com sucesso
-}
-</textarea>
-        </div><!-- ultima tentativa -->
             <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
                 <label style="background: #F9F9F9">Nova Resposta:</label>
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2079">
-                <input type="hidden" name="tst_password" value="15d2dd5df56307ad60149b3798945dd6452e42e4">
-                <input type="hidden" name="id_problema" value="1103">
+                <input type="hidden" name="id_prova" value="2078">
+                <input type="hidden" name="tst_password" value="ce7c470432ccce35f28d20494b7d6a035d08260f">
+                <input type="hidden" name="id_problema" value="1801">
                 <input type="hidden" name="idUsuario" value="6644">
-                <input type="hidden" name="nroTentativa" value="2">
+                <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
                 <input type="hidden" name="nroQuestao" value="1">
                 <input type="hidden" name="_action" value="save">
@@ -596,30 +317,152 @@ int main()
     </div><!-- problem-try-ct -->
     <div class="problem-try-ct">
         <a name="Q2"></a>
-        <h3>Questão 2: Árvore ABB - Altura de um Nó</h3>
+        <h3>Questão 2: Estrutura de dados AVL recursiva - Festival de Cinema</h3>
         <div class="description-display-box">
-<img style="float:right; margin:2em" width="240" height="260" src="/public/img/abb-altura-de-noh2.png">
-<p>O <a href="/exemplos/abb-6e0f8f87.cpp">código fornecido</a> implementa uma Árvore Binária de Busca, com operações de inserir, buscar e percorrer escrevendo. Crie um método (e seus auxiliares) para calcular a altura de um nó. A figura à direita mostra uma árvore com anotação da altura de cada nó em vermelho. A altura de uma folha é zero.</p>
-<p>Usando esses métodos, o programa deverá ser modificado para ler vários valores e escrever a altura dos nós em que os valores estão. Suponha que os nós sempre estarão na árvore. A operação de escrita da altura deve estar no programa e não na classe.</p>
-<p>A operação de percorrer escrevendo, está disponível para ajudar na depuração, se necessário.</p>
+<p>Tubiacanga irá sediar o Festival de Cinema Brasileiro no ano de 2022 e os responsáveis pelo festival decidiram fazer uma série de levantamentos de dados para, a partir disso, organizar um belíssimo festival. Para iniciar o levantamento, todos os festivais já realizados serão cadastrados com o nome da cidade em que a edição ocorreu, o ano e a quantidade de filmes que foram apresentados. Utilizando o <a href="/exemplos/avl-a7234709.cpp">código fornecido</a> implemente um árvore AVL com as funções de inserir e remover elementos. A ideia principal do problema é que implementação da remoção seja utilizando recursão, não sendo necessário o uso da função transplanta. A estratégia de remoção de elementos que não estejam em nós folhas é a substituição pelo elemento posterior (sucessor). </p>
+<p>
+O código fornecido já tem o menu de entrada e o método de impressão. <strong>Não</strong> altere essas funções. O caminho mais fácil para a solução do exercício é não alterar a assinaturas das funções, dessa forma, não resultará em conflito com o código fornecido. 
+O dado a ser armazenado na árvore é composto por um <b>ano</b> do tipo <i>inteiro</i>, o <b>nome da cidade em que o evento foi realizado</b> do tipo <i>string</i> e a <b>quantidade de filmes apresentados</b> do tipo <i>inteiro</i>. Não existe mais de uma edição em um dado ano. </p>
 <p>Entradas:</p>
 <ol>
-<li>A quantidade de valores a inserir na árvore.</li>
-<li>Os valores (inteiros) a serem inseridos.</li>
-<li>A quantidade de valores a serem buscados na árvore.</li>
-<li>Os valores (inteiros, pertencentes à árvore) a serem buscados.</li>
+<li> i - para <b>inserir</b> elemento : deve ler ano [inteiro] , nome da cidade [string] e a quantidade de filmes apresentados [inteiro]</li>
+<li> r - para <b>remover</b> elemento : deve ler ano [inteiro] </li>
+<li> b - para <b>buscar</b> elemento : deve ler ano [inteiro] </li>
+<li> l - para fazer o <b>levantamento</b> do ano com a maior quantidade de filmes apresentados</li>
+<li> e - para <b>imprimir</b> árvore  </li>
+<li> f - finalizar </li>
 </ol>
 <p>Saídas:</p>
 <ol>
-<li>A altura do nó que contém cada um dos valores buscados.</li>
+<li> i - inserir elemento : A operação de inserção <b>não</b> produz saída</li>
+<li> r - remover elemento : A operação de remoção <b>não</b> produz saída</li>
+<li> b - buscar elemento : A operação de busca escreve a frase: "Elemento buscado: ([ano],[nome],[quantidade])", em que [ano], [nome] e [quantidade] devem ser substituídos pelo respectivo ano, nome da cidade em que o evento ocorreu e quantidade de filmes apresentados</li>
+<li> l - levantamento por ano: Imprime: "Edição com maior quantidade de filmes apresentados: [ano]", em que [ano]  deve ser substituído pelo ano com a maior quantidade filmes apresentados -- no caso de empate, deve ser impresso o mais antigo </li>
+<li> e - imprimir árvore : imprime a árvore seguindo o padrão de formatação tree </li>
+<li> f - finalizar : finaliza o programa </li>
 </ol>
+
 <p>Exemplo de Entrada:</p>
-<pre>7
-5 1 10 8 3 7 9
-3
-7 8 10</pre>
+<pre>
+i 1992 Remanso 5
+i 2011 Preciosa 12
+i 2007 Passaperto 2
+i 2002 Maramores 7
+i 2005 Roseiral 3
+i 1984 Sucupira 6
+i 1989 Santana_do_Agreste 12
+i 1998 Santana_dos_Ferros 15
+i 1985 Asa_Branca 11
+i 1988 Sensilvania 13
+e
+l 
+f
+</pre>
 <p>Exemplo de Saída:</p>
-<pre>0 1 2</pre>
+<pre>
+(2002,Maramores)
+ ├e─(1989,Santana_do_Agreste)
+ │   ├e─(1985,Asa_Branca)
+ │   │   ├e─(1984,Sucupira)
+ │   │   └d─(1988,Sensilvania)
+ │   └d─(1992,Remanso)
+ │       └d─(1998,Santana_dos_Ferros)
+ └d─(2007,Passaperto)
+     ├e─(2005,Roseiral)
+     └d─(2011,Preciosa)
+Edição com maior quantidade de filmes apresentados: 1998
+</pre>
+
+<p>Exemplo de Entrada:</p>
+<pre>
+i 1992 Remanso 5
+i 2011 Preciosa 12
+i 2007 Passaperto 2
+i 2002 Maramores 7
+i 2005 Roseiral 3
+i 1984 Sucupira 6
+i 1989 Santana_do_Agreste 12
+i 1998 Santana_dos_Ferros 15
+i 1985 Asa_Branca 11
+i 1988 Sensilvania 13
+e
+r 2005
+r 1989
+e
+f
+</pre>
+<p>Exemplo de Saída:</p>
+<pre>
+(2002,Maramores)
+ ├e─(1989,Santana_do_Agreste)
+ │   ├e─(1985,Asa_Branca)
+ │   │   ├e─(1984,Sucupira)
+ │   │   └d─(1988,Sensilvania)
+ │   └d─(1992,Remanso)
+ │       └d─(1998,Santana_dos_Ferros)
+ └d─(2007,Passaperto)
+     ├e─(2005,Roseiral)
+     └d─(2011,Preciosa)
+(2002,Maramores)
+ ├e─(1992,Remanso)
+ │   ├e─(1985,Asa_Branca)
+ │   │   ├e─(1984,Sucupira)
+ │   │   └d─(1988,Sensilvania)
+ │   └d─(1998,Santana_dos_Ferros)
+ └d─(2007,Passaperto)
+     └d─(2011,Preciosa)
+</pre>
+<p>Exemplo de Entrada:</p>
+<pre>
+i 1992 Remanso 5
+i 2011 Preciosa 12
+i 2007 Passaperto 2
+i 2002 Maramores 7
+i 2005 Roseiral 3
+i 1984 Sucupira 6
+i 1989 Santana_do_Agreste 12
+i 1998 Santana_dos_Ferros 15
+i 1985 Asa_Branca 11
+i 1988 Sensilvania 13
+e
+b 1984
+b 2000
+l
+r 1992
+r 2002
+e
+f
+</pre>
+<p>Exemplo de Saída:</p>
+<pre>
+(2002,Maramores)
+ ├e─(1989,Santana_do_Agreste)
+ │   ├e─(1985,Asa_Branca)
+ │   │   ├e─(1984,Sucupira)
+ │   │   └d─(1988,Sensilvania)
+ │   └d─(1992,Remanso)
+ │       └d─(1998,Santana_dos_Ferros)
+ └d─(2007,Passaperto)
+     ├e─(2005,Roseiral)
+     └d─(2011,Preciosa)
+Elemento buscado: (1984,Sucupira,6)
+Erro na busca: elemento não encontrado!
+Edição com maior quantidade de filmes apresentados: 1998
+(2005,Roseiral)
+ ├e─(1989,Santana_do_Agreste)
+ │   ├e─(1985,Asa_Branca)
+ │   │   ├e─(1984,Sucupira)
+ │   │   └d─(1988,Sensilvania)
+ │   └d─(1998,Santana_dos_Ferros)
+ └d─(2007,Passaperto)
+     └d─(2011,Preciosa)
+</pre>
+
+
+<br>
+<p>
+<strong>Observação</strong>: para baixar o arquivo, clique com o botão direito do mouse, depois clique em "salvar link como" e escolha uma pasta do seu computador. Não tente abrir o código no navegador e copiar o texto. Isso resultará em mudança na codificação do texto de UTF-8 para ISO, deformando a saída formatada da árvore.
+</p>
         </div><!-- description-display-box -->
         <a name="JQ2"></a>
         <p><b>Peso:</b> 1</p>
@@ -628,9 +471,9 @@ int main()
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2079">
-                <input type="hidden" name="tst_password" value="15d2dd5df56307ad60149b3798945dd6452e42e4">
-                <input type="hidden" name="id_problema" value="1396">
+                <input type="hidden" name="id_prova" value="2078">
+                <input type="hidden" name="tst_password" value="ce7c470432ccce35f28d20494b7d6a035d08260f">
+                <input type="hidden" name="id_problema" value="1800">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
@@ -641,24 +484,164 @@ int main()
     </div><!-- problem-try-ct -->
     <div class="problem-try-ct">
         <a name="Q3"></a>
-        <h3>Questão 3: Árvore binária (ABB) – Contagem de nós folha</h3>
+        <h3>Questão 3: Estrutura de dados AVL recursiva - Encontro de Motociclistas</h3>
         <div class="description-display-box">
-<p>A partir do <a href="/exemplos/abb-32c9421c.cpp">código fornecido</a>, implemente os métodos que calculam a quantidade de nós folhas em uma árvore binária. Não é necessário manter o projeto do programa exemplo. Métodos auxiliares podem ser criados. Métodos da contagem de folhas que não forem usados devem ser apagados.</p>
-<p>A quantidade de folhas numa árvore vazia é zero.</p>
+<p>A Associação Duas Rodas está organizando um encontro de motociclistas.  Os responsáveis pelo encontro decidiram fazer uma série de levantamentos de dados para, a partir disso, organizar um encontro memorável. Assim eles, irão cadastrar todas as motocicletas que participarão do evento, armazenando para isso o modelo da motocicleta, sua marca e o ano de fabricação.  Utilizando o <a href="/exemplos/avl-3543d9e9.cpp">código fornecido</a> implemente um árvore AVL com as funções de inserir e remover elementos. A ideia principal do problema é que implementação da remoção seja utilizando recursão, não sendo necessário o uso da função transplanta. A estratégia de remoção de elementos que não estejam em nós folhas é a substituição pelo elemento posterior (sucessor). Além das funções tradicionais, eles irão também implementar um método para levantamento da quantidade de motocicletas de uma dada marca que tenham sido fabricadas após um determinado ano. </p>
+<p>
+O código fornecido já tem o menu de entrada e o método de impressão. <strong>Não</strong> altere essas funções. O caminho mais fácil para a solução do exercício é não alterar a assinaturas das funções, dessa forma, não resultará em conflito com o código fornecido. 
+O dado a ser armazenado na árvore é composto por uma <b>chave</b> do tipo <i>inteiro</i>, o <b>modelo da motocicleta</b> do tipo <i>string</i>, a <b>marca da motocicleta</b> do tipo <i>string</i> e o <b>ano de fabricação</b> do tipo <i>inteiro</i>. Não existem duas motocicletas com mesma chave no sistema. </p>
 <p>Entradas:</p>
 <ol>
-<li>Número de valores a serem lidos.</li>
-<li>Valores (inteiros) a inserir na árvore.</li>
+<li> i - para <b>inserir</b> elemento : deve ler chave [inteiro] , modelo da motocicleta [string], marca da motocicleta [string]  e o ano de fabricação[inteiro]</li>
+<li> r - para <b>remover</b> elemento : deve ler chave [inteiro] </li>
+<li> b - para <b>buscar</b> elemento : deve ler chave [inteiro] </li>
+<li> l - para fazer o <b>levantamento</b> da quantidade de motocicletas de uma mesma marca fabricadas a partir de um dado ano</li>
+<li> e - para <b>imprimir</b> árvore  </li>
+<li> f - finalizar </li>
 </ol>
 <p>Saídas:</p>
-<ul>
-<li>Quantidade de nós folha.</li>
-</ul>
+<ol>
+<li> i - inserir elemento : A operação de inserção <b>não</b> produz saída</li>
+<li> r - remover elemento : A operação de remoção <b>não</b> produz saída</li>
+<li> b - buscar elemento : A operação de busca escreve a frase: "Elemento buscado:  ([modelo],[marca],[ano])", em que [modelo], [marca] e [ano] devem ser substituídos pelo respectivo modelo, marca e ano de fabricação da motocicleta</li>
+<li> l - levantamento por ano: Imprime: "Levantamento da [marca]: [quantidade]", em que [marca]  é a marca de motocicleta informada para busca e [quantidade] e o número de motocicletas fabricadas a partir do ano (também informado para o levantamento)</li>
+<li> e - imprimir árvore : imprime a árvore seguindo o padrão de formatação tree</li>
+<li> f - finalizar : finaliza o programa </li>
+</ol>
+
 <p>Exemplo de Entrada:</p>
-<pre>8
-30 15 50 41 10 60 32 45</pre>
+<pre>
+i 80 PBR Arruela 1998
+i 3 YBR IrNaMarra 1980
+i 5 TXT Ronda 1990
+i 9 ZTX Rarledavisson 1993
+i 11 SZK Suzuki 1998
+i 160 PBZ Arruela 2002
+i 15 BZB Bizon 2001
+e
+l IrNaMarra 1970
+i 8 YBZ IrNaMarra 1990
+i 22 YBW IrNaMarra 1995
+l IrNaMarra 1990
+l IrNaMarra 1970
+e
+f
+</pre>
 <p>Exemplo de Saída:</p>
-<pre>4</pre>
+<pre>
+(11,SZK)
+ ├e─(5,TXT)
+ │   ├e─(3,YBR)
+ │   └d─(9,ZTX)
+ └d─(80,PBR)
+     ├e─(15,BZB)
+     └d─(160,PBZ)
+Levantamento da marca IrNaMarra: 1
+Levantamento da marca IrNaMarra: 2
+Levantamento da marca IrNaMarra: 3
+(11,SZK)
+ ├e─(5,TXT)
+ │   ├e─(3,YBR)
+ │   └d─(9,ZTX)
+ │       └e─(8,YBZ)
+ └d─(80,PBR)
+     ├e─(15,BZB)
+     │   └d─(22,YBW)
+     └d─(160,PBZ)
+</pre>
+
+<p>Exemplo de Entrada:</p>
+<pre>
+i 80 PBR Arruela 1998
+i 3 YBR IrNaMarra 1980
+i 5 TXT Ronda 1990
+i 9 ZTX Rarledavisson 1993
+i 11 SZK Suzuki 1998
+i 160 PBZ Arruela 2002
+i 15 BZB Bizon 2001
+i 8 YBZ IrNaMarra 1990
+i 22 YBW IrNaMarra 1995
+e
+r 3
+r 80
+r 11
+e
+l IrNaMarra 1990
+l IrNaMarra 1970
+f
+</pre>
+<p>Exemplo de Saída:</p>
+<pre>
+(11,SZK)
+ ├e─(5,TXT)
+ │   ├e─(3,YBR)
+ │   └d─(9,ZTX)
+ │       └e─(8,YBZ)
+ └d─(80,PBR)
+     ├e─(15,BZB)
+     │   └d─(22,YBW)
+     └d─(160,PBZ)
+(15,BZB)
+ ├e─(8,YBZ)
+ │   ├e─(5,TXT)
+ │   └d─(9,ZTX)
+ └d─(22,YBW)
+     └d─(160,PBZ)
+Levantamento da marca IrNaMarra: 2
+Levantamento da marca IrNaMarra: 2
+</pre>
+<p>Exemplo de Entrada:</p>
+<pre>
+i 80 PBR Arruela 1998
+i 3 YBR IrNaMarra 1980
+i 5 TXT Ronda 1990
+i 9 ZTX Rarledavisson 1993
+i 11 SZK Suzuki 1998
+i 160 PBZ Arruela 2002
+i 15 BZB Bizon 2001
+i 8 YBZ IrNaMarra 1990
+i 22 YBW IrNaMarra 1995
+e
+r 3
+r 80
+r 11
+b 11
+i 11 SZZ Suzuki 1998
+i 80 PBRt Arruela 1998
+i 3 YBRX IrNaMarra 1980
+e
+b 11
+f
+</pre>
+<p>Exemplo de Saída:</p>
+<pre>
+(11,SZK)
+ ├e─(5,TXT)
+ │   ├e─(3,YBR)
+ │   └d─(9,ZTX)
+ │       └e─(8,YBZ)
+ └d─(80,PBR)
+     ├e─(15,BZB)
+     │   └d─(22,YBW)
+     └d─(160,PBZ)
+Erro na busca: elemento não encontrado!
+(15,BZB)
+ ├e─(8,YBZ)
+ │   ├e─(5,TXT)
+ │   │   └e─(3,YBRX)
+ │   └d─(9,ZTX)
+ │       └d─(11,SZZ)
+ └d─(80,PBRt)
+     ├e─(22,YBW)
+     └d─(160,PBZ)
+Elemento buscado: (11,SZZ,Suzuki,1998)
+</pre>
+
+
+<br>
+<p>
+<strong>Observação</strong>: para baixar o arquivo, clique com o botão direito do mouse, depois clique em "salvar link como" e escolha uma pasta do seu computador. Não tente abrir o código no navegador e copiar o texto. Isso resultará em mudança na codificação do texto de UTF-8 para ISO, deformando a saída formatada da árvore.
+</p>
         </div><!-- description-display-box -->
         <a name="JQ3"></a>
         <p><b>Peso:</b> 1</p>
@@ -667,9 +650,9 @@ int main()
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2079">
-                <input type="hidden" name="tst_password" value="15d2dd5df56307ad60149b3798945dd6452e42e4">
-                <input type="hidden" name="id_problema" value="1400">
+                <input type="hidden" name="id_prova" value="2078">
+                <input type="hidden" name="tst_password" value="ce7c470432ccce35f28d20494b7d6a035d08260f">
+                <input type="hidden" name="id_problema" value="1802">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
@@ -680,33 +663,124 @@ int main()
     </div><!-- problem-try-ct -->
     <div class="problem-try-ct">
         <a name="Q4"></a>
-        <h3>Questão 4: Árvore binária (ABB) - sucessor</h3>
+        <h3>Questão 4: Estrutura de dados AVL recursiva - Floricultura</h3>
         <div class="description-display-box">
-<img src="public/img/abb-3ebf316b.png" style="float: right; margin-left: 20px" width="288" height="240">
-<p>Implemente um método para encontrar o sucessor de uma chave numa árvore binária. Suponha que a chave pertence à árvore. É importante que haja um mínimo de eficiência: buscar a chave (já pronto) e depois caminhar até o sucessor, sem processar outros nós.</p>
-<p>Use <a href="/exemplos/abb-4e8d82bb.cpp">esta implementação</a> que já tem prontos métodos para inserir chave, buscar chave e escrever a árvore, além de uma interface que ativa os métodos implementados. A interface não deve ser alterada.</p>
-<p>Antes de implementar, planeje. Note que um nó que não tem filho à direita tem um sucessor que não está numa subárvore. Na árvore da figura, por exemplo, o sucessor de 7 está na raiz.</p>
+<p>Uma floricultura resolveu catalogar o seu estoque de sementes. Para isso, cada pacote de semente será registrado com nome do cultivar, marca da semente, ano de fabricação e a quantidade de itens disponíveis para venda.  Utilizando o <a href="/exemplos/avl-06532321.cpp">código fornecido</a>, implemente um árvore AVL com as funções de inserir e remover elementos. A idea principal do problema é que implementação da remoção seja utilizando recursão, não sendo necessário o uso da função transplanta. A estratégia de remoção de elementos que não estejam em nós folhas é a substituição pelo elemento posterior (sucessor). </p>
+<p>
+O código fornecido já tem o menu de entrada e o método de impressão. <strong>Não</strong> altere essas funções. O caminho mais fácil para a solução do exercício é não alterar a assinaturas das funções, dessa forma, não resultará em conflito com o código fornecido. 
+O dado a ser armazenado na árvore é composto por uma <b>chave</b> do tipo <i>inteiro</i>, o <b>nome do cultivar</b> do tipo <i>string</i>, a <b>marca da semente</b> do tipo <i>string</i>, <b>ano de fabricação</b> do tipo <i>inteiro</i> e a <b>quantidade de itens</b> disponíveis do tipo <i>inteiro</i>.  </p>
 <p>Entradas:</p>
-<p>O programa lê comandos e os executa. Os sucessores são encontrados chamando repetidamente o método que encontra um sucessor. Basta usar a interface providenciada. Os comandos são:</p>
-<ul>
-<li>f - para finalizar a execução do programa</li>
-<li>i - para inserir uma chave, seguido da chave (inteiro)</li>
-<li>e - para escrever o conteúdo da árvore, nível a nível para facilitar o entendimento da estrutura</li>
-<li>s - para escrever todos os sucessores de uma chave, seguido da chave (inteiro)</li>
-</ul>
+<ol>
+<li> i - para <b>inserir</b> elemento : deve ler chave [inteiro] , nome do cultivar [string], marca [string], ano de fabricação [inteiro] e quantidade disponível [inteiro]</li>
+<li> r - para <b>remover</b> elemento : deve ler chave [inteiro] </li>
+<li> b - para <b>buscar</b> elemento : deve ler chave [inteiro] </li>
+<li> l - para fazer o <b>levantamento</b> de quantidade de pacotes de sementes de um cultivar de uma  dada marca: deve ler duas strings (cultivar e marca) </li>
+<li> e - para <b>imprimir</b> árvore  </li>
+<li> f - finalizar </li>
+</ol>
 <p>Saídas:</p>
-<p>Cada comando produz uma saída específica. Apenas mantenha as saídas já implementadas.</p>
-<p>Exemplo de entrada e saída juntos:</p>
-<pre>i 300
-i 20
-i 430
-i 12
-i 360
-i 451
-s 20
-300 360 430 451 
-f</pre>
+<ol>
+<li> i - inserir elemento : A operação de inserção <b>não</b> produz saída</li>
+<li> r - remover elemento : A operação de remoção <b>não</b> produz saída</li>
+<li> b - buscar elemento : A operação de busca escreve a frase: "Elemento buscado: ([chave],[cultivar],[marca],[ano],[quantidade])", em que [chave], [nome], [local], [ano] e [quantidade] devem ser substituídos pela respectiva chave, nome do cultivar, marca da semente, ano de fabricação e quantidade disponível</li>
+<li> l - levantamento por localização: Imprime: "Levantamento do cultivar [cultivar]: [quantidade]", em que [cultivar] é o cultivar pesquisado e [quantidade] é a quantidade de pacotes de sementes daquele cultivar com uma dada marca</li>
+<li> e - imprimir árvore : imprime a árvore seguindo o padrão de formatação tree </li>
+<li> f - finalizar : finaliza o programa </li>
+</ol>
 
+<p>Exemplo de Entrada:</p>
+<pre>
+i 4 tomate astrix 2008 5
+i 5 tomate panun 2009 6
+i 8 rosa astrix 2010 3
+i 10 rosa panu 2013 2
+i 101 cravo astrix 2018 3
+i 201 tomate astrix 2010 5
+i 301 tomate astrix 2015 10
+i 15 manjericao tafum 2018 3
+i 18 manjericao tafum 2020 5
+e
+l manjericao tafum
+l tomate astrix
+f
+</pre>
+<p>Exemplo de Saída:</p>
+<pre>
+(10,rosa)
+ ├e─(5,tomate)
+ │   ├e─(4,tomate)
+ │   └d─(8,rosa)
+ └d─(201,tomate)
+     ├e─(18,manjericao)
+     │   ├e─(15,manjericao)
+     │   └d─(101,cravo)
+     └d─(301,tomate)
+Levantamento do cultivar manjericao: 8
+Levantamento do cultivar tomate: 20
+</pre>
+<p>Exemplo de Entrada 2:</p>
+<pre>
+i 4 tomate astrix 2008 5
+i 5 tomate panun 2009 6
+i 8 rosa astrix 2010 3
+i 10 rosa panu 2013 2
+i 101 cravo astrix 2018 3
+i 201 tomate astrix 2010 5
+i 301 tomate astrix 2015 10
+i 15 manjericao tafum 2018 3
+i 18 manjericao tafum 2020 5
+e
+b 201
+b 142
+l rosa panun
+r 8
+r 10
+r 301
+i 10 rosa panun 2013 2
+i 303 rosa panun 2014 3
+e
+l rosa panun
+f
+</pre>
+<p>Exemplo de Saída 2:</p>
+<pre>
+(10,rosa)
+ ├e─(5,tomate)
+ │   ├e─(4,tomate)
+ │   └d─(8,rosa)
+ └d─(201,tomate)
+     ├e─(18,manjericao)
+     │   ├e─(15,manjericao)
+     │   └d─(101,cravo)
+     └d─(301,tomate)
+Elemento buscado: (201,tomate,astrix,2010,5)
+Erro na busca: elemento não encontrado!
+Levantamento do cultivar rosa: 0
+(15,manjericao)
+ ├e─(5,tomate)
+ │   ├e─(4,tomate)
+ │   └d─(10,rosa)
+ └d─(101,cravo)
+     ├e─(18,manjericao)
+     └d─(201,tomate)
+         └d─(303,rosa)
+Levantamento do cultivar rosa: 5
+</pre>
+<p>Exemplo de Entrada 3:</p>
+<pre>
+e
+l cenoura isla
+b 13
+f
+</pre>
+<p>Exemplo de Saída 3:</p>
+<pre>
+*arvore vazia*
+Levantamento do cultivar cenoura: 0
+Erro na busca: elemento não encontrado!
+</pre>
+<br>
+<strong>Observação</strong>: para baixar o arquivo, clique com o botão direito do mouse, depois clique em "salvar link como" e escolha uma pasta do seu computador. Não tente abrir o código no navegador e copiar o texto. Isso resultará em mudança na codificação do texto de UTF-8 para ISO, deformando a saída formatada da árvore.
         </div><!-- description-display-box -->
         <a name="JQ4"></a>
         <p><b>Peso:</b> 1</p>
@@ -715,9 +789,9 @@ f</pre>
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2079">
-                <input type="hidden" name="tst_password" value="15d2dd5df56307ad60149b3798945dd6452e42e4">
-                <input type="hidden" name="id_problema" value="1415">
+                <input type="hidden" name="id_prova" value="2078">
+                <input type="hidden" name="tst_password" value="ce7c470432ccce35f28d20494b7d6a035d08260f">
+                <input type="hidden" name="id_problema" value="1803">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
@@ -728,24 +802,128 @@ f</pre>
     </div><!-- problem-try-ct -->
     <div class="problem-try-ct">
         <a name="Q5"></a>
-        <h3>Questão 5: Árvore binária (ABB) - Contagem de nós</h3>
+        <h3>Questão 5: Estrutura de dados AVL recursiva - ONG de Adoção de Animais</h3>
         <div class="description-display-box">
-<p>Faça um programa que calcula a quantidade de nós em uma árvore binária. Seu programa também deve exibir a diferença de nós da sub-árvore esquerda com a sub-árvore direita da raiz (esquerda menos direita). A leitura dos valores deve ser feita até que o valor -1 seja lido (ele representará que a entrada acabou).</p>
-<p>A quantidade de nós numa árvore vazia é zero.</p>
-<p>Não é permitido usar atributos que indiquem quantidade de nós na árvore e nem no nó.</p>
+<p>Uma ONG para adoção de animais resolveu catalogar os animais sob seu cuidado. Para isso, cada animal será registrado com seu nome, espécie e raça.  Utilizando o <a href="/exemplos/avl-a22edf62.cpp">código fornecido</a>, implemente um árvore AVL com as funções de inserir e remover elementos. A ideia principal do problema é que implementação da remoção seja utilizando recursão, não sendo necessário o uso da função transplanta. A estratégia de remoção de elementos que não estejam em nós folhas é a substituição pelo elemento posterior (sucessor). </p>
+<p>
+O código fornecido já tem o menu de entrada e o método de impressão. <strong>Não</strong> altere essas funções. O caminho mais fácil para a solução do exercício é não alterar a assinaturas das funções, dessa forma, não resultará em conflito com o código fornecido. 
+O dado a ser armazenado na árvore é composto por uma <b>chave</b> do tipo <i>inteiro</i>, o <b>nome do animal</b> do tipo <i>string</i>, a <b>espécie (gato, cachorro, etc.) do animal</b> do tipo <i>string</i>, <b>raça (pequinês, vira-lata, etc.) do animal</b> do tipo <i>string</i>. </p>
 <p>Entradas:</p>
 <ol>
-<li>Valores (inteiros) a inserir na árvore.</li>
+<li> i - para <b>inserir</b> elemento : deve ler chave [inteiro] , nome do animal [string], espécie [string], raça [string]</li>
+<li> r - para <b>remover</b> elemento : deve ler chave [inteiro] </li>
+<li> b - para <b>buscar</b> elemento : deve ler chave [inteiro] </li>
+<li> l - para fazer o <b>levantamento</b> de quantidade de animais de uma dada espécie e raça: deve ler duas strings (espécie e raça) </li>
+<li> e - para <b>imprimir</b> árvore  </li>
+<li> f - finalizar </li>
 </ol>
 <p>Saídas:</p>
 <ol>
-<li>Quantidade de nós da árvore.</li>
-<li>Diferença de nós da sub-árvore esquerda com a sub-árvore direita da raiz.</li>
+<li> i - inserir elemento : A operação de inserção <b>não</b> produz saída</li>
+<li> r - remover elemento : A operação de remoção <b>não</b> produz saída</li>
+<li> b - buscar elemento : A operação de busca escreve a frase: "Elemento buscado: ([chave],[nome],[espécie],[raça])", em que [chave], [nome], [espécie] e [raça] devem ser substituídos pela respectiva chave, nome do animal, sua espécie e raça</li>
+<li> l - levantamento por localização: Imprime: "Levantamento de animais: [quantidade]", em que [quantidade] é número de animais de uma dada espécie e raça. </li>
+<li> e - imprimir árvore : imprime a árvore seguindo o padrão de formatação tree </li>
+<li> f - finalizar : finaliza o programa </li>
 </ol>
+
 <p>Exemplo de Entrada:</p>
-<pre>45 30 10 69 5 187 100 50 25 2 -1</pre>
+<pre>
+i 5 doguo cao viralata
+i 10 mieco gato persa
+i 15 tanin gato persa
+i 3 xicao cao viralata
+i 2 pepe cao pequines
+i 1 popo cao pequines
+i 200 drum cao fila
+i 201 bitao cao viralata
+i 399 bigorna cao pequines
+i 12 baran gato viralata
+i 31 xaxau gato persa
+i 32 xupita cao pequines
+e
+l cao pequines
+l cao russo
+l gato persa
+f
+</pre>
 <p>Exemplo de Saída:</p>
-<pre>10 1</pre>
+<pre>
+(10,mieco)
+ ├e─(3,xicao)
+ │   ├e─(2,pepe)
+ │   │   └e─(1,popo)
+ │   └d─(5,doguo)
+ └d─(200,drum)
+     ├e─(15,tanin)
+     │   ├e─(12,baran)
+     │   └d─(31,xaxau)
+     │       └d─(32,xupita)
+     └d─(201,bitao)
+         └d─(399,bigorna)
+Levantamento de animais: 4
+Levantamento de animais: 0
+Levantamento de animais: 3
+</pre>
+<p>Exemplo de Entrada 2:</p>
+<pre>
+i 5 doguo cao viralata
+i 10 mieco gato persa
+i 15 tanin gato persa
+i 3 xicao cao viralata
+i 2 pepe cao pequines
+i 1 popo cao pequines
+i 200 drum cao fila
+i 201 bitao cao viralata
+i 399 bigorna cao pequines
+i 12 baran gato viralata
+i 31 xaxau gato persa
+i 32 xupita cao pequines
+e
+r 1 
+r 2 
+r 10
+i 1 popo cao fila
+i 2 pepe cao russo
+i 10 mieco gato siames
+e
+l cao pequines
+l cao russo
+l gato persa
+f
+</pre>
+<p>Exemplo de Saída 2:</p>
+<pre>
+(10,mieco)
+ ├e─(3,xicao)
+ │   ├e─(2,pepe)
+ │   │   └e─(1,popo)
+ │   └d─(5,doguo)
+ └d─(200,drum)
+     ├e─(15,tanin)
+     │   ├e─(12,baran)
+     │   └d─(31,xaxau)
+     │       └d─(32,xupita)
+     └d─(201,bitao)
+         └d─(399,bigorna)
+(15,tanin)
+ ├e─(5,doguo)
+ │   ├e─(2,pepe)
+ │   │   ├e─(1,popo)
+ │   │   └d─(3,xicao)
+ │   └d─(12,baran)
+ │       └e─(10,mieco)
+ └d─(200,drum)
+     ├e─(31,xaxau)
+     │   └d─(32,xupita)
+     └d─(201,bitao)
+         └d─(399,bigorna)
+Levantamento de animais: 2
+Levantamento de animais: 1
+Levantamento de animais: 2
+</pre>
+<br>
+<strong>Observação</strong>: para baixar o arquivo, clique com o botão direito do mouse, depois clique em "salvar link como" e escolha uma pasta do seu computador. Não tente abrir o código no navegador e copiar o texto. Isso resultará em mudança na codificação do texto de UTF-8 para ISO, deformando a saída formatada da árvore.
         </div><!-- description-display-box -->
         <a name="JQ5"></a>
         <p><b>Peso:</b> 1</p>
@@ -754,9 +932,9 @@ f</pre>
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2079">
-                <input type="hidden" name="tst_password" value="15d2dd5df56307ad60149b3798945dd6452e42e4">
-                <input type="hidden" name="id_problema" value="1428">
+                <input type="hidden" name="id_prova" value="2078">
+                <input type="hidden" name="tst_password" value="ce7c470432ccce35f28d20494b7d6a035d08260f">
+                <input type="hidden" name="id_problema" value="1804">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
@@ -767,37 +945,92 @@ f</pre>
     </div><!-- problem-try-ct -->
     <div class="problem-try-ct">
         <a name="Q6"></a>
-        <h3>Questão 6: Árvore ABB - Eficiência da busca</h3>
+        <h3>Questão 6: Estrutura de dados AVL recursiva  - Biblioteca</h3>
         <div class="description-display-box">
-<p>A árvore binária de busca serve para reduzir os passos necessários na recuperação de informações de um conjunto grande. Para investigar essa eficiência você vai implementar uma árvore com as operações de inserção e busca, de tal forma que seja possível saber o número de nós visitados durante uma busca na árvore.</p>
-<p><a href="/exemplos/abb-334ae6bd.cpp">Este código</a> já tem um começo de implementação, em que a função principal já está pronta, e também está implementado um tipo de dados que o programa vai usar para armazenar na árvore. Esse tipo consiste de uma chave (número inteiro) e um valor (texto). Você pode alterar a função principal se decidir que não deseja usar manipulação de exceções, porém o programa deverá continuar funcionando do mesmo jeito.</p>
+<p>Uma biblioteca comunitária decidiu reorganizar seus livros e renovar seu sistema de consulta, facilitando a busca por títulos. Para isso, cada livro será registrado com seu nome, localização e quantidade de itens disponíveis para empréstimo. A cada empréstimo ou devolução, a quantidade de itens disponíveis para empréstimo é atualizada.  Utilizando o <a href="/exemplos/avl-790c7423.cpp">código fornecido</a>, implemente um árvore AVL com as funções de inserir e remover elementos. A idea principal do problema é que implementação da remoção seja utilizando recursão, não sendo necessário o uso da função transplanta. A estratégia de remoção de elementos que não estejam em nohs folhas é a substituição pelo elemento posterior (sucessor). </p>
+<p>
+O código fornecido já tem o menu de entrada e o método de impressão. <strong>Não</strong> altere essas funções. O caminho mais fácil para a solução do exercício é não alterar a assinaturas das funções, dessa forma, não resultará em conflito com o código fornecido. 
+O dado a ser armazenado na árvore é composto por uma <b>chave</b> do tipo <i>inteiro</i>, o <b>nome do livro</b> do tipo <i>string</i>, a <b>localização</b> do tipo <i>string</i> e a <b>quantidade de itens</b> disponíveis do tipo <b>inteiro</b>. Não existem livros diferentes com a mesma chave. </p>
 <p>Entradas:</p>
-<p>O programa consiste em um laço com as opções de <u>inserção</u>, <u>busca</u>, <u>escrita em ordem</u> e <u>encerramento</u>. A operação de escrita não é importante na nota. Se você decidir implementar, adicione o comando para escrever na função principal. As opções são identificados por letras seguidas de parâmetros, a saber:</p>
 <ol>
-<li>i - para <b>inserir</b> uma informação na árvore. A letra i deve ser seguida da chave (número inteiro) e valor (palavra).</li>
-<li>b - para <b>buscar</b> uma informação na árvore. A letra b deve ser seguida da chave a ser buscada.</li>
-<li>e - para escrever o conteúdo da árvore, em ordem.</li>
-<li>f - para finalizar a execução do programa.</li>
+<li> i - para <b>inserir</b> elemento : deve ler chave [inteiro] , nome do livro [string], localização [string] e quantidade disponível [inteiro]</li>
+<li> r - para <b>remover</b> elemento : deve ler chave [inteiro] </li>
+<li> b - para <b>buscar</b> elemento : deve ler chave [inteiro] </li>
+<li> l - para fazer o <b>levantamento</b> de livros em uma dada localização: deve ler uma string </li>
+<li> e - para <b>imprimir</b> árvore  </li>
+<li> f - finalizar </li>
 </ol>
 <p>Saídas:</p>
-<p>A operação de inserção não produz saída. A operação de busca escreve o valor associado à chave, seguida do número de nós visitados na árvore durante a busca. Caso a informação busca não esteja na árvore, a função principal escreve "INEXISTENTE" no lugar do valor. A operação de escrever escreve todos os valores da árvore e <b>não tem influência na avaliação</b>.</p>
+<ol>
+<li> i - inserir elemento : A operação de inserção <b>não</b> produz saída</li>
+<li> r - remover elemento : A operação de remoção <b>não</b> produz saída</li>
+<li> b - buscar elemento : A operação de busca escreve a frase: "Elemento buscado: ([chave],[nome],[local],[quantidade])", em que [chave], [nome], [local] e [quantidade] devem ser substituídos pela respectiva chave, nome do livro, localização e quantidade disponível."</li>
+<li> l - levantamento por localização: Imprime: "Levantamento do local [local]: [quantidade]", em que [local] é o local pesquisado e [quantidade] é a quantidade de elementos na dada localização. </li>
+<li> e - imprimir árvore : imprime a árvore seguindo o padrão de formatação tree </li>
+<li> f - finalizar : finaliza o programa </li>
+</ol>
+
 <p>Exemplo de Entrada:</p>
-<pre>i 2 dois
-i 5 cinco
-i 6 seis
-i 4 quatro
-i 1 um
-i 3 tres
-b 1
-b 3
-b 7
-b 2
-f</pre>
+<pre>
+i 5 Memorias_Postumas_de_Bras_Cubas C6E01 3
+i 7 Capitaes_de_Areia C4E02 5 
+i 9 Luciola C6E05 2
+i 6 Dom_Casmurro C3E01 4
+i 11 Quincas_Borba C3E01 3
+i 42 O_Guia_do_Mochileiro_das_Galaxias C7E42 10
+i 43 O_Restaurante_no_Fim_do_Universo C7E42 8
+i 44 A_Vida_o_Universo_e_Tudo_Mais C7E42 7
+i 45 Ate_mais_e_Obrigado_pelos_Peixes C7E42 6
+i 46 Praticamente_Inofensiva C7E42 6
+e
+l C7E42
+l C3E01
+f
+</pre>
 <p>Exemplo de Saída:</p>
-<pre>um 2
-tres 4
-INEXISTENTE 3
-dois 1</pre>
+<pre>
+(7,Capitaes_de_Areia)
+ ├e─(5,Memorias_Postumas_de_Bras_Cubas)
+ │   └d─(6,Dom_Casmurro)
+ └d─(43,O_Restaurante_no_Fim_do_Universo)
+     ├e─(11,Quincas_Borba)
+     │   ├e─(9,Luciola)
+     │   └d─(42,O_Guia_do_Mochileiro_das_Galaxias)
+     └d─(45,Ate_mais_e_Obrigado_pelos_Peixes)
+         ├e─(44,A_Vida_o_Universo_e_Tudo_Mais)
+         └d─(46,Praticamente_Inofensiva)
+Levantamento do local C7E42: 37
+Levantamento do local C3E01: 7
+</pre>
+<p>Exemplo de Entrada 2:</p>
+<pre>
+i 5 Memorias_Postumas_de_Bras_Cubas C6E01 3
+i 7 Capitaes_de_Areia C4E02 5 
+i 9 Luciola C6E05 2
+i 6 Dom_Casmurro C3E01 4
+i 14 Pedro_e_o_Lobo C6E05 8
+l C6E05
+b 9
+r 9
+r 9
+b 9
+e
+f
+
+</pre>
+<p>Exemplo de Saída 2:</p>
+<pre>
+Levantamento do local C6E05: 10
+Elemento buscado: (9,Luciola,C6E05,2)
+Erro na remoção: chave não encontrada!
+Erro na busca: elemento não encontrado!
+(7,Capitaes_de_Areia)
+ ├e─(5,Memorias_Postumas_de_Bras_Cubas)
+ │   └d─(6,Dom_Casmurro)
+ └d─(14,Pedro_e_o_Lobo)
+</pre>
+<br>
+<strong>Observação</strong>: para baixar o arquivo, clique com o botão direito do mouse, depois clique em "salvar link como" e escolha uma pasta do seu computador. Não tente abrir o código no navegador e copiar o texto. Isso resultará em mudança na codificação do texto de UTF-8 para ISO, deformando a saída formatada da árvore.
         </div><!-- description-display-box -->
         <a name="JQ6"></a>
         <p><b>Peso:</b> 1</p>
@@ -806,9 +1039,9 @@ dois 1</pre>
                 <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
                 <input type="file" name="arquivo" id="arquivo" required="required">
                 <input type="hidden" name="MAX_FILE_SIZE" value="20000">
-                <input type="hidden" name="id_prova" value="2079">
-                <input type="hidden" name="tst_password" value="15d2dd5df56307ad60149b3798945dd6452e42e4">
-                <input type="hidden" name="id_problema" value="1670">
+                <input type="hidden" name="id_prova" value="2078">
+                <input type="hidden" name="tst_password" value="ce7c470432ccce35f28d20494b7d6a035d08260f">
+                <input type="hidden" name="id_problema" value="1763">
                 <input type="hidden" name="idUsuario" value="6644">
                 <input type="hidden" name="nroTentativa" value="1">
                 <input type="hidden" name="atenuacao" value="1">
@@ -817,11 +1050,395 @@ dois 1</pre>
                 <input type="submit" name="avaliar" value="Enviar Resposta">
             </form>
     </div><!-- problem-try-ct -->
+    <div class="problem-try-ct">
+        <a name="Q7"></a>
+        <h3>Questão 7: Estrutura de dados AVL recursiva  - PeguePague </h3>
+        <div class="description-display-box">
+<p>Um estabelecimento comercial decidiu disponibilizar diversos pontos de consulta para que os próprios clientes consultem a disponibilidade de um produto, sirvam-se da quantidade desejada e dirijam-se ao caixa para o pagamento. Para que essa estratégia seja bem sucedida, ele o contratou para desenvolver o sistema de busca ao produtos, e, para maior eficiência, você optou pelo uso de uma árvore binária de busca balanceada - AVL.
+Utilizando o <a href="/exemplos/avl-d23dfe0b.cpp">código fornecido</a> implemente um árvore AVL com as funções de inserir e remover elementos. A ideia principal do problema é que implementação da remoção seja utilizando recursão, não sendo necessário o uso da função transplanta. A estratégia de remoção de elementos que não estejam em nós folhas é a substituição pelo elemento posterior (sucessor).
+</p>
+O código fornecido já tem o menu de entrada e o método de impressão. <strong>Não</strong> altere essas funções. O caminho mais fácil para a solução do exercício é não alterar a assinaturas das funções, dessa forma, não resultará em conflito com o código fornecido. 
+O dado a ser armazenado na árvore é composto por uma <b>chave</b> do tipo <i>inteiro</i>, o <b>nome do produto</b> do tipo <i>string</i>, a <b>marca do produto</b> do tipo <b>string</b> e a <b>quantidade disponível</b> do tipo <b>inteiro</b>.
+</p>
+<p>Entradas:</p>
+<ol>
+<li> i - para <b>inserir</b> elemento : deve ler chave [inteiro] , nome do produto [string], marca [string] e quantidade disponível [inteiro]</li>
+<li> r - para <b>remover</b> elemento : deve ler chave [inteiro] </li>
+<li> b - para <b>buscar</b> elemento : deve ler chave [inteiro] </li>
+<li> l - para fazer o <b>levantamento</b> da quantidade de produtos de uma dada marca: deve ler uma string</li>
+<li> e - para <b>imprimir</b> árvore  </li>
+<li> f - finalizar </li>
+</ol>
+<p>Saídas:</p>
+<ol>
+<li> i - inserir elemento : A operação de inserção <b>não</b> produz saída</li>
+<li> r - remover elemento : A operação de remoção <b>não</b> produz saída</li>
+<li> b - buscar elemento : A operação de busca escreve a frase: "Elemento buscado: ([chave],[nome],[marca],[quantidade])", em que [chave], [nome], [local] e [quantidade] devem ser substituídos pela respectiva chave, nome do produto, marca e quantidade disponível."</li>
+<li> l - levantamento por marca: Imprime: "Levantamento da marca [marca]: [quantidade]", em que [marca] é a marca pesquisada e [quantidade] é a quantidade de produtos dessa marca.
+<li> e - imprimir árvore : imprime a árvore seguindo o padrão de formatação tree </li>
+<li> f - finalizar : finaliza o programa </li>
+</ol>
+
+<p>Exemplo de Entrada:</p>
+<pre>
+i 100 chocolate SrCacau 30
+i 187 sal MarSalgado 15 
+i 210 sorvete LeiGelato 28
+i 130 biscoito CreckCrack 111
+i 304 azeite MarSalgado 21
+i 214 capuccino SrCacau 12
+i 402 sardinha MarSalgado 21
+l MarSalgado
+l SrCacau
+e
+f
+</pre>
+<p>Exemplo de Saída:</p>
+<pre>
+Levantamento da marca MarSalgado: 57
+Levantamento da marca SrCacau: 42
+(187,sal)
+ ├e─(100,chocolate)
+ │   └d─(130,biscoito)
+ └d─(214,capuccino)
+     ├e─(210,sorvete)
+     └d─(304,azeite)
+         └d─(402,sardinha)
+</pre>
+<p>Exemplo de Entrada 2:</p>
+<pre>
+i 100 chocolate SrCacau 30
+i 187 sal MarSalgado 15 
+i 210 sorvete LeiGelato 28
+i 130 biscoito CreckCrack 111
+i 187 sal MarSalgado 15 
+i 304 azeite MarSalgado 21
+i 214 capuccino SrCacau 12
+i 402 sardinha MarSalgado 21
+i 87 pacoquinha DaDinda 13
+i 55 azeitonas Filistao 24
+i 13 macarrao Filistao 12
+i 803 lasanha Filistao 21
+i 255 mocaccinho SrCacau 13
+b 210
+r 210
+r 210
+b 210
+l SrCacau
+l Filistao
+e
+f
+</pre>
+<p>Exemplo de Saída 2:</p>
+<pre>
+Erro na inserção: chave já existente!
+Elemento buscado: (210,sorvete,LeiGelato,28)
+Erro na remoção: chave não encontrada!
+Erro na busca: elemento não encontrado!
+Levantamento da marca SrCacau: 55
+Levantamento da marca Filistao: 57
+(187,sal)
+ ├e─(100,chocolate)
+ │   ├e─(55,azeitonas)
+ │   │   ├e─(13,macarrao)
+ │   │   └d─(87,pacoquinha)
+ │   └d─(130,biscoito)
+ └d─(304,azeite)
+     ├e─(214,capuccino)
+     │   └d─(255,mocaccinho)
+     └d─(402,sardinha)
+         └d─(803,lasanha)
+</pre>
+<br>
+<strong>Observação</strong>: para baixar o arquivo, clique com o botão direito do mouse, depois clique em "salvar link como" e escolha uma pasta do seu computador. Não tente abrir o código no navegador e copiar o texto. Isso resultará em mudança na codificação do texto de UTF-8 para ISO, deformando a saída formatada da árvore.
+        </div><!-- description-display-box -->
+        <a name="JQ7"></a>
+        <p><b>Peso:</b> 1</p>
+            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
+                <label style="background: #F9F9F9">Nova Resposta:</label>
+                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
+                <input type="file" name="arquivo" id="arquivo" required="required">
+                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
+                <input type="hidden" name="id_prova" value="2078">
+                <input type="hidden" name="tst_password" value="ce7c470432ccce35f28d20494b7d6a035d08260f">
+                <input type="hidden" name="id_problema" value="1764">
+                <input type="hidden" name="idUsuario" value="6644">
+                <input type="hidden" name="nroTentativa" value="1">
+                <input type="hidden" name="atenuacao" value="1">
+                <input type="hidden" name="nroQuestao" value="7">
+                <input type="hidden" name="_action" value="save">
+                <input type="submit" name="avaliar" value="Enviar Resposta">
+            </form>
+    </div><!-- problem-try-ct -->
+    <div class="problem-try-ct">
+        <a name="Q8"></a>
+        <h3>Questão 8: Estrutura de dados AVL recursiva - Pokemon</h3>
+        <div class="description-display-box">
+<p>Está chegando o próximo mega-híper-super campeonato de Pokemon Come e você resolve colocar à prova os seus fabulosos conhecimentos. Para isso, você resolveu fazer um programinha para cadastrar os seus pokemons  e, para maior eficiência, você optou pelo uso de uma árvore binária de busca balanceada - AVL. Utilizando o <a href="/exemplos/avl-aea8c324.cpp">código fornecido</a>, implemente um árvore AVL com as funções de inserir e remover elementos. A ideia principal do problema é que implementação da remoção seja utilizando recursão, não sendo necessário o uso da função transplanta. A estratégia de remoção de elementos que não estejam em nós folhas é a substituição pelo elemento posterior (sucessor).
+</p>
+<p>
+O código fornecido já tem o menu de entrada e o método de impressão. <strong>Não</strong> altere essas funções. O caminho mais fácil para a solução do exercício é não alterar a assinaturas das funções, dessa forma, não resultará em conflito com o código fornecido. 
+O dado a ser armazenado na árvore é composto por um <b>id</b> do tipo <i>inteiro</i>, o <b>nome do pokemon</b> do tipo <i>string</i>, o  <b>tipo principal do pokemon</b> do tipo <b>string</b> e o <b>nível alcançado</b> do tipo <b>inteiro</b>.</p>
+<p></p>
+<p>Entradas:</p>
+<ol>
+<li> i - para <b>inserir</b> elemento : deve ler id [inteiro] , nome do pokemon [string], tipo [string] e nível [inteiro]</li>
+<li> r - para <b>remover</b> elemento : deve ler id [inteiro] </li>
+<li> b - para <b>buscar</b> elemento : deve ler id [inteiro] </li>
+<li> l - para fazer o <b>levantamento</b> de pokemons de um determinado tipo e nível: deve ler uma string e um inteiro</li>
+<li> e - para <b>imprimir</b> árvore  </li>
+<li> f - finalizar </li>
+</ol>
+<p>Saídas:</p>
+<ol>
+<li> i - inserir elemento : A operação de inserção <b>não</b> produz saída</li>
+<li> r - remover elemento : A operação de remoção <b>não</b> produz saída</li>
+<li> b - buscar elemento : A operação de busca escreve a frase: "Elemento buscado: ([id],[nome],[tipo],[nível])", em que [id], [nome], [tipo] e [nível] devem ser substituídos pelo respectivo id, nome do pokemon, tipo principal e nível alcançado."</li>
+<li> l - levantamento por tipo e nível: Imprime: "Levantamento de pokemons tipo [tipo] e nível [nível]:  [quantidade]", em que [tipo] é o tipo de pokemon, [nível] o nível alcançado e  [quantidade] é a quantidade de pokemons atendendo esses dois requisitos.
+<li> e - imprimir árvore : imprime a árvore seguindo o padrão de formatação tree </li>
+<li> f - finalizar : finaliza o programa </li>
+</ol>
+<p>Exemplo de Entrada 1:</p>
+<pre>
+i 12 pikachu eletrico 25
+i 51 charizard fogo 30
+i 302 bulbassauro agua 40
+i 14 eevee normal 45
+i 96 magmar fogo 25
+i 301 flareon fogo 30
+i 13 jolteon eletrico 25
+i 55 raichu eletrico 30
+l fogo 30
+l eletrico 25
+l fogo 25
+e
+f
+</pre>
+<p>Exemplo de Saída1 :</p>
+<pre>
+Levantamento de pokemons tipo fogo e nível 30: 2
+Levantamento de pokemons tipo eletrico e nível 25: 2
+Levantamento de pokemons tipo fogo e nível 25: 1
+(51,charizard)
+ ├e─(13,jolteon)
+ │   ├e─(12,pikachu)
+ │   └d─(14,eevee)
+ └d─(301,flareon)
+     ├e─(96,magmar)
+     │   └e─(55,raichu)
+     └d─(302,bulbassauro)
+</pre>
+<p>Exemplo de Entrada 2:</p>
+<pre>
+i 12 pikachu eletrico 25
+i 51 charizard fogo 30
+i 302 bulbassaur agua 40
+i 14 eevee normal 45
+i 96 magmar fogo 25
+i 102 cleffairy normal 45
+i 402 snorlax normal 45
+i 9 rattata normal 45
+i 77 ditto normal 42
+i 66 meowth normal 23
+i 88 ponyta fogo 30
+i 2 charmander fogo 30
+i 301 flareon fogo 30
+i 13 jolteon eletrico 25
+i 55 raichu eletrico 30
+e
+l fogo 30
+r 9
+r 96
+r 402
+b 14
+b 9
+l normal 45
+l fogo 25
+e
+f
+</pre>
+<p>Exemplo de Saída 2:</p>
+<pre>
+(77,ditto)
+ ├e─(12,pikachu)
+ │   ├e─(9,rattata)
+ │   │   └e─(2,charmander)
+ │   └d─(51,charizard)
+ │       ├e─(14,eevee)
+ │       │   └e─(13,jolteon)
+ │       └d─(66,meowth)
+ │           └e─(55,raichu)
+ └d─(102,cleffairy)
+     ├e─(96,magmar)
+     │   └e─(88,ponyta)
+     └d─(302,bulbassaur)
+         ├e─(301,flareon)
+         └d─(402,snorlax)
+Levantamento de pokemons tipo fogo e nível 30: 4
+Elemento buscado: (14,eevee,normal,45)
+Erro na busca: elemento não encontrado!
+Levantamento de pokemons tipo normal e nível 45: 2
+Levantamento de pokemons tipo fogo e nível 25: 0
+(77,ditto)
+ ├e─(51,charizard)
+ │   ├e─(12,pikachu)
+ │   │   ├e─(2,charmander)
+ │   │   └d─(14,eevee)
+ │   │       └e─(13,jolteon)
+ │   └d─(66,meowth)
+ │       └e─(55,raichu)
+ └d─(102,cleffairy)
+     ├e─(88,ponyta)
+     └d─(302,bulbassaur)
+         └e─(301,flareon)
+</pre>
+<p>
+<strong>Observação</strong>: para baixar o arquivo, clique com o botão direito do mouse, depois clique em "salvar link como" e escolha uma pasta do seu computador. Não tente abrir o código no navegar e copiar o texto. Isso resultará em mudança na codificação do texto de UTF-8 para ISO, deformando a saída formatada da árvore.
+</p>
+        </div><!-- description-display-box -->
+        <a name="JQ8"></a>
+        <p><b>Peso:</b> 1</p>
+            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
+                <label style="background: #F9F9F9">Nova Resposta:</label>
+                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
+                <input type="file" name="arquivo" id="arquivo" required="required">
+                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
+                <input type="hidden" name="id_prova" value="2078">
+                <input type="hidden" name="tst_password" value="ce7c470432ccce35f28d20494b7d6a035d08260f">
+                <input type="hidden" name="id_problema" value="1765">
+                <input type="hidden" name="idUsuario" value="6644">
+                <input type="hidden" name="nroTentativa" value="1">
+                <input type="hidden" name="atenuacao" value="1">
+                <input type="hidden" name="nroQuestao" value="8">
+                <input type="hidden" name="_action" value="save">
+                <input type="submit" name="avaliar" value="Enviar Resposta">
+            </form>
+    </div><!-- problem-try-ct -->
+    <div class="problem-try-ct">
+        <a name="Q9"></a>
+        <h3>Questão 9: Estrutura de dados AVL recursiva - Checagem CPF</h3>
+        <div class="description-display-box">
+Uma empresa está tentando se adaptar a rotina de distanciamento social vigente. Uma das medidas é restringir a entrada de funcionários ao espaço físico da empresa de acordo com o número do CPF. Em dias pares, somente funcionários com CPF finalizando em número par pode entrar, em casos de dias ímpares, somente funcionários com CPF finalizando em número ímpar. Para agilizar o controle de acesso, você deve criar um sistema para fazer buscas rápidas na base, para isso, utilizando árvores binárias de buscas balanceadas. 
+<p></p>
+Utilizando o <a href="/exemplos/avl_1766-dadd89b9.cpp">código fornecido</a>, implemente uma árvore AVL com as funções de inserir, remover e buscar elementos. A idea principal do problema é que implementação da remoção seja utilizando recursão, não sendo necessário o uso da função transplanta. A estratégia de remoção de elementos, em casos que precise de substituição, é a substituição pelo elemento posterior (sucessor). Além disso, você deve desenvolver uma função, que, ao receber a chave de acesso do funcionário e o dia do mês, retorna se o funcionário está autorizado a entrar ou não. Outra função necessária é listar todos os funcionários que podem acessar a empresa, para isso, a função recebe o dia do mês como entrada, e realiza a impressão <b>em ordem</b> na AVL.
+<p></p>
+O código fornecido já tem o menu de entrada e o método de impressão. <strong>Não</strong> altere essas funções. O caminho mais fácil para a solução do exercício é não alterar a assinaturas das funções, dessa forma, não resultará em conflito com o código fornecido.
+<p></p>
+O dado a ser armazenado na árvore é composto por uma <b>chave</b> do tipo <i>inteiro</i>, um <b>nome</b> do tipo <i>string</i>, e um <b>CPF</b> do tipo <i>unsigned long long int</i>.
+
+<p>Entradas:</p>
+<ol>
+<li> i - para <b>inserir</b> elemento : deve ler chave [inteiro] e valor [string]</li>
+<li> r - para <b>remover</b> elemento : deve ler chave [inteiro] </li>
+<li> b - para <b>buscar</b> elemento : deve ler chave [inteiro] </li>
+<li> v - para <b>verificar</b> funcionario : deve ler chave [inteiro] e dia do mês [inteiro] </li>
+<li> l - para <b>listar</b> funcionários : deve ler dia do mês [inteiro] </li>
+<li> e - para <b>imprimir</b> árvore  </li>
+<li> f - finalizar </li>
+</ol>
+<p>Saídas:</p>
+<ol>
+<li> i - inserir elemento : A operação de inserção <b>não</b> produz saída</li>
+<li> r - remover elemento : A operação de remoção <b>não</b> produz saída</li>
+<li> b - buscar elemento : A operação de busca escreve a frase: "Nome: [nome] | CPF: [cpf] | Cod: [chave] ", em que [nome], [cpf] e [chave] são as informações armazenadas do funcionário.". Caso o elemento não seja encontrado, imprime a mensagem: "Erro na busca: elemento não encontrado!".</li>
+<li> v - verificar funcionario : imprime a frase: "Autorizado.", caso a paridade seja a mesma entre o CPF e o dia do mês, caso contrário imprime "Não autorizado.", ou ainda, imprime "Erro na verificacao: chave inexistente!", caso a chave informada não esteja cadastrada.
+<li> l - listar funcionários  : deve listar os funcionários permitidos a trabalhar no dia informado, um por linha, segundo a formatação "Nome: [nome] | CPF: [cpf] | Cod: [chave] ", em que [nome], [cpf] e [chave] são as informações armazenadas do funcionário. </li>
+<li> e - imprimir árvore : imprime a árvore seguindo o padrão de formatação tree </li>
+<li> f - finalizar : finaliza o programa </li>
+</ol>
+<p>Exemplo de Entrada 1:</p>
+<pre>
+i 1 Gelo_Tancredo 11111111111
+i 2 Sauna_Jose 22222222222
+i 3 Gray_Fernando 33333333333
+i 4 Liar_Itamar 44444444444
+i 5 Rico_Fernando 55555555555
+i 6 Hino_Luiz 66666666666
+i 7 Huck_Dilma 77777777777
+i 8 Coragem_Michel 88888888888
+i 9 Naro_Jair 99999999999
+e
+f
+</pre>
+<p>Exemplo de Saída 1:</p>
+<pre>
+(4,Liar_Itamar)
+ ├e─(2,Sauna_Jose)
+ │   ├e─(1,Gelo_Tancredo)
+ │   └d─(3,Gray_Fernando)
+ └d─(6,Hino_Luiz)
+     ├e─(5,Rico_Fernando)
+     └d─(8,Coragem_Michel)
+         ├e─(7,Huck_Dilma)
+         └d─(9,Naro_Jair)
+</pre>
+<p></p>
+<p>Exemplo de Entrada 2:</p>
+<pre>
+i 1 Gelo_Tancredo 11111111111
+i 2 Sauna_Jose 22222222222
+i 3 Gray_Fernando 33333333333
+i 4 Liar_Itamar 44444444444
+i 5 Rico_Fernando 55555555555
+i 6 Hino_Luiz 66666666666
+i 7 Huck_Dilma 77777777777
+i 8 Coragem_Michel 88888888888
+i 9 Naro_Jair 99999999999
+v 3 21
+v 3 12
+v 10 12 
+l 11
+b 5
+r 5
+b 5
+l 22
+v 5 12
+r 9
+f
+</pre>
+<p>Exemplo de Saída 2:</p>
+<pre>
+Autorizado.
+Não autorizado.
+Erro na verificacao: chave inexistente!
+Nome: Gelo_Tancredo | CPF: 11111111111 | Cod: 1
+Nome: Gray_Fernando | CPF: 33333333333 | Cod: 3
+Nome: Rico_Fernando | CPF: 55555555555 | Cod: 5
+Nome: Huck_Dilma | CPF: 77777777777 | Cod: 7
+Nome: Naro_Jair | CPF: 99999999999 | Cod: 9
+Nome: Rico_Fernando | CPF: 55555555555 | Cod: 5
+Erro na busca: elemento não encontrado!
+Nome: Sauna_Jose | CPF: 22222222222 | Cod: 2
+Nome: Liar_Itamar | CPF: 44444444444 | Cod: 4
+Nome: Hino_Luiz | CPF: 66666666666 | Cod: 6
+Nome: Coragem_Michel | CPF: 88888888888 | Cod: 8
+Erro na verificacao: chave inexistente!
+</pre>
+<strong>Observação</strong>: para baixar o arquivo, clique com o botão direito do mouse, depois clique em "salvar link como" e escolha uma pasta do seu computador. Não tente abrir o código no navegar e copiar o texto. Isso resultará em mudança na codificação do texto de UTF-8 para ISO, deformando a saída formatada da árvore.
+        </div><!-- description-display-box -->
+        <a name="JQ9"></a>
+        <p><b>Peso:</b> 1</p>
+            <form method=POST action="testTrials.php" class="comBorda" enctype="multipart/form-data">
+                <label style="background: #F9F9F9">Nova Resposta:</label>
+                <p style="margin-top: -0.3em">Selecione o arquivo com o código fonte do programa que resolve o problema para enviá-lo.</p>
+                <input type="file" name="arquivo" id="arquivo" required="required">
+                <input type="hidden" name="MAX_FILE_SIZE" value="20000">
+                <input type="hidden" name="id_prova" value="2078">
+                <input type="hidden" name="tst_password" value="ce7c470432ccce35f28d20494b7d6a035d08260f">
+                <input type="hidden" name="id_problema" value="1766">
+                <input type="hidden" name="idUsuario" value="6644">
+                <input type="hidden" name="nroTentativa" value="1">
+                <input type="hidden" name="atenuacao" value="1">
+                <input type="hidden" name="nroQuestao" value="9">
+                <input type="hidden" name="_action" value="save">
+                <input type="submit" name="avaliar" value="Enviar Resposta">
+            </form>
+    </div><!-- problem-try-ct -->
     <div style="clear: both"></div>
 </div><!-- problem-try-ct -->
 </div><!-- prova -->
 <script type="text/javascript">
-    var serverTime = 1723295246000;
+    var serverTime = 1723347153000;
     var localTime = +Date.now();
     var timeDiff = serverTime - localTime;
     var closingTime = 1723604399000;
